@@ -89,7 +89,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wagon.kavel.cn/articles/hexo-public-dir-shortcut/hexo-public-dir-shortcut.html" data-id="cjcrgmwbp00078swdflv3jq49" class="article-share-link">Share</a>
+      <a data-url="http://wagon.kavel.cn/articles/hexo-public-dir-shortcut/hexo-public-dir-shortcut.html" data-id="cjcrh8g9y0007tkwdtvkkt9s3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -176,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wagon.kavel.cn/articles/hexo-configuration/hexo-configuration.html" data-id="cjcrgmwbo00068swdyo2lni50" class="article-share-link">Share</a>
+      <a data-url="http://wagon.kavel.cn/articles/hexo-configuration/hexo-configuration.html" data-id="cjcrh8g9x0006tkwdp1blatp2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -221,7 +221,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wagon.kavel.cn/articles/hello-world.html" data-id="cjcrgmwa500008swdxj6a9a59" class="article-share-link">Share</a>
+      <a data-url="http://wagon.kavel.cn/articles/hello-world.html" data-id="cjcrh8g900000tkwdz2qnliqg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wagon.kavel.cn/articles/post-via-cas/post-via-cas.html" data-id="cjcrgmwbw000b8swdjkhnpjcr" class="article-share-link">Share</a>
+      <a data-url="http://wagon.kavel.cn/articles/post-via-cas/post-via-cas.html" data-id="cjcrh8ga10009tkwd87b0n9mp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CAS/">CAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
@@ -365,10 +365,90 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wagon.kavel.cn/articles/hexo-installment-log.html" data-id="cjcrgmwa900018swdzp0cr2om" class="article-share-link">Share</a>
+      <a data-url="http://wagon.kavel.cn/articles/hexo-installment-log.html" data-id="cjcrh8g9j0001tkwdo6hv78le" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-php-single-page-GET/php-framework-using-singleton-with-GET" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/articles/php-single-page-GET/php-framework-using-singleton-with-GET.html" class="article-date">
+  <time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/programming/">编程</a>►<a class="article-category-link" href="/categories/programming/phpnoob/">php造车轮</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/articles/php-single-page-GET/php-framework-using-singleton-with-GET.html">php造车轮：基于单主页+GET请求的模块化框架</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书<a href="http://baike.baidu.com/link?url=vggwmUem3loYtWvs94Q3HyZUh1UVFYs919tmyyY3_fWNDunqRweFTBEC2OlTIr8yGkVnxH4OetQ9vgCnohzZ-oRmmVY1WOF3MGGV1WMmFd_t1YxhW7rRFR2Aiq_zJ8NLdOKt_Ckg3UvRzhhhZAxB6DdUZAkwuPaBv6naqZ5RHlhTEx83_xHmFqjKSRCcUCwl" target="_blank" rel="noopener">《PHP 5 高级应用开发实践》</a>来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。</p>
+<p>在介绍框架之前，需要了解GET请求是什么。</p>
+<p>###GET请求<br>在用户与服务器之间进行请求-响应时，两种最常被用到的方法分别为：<strong>GET</strong>和<strong>POST</strong>。</p>
+<p>其中，<strong>GET请求</strong>的查询字符串是直接写在URL中进行发送的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.kavel.cn/?page=pdf</span><br></pre></td></tr></table></figure></p>
+<p>在这段URL中，<code>?</code>表示GET请求的开头，而<code>page=pdf</code>则是查询的键值对。</p>
+<p>而GET请求也有如下的一些原则：</p>
+<ul>
+<li>GET 请求<strong>可被缓存</strong></li>
+<li>GET 请求<strong>可保留</strong>在浏览器<strong>历史记录</strong>中</li>
+<li>GET 请求<strong>可被收藏为书签</strong></li>
+<li>GET 请求<strong>不应</strong>在<strong>处理敏感数据</strong>时使用</li>
+<li>GET 请求<strong>有长度限制</strong></li>
+<li>GET 请求只应当用于<strong>取回数据</strong> </li>
+</ul>
+<p>在PHP中，我们使用<code>$value=$_GET[$key]</code>方法来获取GET的内容。<br>其中<code>$key</code>为我们自己定义的等号左边的内容（如<code>page</code>），称为<strong>键</strong>。<br>而<code>$value</code>的内容即为我们需要获取的等号右边的内容（如<code>pdf</code>），称为<strong>值</strong>。</p>
+<p>而这套框架的核心原理，则是利用了GET传递请求的<strong>可保留</strong>性，在单个页面（如<code>index.php</code>）通过GET请求获取到用户传来的不同的<strong>值</strong> ，并根据<strong>值</strong>插入不同的模块页展现给用户。这是一种非常容易实现的<strong>模块化方案</strong>。</p>
+<p>话不多说，赶紧进入实战环节。</p>
+<p>###获取用户传来的GET信息：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取插入的子页面名称</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'page'</span>])) &#123;</span><br><span class="line">    $p = sterilizeInput($_GET[<span class="string">'page'</span>]);</span><br><span class="line">&#125; <span class="keyword">elseif</span> (<span class="keyword">isset</span>($_POST[<span class="string">'page'</span>])) &#123;</span><br><span class="line">    $p = $_POST[<span class="string">'page'</span>];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $p = <span class="string">'index'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//任何GET表单在赋值前必须使用消毒函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sterilizeInput</span><span class="params">($data)</span> </span>&#123;</span><br><span class="line">    $data = trim($data); <span class="comment">//移除字符串两侧的空白字符</span></span><br><span class="line">    $data = stripslashes($data); <span class="comment">//移除字符串中的所有反斜杠</span></span><br><span class="line">    $data = htmlspecialchars($data); <span class="comment">//将预定义的字符转换为 HTML 实体，可过滤单引号、双引号等</span></span><br><span class="line">    <span class="keyword">return</span> $data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们应当提防<strong>用户能够通过GET请求上传恶意代码使得对网页进行的任意操作成为可能</strong>。所以在进行赋值前，使用<strong>消毒函数</strong>对<strong>值</strong>进行消毒非常重要。</p>
+<p>###根据GET信息选择要插入的模块页面</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//选择插入的子页面</span></span><br><span class="line"><span class="keyword">switch</span> ($p) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'index'</span>:</span><br><span class="line">        $page = <span class="string">'welcome.php'</span>;</span><br><span class="line">        $page_title = <span class="string">'主页'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'pdf'</span>:</span><br><span class="line">        $page=<span class="string">'pdf.php'</span>;</span><br><span class="line">        $page_title=<span class="string">'课堂笔记'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'resume'</span>:</span><br><span class="line">        $page=<span class="string">'resume.html'</span>;</span><br><span class="line">        $page_title=<span class="string">'简历'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'404'</span>:</span><br><span class="line">        header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里，我们通过switch-case方式对得到的<strong>值</strong>进行判断，得到对应的页面文件名称。还要记得如果<strong>值</strong>对所有条件都不符合时，跳转到404页面。</p>
+<p>###插入模块页面</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//确保子页面存在</span></span><br><span class="line"><span class="keyword">if</span> (!file_exists(<span class="string">'./modules/'</span> . $page)) &#123;</span><br><span class="line">    header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">    <span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//插入页眉文件</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'./includes/'</span> . <span class="string">'header.inc.html'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入子页面</span></span><br><span class="line"><span class="keyword">include</span>(<span class="string">'./modules/'</span> . $page);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入页脚文件</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'./includes/'</span> . <span class="string">'footer.inc.html'</span>);</span><br></pre></td></tr></table></figure>
+<p>使用<code>include($page)</code>函数进行页面的插入。在插入页面前，还需要判断该页面是否真实存在。如果不存在，记得跳转到404页面。</p>
+<p>为了实现模块化，我将整个页面分成三部分，分别为页眉、正文和页脚。页眉负责页面的头文件、CSS等。通过插入相同的页眉文件，我们可以确保整个网站都能得到统一的风格。</p>
+<p>使用模块化的框架可以极大地方便模板页的开发。因为这样直接省去了编写每个页面都相同且必须的头文件和CSS等项，直接从<code>&lt;body&gt;</code>部分开始下笔。 我在这里则更加极端（lǎn），模板页只负责一个<code>&lt;div&gt;</code>，其余内容都在页眉和页脚文件中。</p>
+<p>这里是当<code>page=index</code>时，网页的组成内容：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: header.inc.html*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">if</span> (!<span class="keyword">isset</span>($page_title)) $page_title=<span class="string">'主页'</span>;<span class="meta">?&gt;</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;<span class="meta">&lt;?</span>=$page_title<span class="meta">?&gt;</span> - kavel.cn&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class="container body-content"&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在页眉文件里，<code>&lt;title&gt;</code>标签里面的值<code>$page_title</code>由<code>index.php</code>定义。使用这种模块化方式的好处之一，就是在<code>index.php</code>内定义的变量，可以当作全局变量，在所有模块页面都能任意使用。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: welcome.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomSplash</span><span class="params">()</span></span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line">&lt;div class="jumbotron"&gt;</span><br><span class="line">    &lt;div class="container"&gt;</span><br><span class="line">        &lt;h1&gt;<span class="meta">&lt;?</span>=randomSplash()<span class="meta">?&gt;</span>&lt;/h1&gt;</span><br><span class="line">        &lt;p&gt;这里是嘉维小站，我是王嘉维。&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&lt;a class="btn btn-primary btn-lg" href="/blog" role="button"&gt;进入博客&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>可以看到在模块页面内只包含一个<code>&lt;div&gt;</code>。这极大地方便了模块页的开发，也不需要担心样式问题。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: footer.inc.html*/</span></span><br><span class="line"></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;footer class="container body-content"&gt;</span><br><span class="line">            &lt;hr /&gt;</span><br><span class="line">            &lt;p&gt;&amp;copy; <span class="meta">&lt;?</span>=date(<span class="string">"Y"</span>,time())<span class="meta">?&gt;</span> Jiawei W.&lt;/p&gt;</span><br><span class="line">        &lt;/footer&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>页尾文件则是包含各种结束标签。当然<code>&lt;footer&gt;</code>标签也存在于这里。</p>
+<p>本站<a href="https://www.kavel.cn" target="_blank" rel="noopener">首页</a>就是使用这种框架写成的，如果感兴趣的话可以点击链接参观：</p>
+<blockquote>
+<p><a href="https://www.kavel.cn/" target="_blank" rel="noopener">https://www.kavel.cn/</a></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://wagon.kavel.cn/articles/php-single-page-GET/php-framework-using-singleton-with-GET.html" data-id="cjcrh8ga00008tkwdikr92njx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php造车轮/">php造车轮</a></li></ul>
 
     </footer>
   </div>
@@ -490,90 +570,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wagon.kavel.cn/articles/letsencrypt/letsencrypt-on-centos7.html" data-id="cjcrgmwbr00088swdxi4y0akh" class="article-share-link">Share</a>
+      <a data-url="http://wagon.kavel.cn/articles/letsencrypt/letsencrypt-on-centos7.html" data-id="cjcrh8ga5000btkwdyk31p5o9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Let-s-Encrypt/">Let's Encrypt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSL/">SSL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-php-single-page-GET/php-framework-using-singleton-with-GET" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/articles/php-single-page-GET/php-framework-using-singleton-with-GET.html" class="article-date">
-  <time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/programming/">编程</a>►<a class="article-category-link" href="/categories/programming/phpnoob/">php造车轮</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/articles/php-single-page-GET/php-framework-using-singleton-with-GET.html">php造车轮：基于单主页+GET请求的模块化框架</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书<a href="http://baike.baidu.com/link?url=vggwmUem3loYtWvs94Q3HyZUh1UVFYs919tmyyY3_fWNDunqRweFTBEC2OlTIr8yGkVnxH4OetQ9vgCnohzZ-oRmmVY1WOF3MGGV1WMmFd_t1YxhW7rRFR2Aiq_zJ8NLdOKt_Ckg3UvRzhhhZAxB6DdUZAkwuPaBv6naqZ5RHlhTEx83_xHmFqjKSRCcUCwl" target="_blank" rel="noopener">《PHP 5 高级应用开发实践》</a>来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。</p>
-<p>在介绍框架之前，需要了解GET请求是什么。</p>
-<p>###GET请求<br>在用户与服务器之间进行请求-响应时，两种最常被用到的方法分别为：<strong>GET</strong>和<strong>POST</strong>。</p>
-<p>其中，<strong>GET请求</strong>的查询字符串是直接写在URL中进行发送的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.kavel.cn/?page=pdf</span><br></pre></td></tr></table></figure></p>
-<p>在这段URL中，<code>?</code>表示GET请求的开头，而<code>page=pdf</code>则是查询的键值对。</p>
-<p>而GET请求也有如下的一些原则：</p>
-<ul>
-<li>GET 请求<strong>可被缓存</strong></li>
-<li>GET 请求<strong>可保留</strong>在浏览器<strong>历史记录</strong>中</li>
-<li>GET 请求<strong>可被收藏为书签</strong></li>
-<li>GET 请求<strong>不应</strong>在<strong>处理敏感数据</strong>时使用</li>
-<li>GET 请求<strong>有长度限制</strong></li>
-<li>GET 请求只应当用于<strong>取回数据</strong> </li>
-</ul>
-<p>在PHP中，我们使用<code>$value=$_GET[$key]</code>方法来获取GET的内容。<br>其中<code>$key</code>为我们自己定义的等号左边的内容（如<code>page</code>），称为<strong>键</strong>。<br>而<code>$value</code>的内容即为我们需要获取的等号右边的内容（如<code>pdf</code>），称为<strong>值</strong>。</p>
-<p>而这套框架的核心原理，则是利用了GET传递请求的<strong>可保留</strong>性，在单个页面（如<code>index.php</code>）通过GET请求获取到用户传来的不同的<strong>值</strong> ，并根据<strong>值</strong>插入不同的模块页展现给用户。这是一种非常容易实现的<strong>模块化方案</strong>。</p>
-<p>话不多说，赶紧进入实战环节。</p>
-<p>###获取用户传来的GET信息：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取插入的子页面名称</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'page'</span>])) &#123;</span><br><span class="line">    $p = sterilizeInput($_GET[<span class="string">'page'</span>]);</span><br><span class="line">&#125; <span class="keyword">elseif</span> (<span class="keyword">isset</span>($_POST[<span class="string">'page'</span>])) &#123;</span><br><span class="line">    $p = $_POST[<span class="string">'page'</span>];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $p = <span class="string">'index'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//任何GET表单在赋值前必须使用消毒函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sterilizeInput</span><span class="params">($data)</span> </span>&#123;</span><br><span class="line">    $data = trim($data); <span class="comment">//移除字符串两侧的空白字符</span></span><br><span class="line">    $data = stripslashes($data); <span class="comment">//移除字符串中的所有反斜杠</span></span><br><span class="line">    $data = htmlspecialchars($data); <span class="comment">//将预定义的字符转换为 HTML 实体，可过滤单引号、双引号等</span></span><br><span class="line">    <span class="keyword">return</span> $data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们应当提防<strong>用户能够通过GET请求上传恶意代码使得对网页进行的任意操作成为可能</strong>。所以在进行赋值前，使用<strong>消毒函数</strong>对<strong>值</strong>进行消毒非常重要。</p>
-<p>###根据GET信息选择要插入的模块页面</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//选择插入的子页面</span></span><br><span class="line"><span class="keyword">switch</span> ($p) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'index'</span>:</span><br><span class="line">        $page = <span class="string">'welcome.php'</span>;</span><br><span class="line">        $page_title = <span class="string">'主页'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'pdf'</span>:</span><br><span class="line">        $page=<span class="string">'pdf.php'</span>;</span><br><span class="line">        $page_title=<span class="string">'课堂笔记'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'resume'</span>:</span><br><span class="line">        $page=<span class="string">'resume.html'</span>;</span><br><span class="line">        $page_title=<span class="string">'简历'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'404'</span>:</span><br><span class="line">        header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这里，我们通过switch-case方式对得到的<strong>值</strong>进行判断，得到对应的页面文件名称。还要记得如果<strong>值</strong>对所有条件都不符合时，跳转到404页面。</p>
-<p>###插入模块页面</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//确保子页面存在</span></span><br><span class="line"><span class="keyword">if</span> (!file_exists(<span class="string">'./modules/'</span> . $page)) &#123;</span><br><span class="line">    header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">    <span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//插入页眉文件</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'./includes/'</span> . <span class="string">'header.inc.html'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入子页面</span></span><br><span class="line"><span class="keyword">include</span>(<span class="string">'./modules/'</span> . $page);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入页脚文件</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'./includes/'</span> . <span class="string">'footer.inc.html'</span>);</span><br></pre></td></tr></table></figure>
-<p>使用<code>include($page)</code>函数进行页面的插入。在插入页面前，还需要判断该页面是否真实存在。如果不存在，记得跳转到404页面。</p>
-<p>为了实现模块化，我将整个页面分成三部分，分别为页眉、正文和页脚。页眉负责页面的头文件、CSS等。通过插入相同的页眉文件，我们可以确保整个网站都能得到统一的风格。</p>
-<p>使用模块化的框架可以极大地方便模板页的开发。因为这样直接省去了编写每个页面都相同且必须的头文件和CSS等项，直接从<code>&lt;body&gt;</code>部分开始下笔。 我在这里则更加极端（lǎn），模板页只负责一个<code>&lt;div&gt;</code>，其余内容都在页眉和页脚文件中。</p>
-<p>这里是当<code>page=index</code>时，网页的组成内容：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: header.inc.html*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">if</span> (!<span class="keyword">isset</span>($page_title)) $page_title=<span class="string">'主页'</span>;<span class="meta">?&gt;</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;<span class="meta">&lt;?</span>=$page_title<span class="meta">?&gt;</span> - kavel.cn&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class="container body-content"&gt;</span><br></pre></td></tr></table></figure></p>
-<p>在页眉文件里，<code>&lt;title&gt;</code>标签里面的值<code>$page_title</code>由<code>index.php</code>定义。使用这种模块化方式的好处之一，就是在<code>index.php</code>内定义的变量，可以当作全局变量，在所有模块页面都能任意使用。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: welcome.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomSplash</span><span class="params">()</span></span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line">&lt;div class="jumbotron"&gt;</span><br><span class="line">    &lt;div class="container"&gt;</span><br><span class="line">        &lt;h1&gt;<span class="meta">&lt;?</span>=randomSplash()<span class="meta">?&gt;</span>&lt;/h1&gt;</span><br><span class="line">        &lt;p&gt;这里是嘉维小站，我是王嘉维。&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&lt;a class="btn btn-primary btn-lg" href="/blog" role="button"&gt;进入博客&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p>可以看到在模块页面内只包含一个<code>&lt;div&gt;</code>。这极大地方便了模块页的开发，也不需要担心样式问题。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: footer.inc.html*/</span></span><br><span class="line"></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;footer class="container body-content"&gt;</span><br><span class="line">            &lt;hr /&gt;</span><br><span class="line">            &lt;p&gt;&amp;copy; <span class="meta">&lt;?</span>=date(<span class="string">"Y"</span>,time())<span class="meta">?&gt;</span> Jiawei W.&lt;/p&gt;</span><br><span class="line">        &lt;/footer&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>页尾文件则是包含各种结束标签。当然<code>&lt;footer&gt;</code>标签也存在于这里。</p>
-<p>本站<a href="https://www.kavel.cn" target="_blank" rel="noopener">首页</a>就是使用这种框架写成的，如果感兴趣的话可以点击链接参观：</p>
-<blockquote>
-<p><a href="https://www.kavel.cn/" target="_blank" rel="noopener">https://www.kavel.cn/</a></p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://wagon.kavel.cn/articles/php-single-page-GET/php-framework-using-singleton-with-GET.html" data-id="cjcrgmwbs00098swd9c9sd51f" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php造车轮/">php造车轮</a></li></ul>
 
     </footer>
   </div>
@@ -615,7 +615,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wagon.kavel.cn/articles/rewire_https/rewire_https.html" data-id="cjcrgmwbx000c8swdlxtucwpt" class="article-share-link">Share</a>
+      <a data-url="http://wagon.kavel.cn/articles/rewire_https/rewire_https.html" data-id="cjcrh8ga7000dtkwd31wsoq5n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSL/">SSL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
@@ -1235,7 +1235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wagon.kavel.cn/articles/snc-revengence/snc-revengence.html" data-id="cjcrgmwcg00158swdmkquqfp2" class="article-share-link">Share</a>
+      <a data-url="http://wagon.kavel.cn/articles/snc-revengence/snc-revengence.html" data-id="cjcrh8gao0016tkwd38dfz7ir" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/snc/">snc</a></li></ul>
