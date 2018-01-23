@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>php造车轮：基于单主页+GET请求的模块化框架 | 嘉维小站</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
+    <meta charset="utf-8">
+    
+    <title>php造车轮：基于单主页+GET请求的模块化框架 | 嘉维小站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="PHP,Framework,php造车轮" />
+    
+    <meta name="description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
 <meta name="keywords" content="PHP,Framework,php造车轮">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php造车轮：基于单主页+GET请求的模块化框架">
@@ -15,87 +16,157 @@
 <meta property="og:site_name" content="嘉维小站">
 <meta property="og:description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
 <meta property="og:locale" content="zh-HANS">
+<meta property="og:image" content="http://wagon.kavel.cn/articles/%7B%%20asset_img%20373406445910912100.jpg%20%%7D">
 <meta property="og:updated_time" content="2018-01-23T11:13:53.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php造车轮：基于单主页+GET请求的模块化框架">
 <meta name="twitter:description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
-  
-    <link rel="alternate" href="/atom.xml" title="嘉维小站" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:image" content="http://wagon.kavel.cn/articles/%7B%%20asset_img%20373406445910912100.jpg%20%%7D">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+
+
+    <!--Weixin thumbnail-->
+    <div id='wx_logo' style='margin:0 auto;display:none;'>
+        <img src='/k300.png' />
+    </div>
+
 </head>
 
 <body>
-  <div id="container">
     <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">嘉维小站</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">kavel.cn</a>
-        </h2>
-      
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">kavel.cn</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/article/">文章</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/programming/">编程</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/programming/phpnoob/">php造车轮</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wagon.kavel.cn"></form>
-      </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-php-framework-using-singleton-with-GET" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/articles/php-framework-using-singleton-with-GET.html" class="article-date">
-  <time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time>
-</a>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/programming/">编程</a>►<a class="article-category-link" href="/categories/programming/phpnoob/">php造车轮</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      php造车轮：基于单主页+GET请求的模块化框架
+    <a class="page-title-link" href="/categories/programming/">编程</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/programming/phpnoob/">php造车轮</a>
     </h1>
-  
-
-      </header>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-php-framework-using-singleton-with-GET" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书<a href="http://baike.baidu.com/link?url=vggwmUem3loYtWvs94Q3HyZUh1UVFYs919tmyyY3_fWNDunqRweFTBEC2OlTIr8yGkVnxH4OetQ9vgCnohzZ-oRmmVY1WOF3MGGV1WMmFd_t1YxhW7rRFR2Aiq_zJ8NLdOKt_Ckg3UvRzhhhZAxB6DdUZAkwuPaBv6naqZ5RHlhTEx83_xHmFqjKSRCcUCwl" target="_blank" rel="noopener">《PHP 5 高级应用开发实践》</a>来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。</p>
+        <h1 class="article-title" itemprop="name">
+        php造车轮：基于单主页+GET请求的模块化框架
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-subtitle">
+                <a href="/articles/php-framework-using-singleton-with-GET.html" class="article-date">
+    <time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time>
+</a>
+<span>Updated: Tue Jan 23 2018 19:13:53 GMT+0800</span>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php造车轮/">php造车轮</a></li></ul>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <!-- Table of Contents -->
+            
+            <p>上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书<a href="http://baike.baidu.com/link?url=vggwmUem3loYtWvs94Q3HyZUh1UVFYs919tmyyY3_fWNDunqRweFTBEC2OlTIr8yGkVnxH4OetQ9vgCnohzZ-oRmmVY1WOF3MGGV1WMmFd_t1YxhW7rRFR2Aiq_zJ8NLdOKt_Ckg3UvRzhhhZAxB6DdUZAkwuPaBv6naqZ5RHlhTEx83_xHmFqjKSRCcUCwl" target="_blank" rel="noopener">《PHP 5 高级应用开发实践》</a>来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。</p>
 <p>在介绍框架之前，需要了解GET请求是什么。</p>
 <p>###GET请求<br>在用户与服务器之间进行请求-响应时，两种最常被用到的方法分别为：<strong>GET</strong>和<strong>POST</strong>。</p>
 <p>其中，<strong>GET请求</strong>的查询字符串是直接写在URL中进行发送的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.kavel.cn/?page=pdf</span><br></pre></td></tr></table></figure></p>
@@ -134,147 +205,429 @@
 <p><a href="https://www.kavel.cn/" target="_blank" rel="noopener">https://www.kavel.cn/</a></p>
 </blockquote>
 
-      
+        </div>
+        <footer class="article-footer">
+            
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_copy_link"></a>
+    <a class="a2a_button_printfriendly"></a>
+    <a class="a2a_button_wechat"></a>
+    <a class="a2a_button_evernote"></a>
+    <a class="a2a_button_douban"></a>
+    <a class="a2a_button_sina_weibo"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+
+        </footer>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://wagon.kavel.cn/articles/php-framework-using-singleton-with-GET.html" data-id="cjcrkejjt00078owdijdh6mx3" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php造车轮/">php造车轮</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/articles/letsencrypt-on-centos7.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          给网站用上免费SSL：Let&#39;s Encrypt操作记录
-        
-      </div>
-    </a>
-  
-  
-    <a href="/articles/snc-revengence.html" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">SNC的复仇-全文完</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
+    <section id="comments">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/article/">文章</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">编程</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/phpnoob/">php造车轮</a></li></ul></li></ul>
-    </div>
-  </div>
+        
+    <div class="ds-thread" data-thread-key="articles/php-framework-using-singleton-with-GET.html" data-title="php造车轮：基于单主页+GET请求的模块化框架" data-url="http://wagon.kavel.cn/articles/php-framework-using-singleton-with-GET.html"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
 
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CAS/">CAS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Framework/">Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Let-s-Encrypt/">Let's Encrypt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSL/">SSL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php造车轮/">php造车轮</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/snc/">snc</a></li></ul>
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+            
+            <li>
+                <a class="social-tooltip" title="facebook" href="https://www.facebook.com/KavelW"
+                   target="_blank">
+                    <i class="icon fa fa-facebook"></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>
+                <a class="social-tooltip" title="linkedin" href="https://cn.linkedin.com/in/kavelcortex"
+                   target="_blank">
+                    <i class="icon fa fa-linkedin"></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>
+                <a class="social-tooltip" title="github" href="https://github.com/KavelCortex"
+                   target="_blank">
+                    <i class="icon fa fa-github"></i>
+                </a>
+            </li>
+            
+            
+            
+            <li>
+                <a class="social-tooltip" title="steam" href="http://steamcommunity.com/id/wjw_wwasd"
+                   target="_blank">
+                    <i class="icon fa fa-steam"></i>
+                </a>
+            </li>
+            
+            
+        </ul>
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/CAS/" style="font-size: 10px;">CAS</a> <a href="/tags/Framework/" style="font-size: 10px;">Framework</a> <a href="/tags/HTTPS/" style="font-size: 20px;">HTTPS</a> <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/Let-s-Encrypt/" style="font-size: 10px;">Let's Encrypt</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/SSL/" style="font-size: 20px;">SSL</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/nginx/" style="font-size: 20px;">nginx</a> <a href="/tags/php造车轮/" style="font-size: 10px;">php造车轮</a> <a href="/tags/snc/" style="font-size: 10px;">snc</a>
-    </div>
-  </div>
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a></li></ul>
-    </div>
-  </div>
-
-
-  
+<nav id="article-nav">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
-    <div class="widget">
-      <ul>
+        <a href="/articles/letsencrypt-on-centos7.html" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
         
-          <li>
-            <a href="/articles/hexo-public-dir-shortcut.html">(no title)</a>
-          </li>
+            给网站用上免费SSL：Let&#39;s Encrypt操作记录
         
-          <li>
-            <a href="/articles/hexo-configuration.html">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/articles/post-via-cas.html">URLConnection自动登录深大CAS认证平台：提交表单实现方案</a>
-          </li>
-        
-          <li>
-            <a href="/articles/hexo-installment-log.html">hexo小撇步：服务器架设hexo过程全记录</a>
-          </li>
-        
-          <li>
-            <a href="/articles/rewire_https.html">配置好rewire，开启全站https模式</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 Jiawei Wang<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/articles/rewire_https.html" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">配置好rewire，开启全站https模式</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
 </nav>
+
+    
+    <div class="widgets-container">
+        
+        
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/articles/hexo-public-dir-shortcut.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/articles/hexo-public-dir-shortcut.html" class="title"></a></p>
+                            <p class="item-date"><time datetime="2018-01-23T07:11:39.984Z" itemprop="datePublished">2018-01-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/articles/hexo-configuration.html" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/articles/hexo-configuration.html" class="title"></a></p>
+                            <p class="item-date"><time datetime="2018-01-23T07:11:39.974Z" itemprop="datePublished">2018-01-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/articles/post-via-cas.html" class="thumbnail">
+    
+    
+        <span style="background-image:url(:{% asset_img thumbnail.png %})" alt="URLConnection自动登录深大CAS认证平台：提交表单实现方案" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/programming/">编程</a></p>
+                            <p class="item-title"><a href="/articles/post-via-cas.html" class="title">URLConnection自动登录深大CAS认证平台：提交表单实现方案</a></p>
+                            <p class="item-date"><time datetime="2017-04-14T16:00:00.000Z" itemprop="datePublished">2017-04-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/articles/hexo-installment-log.html" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://hexo.io/logo.svg)" alt="hexo小撇步：服务器架设hexo过程全记录" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/programming/">编程</a></p>
+                            <p class="item-title"><a href="/articles/hexo-installment-log.html" class="title">hexo小撇步：服务器架设hexo过程全记录</a></p>
+                            <p class="item-date"><time datetime="2017-03-03T16:00:00.000Z" itemprop="datePublished">2017-03-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/articles/letsencrypt-on-centos7.html" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://letsencrypt.org/images/letsencrypt-logo-horizontal.svg)" alt="给网站用上免费SSL：Let&#39;s Encrypt操作记录" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/programming/">编程</a></p>
+                            <p class="item-title"><a href="/articles/letsencrypt-on-centos7.html" class="title">给网站用上免费SSL：Let&#39;s Encrypt操作记录</a></p>
+                            <p class="item-date"><time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/article/">文章</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">编程</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/phpnoob/">php造车轮</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CAS/">CAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Framework/">Framework</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTPS/">HTTPS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Let-s-Encrypt/">Let's Encrypt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSL/">SSL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php造车轮/">php造车轮</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/snc/">snc</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CAS/" style="font-size: 10px;">CAS</a> <a href="/tags/Framework/" style="font-size: 10px;">Framework</a> <a href="/tags/HTTPS/" style="font-size: 20px;">HTTPS</a> <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/Let-s-Encrypt/" style="font-size: 10px;">Let's Encrypt</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/SSL/" style="font-size: 20px;">SSL</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/nginx/" style="font-size: 20px;">nginx</a> <a href="/tags/php造车轮/" style="font-size: 10px;">php造车轮</a> <a href="/tags/snc/" style="font-size: 10px;">snc</a>
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://www.kavel.cn/">首页</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+        
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 Jiawei Wang</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'kavelcn'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+<!-- Baidu Zhanzhang -->
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<!-- Baidu Zhanzhang Ends-->
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
+<!-- Linkedin Badge -->
+<!--script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script-->
+<!-- Linkedin Badge Ends-->
+    </div>
 </body>
 </html>
