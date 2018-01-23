@@ -7,17 +7,17 @@
   
   <title>嘉维小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在这里摘录一下官方文档中的配置参数： #Site   设置项 描述     title 站点的标题   subtitle 站点的副标题   description 站点描述，会被一些主题用到   author 你的名字。   language 网站使用的语言，[使用2个字符表示][8]   timezone 网站使用的[时区][9]，默认是本服务器使用的时区    #URL   设置项 描述">
+  <meta name="description" content="在这个配置文件中，有一个比较特别的配置项是public_dir:，官网对其的解释是这样的：  Public folder. Where the static site will be generated公共文件夹，静态站点将会在这里生成。  于是乎，我直接将其设置在nginx的网站根目录下： 1public_dir: /usr/share/nginx/html/blog 保存好后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="嘉维小站">
-<meta property="og:url" content="http://wagon.kavel.cn/articles/hexo-configuration/hexo-configuration.html">
+<meta property="og:url" content="http://wagon.kavel.cn/articles/hexo-public-dir-shortcut.html">
 <meta property="og:site_name" content="嘉维小站">
-<meta property="og:description" content="在这里摘录一下官方文档中的配置参数： #Site   设置项 描述     title 站点的标题   subtitle 站点的副标题   description 站点描述，会被一些主题用到   author 你的名字。   language 网站使用的语言，[使用2个字符表示][8]   timezone 网站使用的[时区][9]，默认是本服务器使用的时区    #URL   设置项 描述">
+<meta property="og:description" content="在这个配置文件中，有一个比较特别的配置项是public_dir:，官网对其的解释是这样的：  Public folder. Where the static site will be generated公共文件夹，静态站点将会在这里生成。  于是乎，我直接将其设置在nginx的网站根目录下： 1public_dir: /usr/share/nginx/html/blog 保存好后">
 <meta property="og:locale" content="zh-HANS">
-<meta property="og:updated_time" content="2017-03-04T16:24:18.062Z">
+<meta property="og:updated_time" content="2017-03-04T16:21:41.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嘉维小站">
-<meta name="twitter:description" content="在这里摘录一下官方文档中的配置参数： #Site   设置项 描述     title 站点的标题   subtitle 站点的副标题   description 站点描述，会被一些主题用到   author 你的名字。   language 网站使用的语言，[使用2个字符表示][8]   timezone 网站使用的[时区][9]，默认是本服务器使用的时区    #URL   设置项 描述">
+<meta name="twitter:description" content="在这个配置文件中，有一个比较特别的配置项是public_dir:，官网对其的解释是这样的：  Public folder. Where the static site will be generated公共文件夹，静态站点将会在这里生成。  于是乎，我直接将其设置在nginx的网站根目录下： 1public_dir: /usr/share/nginx/html/blog 保存好后">
   
     <link rel="alternate" href="/atom.xml" title="嘉维小站" type="application/atom+xml">
   
@@ -68,10 +68,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hexo-configuration/hexo-configuration" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hexo-public-dir-shortcut" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/articles/hexo-configuration/hexo-configuration.html" class="article-date">
-  <time datetime="2018-01-23T07:11:39.974Z" itemprop="datePublished">2018-01-23</time>
+    <a href="/articles/hexo-public-dir-shortcut.html" class="article-date">
+  <time datetime="2018-01-23T07:11:39.984Z" itemprop="datePublished">2018-01-23</time>
 </a>
     
   </div>
@@ -80,72 +80,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在这里摘录一下官方文档中的配置参数：</p>
-<h4 id="Site"><a href="#Site" class="headerlink" title="#Site"></a>#Site</h4><table>
-<thead>
-<tr>
-<th>设置项</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>title</code></td>
-<td>站点的标题</td>
-</tr>
-<tr>
-<td><code>subtitle</code></td>
-<td>站点的副标题</td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td>站点描述，会被一些主题用到</td>
-</tr>
-<tr>
-<td><code>author</code></td>
-<td>你的名字。</td>
-</tr>
-<tr>
-<td><code>language</code></td>
-<td>网站使用的语言，[使用2个字符表示][8]</td>
-</tr>
-<tr>
-<td><code>timezone</code></td>
-<td>网站使用的[时区][9]，默认是本服务器使用的时区</td>
-</tr>
-</tbody>
-</table>
-<h4 id="URL"><a href="#URL" class="headerlink" title="#URL"></a>#URL</h4><table>
-<thead>
-<tr>
-<th>设置项</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>url</code></td>
-<td>网站中hexo页面所在的网址，用于网页里面的链接</td>
-</tr>
-<tr>
-<td><code>root</code></td>
-<td>网站中hexo页面所在的地址，同样用于网页里的链接</td>
-</tr>
-<tr>
-<td><code>permalink</code></td>
-<td>生成页面时文章网址的[格式][10]</td>
-</tr>
-<tr>
-<td><code>permalink_defaults</code></td>
-<td>文章网址格式中内容的默认值</td>
-</tr>
-</tbody>
-</table>
+        <p>在这个配置文件中，有一个比较特别的配置项是<code>public_dir:</code>，官网对其的解释是这样的：</p>
+<blockquote>
+<p>Public folder. Where the static site will be generated<br>公共文件夹，静态站点将会在这里生成。</p>
+</blockquote>
+<p>于是乎，我直接将其设置在nginx的网站根目录下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">public_dir:</span> <span class="string">/usr/share/nginx/html/blog</span></span><br></pre></td></tr></table></figure>
+<p>保存好后</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wagon.kavel.cn/articles/hexo-configuration/hexo-configuration.html" data-id="cjcrilu0s0001cswdqbbqxp8a" class="article-share-link">Teilen</a>
+      <a data-url="http://wagon.kavel.cn/articles/hexo-public-dir-shortcut.html" data-id="cjcriu6w00004uwwdisy2vfp3" class="article-share-link">Teilen</a>
       
       
     </footer>
@@ -154,19 +100,10 @@
     
 <nav id="article-nav">
   
-    <a href="/articles/hexo-public-dir-shortcut/hexo-public-dir-shortcut.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/articles/hello-world.html" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/articles/hexo-configuration.html" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>
@@ -224,23 +161,23 @@
       <ul>
         
           <li>
-            <a href="/articles/hexo-public-dir-shortcut/hexo-public-dir-shortcut.html">(no title)</a>
+            <a href="/articles/hexo-public-dir-shortcut.html">(no title)</a>
           </li>
         
           <li>
-            <a href="/articles/hexo-configuration/hexo-configuration.html">(no title)</a>
+            <a href="/articles/hexo-configuration.html">(no title)</a>
           </li>
         
           <li>
-            <a href="/articles/hello-world.html">Hello World</a>
+            <a href="/articles/post-via-cas.html">URLConnection自动登录深大CAS认证平台：提交表单实现方案</a>
           </li>
         
           <li>
-            <a href="/articles/post-via-cas/post-via-cas.html">URLConnection自动登录深大CAS认证平台：提交表单实现方案</a>
+            <a href="/articles/hexo-installment-log.html">hexo小撇步：服务器架设hexo过程全记录</a>
           </li>
         
           <li>
-            <a href="/articles/hexo-installment-log/hexo-installment-log.html">hexo小撇步：服务器架设hexo过程全记录</a>
+            <a href="/articles/rewire_https.html">配置好rewire，开启全站https模式</a>
           </li>
         
       </ul>
