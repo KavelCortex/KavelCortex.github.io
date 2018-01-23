@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="嘉维小站">
 <meta property="og:description" content="本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等一切需要使用深大统一认证平台的站点实现一键登录甚至免登录的功能。 CAS验证基本原理深大统一身份认证平台使用了Jasig Central Authentication Service 3.">
 <meta property="og:locale" content="zh-HANS">
-<meta property="og:image" content="http://wagon.kavel.cn/articles/%7B%%20asset_img%20thumbnail.png%20%%7D">
-<meta property="og:updated_time" content="2018-01-23T11:50:44.911Z">
+<meta property="og:image" content="http://wagon.kavel.cn/images/cas.png">
+<meta property="og:updated_time" content="2018-01-23T11:58:07.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="URLConnection自动登录深大CAS认证平台：提交表单实现方案">
 <meta name="twitter:description" content="本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等一切需要使用深大统一认证平台的站点实现一键登录甚至免登录的功能。 CAS验证基本原理深大统一身份认证平台使用了Jasig Central Authentication Service 3.">
-<meta name="twitter:image" content="http://wagon.kavel.cn/articles/%7B%%20asset_img%20thumbnail.png%20%%7D">
+<meta name="twitter:image" content="http://wagon.kavel.cn/images/cas.png">
     
 
     
@@ -72,13 +72,13 @@
                         <ul id="main-nav">
                             
                                 <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
+                                    <a class="main-nav-list-link" href="/">Inici</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/article/">文章</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/programming/">编程</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/programming/phpnoob/">php造车轮</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                    <a class="main-nav-list-link" href="/about/index.html">Quant a</a>
                                 </li>
                             
                         </ul>
@@ -86,7 +86,7 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cercar" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -107,8 +107,8 @@
         TRANSLATION: {
             POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            CATEGORIES: 'categories',
+            TAGS: 'etiquetes',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -156,7 +156,7 @@
                 <a href="/articles/post-via-cas.html" class="article-date">
     <time datetime="2017-04-14T16:00:00.000Z" itemprop="datePublished">2017-04-15</time>
 </a>
-<span>Updated: Tue Jan 23 2018 19:50:44 GMT+0800</span>
+<span>Updated: Tue Jan 23 2018 19:58:07 GMT+0800</span>
                 
     <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CAS/">CAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
 
@@ -291,7 +291,7 @@
                     <aside id="sidebar">
     <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
     <div class="sidebar-top">
-        <p>follow:</p>
+        <p>seguir:</p>
         <ul class="social-links">
             
             
@@ -338,7 +338,7 @@
     
     
         <a href="/articles/hexo-installment-log.html" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
+        <strong class="article-nav-caption">antic</strong>
         <p class="article-nav-title">hexo小撇步：服务器架设hexo过程全记录</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
@@ -361,7 +361,7 @@
                             <a href="/articles/post-via-cas.html" class="thumbnail">
     
     
-        <span style="background-image:url({% asset_img thumbnail.png %})" alt="URLConnection自动登录深大CAS认证平台：提交表单实现方案" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/cas.png)" alt="URLConnection自动登录深大CAS认证平台：提交表单实现方案" class="thumbnail-image"></span>
     
     
 </a>
@@ -401,7 +401,7 @@
                             <a href="/articles/php-framework-using-singleton-with-GET.html" class="thumbnail">
     
     
-        <span style="background-image:url(373406445910912100.jpg)" alt="php造车轮：基于单主页+GET请求的模块化框架" class="thumbnail-image"></span>
+        <span style="background-image:url(images/php.jpg)" alt="php造车轮：基于单主页+GET请求的模块化框架" class="thumbnail-image"></span>
     
     
 </a>
@@ -472,7 +472,7 @@
         
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
+        <h3 class="widget-title">arxius</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a><span class="archive-list-count">1</span></li></ul>
         </div>
@@ -482,7 +482,7 @@
         
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">tags</h3>
+        <h3 class="widget-title">etiquetes</h3>
         <div class="widget">
             <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CAS/">CAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Framework/">Framework</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTPS/">HTTPS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Let-s-Encrypt/">Let's Encrypt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSL/">SSL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php造车轮/">php造车轮</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/snc/">snc</a><span class="tag-list-count">1</span></li></ul>
         </div>
@@ -492,7 +492,7 @@
         
         
     <div class="widget-wrap widget-float">
-        <h3 class="widget-title">tag cloud</h3>
+        <h3 class="widget-title">etiqueta cloud</h3>
         <div class="widget tagcloud">
             <a href="/tags/CAS/" style="font-size: 10px;">CAS</a> <a href="/tags/Framework/" style="font-size: 10px;">Framework</a> <a href="/tags/HTTPS/" style="font-size: 20px;">HTTPS</a> <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/Let-s-Encrypt/" style="font-size: 10px;">Let's Encrypt</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/SSL/" style="font-size: 20px;">SSL</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/nginx/" style="font-size: 20px;">nginx</a> <a href="/tags/php造车轮/" style="font-size: 10px;">php造车轮</a> <a href="/tags/snc/" style="font-size: 10px;">snc</a>
         </div>
