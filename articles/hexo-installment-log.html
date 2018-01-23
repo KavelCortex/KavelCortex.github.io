@@ -170,7 +170,7 @@
 <li>安装Node.js</li>
 <li>安装Hexo</li>
 </ul>
-<h3><span id="安装nodejs">安装Node.js</span></h3><p>安装之前，我们需要更新yum源：</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>安装之前，我们需要更新yum源：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum -y update</span><br></pre></td></tr></table></figure>
 <p>接下来，从官网下载Node.js的最新源码来进行编译安装。</p>
 <p>首先我们需要安装用来进行编译操作的<code>Development Tools</code>：</p>
@@ -190,7 +190,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make install</span><br></pre></td></tr></table></figure>
 <p>安装的时间比编译时间要短一些，大概10分钟左右。安装完毕后，可以输入以下指令检查是否正确安装：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node --version  </span><br><span class="line">$ npm --version</span><br></pre></td></tr></table></figure>
-<h3><span id="安装hexo">安装Hexo</span></h3><p>Hexo使用的是<code>npm</code>进行安装。由于npm源的原因，在国内直接使用npm进行安装整个下载过程将会极其缓慢，苦不堪言。所以我在这里使用<a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝npm镜像</a>来进行安装。</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>Hexo使用的是<code>npm</code>进行安装。由于npm源的原因，在国内直接使用npm进行安装整个下载过程将会极其缓慢，苦不堪言。所以我在这里使用<a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝npm镜像</a>来进行安装。</p>
 <p>可以通过以下的方法更换npm使用的源：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.npmrc</span><br></pre></td></tr></table></figure>
 <p>使用<code>vim</code>打开该文件后，按<code>i</code>添加以下内容，输入<code>:wq</code>退出：</p>
@@ -206,7 +206,7 @@
 <img src="/articles/hexo-installment-log/2_dir.png">
 <p>可以看到，<code>/hexo</code>目录新增了许多文件。主要目录结构如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml （配置文件）</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts （草稿箱，在这里存放的文章不会被生成）</span><br><span class="line">|   └── _posts （在这里存放的文章会被生成）</span><br><span class="line">└── themes （主题目录）</span><br></pre></td></tr></table></figure>
-<h3><span id="_configyml">_config.yml</span></h3><p>这是hexo站点的配置文件。具体的配置可以查看<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">官网文档</a>。</p>
+<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>这是hexo站点的配置文件。具体的配置可以查看<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">官网文档</a>。</p>
 <p>为了方便生成，我在配置文件中将<code>public_dir</code>的路径直接设置在nginx的网站根目录下。具体效果可以看看我写的另一篇文章（正在写）。</p>
 <p>配置好后输入以下指令开始生成静态页面文件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
@@ -352,9 +352,9 @@
     </a>
     
     
-        <a href="/articles/php-framework-using-singleton-with-GET.html" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/articles/letsencrypt-on-centos7.html" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">php造车轮：基于单主页+GET请求的模块化框架</p>
+        <p class="article-nav-title">给网站用上免费SSL：Let&#39;s Encrypt操作记录</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -413,26 +413,6 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/articles/php-framework-using-singleton-with-GET.html" class="thumbnail">
-    
-    
-        <span style="background-image:url(images/php.jpg)" alt="php造车轮：基于单主页+GET请求的模块化框架" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/programming/">编程</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/programming/phpnoob/">php造车轮</a></p>
-                            <p class="item-title"><a href="/articles/php-framework-using-singleton-with-GET.html" class="title">php造车轮：基于单主页+GET请求的模块化框架</a></p>
-                            <p class="item-date"><time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/articles/letsencrypt-on-centos7.html" class="thumbnail">
     
     
@@ -466,6 +446,26 @@
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/programming/">编程</a></p>
                             <p class="item-title"><a href="/articles/rewire_https.html" class="title">配置好rewire，开启全站https模式</a></p>
+                            <p class="item-date"><time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/articles/php-framework-using-singleton-with-GET.html" class="thumbnail">
+    
+    
+        <span style="background-image:url(images/php.jpg)" alt="php造车轮：基于单主页+GET请求的模块化框架" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/programming/">编程</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/programming/phpnoob/">php造车轮</a></p>
+                            <p class="item-title"><a href="/articles/php-framework-using-singleton-with-GET.html" class="title">php造车轮：基于单主页+GET请求的模块化框架</a></p>
                             <p class="item-date"><time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time></p>
                         </div>
                     </li>
