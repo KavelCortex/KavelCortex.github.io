@@ -11,7 +11,7 @@
 <meta name="keywords" content="SSL,HTTPS,nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="配置好rewire，开启全站https模式">
-<meta property="og:url" content="http://www.kavel.cn/articles/rewire_https/rewire_https.html">
+<meta property="og:url" content="http://wagon.kavel.cn/articles/rewire_https/rewire_https.html">
 <meta property="og:site_name" content="嘉维小站">
 <meta property="og:description" content="在一篇文章《给网站用上免费SSL：Let’s Encrypt操作记录》中，我们使用了Let’s Encrypt给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置： 12345erver&amp;#123;        listen 80;        server_name www.kavel.cn kav">
 <meta property="og:locale" content="zh-CN">
@@ -63,7 +63,7 @@
         <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.kavel.cn"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wagon.kavel.cn"></form>
       </div>
     </div>
   </div>
@@ -95,14 +95,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在一篇文章<a href="https://www.kavel.cn/blog/programming/letsencrypt-on-centos7.html">《给网站用上免费SSL：Let’s Encrypt操作记录》</a>中，我们使用了<a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置：</p>
+        <p>在一篇文章<a href="https://www.kavel.cn/blog/programming/letsencrypt-on-centos7.html" target="_blank" rel="noopener">《给网站用上免费SSL：Let’s Encrypt操作记录》</a>中，我们使用了<a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">erver&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.kavel.cn kavel.cn;</span><br><span class="line">        rewrite ^(.*)$ https://www.kavel.cn/ permanent;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <p>保存好后重启nginx，所有http</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.kavel.cn kavel.cn;</span><br><span class="line">        rewrite ^(.*)$ https://www.kavel.cn$uri permanent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        ssl_certificate /etc/letsencrypt/live/&#123;域名&#125;/fullchain.pem;</span><br><span class="line">        ssl_certificate_key  /etc/letsencrypt/live/&#123;域名&#125;/privkey.pem;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">       	    index	    index.php  index.html;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.kavel.cn/articles/rewire_https/rewire_https.html" data-id="cjcrdgcwm000d10wd4eusiu3d" class="article-share-link">Share</a>
+      <a data-url="http://wagon.kavel.cn/articles/rewire_https/rewire_https.html" data-id="cjcrgmwbx000c8swdlxtucwpt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSL/">SSL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
@@ -113,11 +113,11 @@
     
 <nav id="article-nav">
   
-    <a href="/articles/letsencrypt/letsencrypt-on-centos7.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/articles/php-single-page-GET/php-framework-using-singleton-with-GET.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          给网站用上免费SSL：Let&#39;s Encrypt操作记录
+          php造车轮：基于单主页+GET请求的模块化框架
         
       </div>
     </a>
