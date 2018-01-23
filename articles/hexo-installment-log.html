@@ -16,8 +16,8 @@
 <meta property="og:description" content="刚一申请到域名和服务器，第一件事情便是架设博客。当时想找一个方便省事的博客框架，于是看到当时吹得天花乱坠的Wordpress，便不小心掉进了大坑。还没写几篇文章，便已经开始遭遇各种麻烦。最难忍的一点就是不知道为何载入极慢。网上说是由于自带google字库的原因，可是下载了好几个去字库插件变着花样试却都是徒劳（你可以想象在设置页面中顶着30秒以上一页的载入速度在插件页面苦苦寻找并一个一个尝试的滋味吗">
 <meta property="og:locale" content="zh-HANS">
 <meta property="og:image" content="http://wagon.kavel.cn/articles/hexo-installment-log/1_npm.png">
-<meta property="og:image" content="https://www.kavel.cn/blog/images/hexo-installment-log/2_dir.png">
-<meta property="og:updated_time" content="2018-01-23T10:49:47.296Z">
+<meta property="og:image" content="http://wagon.kavel.cn/articles/2_dir.png">
+<meta property="og:updated_time" content="2018-01-23T10:57:07.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo小撇步：服务器架设hexo过程全记录">
 <meta name="twitter:description" content="刚一申请到域名和服务器，第一件事情便是架设博客。当时想找一个方便省事的博客框架，于是看到当时吹得天花乱坠的Wordpress，便不小心掉进了大坑。还没写几篇文章，便已经开始遭遇各种麻烦。最难忍的一点就是不知道为何载入极慢。网上说是由于自带google字库的原因，可是下载了好几个去字库插件变着花样试却都是徒劳（你可以想象在设置页面中顶着30秒以上一页的载入速度在插件页面苦苦寻找并一个一个尝试的滋味吗">
@@ -139,7 +139,7 @@
 <p>输入指令后，hexo开始往该目录下载hexo站点所需要的初始化文件。等待初始化完成后，这个目录就成为了我们的<code>hexo站点目录</code>了。当然，也可以在多个不同的地方建立不同的hexo站点目录，而所有不同地方生成的站点目录都是相互独立的。这有点像project的感觉。而所有对站点进行的操作都需要<code>cd</code>到站点所在的目录下进行。</p>
 <p>那么我们现在进入<code>/hexo</code>目录内一探究竟：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /hexo</span><br><span class="line">$ dir</span><br></pre></td></tr></table></figure>
-<p><img src="https://www.kavel.cn/blog/images/hexo-installment-log/2_dir.png" alt=""></p>
+<p><img src="2_dir.png" alt=""></p>
 <p>可以看到，<code>/hexo</code>目录新增了许多文件。主要目录结构如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml （配置文件）</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts （草稿箱，在这里存放的文章不会被生成）</span><br><span class="line">|   └── _posts （在这里存放的文章会被生成）</span><br><span class="line">└── themes （主题目录）</span><br></pre></td></tr></table></figure>
 <h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>这是hexo站点的配置文件。具体的配置可以查看<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">官网文档</a>。</p>
@@ -155,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wagon.kavel.cn/articles/hexo-installment-log.html" data-id="cjcriy4lq0001jowdyns5f3yy" class="article-share-link">Teilen</a>
+      <a data-url="http://wagon.kavel.cn/articles/hexo-installment-log.html" data-id="cjcrj0mr30002owwdbnrz143c" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -236,10 +236,6 @@
       <ul>
         
           <li>
-            <a href="/articles/testasset.html">testasset</a>
-          </li>
-        
-          <li>
             <a href="/articles/hexo-public-dir-shortcut.html">(no title)</a>
           </li>
         
@@ -253,6 +249,10 @@
         
           <li>
             <a href="/articles/hexo-installment-log.html">hexo小撇步：服务器架设hexo过程全记录</a>
+          </li>
+        
+          <li>
+            <a href="/articles/letsencrypt-on-centos7.html">给网站用上免费SSL：Let&#39;s Encrypt操作记录</a>
           </li>
         
       </ul>
