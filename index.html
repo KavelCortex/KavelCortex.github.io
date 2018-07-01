@@ -1,743 +1,1161 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    
-    <title>嘉维小站</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta property="og:type" content="website">
+  <meta charset="utf-8">
+  
+
+  
+  <title>嘉维小站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="嘉维小站">
 <meta property="og:url" content="http://wagon.kavel.cn/index.html">
 <meta property="og:site_name" content="嘉维小站">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="嘉维小站">
-    
-
-    
-
-    
-        <link rel="icon" href="/images/favicon.ico" />
-        <link rel="shortcut" href="/images/favicon.ico" />
-        <link rel="bookmark" href="/images/favicon.ico" type="image/x-icon"/>
-        <link rel="apple-touch-icon" href="/images/k114.png"/>
-    
-        
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-    
-
-
-    
-
+  
+    <link rel="alternate" href="/atom.xml" title="嘉维小站" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
+  <div id="container">
     <div id="wrap">
-        <header id="header">
-
-    <!--Weixin thumbnail-->
-    <div id='wx_logo' style='margin:0 auto;display:none;'>
-            <img src="/images/k300.png" />
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">嘉维小站</a>
+      </h1>
+      
     </div>
-
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">博客主页</a>
-                                </li>
-                            
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/article/">文章</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/programming/">编程</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/programming/phpnoob/">php造车轮</a></li></ul></li></ul>
-                                    
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
-                                </li>
-                            
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://wagon.kavel.cn"></form>
+      </div>
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </header>
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-post-via-cas" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/articles/post-via-cas.html" class="article-date">
+  <time datetime="2017-04-14T16:00:00.000Z" itemprop="datePublished">2017-04-15</time>
+</a>
     
-    <em class="page-title-link" data-url="home">博客主页</em>
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/programming/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/articles/post-via-cas.html">URLConnection自动登录深大CAS认证平台：提交表单实现方案</a>
     </h1>
-</div>
-                        <div class="main-body-content">
-                            
+  
 
+      </header>
     
-    
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2017" class="archive-year"><i class="icon fa fa-calendar-o"></i>2017</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/articles/post-via-cas.html" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/cas.png)" alt="URLConnection自动登录深大CAS认证平台：提交表单实现方案" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://wagon.kavel.cn/articles/post-via-cas.html">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/programming/">编程</a>
-            </p>
-            <p class="date"><time datetime="2017-04-14T16:00:00.000Z" itemprop="datePublished">2017-04-15</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/articles/post-via-cas.html">URLConnection自动登录深大CAS认证平台：提交表单实现方案</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等一切需要使用深大统一认证平台的站点实现一键登录甚至免登录的功能。
-CAS验证基本原理深大统一身份认证平台使用了Jasig Central Authentication Service 3.
-        </p>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等<strong>一切需要使用深大统一认证平台的站点</strong>实现<strong>一键登录</strong>甚至<strong>免登录</strong>的功能。</p>
+<h2 id="CAS验证基本原理"><a href="#CAS验证基本原理" class="headerlink" title="CAS验证基本原理"></a>CAS验证基本原理</h2><p>深大统一身份认证平台使用了<code>Jasig Central Authentication Service 3.5.2.1</code>这个 CAS 平台。CAS，全称 Central Authentication Service，是一种比较不错的的单点登录服务框架。使用像 CAS 这样单点登录（Single Sign On, 简称 SSO）方案时，用户只需要登录一次即可访问所有相互信任的系统（比如深大内的各种站点）。</p>
+<p>CAS的基本验证原理如图所示：<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-cas/images/image001.jpg" alt="CAS Protocol"></p>
+<p>通过原理图可知，浏览器访问一个使用了 CAS 服务的页面（CAS Client，如BlackBoard）后，将会被重定向至 CAS 验证页面（CAS Server，如深大的统一身份认证平台）进行用户认证。当用户验证成功后，浏览器将获得一条<strong>唯一且不可伪造的 <code>Ticket</code></strong>。然后 CAS Server 页面将浏览器重定向回 CAS Client 页面，浏览器紧接提交获得的<code>Ticket</code>给 Client页面，Client 页面接收到<code>Ticket</code>后，从后台验证该<code>Ticket</code>的合法性。验证通过后将自动跳转到登录后的页面，并返回相关的身份信息。</p>
+<h2 id="实现结果"><a href="#实现结果" class="headerlink" title="实现结果"></a>实现结果</h2><p>请求 BlackBoard 校园卡用户页面<br><a href="http://elearning.szu.edu.cn/webapps/cbb-sdgxtyM-BBLEARN/checksession.jsp" target="_blank" rel="noopener">http://elearning.szu.edu.cn/webapps/cbb-sdgxtyM-BBLEARN/checksession.jsp</a>，成功打印登录后的 BlackBoard 页面内容：</p>
+<p><img src="https://www.kavel.cn/repimg/6/1.png" alt="result"></p>
+<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><p>实现有两部分代码组成。第一个是主逻辑代码<code>HTTPSPoster.java</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.kavel.httpsposter;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.HttpsURLConnection;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.SSLContext;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.SSLSocketFactory;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.TrustManager;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by wjw_w on 2017/4/13.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HTTPSPoster</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> URL mHttpsURLHost;</span><br><span class="line">    <span class="keyword">private</span> StringBuilder mPOSTQuery;</span><br><span class="line">    <span class="keyword">private</span> StringBuilder mCOOKIEChain;</span><br><span class="line">    <span class="keyword">private</span> String action;</span><br><span class="line">    <span class="keyword">private</span> String cookie;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 构造方法</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> host     需要登录的目标地址</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> username 登录用户名</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> password 登录密码</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    HTTPSPoster(String host, String username, String password) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.username = username;</span><br><span class="line">            <span class="keyword">this</span>.password = password;</span><br><span class="line">            mHttpsURLHost = <span class="keyword">new</span> URL(host);</span><br><span class="line">            mPOSTQuery = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">            mCOOKIEChain = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (MalformedURLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加POST请求键值对</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key   POST键</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> value POST值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addPOSTQuery</span><span class="params">(String key, String value)</span> </span>&#123;</span><br><span class="line">        mPOSTQuery.append(<span class="string">"&amp;"</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            mPOSTQuery.append(URLEncoder.encode(key, <span class="string">"UTF-8"</span>));</span><br><span class="line">            mPOSTQuery.append(<span class="string">"="</span>);</span><br><span class="line">            mPOSTQuery.append(URLEncoder.encode(value, <span class="string">"UTF-8"</span>));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 为302跳转请求添加Cookie链条</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> cookie 该次跳转返回的响应头文件内的Set-Cookie值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addCookieChain</span><span class="params">(String cookie)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mCOOKIEChain.toString().isEmpty())</span><br><span class="line">            mCOOKIEChain.append(cookie);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            mCOOKIEChain.append(<span class="string">";"</span> + cookie);</span><br><span class="line">        System.out.println(mCOOKIEChain.toString());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 处理网页并打印最终网页的结果</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> connection 需要处理的URLConnection</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回String类型的网页内容</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException 连接出错时抛出该异常</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getHTML</span><span class="params">(URLConnection connection)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (connection <span class="keyword">instanceof</span> HttpsURLConnection) &#123;</span><br><span class="line">            HttpsURLConnection httpsURLConnection = (HttpsURLConnection) connection;</span><br><span class="line">            httpsURLConnection.setSSLSocketFactory(initCustomizedSSLSocketFactory());</span><br><span class="line">        &#125;</span><br><span class="line">        connection = handleRedirect(connection);</span><br><span class="line">        String cookies = connection.getHeaderField(<span class="string">"Set-Cookie"</span>);</span><br><span class="line">        cookie = cookies;</span><br><span class="line">        BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(connection.getInputStream(), <span class="string">"GBK"</span>));</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        String s;</span><br><span class="line">        <span class="keyword">while</span> ((s = br.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            sb.append(s);</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 递归处理跳转请求</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> connection 当前请求</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回最终状态码不为302的请求</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException 连接出错时抛出该异常</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> URLConnection <span class="title">handleRedirect</span><span class="params">(URLConnection connection)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"respond:"</span> + ((HttpURLConnection) connection).getResponseCode());</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, List&lt;String&gt;&gt; entry : connection.getHeaderFields().entrySet()) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Key : "</span> + entry.getKey() +</span><br><span class="line">                    <span class="string">" ,Value : "</span> + entry.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (((HttpURLConnection) connection).getResponseCode() == HttpURLConnection.HTTP_MOVED_TEMP) &#123;</span><br><span class="line">            String cookies = connection.getHeaderField(<span class="string">"Set-Cookie"</span>);</span><br><span class="line">            String location = connection.getHeaderField(<span class="string">"Location"</span>);</span><br><span class="line">            connection = <span class="keyword">new</span> URL(location).openConnection();</span><br><span class="line">            <span class="keyword">if</span> (connection <span class="keyword">instanceof</span> HttpsURLConnection) &#123;</span><br><span class="line">                HttpsURLConnection httpsURLConnection = (HttpsURLConnection) connection;</span><br><span class="line">                httpsURLConnection.setSSLSocketFactory(initCustomizedSSLSocketFactory());</span><br><span class="line">            &#125;</span><br><span class="line">            addCookieChain(cookies);</span><br><span class="line">            connection.setRequestProperty(<span class="string">"Cookie"</span>, mCOOKIEChain.toString());</span><br><span class="line">            connection = handleRedirect(connection);</span><br><span class="line">        &#125;</span><br><span class="line">        mHttpsURLHost = connection.getURL();</span><br><span class="line">        <span class="keyword">return</span> connection;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 分析登录验证页面上的元素，获取到表单提交地址和隐藏元素</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> HTTP String类型的网页</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回表单提交地址</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">analyseAuthPage</span><span class="params">(String HTTP)</span> </span>&#123;</span><br><span class="line">        String HIDDEN_REG = <span class="string">"&lt;input type=\"hidden\" (.*?)/&gt;"</span>;</span><br><span class="line">        String FORM_REG = <span class="string">"&lt;form (.*?)/&gt;"</span>;</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; hiddenList = getTag(HTTP, HIDDEN_REG);</span><br><span class="line">        <span class="keyword">for</span> (String tag : hiddenList) &#123;</span><br><span class="line">            String[] splited = tag.split(<span class="string">"\""</span>);</span><br><span class="line">            String name = splited[<span class="number">3</span>];</span><br><span class="line">            String value = splited[<span class="number">5</span>];</span><br><span class="line">            addPOSTQuery(name, value); <span class="comment">//添加隐藏键值对到mPOSTQuery中</span></span><br><span class="line">        &#125;</span><br><span class="line">        String formtag = getTag(HTTP, FORM_REG).get(<span class="number">0</span>);</span><br><span class="line">        String[] splited = formtag.split(<span class="string">"\""</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"https://"</span> + mHttpsURLHost.getHost() + splited[<span class="number">3</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据正则表达式匹配内容</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> HTML  待匹配文本内容</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> regex 正则表达式</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回存放有匹配内容的列表</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> List&lt;String&gt; <span class="title">getTag</span><span class="params">(String HTML, String regex)</span> </span>&#123;</span><br><span class="line">        Matcher matcher = Pattern.compile(regex).matcher(HTML);</span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (matcher.find()) &#123;</span><br><span class="line">            list.add(matcher.group());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 主要逻辑</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * STEP1: 裸GET传入的网页，会因为没有身份验证信息“ticket”而被跳转到CAS页面进行身份验证。</span></span><br><span class="line"><span class="comment">     * 跳转到实际的CAS页面后，分析页面中的HTML元素，从而获取到提交表单所需要的必要信息。（包括POST地址和hidden属性的值）</span></span><br><span class="line"><span class="comment">     * 还有从响应头中获取表示当前身份的Cookie（Cookie非常重要，前几个小时因为没有正确存入Cookie而遭遇了循环跳转CAS页面）</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * STEP2: 获取到必要信息后，open一个connection并将必要信息进行组装，最后加入username与password，进行POST操作。</span></span><br><span class="line"><span class="comment">     * 在这些信息中，组装正确的Cookie值非常重要。前几个小时的实验因为没有存入正确的Cookie而被判断没有登录，一直被重定向回CAS页面。</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * STEP3: 如果一切正常，connection将会非常舒服地通过验证并跳转到所希望的页面上去。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">post</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"STEP1"</span>);</span><br><span class="line">            <span class="comment">//STEP1: GET and Analyse CAS Page (in order to get HIDDEN INFORMATION and COOKIE)</span></span><br><span class="line">            String http = getHTML(mHttpsURLHost.openConnection());</span><br><span class="line">            String action = analyseAuthPage(http);</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">"STEP2"</span>);</span><br><span class="line">            <span class="comment">//STEP2: POST data and HIDDEN INFORMATION and COOKIE</span></span><br><span class="line">            URL newPOST = <span class="keyword">new</span> URL(action);</span><br><span class="line">            HttpsURLConnection newPOSTConnection = (HttpsURLConnection) newPOST.openConnection();</span><br><span class="line">            newPOSTConnection.setSSLSocketFactory(initCustomizedSSLSocketFactory());</span><br><span class="line">            newPOSTConnection.setDoOutput(<span class="keyword">true</span>);</span><br><span class="line">            newPOSTConnection.setRequestMethod(<span class="string">"POST"</span>);</span><br><span class="line">            newPOSTConnection.setRequestProperty(<span class="string">"Cookie"</span>, cookie);</span><br><span class="line">            addPOSTQuery(<span class="string">"username"</span>, username);</span><br><span class="line">            addPOSTQuery(<span class="string">"password"</span>, password);</span><br><span class="line">            BufferedWriter bufferedWriter = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(newPOSTConnection.getOutputStream()));</span><br><span class="line">            bufferedWriter.write(mPOSTQuery.toString());</span><br><span class="line">            bufferedWriter.flush();</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">"STEP3"</span>);</span><br><span class="line">            <span class="comment">//STEP3: GET RESULT</span></span><br><span class="line">            getHTML(newPOSTConnection);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 组装自定义SSLSocket工厂</span></span><br><span class="line"><span class="comment">     * 在默认的情况下建立HTTPS链接时，HttpsURLConnection会根据默认的设定先去验证服务器的证书信息。</span></span><br><span class="line"><span class="comment">     * 而由于一些未知的原因，客户端获取不到深大CAS页面的证书信息，</span></span><br><span class="line"><span class="comment">     * 于是转向客户端TrustStore中寻找证书。而默认TrustStore是空的，因为没有手工添加过证书。</span></span><br><span class="line"><span class="comment">     * 所以这种情况下进行连接将会抛出SSLHandshakeException异常。</span></span><br><span class="line"><span class="comment">     * 所以需要传入一个自定义的SSLSocketFactory用于绕过证书验证。</span></span><br><span class="line"><span class="comment">     * 这个自定义的SSLSocket被传入一个假TrustManager，这个manager遇到证书验证失败不会有任何警报。当然，这种做法非常危险。</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回自定义的SSLSocketFactory</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> SSLSocketFactory <span class="title">initCustomizedSSLSocketFactory</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            TrustManager[] trustManagers = &#123;<span class="keyword">new</span> MyX509TrustManager()&#125;;</span><br><span class="line">            SSLContext sslContext = SSLContext.getInstance(<span class="string">"SSL"</span>, <span class="string">"SunJSSE"</span>);</span><br><span class="line">            sslContext.init(<span class="keyword">null</span>, trustManagers, <span class="keyword">new</span> java.security.SecureRandom());</span><br><span class="line">            <span class="keyword">return</span> sslContext.getSocketFactory();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write your code here</span></span><br><span class="line">        String bb = <span class="string">"http://elearning.szu.edu.cn/webapps/cbb-sdgxtyM-BBLEARN/checksession.jsp"</span>;</span><br><span class="line">        String username = <span class="string">""</span>;</span><br><span class="line">        String password = <span class="string">""</span>;</span><br><span class="line">        HTTPSPoster poster = <span class="keyword">new</span> HTTPSPoster(bb, username, password);</span><br><span class="line">        poster.post();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二个是用于绕过证书验证的自定义TrustMamager<code>MyX509TrustManager.java</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.kavel.httpsposter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.TrustManager;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.TrustManagerFactory;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.X509TrustManager;</span><br><span class="line"><span class="keyword">import</span> java.security.KeyStore;</span><br><span class="line"><span class="keyword">import</span> java.security.cert.CertificateException;</span><br><span class="line"><span class="keyword">import</span> java.security.cert.X509Certificate;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by wjw_w on 2017/4/13.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyX509TrustManager</span> <span class="keyword">implements</span> <span class="title">X509TrustManager</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * The default X509TrustManager returned by SunX509.  We'll delegate</span></span><br><span class="line"><span class="comment">     * decisions to it, and fall back to the logic in this class if the</span></span><br><span class="line"><span class="comment">     * default X509TrustManager doesn't trust it.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    X509TrustManager sunJSSEX509TrustManager;</span><br><span class="line"></span><br><span class="line">    MyX509TrustManager() <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// create a "default" JSSE X509TrustManager.</span></span><br><span class="line">        KeyStore ks = KeyStore.getInstance(<span class="string">"JKS"</span>);</span><br><span class="line">        <span class="comment">//不需要load，因为这个是假的，是特技</span></span><br><span class="line">        <span class="comment">//ks.load(new FileInputStream("trustedCerts"),</span></span><br><span class="line">        <span class="comment">//        "passphrase".toCharArray());</span></span><br><span class="line">        TrustManagerFactory tmf =</span><br><span class="line">                TrustManagerFactory.getInstance(<span class="string">"SunX509"</span>, <span class="string">"SunJSSE"</span>);</span><br><span class="line">        tmf.init(ks);</span><br><span class="line">        TrustManager tms[] = tmf.getTrustManagers();</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">             * Iterate over the returned trustmanagers, look</span></span><br><span class="line"><span class="comment">             * for an instance of X509TrustManager.  If found,</span></span><br><span class="line"><span class="comment">             * use that as our "default" trust manager.</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tms.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (tms[i] <span class="keyword">instanceof</span> X509TrustManager) &#123;</span><br><span class="line">                sunJSSEX509TrustManager = (X509TrustManager) tms[i];</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">             * Find some other way to initialize, or else we have to fail the</span></span><br><span class="line"><span class="comment">             * constructor.</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"Couldn't initialize"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * Delegate to the default trust manager.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkClientTrusted</span><span class="params">(X509Certificate[] chain, String authType)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> CertificateException </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            sunJSSEX509TrustManager.checkClientTrusted(chain, authType);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (CertificateException excep) &#123;</span><br><span class="line">            <span class="comment">// do any special handling here, or rethrow exception.</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * Delegate to the default trust manager.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkServerTrusted</span><span class="params">(X509Certificate[] chain, String authType)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> CertificateException </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            sunJSSEX509TrustManager.checkServerTrusted(chain, authType);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (CertificateException excep) &#123;</span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                 * Possibly pop up a dialog box asking whether to trust the</span></span><br><span class="line"><span class="comment">                 * cert chain.</span></span><br><span class="line"><span class="comment">                 */</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * Merely pass this through.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> X509Certificate[] getAcceptedIssuers() &#123;</span><br><span class="line">        <span class="keyword">return</span> sunJSSEX509TrustManager.getAcceptedIssuers();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://wagon.kavel.cn/articles/post-via-cas.html" data-id="cjj2zofyx000jlswdz1woi3rh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CAS/">CAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JAVA/">JAVA</a></li></ul>
+
+    </footer>
+  </div>
+  
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/articles/hexo-installment-log.html" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://hexo.io/logo.svg)" alt="hexo小撇步：服务器架设hexo过程全记录" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://wagon.kavel.cn/articles/hexo-installment-log.html">0</span>
-    
-</span>
 
-    
+  
+    <article id="post-hexo-installment-log" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/articles/hexo-installment-log.html" class="article-date">
+  <time datetime="2017-03-03T16:00:00.000Z" itemprop="datePublished">2017-03-04</time>
 </a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/programming/">编程</a>
-            </p>
-            <p class="date"><time datetime="2017-03-03T16:00:00.000Z" itemprop="datePublished">2017-03-04</time></p>
-        </div>
-        
     
-        <h1 class="article-title" itemprop="name">
-        <a href="/articles/hexo-installment-log.html">hexo小撇步：服务器架设hexo过程全记录</a>
-        </h1>
-    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/programming/">编程</a>
+  </div>
 
-        <p class="article-excerpt">
-            刚一申请到域名和服务器，第一件事情便是架设博客。当时想找一个方便省事的博客框架，于是看到当时吹得天花乱坠的Wordpress，便不小心掉进了大坑。还没写几篇文章，便已经开始遭遇各种麻烦。最难忍的一点就是不知道为何载入极慢。网上说是由于自带google字库的原因，可是下载了好几个去字库插件变着花样试却都是徒劳（你可以想象在设置页面中顶着30秒以上一页的载入速度在插件页面苦苦寻找并一个一个尝试的滋味吗
-        </p>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/articles/hexo-installment-log.html">hexo小撇步：服务器架设hexo过程全记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>刚一申请到域名和服务器，第一件事情便是架设博客。当时想找一个方便省事的博客框架，于是看到当时吹得天花乱坠的Wordpress，便不小心掉进了大坑。还没写几篇文章，便已经开始遭遇各种麻烦。最难忍的一点就是不知道为何载入极慢。网上说是由于自带google字库的原因，可是下载了好几个去字库插件变着花样试却都是徒劳（你可以想象在设置页面中顶着30秒以上一页的载入速度在插件页面苦苦寻找并一个一个尝试的滋味吗，那大概是地狱的滋味了）。而博客也因此处于长时间停更的状态（实在是没有心情写了）。</p>
+<p>于是乎，趁着一次误删除操作的机会（把主页所在的文件夹整一个删掉了），我踏上了寻找更好的博客框架之路。于是乎，驻足在了<a href="https://hexo.io/" target="_blank" rel="noopener">HEXO</a>面前。</p>
+<p>之前看到很多有关于hexo的教程与内容，基本上都是关于如何在Github Pages中的部署，在服务器中部署的内容极少，所以一直没有认真地考虑过hexo的可行性。于是抱着试一试的态度重新审视了一遍hexo，发现他原来是一个生成静态站点的工具。而因为nginx拥有对静态页面的处理的特殊加成，于是两者一拍即合，浑然天成，当即决定使用hexo作为新的博客框架。</p>
+<p>Hexo是一款由<a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a>开发的博客框架。它的安装需要进行以下步骤：</p>
+<ul>
+<li>安装Node.js</li>
+<li>安装Hexo</li>
+</ul>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>安装之前，我们需要更新yum源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum -y update</span><br></pre></td></tr></table></figure>
+<p>接下来，从官网下载Node.js的最新源码来进行编译安装。</p>
+<p>首先我们需要安装用来进行编译操作的<code>Development Tools</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum -y groupinstall &quot;Development Tools&quot;</span><br></pre></td></tr></table></figure>
+<p>接下来，进入用来编译源码的目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd /uer/local/src</span><br></pre></td></tr></table></figure>
+<p>现在可以准备开始下载Node.js的源码了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://nodejs.org/dist/node-latest.tar.gz</span><br></pre></td></tr></table></figure>
+<p>等待下载完毕后，即可解压文件到当前目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ tar zxf node-*.tar.gz  </span><br><span class="line">$ cd node-v*</span><br></pre></td></tr></table></figure>
+<p>准备进行编译：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./configure</span><br></pre></td></tr></table></figure>
+<p>等待几分钟配置好后，输入命令开始进行漫长的编译：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make</span><br></pre></td></tr></table></figure>
+<p>期间编译的时间极长，伴随着满载的CPU和不断弹出的警告信息（是真的，满屏幕的警告信息）等待大概40~50分钟左右，编译结束,</p>
+<p>开始进行正式安装Node.js：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make install</span><br></pre></td></tr></table></figure>
+<p>安装的时间比编译时间要短一些，大概10分钟左右。安装完毕后，可以输入以下指令检查是否正确安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node --version  </span><br><span class="line">$ npm --version</span><br></pre></td></tr></table></figure>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>Hexo使用的是<code>npm</code>进行安装。由于npm源的原因，在国内直接使用npm进行安装整个下载过程将会极其缓慢，苦不堪言。所以我在这里使用<a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝npm镜像</a>来进行安装。</p>
+<p>可以通过以下的方法更换npm使用的源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.npmrc</span><br></pre></td></tr></table></figure>
+<p>使用<code>vim</code>打开该文件后，按<code>i</code>添加以下内容，输入<code>:wq</code>退出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">registry = https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<img src="/articles/hexo-installment-log/1_npm.png">
+<p>配置好源以后，我们可以开始安装hexo了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>安装完毕以后，选择一个目录，使用以下指令对这个目录进行hexo初始化：（在这里，我选择<code>/hexo</code>作为我的hexo目录）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init /hexo</span><br></pre></td></tr></table></figure>
+<p>输入指令后，hexo开始往该目录下载hexo站点所需要的初始化文件。等待初始化完成后，这个目录就成为了我们的<code>hexo站点目录</code>了。当然，也可以在多个不同的地方建立不同的hexo站点目录，而所有不同地方生成的站点目录都是相互独立的。这有点像project的感觉。而所有对站点进行的操作都需要<code>cd</code>到站点所在的目录下进行。</p>
+<p>那么我们现在进入<code>/hexo</code>目录内一探究竟：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /hexo</span><br><span class="line">$ dir</span><br></pre></td></tr></table></figure>
+<img src="/articles/hexo-installment-log/2_dir.png">
+<p>可以看到，<code>/hexo</code>目录新增了许多文件。主要目录结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml （配置文件）</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts （草稿箱，在这里存放的文章不会被生成）</span><br><span class="line">|   └── _posts （在这里存放的文章会被生成）</span><br><span class="line">└── themes （主题目录）</span><br></pre></td></tr></table></figure>
+<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>这是hexo站点的配置文件。具体的配置可以查看<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">官网文档</a>。</p>
+<p>为了方便生成，我在配置文件中将<code>public_dir</code>的路径直接设置在nginx的网站根目录下。具体效果可以看看我写的另一篇文章（正在写）。</p>
+<p>配置好后输入以下指令开始生成静态页面文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<p>于是乎，新的博客站点已经建立好了。</p>
+<p>###如何写文章</p>
+<p>在本地使用任何支持Markdown格式的文本编辑器（个人推荐<a href="https://markdownpad.com/" target="_blank" rel="noopener">MarkdownPad2</a>）建立一个<code>.md</code>文档来写文章。在文件的头部还需要填写一些<a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="noopener">信息</a>，比如现在这篇文章就是使用如下的信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo小撇步：服务器架设hexo过程全记录</span><br><span class="line">date: 2017/3/4</span><br><span class="line">category: 编程</span><br><span class="line">tags: [hexo]</span><br><span class="line">thumbnail: https://hexo.io/logo.svg</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>文章写完后，将写好的<code>.md</code>文件上传至<code>&lt;hexo站点目录&gt;/source/_posts</code>，然后在站点目录下使用<code>hexo g</code>指令即可生成新的站点。整个站点将在指定的<code>public_dir</code>中生成。（这也就是我选择将该路径直接设置在网站根目录下的原因）</p>
+
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://wagon.kavel.cn/articles/hexo-installment-log.html" data-id="cjj2zofy50000lswdjjgy9fvh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
 </article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/articles/letsencrypt-on-centos7.html" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://letsencrypt.org/images/letsencrypt-logo-horizontal.svg)" alt="给网站用上免费SSL：Let&#39;s Encrypt操作记录" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://wagon.kavel.cn/articles/letsencrypt-on-centos7.html">0</span>
-    
-</span>
 
-    
+  
+    <article id="post-letsencrypt-on-centos7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/articles/letsencrypt-on-centos7.html" class="article-date">
+  <time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time>
 </a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/programming/">编程</a>
-            </p>
-            <p class="date"><time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time></p>
-        </div>
-        
     
-        <h1 class="article-title" itemprop="name">
-        <a href="/articles/letsencrypt-on-centos7.html">给网站用上免费SSL：Let&#39;s Encrypt操作记录</a>
-        </h1>
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/programming/">编程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/articles/letsencrypt-on-centos7.html">给网站用上免费SSL：Let&#39;s Encrypt操作记录</a>
+    </h1>
+  
 
-        <p class="article-excerpt">
-            看着别人网站上绿色的https标签很是心痒，而又不想花大价钱申请企业级的SSL方案，于是寻思着给网站申请了一个免费的沃通CA证书。谁知道前脚刚刚部署完证书，后脚却在网上发现沃通证书将不再被信任，心里很不是滋味。于是便重新上网搜寻其他获得SSL的方法。
-经过短暂的搜寻，发现了这样一个免费的SSL证书授权机构(CA)： Let’s Encrypt
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看着别人网站上绿色的https标签很是心痒，而又不想花大价钱申请企业级的SSL方案，于是寻思着给网站申请了一个免费的沃通CA证书。谁知道前脚刚刚部署完证书，后脚却在网上发现<a href="http://www.cnbeta.com/articles/tech/554167.htm" target="_blank" rel="noopener">沃通证书将不再被信任</a>，心里很不是滋味。于是便重新上网搜寻其他获得SSL的方法。</p>
+<p>经过短暂的搜寻，发现了这样一个免费的SSL证书授权机构(CA)： <a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a></p>
+<p><img src="https://letsencrypt.org/images/letsencrypt-logo-horizontal.svg" alt="Let’s Encrypt"></p>
+<p>据官网介绍，Let’s Encrypt服务由Internet Security Research Group (ISRG)推出，通过向网站自动签发和管理免费SSL证书，旨在降低互联网进行安全通信的门槛。该项目托管于<a href="https://www.linuxfoundation.org/projects" target="_blank" rel="noopener">Linux基金会</a>，得到了来自诸如Mozilla, Akamai, Cisco, Electronic Foundation Frontier, OVH.com, Google Chrome等大咖加持，来头实在不小。</p>
+<p>为什么最终选择使用这个方案呢？首先当然是因为免费了。其次就是官网所宣传的“自动化(automated)”了。要知道当时给网站上CA证书的时候，生成私钥上传证书，各种麻烦事儿。Let’s Encrypt仅需要一条指令即可完成续签，根本不用进行文件操作，实在是极其吸引人。</p>
+<p>不多说废话，立刻进行操作。</p>
+<p><strong>本文使用<code>CentOS 7+Nginx</code>的组合。</strong></p>
+<blockquote>
+<p>注意：不同的OS和Web服务器所使用的命令不尽相同，有关其他系统和Web服务器的操作指南可以查看<a href="https://certbot.eff.org/" target="_blank" rel="noopener">这里</a>。</p>
+</blockquote>
+<p>官网提到，上证书和续签的过程都是使用<a href="https://certbot.eff.org/" target="_blank" rel="noopener">Certbot</a>来进行的。由于服务器使用的是CentOS 7，所以直接运行以下命令即可完成安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install epel-release</span><br><span class="line">$ sudo yum install certbot</span><br></pre></td></tr></table></figure>
+<p>其中第一个命令是安装EPEL源，也称为“企业版Linux的额外软件包（Extra Packages for Enterprise Linux）”。EPEL源了提供许多在CentOS自带源上没有的软件，而这次用到的certbot就是从EPEL源中获取的。而第二个命令则是安装certbot本身。</p>
+<p>Certbot的官网提到，CentOS 7并不支持证书的自动安装，所以我们使用手动方式安装证书。获取证书使用<code>certonly</code>命令。具体参数如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">certbot certonly --webroot -w &lt;网页路径&gt; -d &lt;域名&gt;</span><br></pre></td></tr></table></figure>
+<p><code>--webroot</code>参数适用于使用Web服务器(如Nginx、Apache等)的网站。关于这个参数的具体使用说明可以查看<a href="https://certbot.eff.org/docs/using.html#webroot" target="_blank" rel="noopener">这里</a>。</p>
+<p><code>-w</code>参数后面接的是服务器请求数据的目录(“web root”)。一条命令后面可以接多个<code>-w</code>参数。</p>
+<p><code>-d</code>参数后面接这个目录的域名(“domain”)。同样地，一条命令后面也可以接多个<code>-d</code>参数。</p>
+<p>一个简单的示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ certbot certonly --webroot -w /var/www/example -d example.com -d www.example.com -w /var/www/thing -d thing.is -d m.thing.is</span><br></pre></td></tr></table></figure>
+<p>这条命令将生成单个证书颁发给 <strong>example.com</strong> , <strong>www.example.com</strong> , <strong>thing.is</strong> 和 <strong>m.thing.is</strong> ，而域名目录分别为 <strong>/var/www/example</strong> 和 <strong>/var/www/thing</strong> 。</p>
+<blockquote>
+<p>注意：<code>--webroot</code>参数的原理是在指定的web root位置（由<code>-w</code>指定）生成一个临时文件<code>.well-known/acme-challenge</code>，接着由Let’s Encrypt服务器向指定的域名（由<code>-d</code>指定）发起一个HTTP请求，验证DNS服务器是否能正确解析到该目录，从而验证域名的真实性。所以请在使用<code>--webroot</code>参数之前检查以下项目是否正常：</p>
+<ul>
+<li>保证Web服务器能够请求到隐藏目录（如<code>.well-known</code>这样目录名前带“点”的目录）里面的内容（如<code>.well-known/acme-challenge</code>）。</li>
+<li>保持80端口正常访问。</li>
+<li>当网站使用的是国内DNS时，如DNSPOD、阿里云DNS、CloudXNS等，有几率出现<code>DNS query timed out</code>问题导致证书获取不成功。这时候重新执行一遍命令即可。</li>
+</ul>
+</blockquote>
+<p>键入命令回车后，进入Certbot的UI界面。</p>
+<p>首先会提示键入用于找回私钥的邮箱，回车继续：</p>
+<img src="/articles/letsencrypt-on-centos7/1_enter_email.png">
+<p>接着，需要同意<a href="https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf" target="_blank" rel="noopener">协定</a>用来注册<a href="https://acme-v01.api.letsencrypt.org/directory" target="_blank" rel="noopener">ACME服务</a>：</p>
+<img src="/articles/letsencrypt-on-centos7/2_agree_terms.png">
+<p>接着便是短暂的安装过程：</p>
+<img src="/articles/letsencrypt-on-centos7/3_progress.png">
+<p>唔，安装快要结束时竟然报出了<code>UnicodeEncodeError</code> :</p>
+<img src="/articles/letsencrypt-on-centos7/4_error_unicode.png">
+<p>由于python的默认编码是ascii，而当目标字符的编码不是ascii的时候，python会尝试使用解码器（’ascii’ codec）将其转换为ascii编码再继续执行。当程序中出现非unicode的编码的时候，由于解码器并不能转换非unicode的编码，于是就会报这样的异常。</p>
+<p>于是手动设置环境变量更改系统的编码，命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure>
+<p>接着重新使用<code>certonly</code>命令重新获取证书：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">certbot certonly --webroot -w &lt;网页路径&gt; -d &lt;域名&gt;</span><br></pre></td></tr></table></figure>
+<p>问题解决，成功获取证书：</p>
+<img src="/articles/letsencrypt-on-centos7/5_congrat.png">
+<p>接下来是证书的装载。这点和一般SSL证书的装载操作大致相同，不同点在于使用Let’s Encrypt并不需要手动上传证书，仅需要把证书路径指向它给出的路径即可。</p>
+<blockquote>
+<p>Let’s Encrypt的证书位置</p>
+<p>最新的证书默认存放在<code>/etc/letsencrypt/live/{域名}</code>中。当使用<code>renew</code>命令续签证书时，该目录下的证书总是最新的。该目录存在以下文件：</p>
+<ul>
+<li><code>privkey.pem</code> 私钥文件</li>
+<li><code>fullchain.pem</code> 证书文件（包含证书链）</li>
+<li><code>cert.pem</code>本站点的证书文件及<code>chain.pem</code>证书链文件（这两个文件需搭配使用）</li>
+</ul>
+<p>证书归档在<code>/etc/letsencrypt/archive/{域名}</code>中。所有证书的改动都会归档在这里。文件名后面的序号表示文件的版本。</p>
+</blockquote>
+<p>为了将来方便续签，我们把证书路径定在<code>/etc/letsencrypt/live/{域名}</code>下。</p>
+<p>Nginx的配置示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">server&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name localhost;</span><br><span class="line">        rewrite ^(.*)$ https://$host$uri permanent;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  localhost; </span><br><span class="line">        ssl                  on; </span><br><span class="line">        ssl_certificate      /etc/letsencrypt/live/&#123;域名&#125;/fullchain.pem; </span><br><span class="line">        ssl_certificate_key  /etc/letsencrypt/live/&#123;域名&#125;/privkey.pem; </span><br><span class="line">        ssl_session_timeout  5m; </span><br><span class="line">        ssl_protocols  SSLv3 TLSv1; </span><br><span class="line">        ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; </span><br><span class="line">        ssl_prefer_server_ciphers   on; </span><br><span class="line">        location / &#123; </span><br><span class="line">            root   html; </span><br><span class="line">            index  index.html index.htm; </span><br><span class="line">        &#125; </span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用这样的配置，可以将用户对http（80端口）的请求通过<code>rewrite</code>全部重定向至https（443端口），以实现全站https。（经测试这种设置并不会影响Let’s Encrypt验证服务器的HTTP请求。）</p>
+<p>更改好后保存文件并重启nginx服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nginx -s reload</span><br></pre></td></tr></table></figure>
+<p>大功告成。接下来放心大胆地开启HTTPS之旅吧！！！</p>
+<img src="/articles/letsencrypt-on-centos7/6_done.png">
+<p>等等，聪明的你可能发现了，为什么证书有效期那么短呢？</p>
+<p>没关系，虽然证书的有效期短，可是简单一条命令即可搞定续签：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ certbot renew</span><br></pre></td></tr></table></figure>
+<img src="/articles/letsencrypt-on-centos7/7_renew.png">
+<p>怎么回事？原来，为了保证续签系统的效率，还没到期的证书是不会允许进行续签操作的。那么如果我想测试续签操作到底能不能正常运行该怎么办？可以使用<code>--dry-run</code>参数进行模拟运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ certbot renew --dry-run</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：续签过程和前面申请的过程一样，都需要HTTP验证域名的真实性。所以请保持80端口的畅通。</p>
+</blockquote>
+<img src="/articles/letsencrypt-on-centos7/7_renew_test.png">
+<p>当成功完成模拟运行时，我们就可以把真实的续签命令写进系统计划了。这里我使用crontab来进行任务计划。关于crontab的配置可以看<a href="http://www.centoscn.com/CentOS/2014/0924/3835.html" target="_blank" rel="noopener">这里</a>。网上也有一个<a href="http://cron.qqe2.com/" target="_blank" rel="noopener">在线Cron表达式生成器</a>，可以预览任务执行的时机，个人感觉也非常有用。</p>
+<p>使用vim命令打开cron的任务计划表crontab：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/crontab</span><br></pre></td></tr></table></figure>
+<p>按<code>i</code>进入编辑模式，输入任务计划后，输入<code>:wq</code>保存并退出vim：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 0 0/12 1/1 * ? root certbot renew --quiet</span><br></pre></td></tr></table></figure>
+<img src="/articles/letsencrypt-on-centos7/8_cron.png">
+<p>其中<code>--quiet</code>参数表示静默运行。</p>
+<blockquote>
+<p>注意：官方建议计划任务的运行周期为每天两次，以保证证书能够随时更新。</p>
+</blockquote>
 
-据官网介绍，Let’s Encrypt服务由Inte
-        </p>
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://wagon.kavel.cn/articles/letsencrypt-on-centos7.html" data-id="cjj2zofya0001lswduqt2f9il" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Let-s-Encrypt/">Let's Encrypt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSL/">SSL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
+
+    </footer>
+  </div>
+  
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/articles/php-framework-using-singleton-with-GET.html" class="thumbnail">
-    
-    
-        <span style="background-image:url(images/php.jpg)" alt="php造车轮：基于单主页+GET请求的模块化框架" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://wagon.kavel.cn/articles/php-framework-using-singleton-with-GET.html">0</span>
-    
-</span>
 
-    
+  
+    <article id="post-php-framework-using-singleton-with-GET" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/articles/php-framework-using-singleton-with-GET.html" class="article-date">
+  <time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time>
 </a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/programming/">编程</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/programming/phpnoob/">php造车轮</a>
-            </p>
-            <p class="date"><time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time></p>
-        </div>
-        
     
-        <h1 class="article-title" itemprop="name">
-        <a href="/articles/php-framework-using-singleton-with-GET.html">php造车轮：基于单主页+GET请求的模块化框架</a>
-        </h1>
-    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/programming/">编程</a>►<a class="article-category-link" href="/categories/programming/phpnoob/">php造车轮</a>
+  </div>
 
-        <p class="article-excerpt">
-            上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。
-在介绍框架之前，需要了解GET请求
-        </p>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/articles/php-framework-using-singleton-with-GET.html">php造车轮：基于单主页+GET请求的模块化框架</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书<a href="http://baike.baidu.com/link?url=vggwmUem3loYtWvs94Q3HyZUh1UVFYs919tmyyY3_fWNDunqRweFTBEC2OlTIr8yGkVnxH4OetQ9vgCnohzZ-oRmmVY1WOF3MGGV1WMmFd_t1YxhW7rRFR2Aiq_zJ8NLdOKt_Ckg3UvRzhhhZAxB6DdUZAkwuPaBv6naqZ5RHlhTEx83_xHmFqjKSRCcUCwl" target="_blank" rel="noopener">《PHP 5 高级应用开发实践》</a>来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。</p>
+<p>在介绍框架之前，需要了解GET请求是什么。</p>
+<p>###GET请求<br>在用户与服务器之间进行请求-响应时，两种最常被用到的方法分别为：<strong>GET</strong>和<strong>POST</strong>。</p>
+<p>其中，<strong>GET请求</strong>的查询字符串是直接写在URL中进行发送的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.kavel.cn/?page=pdf</span><br></pre></td></tr></table></figure></p>
+<p>在这段URL中，<code>?</code>表示GET请求的开头，而<code>page=pdf</code>则是查询的键值对。</p>
+<p>而GET请求也有如下的一些原则：</p>
+<ul>
+<li>GET 请求<strong>可被缓存</strong></li>
+<li>GET 请求<strong>可保留</strong>在浏览器<strong>历史记录</strong>中</li>
+<li>GET 请求<strong>可被收藏为书签</strong></li>
+<li>GET 请求<strong>不应</strong>在<strong>处理敏感数据</strong>时使用</li>
+<li>GET 请求<strong>有长度限制</strong></li>
+<li>GET 请求只应当用于<strong>取回数据</strong> </li>
+</ul>
+<p>在PHP中，我们使用<code>$value=$_GET[$key]</code>方法来获取GET的内容。<br>其中<code>$key</code>为我们自己定义的等号左边的内容（如<code>page</code>），称为<strong>键</strong>。<br>而<code>$value</code>的内容即为我们需要获取的等号右边的内容（如<code>pdf</code>），称为<strong>值</strong>。</p>
+<p>而这套框架的核心原理，则是利用了GET传递请求的<strong>可保留</strong>性，在单个页面（如<code>index.php</code>）通过GET请求获取到用户传来的不同的<strong>值</strong> ，并根据<strong>值</strong>插入不同的模块页展现给用户。这是一种非常容易实现的<strong>模块化方案</strong>。</p>
+<p>话不多说，赶紧进入实战环节。</p>
+<p>###获取用户传来的GET信息：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取插入的子页面名称</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'page'</span>])) &#123;</span><br><span class="line">    $p = sterilizeInput($_GET[<span class="string">'page'</span>]);</span><br><span class="line">&#125; <span class="keyword">elseif</span> (<span class="keyword">isset</span>($_POST[<span class="string">'page'</span>])) &#123;</span><br><span class="line">    $p = $_POST[<span class="string">'page'</span>];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $p = <span class="string">'index'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//任何GET表单在赋值前必须使用消毒函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sterilizeInput</span><span class="params">($data)</span> </span>&#123;</span><br><span class="line">    $data = trim($data); <span class="comment">//移除字符串两侧的空白字符</span></span><br><span class="line">    $data = stripslashes($data); <span class="comment">//移除字符串中的所有反斜杠</span></span><br><span class="line">    $data = htmlspecialchars($data); <span class="comment">//将预定义的字符转换为 HTML 实体，可过滤单引号、双引号等</span></span><br><span class="line">    <span class="keyword">return</span> $data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们应当提防<strong>用户能够通过GET请求上传恶意代码使得对网页进行的任意操作成为可能</strong>。所以在进行赋值前，使用<strong>消毒函数</strong>对<strong>值</strong>进行消毒非常重要。</p>
+<p>###根据GET信息选择要插入的模块页面</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//选择插入的子页面</span></span><br><span class="line"><span class="keyword">switch</span> ($p) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'index'</span>:</span><br><span class="line">        $page = <span class="string">'welcome.php'</span>;</span><br><span class="line">        $page_title = <span class="string">'主页'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'pdf'</span>:</span><br><span class="line">        $page=<span class="string">'pdf.php'</span>;</span><br><span class="line">        $page_title=<span class="string">'课堂笔记'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'resume'</span>:</span><br><span class="line">        $page=<span class="string">'resume.html'</span>;</span><br><span class="line">        $page_title=<span class="string">'简历'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'404'</span>:</span><br><span class="line">        header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里，我们通过switch-case方式对得到的<strong>值</strong>进行判断，得到对应的页面文件名称。还要记得如果<strong>值</strong>对所有条件都不符合时，跳转到404页面。</p>
+<p>###插入模块页面</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//确保子页面存在</span></span><br><span class="line"><span class="keyword">if</span> (!file_exists(<span class="string">'./modules/'</span> . $page)) &#123;</span><br><span class="line">    header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">    <span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//插入页眉文件</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'./includes/'</span> . <span class="string">'header.inc.html'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入子页面</span></span><br><span class="line"><span class="keyword">include</span>(<span class="string">'./modules/'</span> . $page);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入页脚文件</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'./includes/'</span> . <span class="string">'footer.inc.html'</span>);</span><br></pre></td></tr></table></figure>
+<p>使用<code>include($page)</code>函数进行页面的插入。在插入页面前，还需要判断该页面是否真实存在。如果不存在，记得跳转到404页面。</p>
+<p>为了实现模块化，我将整个页面分成三部分，分别为页眉、正文和页脚。页眉负责页面的头文件、CSS等。通过插入相同的页眉文件，我们可以确保整个网站都能得到统一的风格。</p>
+<p>使用模块化的框架可以极大地方便模板页的开发。因为这样直接省去了编写每个页面都相同且必须的头文件和CSS等项，直接从<code>&lt;body&gt;</code>部分开始下笔。 我在这里则更加极端（lǎn），模板页只负责一个<code>&lt;div&gt;</code>，其余内容都在页眉和页脚文件中。</p>
+<p>这里是当<code>page=index</code>时，网页的组成内容：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: header.inc.html*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">if</span> (!<span class="keyword">isset</span>($page_title)) $page_title=<span class="string">'主页'</span>;<span class="meta">?&gt;</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;<span class="meta">&lt;?</span>=$page_title<span class="meta">?&gt;</span> - kavel.cn&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class="container body-content"&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在页眉文件里，<code>&lt;title&gt;</code>标签里面的值<code>$page_title</code>由<code>index.php</code>定义。使用这种模块化方式的好处之一，就是在<code>index.php</code>内定义的变量，可以当作全局变量，在所有模块页面都能任意使用。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: welcome.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomSplash</span><span class="params">()</span></span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line">&lt;div class="jumbotron"&gt;</span><br><span class="line">    &lt;div class="container"&gt;</span><br><span class="line">        &lt;h1&gt;<span class="meta">&lt;?</span>=randomSplash()<span class="meta">?&gt;</span>&lt;/h1&gt;</span><br><span class="line">        &lt;p&gt;这里是嘉维小站，我是王嘉维。&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&lt;a class="btn btn-primary btn-lg" href="/blog" role="button"&gt;进入博客&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>可以看到在模块页面内只包含一个<code>&lt;div&gt;</code>。这极大地方便了模块页的开发，也不需要担心样式问题。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: footer.inc.html*/</span></span><br><span class="line"></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;footer class="container body-content"&gt;</span><br><span class="line">            &lt;hr /&gt;</span><br><span class="line">            &lt;p&gt;&amp;copy; <span class="meta">&lt;?</span>=date(<span class="string">"Y"</span>,time())<span class="meta">?&gt;</span> Jiawei W.&lt;/p&gt;</span><br><span class="line">        &lt;/footer&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>页尾文件则是包含各种结束标签。当然<code>&lt;footer&gt;</code>标签也存在于这里。</p>
+<p>本站<a href="https://www.kavel.cn" target="_blank" rel="noopener">首页</a>就是使用这种框架写成的，如果感兴趣的话可以点击链接参观：</p>
+<blockquote>
+<p><a href="https://www.kavel.cn/" target="_blank" rel="noopener">https://www.kavel.cn/</a></p>
+</blockquote>
+
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://wagon.kavel.cn/articles/php-framework-using-singleton-with-GET.html" data-id="cjj2zofyq000glswd66waukod" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Framework/">Framework</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php造车轮/">php造车轮</a></li></ul>
+
+    </footer>
+  </div>
+  
 </article>
-    
-        </div>
-    
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/articles/rewire_https.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://wagon.kavel.cn/articles/rewire_https.html">0</span>
-    
-</span>
 
-    
+  
+    <article id="post-rewire_https" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/articles/rewire_https.html" class="article-date">
+  <time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time>
 </a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/programming/">编程</a>
-            </p>
-            <p class="date"><time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time></p>
-        </div>
-        
     
-        <h1 class="article-title" itemprop="name">
-        <a href="/articles/rewire_https.html">配置好rewire，开启全站https模式</a>
-        </h1>
-    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/programming/">编程</a>
+  </div>
 
-        <p class="article-excerpt">
-            在一篇文章《给网站用上免费SSL：Let’s Encrypt操作记录》中，我们使用了Let’s Encrypt给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置：
-12345erver&#123;        listen 80;        server_name www.kavel.cn kav
-        </p>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/articles/rewire_https.html">配置好rewire，开启全站https模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在一篇文章<a href="https://www.kavel.cn/blog/programming/letsencrypt-on-centos7.html" target="_blank" rel="noopener">《给网站用上免费SSL：Let’s Encrypt操作记录》</a>中，我们使用了<a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">erver&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.kavel.cn kavel.cn;</span><br><span class="line">        rewrite ^(.*)$ https://www.kavel.cn/ permanent;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>保存好后重启nginx，所有http</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.kavel.cn kavel.cn;</span><br><span class="line">        rewrite ^(.*)$ https://www.kavel.cn$uri permanent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        ssl_certificate /etc/letsencrypt/live/&#123;域名&#125;/fullchain.pem;</span><br><span class="line">        ssl_certificate_key  /etc/letsencrypt/live/&#123;域名&#125;/privkey.pem;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">       	    index	    index.php  index.html;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://wagon.kavel.cn/articles/rewire_https.html" data-id="cjj2zofyw000hlswd4rcha1fk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSL/">SSL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
+
+    </footer>
+  </div>
+  
 </article>
-    
 
-    
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2009" class="archive-year"><i class="icon fa fa-calendar-o"></i>2009</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/articles/snc-revengence.html" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://www.kavel.cn/blog/images/fckbit.png)" alt="SNC的复仇-全文完" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://wagon.kavel.cn/articles/snc-revengence.html">0</span>
-    
-</span>
 
-    
+  
+    <article id="post-snc-revengence" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/articles/snc-revengence.html" class="article-date">
+  <time datetime="2009-09-06T16:00:00.000Z" itemprop="datePublished">2009-09-07</time>
 </a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            <a class="article-category-link" href="/categories/article/">文章</a>
-            </p>
-            <p class="date"><time datetime="2009-09-06T16:00:00.000Z" itemprop="datePublished">2009-09-07</time></p>
-        </div>
-        
     
-        <h1 class="article-title" itemprop="name">
-        <a href="/articles/snc-revengence.html">SNC的复仇-全文完</a>
-        </h1>
-    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/article/">文章</a>
+  </div>
 
-        <p class="article-excerpt">
-             这是一篇于09年开始落笔、14年高考前停笔的连载短篇。其灵感来源于一款名为GTA:SA的游戏及其相关插件（联机插件SA-MP、作弊插件m0d_s0beit、功能插件CLEO）。今天猛然从硬盘的角落翻出来全套word文档，发现自己竟然在这5年间断断续续地写了35篇整，今有感而发决定把他们重新修改一番完整发出来，算是对过去一同游戏的，如今各奔东西的曾经的少年们的怀念，也是对自己愉快的童年重新回味一番
-        </p>
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/articles/snc-revengence.html">SNC的复仇-全文完</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> <em>这是一篇于09年开始落笔、14年高考前停笔的连载短篇。其灵感来源于一款名为<a href="http://baike.baidu.com/link?url=LXn7gzWF9VZGDjknPHGLSnOPaQ4X9TWCwkad4OUIH8W7wyapyQnfrVeSqQ6I5BkUG8sABsVZEwSOlexn6fgP7wEK1wOuuk_u5QupgJ-ymC7ujZdXTewqfCKVjuUGpK5sUwrk7fOfiVIHlaIbK_KLkBb2T-hA0HXooe9AUZy_78U1Rvup1lOHLUsfnZwfdQEZDaD5F3D9YR8-z5fZYeJztKCCrdELk7jCTXMzGITmNkT5IxcU52PGd_QqVggOsHMu" target="_blank" rel="noopener">GTA:SA</a>的游戏及其相关插件（<a href="http://sa-mp.com/" target="_blank" rel="noopener">联机插件SA-MP</a>、<a href="https://code.google.com/archive/p/m0d-s0beit-sa/" target="_blank" rel="noopener">作弊插件m0d_s0beit</a>、<a href="http://baike.baidu.com/item/Cleo/13010743" target="_blank" rel="noopener">功能插件CLEO</a>）。今天猛然从硬盘的角落翻出来全套word文档，发现自己竟然在这5年间断断续续地写了35篇整，今有感而发决定把他们重新修改一番完整发出来，算是对过去一同游戏的，如今各奔东西的曾经的少年们的怀念，也是对自己愉快的童年重新回味一番罢。</em></p>
+<h3 id="出塞"><a href="#出塞" class="headerlink" title="出塞"></a>出塞</h3><p>一个还算可以的晴天，平常得不能再平常。</p>
+<p>在S城的银行里，来了三个不像来存钱的人，其中两个人的身后还背着一个很长的袋子。门外停着一辆改装得不像样的Turismo，车牌甚至是夸张的”SNC94110”。<br>这三个人向银行里望了一阵，突然他们之中一个叫SBill的人突然好像想起什么似的，向口袋里的控制器按下一个键，接着迅速拿起藏在上衣里面的MP5指着柜台前的职员：“马上拿出5000万！立刻！”看见银行职员没有想拿钱的动作，SBill轻声地说了一声：“索嘎…”SBill身后的两个人听到了，也把自己的左手伸进口袋里，把脸望向SBill，像是在等待这什么信号。银行职员警觉了起来：“你们…想干什么…”</p>
+<p>SBill轻轻点了一下头，身后两个人的左手向控制器也按下一个键。只见一个人从身后的袋子里抽出一把RPG，对着柜台就是一发，整个柜台顿时穿了一个大洞。SBill大喊：“依克做！”然后也从身后的袋子里拿出另一把RPG，和那个射穿柜台的叫NCkr的人冲了进去。而那个什么都没拿的CKavel则是径直跑出去启动那台改装得不像样的Turismo。</p>
+<p>这是一辆货车版Turismo。前半部分是普通的Turismo车身，后半部分发动机上则架起了一个木制的带围栏的载物台。从这夸张的改装来看大概是一个爱好改装的农民制作的，实用又不影响美观。这辆货车版Turismo还是前几天NCkr在LDZ比赛赢的，只可惜他不会开，就被CKavel“借”走了。<br>正当CKavel把车子启动时，远处便开始传来警笛声。从声音上判断，有几十辆、甚至是几百辆警车正往这里开来。“氧化钙…”CKavel说道。这时，正看到SBill和NCkr拿着大袋钱跑过来。CKavel说：“来不及了，快坐上货柜！”接着一个甩尾飙出去好远。</p>
+<h3 id="亡命高速公路-1"><a href="#亡命高速公路-1" class="headerlink" title="亡命高速公路(1)"></a>亡命高速公路(1)</h3><p>当SBill和 NCkr上车后，CKavel二话不说，一踩油门将车完美的甩出了个180度，从那些警察的身边擦过。“Holyckr!我的车!”NCkr边坐稳边说道。“放心吧NC…以我的技术保证你的车没刮到那些警车…”CKavel敏捷地躲过前面开来的警车说道，“你们也别愣着，快解决掉那些警车！SB，把车上的人都干了！”“WTF…”SBill抓起一把狙击枪，以他神圣的枪法把后面追上的车一个一个解决掉。 “SHIT!”CKavel大叫道。正说着，旁边的小道突然冲出一辆N.O.O.S.E防暴车。车里面的特种兵一个个发了疯似的往Turismo的车顶跳去。“我的车顶被你糟蹋啦！”NCkr大叫道，然后也跳上车顶拼命地把他们扔下去。“WTF?!”SBill看到这个情况，左手伸出一把沙鹰，头也不回地快速把车顶上的特种兵解决了。“好了…下来吧…”SBill说道，然后继续狙杀车后的人。见后面的警车越来越多，SBill也渐渐招架不住了。等NCkr回到载物台时，CKavel一个甩尾把车上的尸体甩开，说：“NCkr你也别呆着，用RPG轰掉后面的车！”“好吧…”NCkr拿起RPG对着后面就是一阵狂轰。“氧化钙…抢我生意…”SBill说着放下枪口热得发红的狙击枪，拿起RPG朝着上空的直升飞机就是一发。</p>
+<p>“在这里兜圈也没办法了，赶紧逃到下一个城市吧！”SBill说道。“离这里最近的是哪个城市？”“LS城离这里最近。”“好吧…”CKavel说，“也只能去那里了。”</p>
+<h3 id="亡命高速公路-2"><a href="#亡命高速公路-2" class="headerlink" title="亡命高速公路(2)"></a>亡命高速公路(2)</h3><p>在通往LS的公路上。</p>
+<p>“WTF?!后面的警车没完没了！CK！我的火箭筒弹药快用完了！得想办法甩开他们！”SBill大叫。“来不及了…看看前面…”NCkr 说。他们正前方有两辆坦克横在公路中间，试图挡住他们的道路。“我氧化钙…我的车技可不是吹的！看我的B！”CKavel边说着，边从口袋里拿出控制器， 按下写着“B”字样的键。只见货车版Turismo立刻弹跳到空中，以优美的抛物线从离他们只有半米远的两辆坦克上空飞过，接着平稳落地。NCkr看着后面的警车一个接着一个被那两辆坦克撞炸，感慨了一句：“Holyckr…”</p>
+<p>又走了很大段路，离LS城也已经越来越近了。可是路上连一辆警车都没有，甚至警笛声都消失了。SBill有种不祥的预感：“怎么那么平静…不会是个陷阱吧…”果然被SBill说中了。在他说了这句话没过多久，CKavel慢慢地把车停了下来。他们三个都看傻了。而前方竟然是。。。</p>
+<p>断桥。而对面正是LS城。</p>
+<h3 id="极品飞车"><a href="#极品飞车" class="headerlink" title="极品飞车"></a>极品飞车</h3><p>CKavel停住了车。车后的两人陆续跳下了车。在断桥的上空，盘旋着十几架警用直升机，而桥的那边也渐渐被N.O.O.S.E给占领了。NCkr拿出他那由狙击镜拼成的双筒望远镜看着越来越多的飞机群。“无路可逃了啊…话说那个飞行员长的实在看不下去啊……”“…没办法了吗…”CKavel轻叹了一口气，打开车门，从口袋里拿出最后一支POCKY咬在嘴上，然后慢慢地从车子里出来。转身从载物架里拿出一块大木板，用空的POCKY包装盒把木板架起，放在了断桥的边上。“SB，就看你的了。”CKavel转身进了副驾驶座。</p>
+<p>只见SBill的嘴唇往上挑了挑。“NC，上车！”随后进了驾驶座。NCkr拿出绳子一头系在车顶，另一头绑在腰间，跳上了载物台。</p>
+<p>松开手刹，只见SBill以完美的操作使车向后急退。到了一定距离后，只见SBill右手华丽的挂档、拉手刹，车轮正拉着白烟在原地拼命地空转。“准备好…3..2..1..日啊！！”车子以极高的加速度向前飞奔。前车轮快碰到木板的那一刹那，SBill按下了控制器里印着Alt字样的键。</p>
+<p>“这里是13号机，这里是13号机。抢劫犯好像有些行动了，请大家警戒….噢不….他们准备冲向断桥的另一侧！这根本不可能！…他们飞起来了！他们违背了重力！…车顶上还有个人！他好像拿着什么东西向我扔来！……（BOOM）！”“哈！一架直升机！”NCkr手拿着手榴弹，威风的站在车顶上。“喵！”另一架直升机坠落。“你！”又一架直升机坠落。“个！”再一架直升机坠落。“咪！”第五架直升机坠落。正说着，那辆Turismo已经成功的到达了桥的对面。现在，他们的只能去当年“油炸旧金山”行动认识的一名队友那里暂时躲一下风声。他叫Chun Juan。有的叫他CJ,有的叫他春哥。他是SNC三人在LS城里唯一认识的人了。</p>
+<h3 id="洛圣都，新的开始"><a href="#洛圣都，新的开始" class="headerlink" title="洛圣都，新的开始"></a>洛圣都，新的开始</h3><p>“Good Job！”CKavel边往窗后射击，边称赞SBill的华丽的驾驶技术。“哼…当然…我可是当年雷达站【华丽的控车艺术】比赛的二等奖获得者…”NCkr经过刚才眼花缭乱的杂技，感觉有些累，摊在车顶吐槽道：“嘛…他那个比赛…冠军亚军季军各一名…后面是一等奖4名…二等奖5名…要不是我求情…SBill差点被分到三等奖那里…”“— —|||”听后，CKavel的脸上不自然地形成了一个川字。</p>
+<p>“谢特…”SBill不自觉地叫了一声。“马萨嘎…被我说囧了…但是你也别放慢车速啊…”NCkr的脸上也出现了一个川字。“怎么了？”CKavel问道。“骚瑞…都怪我年少无知…信了那个在7F乱吹技术的家伙…装了一个油箱CLEO…呵呵呵…好像没油了…”SBill说着，无可奈何地晃了晃他那控制器。上面插着一个带显示器的U盘，显示器里写着“CLEO3注入器状态-车辆油箱CLEO:已加载”</p>
+<p>“WTF……看来SB你不经夸啊…车子我来开算了…”CKavel脸上的川字终于被挤成了一个水字，以迅雷不及掩耳盗铃之势和SBill交换了一个位置。“其实我一直不喜欢用NOS的…最BS玩LDZ开NOS的人了”“…不过这次算了”说着CKavel按下了NOS钮。随着一股蓝色火焰从车的排气管喷出来，立刻把身后的N.O.O.S.E防暴车甩开好远。“SB！你的CLEO除了油箱这一没用的东西还装了什么？”“Let me see see….哦，还装了一个尿尿CLEO、醉酒CLEO、跑酷CLEO、跳舞CLEO….没了，就这五个…都是从那个人那里要来的…”“卧槽…一个没用的都没有..醉酒尿尿跳舞用‘/’命令不就好了…但是那个跑酷…你等一下传给我吧…嘿嘿…”由于车速太快，脑袋壳儿磕到载物台挡板上的NCkr说话了：“卧槽…‘嘿嘿’那么猥琐的声音…嘿嘿什么的最讨厌了…嘿嘿…”“— —|||”坐在车厢内的CKavel和SBill脸上同时出现了川字。</p>
+<p>不知不觉，他们已经到了CJ家附近了。而CJ也好像听说过这件事了，早早地派了一大帮“春哥帮”的成员，用汽车把整条街戒备了起来，随时迎接SNC三人和击退剩余的N.O.O.S.E。“春哥帮”，是CJ组织的帮派。他们帮派是一个曾经有过交警颁发的【连续十年无人违反交通规则】证书的遵纪守法的黑帮。平常也很少惹警察—–因为帮派成员精通各类潜入技巧，所以犯了事儿警察也找不到证据。</p>
+<h3 id="重聚"><a href="#重聚" class="headerlink" title="重聚"></a>重聚</h3><p>三年过去了…</p>
+<p>由于SNC三成员逃入LS城之后一直安分守己，也因为LS的警察们都不想惹祸上身，SB、NC、CK这三个曾经大闹乡村银行的小混混，竟慢慢地淡出了警察们的视野。</p>
+<p>LS赤城山入口…</p>
+<p>“卧了个槽…”SB正蹲在他那残旧的AE86旁，看样子好像已经等了一个下午了。</p>
+<p>“死NC…说好12点在赤城山赛一场的…KAO都晚上7点了还没来人…搞什么飞机…算了。打个电话，顺便骂死他。”于是SB熟练地拿出了CKR牌手机，关掉正在看的H，打开通讯录，用飞快的速度输入了‘N’字，选中了‘脑残’这个人，按下了通话键。</p>
+<p>LS某大饭店…</p>
+<p>“无路赛~！无路赛~！无路赛~！”在饭店所有人的鄙夷的眼神中，一个穿着人字拖，军绿色短裤，桐乃痛T-shirt，还戴着大黑墨镜的小哥从屁股袋里掏出一只橙色的CKR牌俺妹痛手机，上面的少女字体一蹦一蹦地显示着“傻逼来电话了哟~！”的字样。这名小哥熟练地按下通话键，用娇娇的口音说道：“哦~是SB的电话呢…莫西莫…”</p>
+<p>“莫尼玛！尼玛不是说好了12点和我跑赤城的吗？！死哪去了？！”SB粗犷的声音怒不可遏。</p>
+<p>“卧槽…不是午夜12点吗…现在在吃饭..”NC无辜地说道。</p>
+<p>“KAO!我顶着个大太阳就开始等你等到了现在啊WTF…尼玛在吃饭…”</p>
+<p>“人家怎么知道了啦…”</p>
+<p>“限你半小时后给我死过来！”SB啪地挂了电话。</p>
+<p>“唉…谁叫我那么抢手…没办法了…去吧…”NC付了钱悠闲地走出了饭店。</p>
+<p>“大天黑的戴墨镜…神经病..”饭店里一老头说道。他头上戴的是金馆长的面罩。</p>
+<p>“卧槽刚刚有一老头碉堡了…”NC发了一个群信息，转身跳进了一辆有着大得不像样的排气筒的Turismo里去了。直奔赤城。</p>
+<p>“这样等下去也不是办法呢…哟西自己先跑一圈吧。话说好久没碰过86了…先熟练一下…”于是SB进车开启了引擎。空调口里吹来一阵凉爽的风。SB顿时泪流满面。“卧槽…一直蹲在外面等NC…早知在车里等…”</p>
+<p>晚上7点半，一辆AE86，慢吞吞地一顿一顿地上了山。</p>
+<p>“哦摸姨爹~ 那嗯~ 跌伊亚拉姨哟~~~”赤诚半山腰，一个开着定制版R8(粉红色)的帅小伙，收音机里听着很燃的音乐，正以飞快的速度漂移下山。正漂着，只见前方一辆老爷车横在路边。“卧…卧…卧槽！”帅小伙当机立断拉手刹，脚猛踩刹车，猛打方向盘，车子转了一个360度之后，停在了老爷车前面，差点没撞到。</p>
+<p>帅小伙下了车，往老爷车走去。</p>
+<p>“你个煞笔怎么开车的啊！车子竟然会被你开成这样！”正说着，帅小伙往车里一看，“卧槽…”只见SB从86里瞪着帅小伙。“这货真的是傻逼…”帅小伙停住了脚步。只见SB打开车窗，慢慢地说道：“死CK给我记住…以后骂人不要带SB…”</p>
+<p>帅小伙从兜里拿出一包POCKR，边吃边说道：“SB那么晚横在路边干啥子？”“尼玛…老子今天改装了车子结果改崩了…哟西改回来了，快坐进来看我跑一圈。”SB说道。</p>
+<p>“算了，”CK转身回去自己的车，“NC说他现在在赤城山下等我。他从我这借了俺妹特典借了3个月了，今天突然说要还给我，让我激动得都尿裤子了…我得赶快下去。”</p>
+<p>“噢噢，NC到了吗。哟西我也下山了。我们来比比谁下山快吧哈哈哈哈！”SB激动地叫着。</p>
+<p>15分钟后…</p>
+<p>CK熟练地驾驶着R8华丽地漂下山后再来一个180度甩尾最后完美地停进了一个停车位，NC的Turismo就在旁边。    “yoooooooooooooooooCK!”NC激动地叫着。</p>
+<p>“yoooo你妹。我的碟子呢，快还。”CK不吃这一套。</p>
+<p>“什么嘛…真没情调…好吧好吧还给你..真是的…”</p>
+<p>“呜呜噢噢噢噢哦哦哦哦哦哦！终于回来了我的碟子！WTF这一阵什么气味…哎呀赶紧回家去。”CK激动坏了。</p>
+<p>“喂喂别走先…我和SB要比赛，看吗？”</p>
+<p>正说着，SB和他那86慢慢下来了。</p>
+<p>“KAO你的4WD超跑让我怎么追得上啊KAO!”SB怒斥。</p>
+<p>“要和我比的可是你…”CK无辜道。</p>
+<p>“哟SB来啦！撒、来比吧！CK也来吗？”“算了…你们自己慢慢玩…我回家去。”</p>
+<p>于是，SB，NC，CK三人，经过短暂的相聚，再度散去。</p>
+<h3 id="CK的大危机"><a href="#CK的大危机" class="headerlink" title="CK的大危机?!"></a>CK的大危机?!</h3><p>CK正在回家的路上….</p>
+<p>“哟吓！被死NC拿去做奇怪的事情做了三个月的俺妹特典终于回来了…死NC害的这可爱的光盘沾上了一股奇怪的气味…WTF…”CK愤愤道。于是他重重地踩下了油门，好赶快回家把光盘用水冲一遍然后珍藏起来。</p>
+<p>与此同时在赤城山顶…</p>
+<p>“尼玛FR怎么可能追得上4WD超跑啊靠！”SB开着他那AE86慢慢地上了山顶，NC已经在那里等了5分钟了。“要和我比赛的可是你…”NC说出了和CK一样的话。</p>
+<p>“WTF…”SB明显不甘心。于是他掏出一颗白色的胶囊，狠狠地抛在了地上。面前立马出现了一辆FD。“你…你确定我俩还要比吗…”NC无奈道。“等等…CK来电话了。”</p>
+<p>“喂？NC你们还在赤城吧…赶快过来…我家…出大事了…”“啥…好吧…马上过去。”</p>
+<p>“嗯…快点…”CK按下了挂断键。而眼前，他的家里明显被人翻乱了。各种人物手办和抱枕乱撒一地。门前留了张长长的纸条。上面写道：</p>
+<p>“想必还认识我吧。上次你们仨赢了我，我很不甘心。今天来打算找你们重新赛一场，完成我的复仇。但是看你不在家，于是我就进门搜刮了一遍。还不错，找到了一个最新版的m0d。想要回来的话，下周六下午2点，LDZ见。”</p>
+<p>“KAO…”CK在风中凌乱。</p>
+<p>“怎么了怎么了？”SB和NC火速赶到了现场。</p>
+<p>“John留。”SB指着纸条最下面念到，“就是上次我们集训CK用小刀扔爆车胎的那个人吗…到现在还记得那事…”</p>
+<p>“嗯嗯…”NC若有所思。“看啊SB看别人约定时间是分上午下午的…没人像你那样傻X…”</p>
+<p>“NCNMGun…”SB选择无视NC。“对了…上面说的m0d…CK…你该不会…”</p>
+<p>“嗯…”CK看上去快哭了。“NC说要还我特典光碟…一时太激动忘了带m0d直接跑出来了…”</p>
+<p>“= =”SB从裆部掏出一支带显示器的U盘，“拿去吧…里面有齐了m0d基本上所有功能的CLEO…用这个吧…”</p>
+<p>“卧槽你还带着..”CK感激地收下了。CK在U盘的显示屏上翻看里面的内容，却顿时留下两行老泪。“功能好齐全…”这只小小的CLEOU盘里面几乎可以充当一个精简版的m0d，只是没有SNC最常用的R键B键和SHIFT键还有DELETE键。</p>
+<p>“m0d我好想你…”CK现已泪流满面。</p>
+<h3 id="有危才有机"><a href="#有危才有机" class="headerlink" title="有危才有机"></a>有危才有机</h3><p>没有了m0d的CK，就像是了魂一样落魄。</p>
+<p>“CK,一起去秋明跑一圈吧！”</p>
+<p>“嗯…”</p>
+<p>“CK，一起去看猫猫片吧！”</p>
+<p>“嗯…”</p>
+<p>“CK，一起去看H吧！”</p>
+<p>“嗯…”</p>
+<p>“CK，把你的easyloli借给我H吧！”</p>
+<p>“嗯…”</p>
+<p>……</p>
+<p>“这样也不是办法呢，”第二天早晨，SB和NC在幻想山半腰的某餐馆处，SB对NC说。</p>
+<p>“嗯嗯。。要不我们仨去LDZ附近合宿吧，顺便练练车技，打败John。”NC提议道。</p>
+<p>“哟西就这么干。”</p>
+<p>第二天一早，SB跟NC带着半箱珍藏的萌萌loliH同人本，还有一个俺妹限量版的充气娃娃跑去CK家，硬是把CK给拽出门了。</p>
+<p>“好吧好吧…看在俺妹充气娃娃的份上（吞口水）…我就勉强地跟你们出去了…”劝说CK出门所用时间：1分钟。</p>
+<p>在NC亮出充气娃娃之后劝说所用时间：2秒半。</p>
+<p>半小时后，SNC开始前往沙漠。</p>
+<p>“呐呐SB，”CK饶有兴趣，“沙漠有啥好的旅馆吗？”</p>
+<p>“尼玛我是路痴别找我…”SB翻了翻白眼，“问NC去。”</p>
+<p>“我们不住旅馆…”NC说，“去一个朋友家寄宿。”</p>
+<p>“朋友？”SB失望地说，“肯定是那些满屋子充满工口气味的恶心宅吧…”</p>
+<p>又过了半小时，在LDZ附近的一个乡村…</p>
+<p>“卧了个大槽…”当NC按下门铃，当SB看到开门的是一个穿着睡衣的可爱短发女生的时候，CK感叹道，“NC不可能私藏一个这么可爱的loli…”<br>“ASS♂WE♂CAN”NC说道，“我妹妹..怎么样…”</p>
+<p>“呜呜呜哦哦哦哦哦哦哦哦哦哦哦哦哦哦哦！”CK一把冲上去抱住loli，边蹭脸边说道，“好可爱啊啊啊啊啊啊啊啊啊啊啊啊”</p>
+<p>“大哥哥…放…放开我…咳咳…放开..”loli看上去很辛苦。</p>
+<p>“就不要”CK正要把手贴到loli的胸部，“平的好萌啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊”</p>
+<p>“法克！”只见loli把CK的手一拨，然后挣脱开CK的怀抱，转身一个飞踢，把CK踢进厕所去了。</p>
+<p>“再碰我…”loli扣好睡衣扣子，轻声说道，“阉了你哦。”</p>
+<p>“哟西…”安排好床位后，SNC三人在房间里聊天，NC说道，“我妹妹…空手道二段…我都打不过她…”</p>
+<p>“逆天了…”CK揉了揉已经发紫了的肚子说道，“…不过这样的女生好可爱…”</p>
+<p>“尼玛…”SB鄙视地说，“这一脸享受的表情是怎么回事啊你这个M…”</p>
+<p>“话说这里离LDZ这么近，”NC提议道，“等下去LDZ耍耍吧。都三年没回来了。”</p>
+<p>“恩恩好好”SBCK都表示同意。</p>
+<p>“大哥哥们，”NC的妹妹推开了SNC宿舍门，“出来吃午饭吧。”</p>
+<p>“呜呜噢噢噢噢哦哦哦哦哦哦过来让哥哥抱抱吧啊啊啊啊啊啊啊啊啊啊”CK冲了上去。</p>
+<p>又是一个飞踢，CK又进了厕所。</p>
+<p>吃饭时间……</p>
+<p>“还没自我介绍呢，”NC妹说道，“我叫兔子。听NC说你们要在这里住一阵子什么的，请多多指教~”</p>
+<p>“叫你萌萌可以吗”CK打断道。</p>
+<p>“…萌萌什么的..”兔子突然脸红起来，小声地说道，“…你去死吧。”</p>
+<p>吃饭中…</p>
+<p>CK见兔子的碗里几乎没有菜，而桌上的菜都被SB和NC扫荡着。于是CK将自己碗里仅剩的一块烤土豆夹给了兔子。兔子脸红了。隔了很久才小声地说道，“谢…谢谢…”CK对着兔子微微一笑，说道，“吃吧。没关系的。”兔子的脸更红了，把头埋到了碗里。</p>
+<p>“好可爱…”CK被萌到了。而SB和NC都只顾着自己吃饭，根本没注意到那么可爱的loli就坐在眼前。</p>
+<p>“哟西，我们出发去LDZ了！”出行前，NC兴奋地说。“妹妹你就帮忙看家吧。”</p>
+<p>“看尼玛，你的家吗。”兔子强力吐槽道。</p>
+<p>SNC三人一个接一个走出了大门。CK走在最后面。正要步出大门时，他感觉到后面有人拉着他的衣袖。“那个…出门…注意安全哦…”</p>
+<p>“放心。为了你我会安全回来的。”CK微笑着把手轻轻放在兔子头上。</p>
+<p>“什…什么为了我之类乱七八糟的…”兔子的脸好红好红，“哥哥这个笨蛋…”</p>
+<p>于是SNC一行人，正式向LDZ进发。</p>
+<h3 id="廉颇，老矣"><a href="#廉颇，老矣" class="headerlink" title="廉颇，老矣"></a>廉颇，老矣</h3><p>20分钟后，SNC一行人终于到了LDZ附近。</p>
+<p>“LDZ真是越来越荒凉了…”开车的NC感叹道。“不靠GPS都不认得路了…”</p>
+<p>去LDZ的路上，连半个人影都没有。一路上的风景除了黄沙满天，便是路上那些名贵跑车的残骸。</p>
+<p>终于，SNC三人透过车窗看到了著名的大雷达和发夹弯。到了LDZ了。</p>
+<p>“我们先来一场。”SNC三人各拿出一粒胶囊，往地上一扔。SB的还是86。NC的是大排气管TUR。CK的是粉红色的R8。“KAO…”SB忿怒地望着正在偷笑的NC和CK，“尼玛怎么都是4WD超跑…”</p>
+<p>“5…4…3…2…1…狗！”CKR牌手机就是好，还支持无线电对讲机功能，大伙儿用了都说好。只见NC第一个冲了出去。“死NC的臭习惯到现在还没改过来…”SB叫道，“甩尾都用NOS…”“亚…不只是NOS…”NC一边横着滑自己的车一边说道，“还用了ALT…”“尼玛要是我有m0d的话第一个R你…”CK怒斥。</p>
+<p>三辆车，三名有着出神入化车技的车手，冲开了LDZ道路上沉积已久的灰尘。</p>
+<p>半小时后，SNC三人在LDZ终点处。</p>
+<p>“让我看看John是何许人…”SB用CKR牌手机上着网，“找到了…街头赛车手，主攻山路，秋名山赛道下坡记录保持者，保持了2年没人超过。他跑LDZ最好成绩是12分钟。”</p>
+<p>“我们呢？”CK插话道。</p>
+<p>“26分钟…而且是全开NOS和ALT…”NC绝望地说。</p>
+<p>“卧槽差那么远…”CK也绝望了。</p>
+<p>“其实我们三年没跑过LDZ，这次跑能有26分算不错的了…”SB打气道。“我还以为我会迷路回不来了…”</p>
+<p>SB的一番话让NC和CK都看到了希望。“嗯…再差也有SB垫底…”</p>
+<p>“WTF…”SB看起来很受打击。</p>
+<p>“弱爆了你们。”不知什么时候，LDZ上又来了一个人。只见他慢慢地开进停车位，帅气地从Bullet里面走出来。这位帅哥身穿真皮大风衣，带着大黑墨镜，帅气的站在NC身边，比NC高好几个头。“才三年没来就连弯都不会过了吗…”</p>
+<p>“哇…好高…”NC仰着头看着他。“而且我也有一副这样的墨镜…”</p>
+<p>“尼玛你忘了这墨镜之前我和你一起买的吗…”帅哥摘下墨镜说道。</p>
+<p>“噢噢噢噢噢噢…你就是那个BB什么的…”SNC三人同时认出了帅哥。</p>
+<p>“BB尼玛..”帅哥把手插进口袋，“是Bleach。”</p>
+<h3 id="Bleach"><a href="#Bleach" class="headerlink" title="Bleach"></a>Bleach</h3><p>Bleach现身LDZ。</p>
+<p>“BB,好久没见了。”“BB,有什么H好看的推荐没？…”“BB,最近有什么妹子介绍吗？…”SNC三人明显兴奋了。</p>
+<p>Bleach，由于SNC三人连狗都不如的记忆力，被一直认为其名字是BB。业余赛车手。本身的职业是个卖鱼蛋的。但是一到午夜或者假期就会化身为开着黄色Bullet的墨镜帅哥。由于他的第一次比赛就击败了职业赛车手赛文打破了五年来幻想山下坡最快纪录，所以被人们称为“幻想山的黄色鱼蛋传说”。</p>
+<p>“什么风把你们吹来了？”Bleach打断他们。</p>
+<p>当SNC你一言我一语把整件事告诉Bleach之后，他重新戴上了墨镜，挥了挥手说：“大丈夫，萌大奶。每个人单独和我赛一场，结果有目共睹。”</p>
+<p>于是，带着疑惑，SNC每个人都跟Bleach跑了一圈。结果除了SB是跟Bleach一起到的终点，NC、CK都远远超过Bleach一大截。</p>
+<p>“哈哈哈哈哈哈哈”Bleach金馆长了一下。“LDZ的速度，你们不是都跑得不错嘛。”</p>
+<p>“你一圈用多久？”SB问到。</p>
+<p>“9分半。没用NOS。”Bleach轻松地说到。</p>
+<p>“卧槽…这么说我们…”CK难以自信。</p>
+<p>“嗯…速度都碉堡了…”NC说。</p>
+<p>“哟西..”SB说道，“难道你们都忘了我们仨以前被人称为什么吗…”</p>
+<p>被这么一说，SNC三人顿时陷入了回忆之中……</p>
+<h3 id="LDZ的低空飞行三人组"><a href="#LDZ的低空飞行三人组" class="headerlink" title="LDZ的低空飞行三人组"></a>LDZ的低空飞行三人组</h3><p>五年前的八月。热闹的LDZ打破了夏夜的宁静。这正是一年一度的市长杯山路竞速赛的第一站—LDZ赛区。这场比赛吸引了上百名参赛选手和来自全球各地的上万名观众现场观看。而收看电视直播的车迷们更是达到了百万。</p>
+<p>“哇…人好多…”Kavel作为一名参赛者，也出现在了LDZ现场。这时的Kavel只是一名无聊的时候跑跑LV街道的小业余赛车手。虽说业余，但是他以前为了偷看在雷达站工作的可爱女生，已经跑了LDZ不下几千遍了，对LDZ赛道上每一条裂痕都了如指掌。</p>
+<p>“那个…”突然Kavel从背后被人拍了一下肩。“请问…厕所在哪…”</p>
+<p>“不知道..问别人去…”Kavel没鸟他。</p>
+<p>“好吧…”那人走开了。走路姿势好猥琐。</p>
+<p>这人名叫CKR,也是参赛者之一。他给Kavel的第一印象就是猥琐。</p>
+<p>“对了…看看观众里面有没有什么可爱的女生…”Kavel挤进了人堆中。</p>
+<p>十分钟过去了…</p>
+<p>“呜哦哦哦…那个雷达站工作的女生也来了…好可爱…”Kavel从人群的缝隙中看到了对面有一个很可爱很可爱的短发女生，她使劲踮脚的姿势好萌好萌。于是Kavel有一种想把他从后面抱起来的想法。</p>
+<p>正准备过去时，Kavel感觉到他后面又被人拍了一下。“又见面了呢…”还是之前那个猥琐小哥，不过旁边貌似还站着个人。“不知道厕所在哪对吧…他知道在哪…我也是刚刚才知道的…你也问问嘛…”</p>
+<p>“卧槽我为毛想要知道厕所在哪…”Kavel使劲吐槽道。</p>
+<p>被CKR拉过来的人名叫Bill。他也是这次比赛的参赛者。原本他坐在自己的车里听着音乐玩手机。至于为什么被CKR给拉出来了，天知道。</p>
+<p>一个小时后，听到大喇叭“各就各位”的声音后，每个人都坐进了自己的车。Kavel的车是天蓝色的Turismo。CKR的是某种很恶心的绿色的大排气筒Turismo。Bill的则是AE86。</p>
+<p>“开始！”在刚开始的直道上，CKR首先就加速冲到了队伍的前面。而前面就是第一个发夹弯。“卧槽这个猥琐男快过弯了都不减速…”Kavel心想。距离第一个弯道越来越近，CKR却加大了油门，在入弯的时候甚至打开了NOS。“这货是新手吗…”Bill心想。CKR紧接着用一般人难以想象的角度擦边横着过了弯道。“卧…卧槽这货不要命了…”Bill惊叹道。出了弯之后CKR的车身由于悬挂系统左右猛烈晃动着。“卧槽以后别让我坐他的车…”Kavel感叹道。</p>
+<p>CKR在耍宝，Kavel在他后面看得入神。Bill不知什么时候就跑到了第一位。</p>
+<p>“那两个真的是新手…”Bill看着后视镜摇摇头说道。</p>
+<p>接下来的几个发夹弯，带头的Bill华丽的漂移技术让后面的CKR和Kavel大吃一斤。“好…好厉害…”</p>
+<p>“…但是再厉害也只是86…”下了发夹弯，一大段的直路让Kavel和CKR的4WD大马力超跑级别的Turismo很轻易地超过了Bill的86，并把Bill挤到了第三位。“Fxxk…”SB愤怒地说道。</p>
+<p>很快地，车队来到了水坝前的大坡度下坡加发夹弯。“卧槽完了…”CKR在入弯前习惯地按下了NOS键，才发现他的判断错了——下坡开NOS，毫无疑问是必死的。</p>
+<p>辛亏CKR的功底不错，也只是稍稍地冲出了赛道一点。但是他还是被Kavel和Bill超过了。Kavel排到了第一位。</p>
+<p>这种顺序几乎一直保持到了比赛的最后阶段。离LDZ只剩下最后一段直线了。Kavel望了望后视镜，发现Bill跟CKR并排跟在后面。</p>
+<p>Kavel突然做出了一个决定。</p>
+<p>稍稍向右扭了一下方向盘。</p>
+<p>轻轻松了一下油门。</p>
+<p>……</p>
+<p>市长杯山路竞速赛LDZ赛区，从左到右，Bill、CKR、Kavel三人，并列同时冲进了重点。</p>
+<p>他们三人的成绩：2分50秒。</p>
+<p>而第四个冲进终点的人的成绩，整整慢了他们10分钟。</p>
+<p>……</p>
+<p>经过那场比赛后，他们三个被赛车界誉为“LDZ的低空飞行三人组”。</p>
+<p>SNC三人，就是在这场比赛中认识的。</p>
+<h3 id="宝刀未老三少侠"><a href="#宝刀未老三少侠" class="headerlink" title="宝刀未老三少侠"></a>宝刀未老三少侠</h3><p>“我们…”CK突然回想起来了。“以前LDZ好像很快来着…”</p>
+<p>“ms你那过弯加速的臭毛病那时候就有了…”SB对NC说。</p>
+<p>“ms你那总是用低马力FR车的臭毛病那时候就有了…”NC对SB说。</p>
+<p>“我呢…我呢…”CK兴奋地问SB和NC。</p>
+<p>“ms你那萌短发萌萌女生的臭毛病那时候就有了…”SB和NC异口同声。</p>
+<p>“WTF…”</p>
+<p>“撒、接下来有什么事做呢…”刚吃完早饭，SNC就出了家门。现在他们仨坐在SB的AE86里摇摇晃晃地在沙漠里兜风。CK问到。</p>
+<p>“凑时间等John跟我们决斗…”SB一语道破。</p>
+<p>“卧槽…难道要等一个星期没事干…那我的连载怎么办…”CK一语道破+1.</p>
+<p>“什…什么连载…CK你说了个啥…”SB和NC的脸同时变成= =|||。</p>
+<p>“WTF…没事了…”CK突然意识到什么，然后自觉闭嘴了。</p>
+<p>“呐呐快看前面…”NC指着前方附近的乡村银行。“我们以前抢劫过这家银行吧…”</p>
+<p>“真怀念啊…要是我们再抢一遍的话…我觉得我们首先应该这样这样，然后这样这样，之后这样这样……最后从那面墙破一个大洞冲出来。”SB像军事顾问一样把全盘策略头头是道地说了出来。</p>
+<p>Just like the old time.</p>
+<p>正当SNC三人一脸陶醉的表情正在回忆过往美好的时光的时候，突然“嘭”的一声，SB说的那面墙突然炸开了一个洞。</p>
+<p>“卧了个大槽…”当SNC三人看到了从洞里出来一个壮汉、一个猥琐和一个眼镜的时候，SNC三人的脸同时变成了= =|||。</p>
+<p>“快看那三个…”CK说道。“嗯嗯…果然那个眼镜最帅…”</p>
+<p>“CKNMGun…”SB翻了翻白眼。</p>
+<p>远处那三人，每人从口袋里拿出一颗胶囊，往地上一扔。壮汉扔出一辆ZR350，眼镜扔出一辆Inf，猥琐扔出一辆自行车。</p>
+<p> “卧槽扔错了…”于是猥琐重新摸出一颗胶囊，又是一扔，扔出一辆摩托车。“卧槽我的TUR跑哪去了…”“草靠日快点…就用摩托算了…我们没时间了…”“好吧…”于是三人组坐上各自的车跑了。</p>
+<p>“这仨是新手吗…”SNC脸上的川字早就变成了水字了。</p>
+<p>“呐呐…”NC提议道，“不如我们把那三个都追上怎么样…”</p>
+<p>“哟西就这么做。”SB掏出遥控器按了按，那残旧的86立刻焕然一新。右侧车门的“SNC豆腐店（SB用）”字样变得闪闪发亮。</p>
+<p>“依克做！”SB一按SHIFT键，汽车立刻浮在半空中。“哟吓！”NC打开了GPS装置。“开慢点..”CK第一次感到了没有遥控器的无助感。他坐在后排扣紧了安全带。</p>
+<p>“= =|||||||”SB和NC都知道如果让CK拿m0d来开车他肯定会用ALT乱冲。</p>
+<p>“NC，看到他们在哪里了吗？”SB手握遥控器上的摇杆说道。</p>
+<p>“就在这里。”NC将GPS拿去给SB看了看。</p>
+<p>“哟西我们就在他们前面一个街道的路旁守株待兔。”SB说道。</p>
+<p>于是SB熟练地操纵着摇杆，操控着AE86在乡村的街道上穿行。</p>
+<p>SHIFT的速度比想象中要快。当SNC他们早已到了目的地的时候，新手三人组才刚刚开过来。</p>
+<p>“喂喂无机物…”在前方用ZR350开路的壮汉说道。“看前面那停着的86…刚刚我们好像才见过吧…”“好像是这样的…”眼镜表示同意。</p>
+<p>与此同时在SNC那边…</p>
+<p>“准备好了吗？”SB有节奏地空踩着油门，左手摇晃着挡杆说道。</p>
+<p>“3…2…1…ike!”CK透过后车窗看准了时机。</p>
+<p>“轰！”随着引擎的怒吼，AE86突然从草丛中一跃而出，正好从ZR350的车前擦过。突然冲出的车把新手三人组吓得不轻。速度也立刻放慢了许多。SB熟练地驾驶着86很快地赶上了。</p>
+<p>“比…比尔…”车队最后那个开摩托的猥琐叫道，“那…那辆破86想追上我们干嘛…”</p>
+<p>“破尼玛破！”SB怒道。只见SB左脚踩下离合，左手熟练地推上三档，右脚猛踩油门，从右边赶上了猥琐。<br>NC和CK同时拉下了车窗。坐在前排的NC伸出手握住了摩托车的手把，后排的CK伸出手把猥琐一拉拉进了车里。</p>
+<p>“卧槽！你…你们想干什…”话没说完，CK已经五花大绑把猥琐绑着扔到后备箱去了。<br>“哟西！下一个！”CK叫道。</p>
+<p>“哟西！”SB继续踩着油门。86在不断接近队伍中间的Infernus。这时CK拉开了86的车门。</p>
+<p>“不行，还差一点！”CK叫道。SB松开油门，在一瞬间脚踩离合左手换挡。还没等油门踏板弹回来的功夫，车子稳稳当当地升到了四档。86渐渐和Inf并排了。换上四档后引擎的低鸣声中就可以听得出这台86改装FD引擎的马力完全比得上眼镜那台Inf的原厂4WD引擎，甚至更高。</p>
+<p>“距离正好！我去了！”这时两辆车并排跑着。CK站在86的车门框上拉开了对面Infernus的车门，向后一蹬，从Infernus的右边跳了进去。CK在空中抓住了眼镜的脖子，俩人从Inf开着的车窗里飞了出来。</p>
+<p>SB从后视镜看着CK飞进他们的车厢，轻点刹车，从Infernus的后面绕到了左边。猛踩油门，86的车身向后一倾，以极快的速度赶了上去，重新与Infernus的车头平行。</p>
+<p>SB一把推开86的右车门，正好赶上了在空中旋转着的CK和眼镜。CK七百二十度空中转体带着眼镜一起钻进了86。整个过程一气呵成不带任何瑕疵。</p>
+<p>眼镜明显被刚才发生的一幕吓到了，以至于CK用SM绑法绑住眼镜然后扔到后备箱，眼镜还一时没回过神来。</p>
+<p>开路的壮汉估计也吓怕了。立刻减速。</p>
+<p>SB拉手刹来个270度甩尾之后横向停在了ZR350前面。</p>
+<p>“呐，骚年，”NC拿着GPS从86里出来，靠着车门帅气地说道，</p>
+<p>“要加入我们吗？”</p>
+<h3 id="阴谋"><a href="#阴谋" class="headerlink" title="阴谋"></a>阴谋</h3><p>壮汉颤抖着拉开了车门，刚离开驾驶座便腿软一屁股坐在了地上，望着86旁边的SNC三人发抖。“好…好厉害的驾驶技术…”“不算什么嘛…”SNC三人同时说道。“不不不NC你没资格搭话…从头到尾你就摸了一下摩托车把而已…看我那空中抓人加转体飞进车那才叫GJ…”“切…要不是有本B的神车技你们还能得瑟的起来吗…”说着，SNC自个儿吵起来了。新手三人组在一旁听着，脸上出现了大大的川字。</p>
+<p>“让我们加入你们吧…！”眼镜的声音从后尾箱传了出来。待SNC将尾箱的两个解出来后，他们开始做自我介绍。眼镜：“我叫无机物…平时就有听说过你们的名字…你们其实一直是我的偶像..”壮汉：“我叫比尔…和无机物一起赛车的…直到某一天在发现了蹲在路边的草靠日…”猥琐：“叫我草靠日..我是看无机物和比尔有外挂才跟着他们的…”</p>
+<p>“呐呐..叫他们无比草怎么样…”“啥…那么恶心的名字..叫草比物吧…”“都不好听…还是SNC比较霸气…嗯嗯…”SNC早将三人无视了，在自己聊天。</p>
+<p>“唔唔唔…可以加吗…”草比物三人问道。</p>
+<p>“不能。”SNC三人异口同声。</p>
+<p>“诶…？刚才那个很猥琐的明明还问要不要加的…”草靠日说道。</p>
+<p>“说着玩的…”NC一脸坏笑。</p>
+<p>于是SNC登上了SB的86一下子没了踪影，留下草比物在风中凌乱。</p>
+<p>在路上…</p>
+<p>“呐呐你说我刚才会不会很欠打…”NC看着手机里的H问道。</p>
+<p>“你一直很欠打…”SB说道。</p>
+<p>“嗯嗯兔子好萌…”CK搭话道。</p>
+<p>“WTF…”SBNC的脸出现了川字。</p>
+<p>与此同时…</p>
+<p>无机物的手机响了。屏幕显示着“JOHN”的字样。</p>
+<p>“做得怎么样了？”</p>
+<p>“刚刚搞定。看样子他们还没意识到。”</p>
+<p>“不错。”</p>
+<p>在不远处的一座蓄水塔上，JOHN挂断了电话，接着从口袋里拿出一个车钥匙一样的发射器。</p>
+<p>CK的脖子后面，被粘上了一个很小的发着红光的接收器。</p>
+<h3 id="决战之日"><a href="#决战之日" class="headerlink" title="决战之日"></a>决战之日</h3><p>终于，决战之日到了。</p>
+<p>在荒凉的沙漠上，此时的LDZ附近却热闹非凡。</p>
+<p>整条赛道的两侧都挤满了各种大马力4WD超跑和专门来看比赛的群众。这种阵势已经很久没有见过了。他们想看的是John如何刷新LDZ新纪录，更想看的是“LDZ低空飞行三人组”成员CK的复出。</p>
+<p>“如果哥哥赢了这场比赛，我就答应跟哥哥去约会…！”带着萌萌兔子的约定，CK带着一脸春风，和SBNC一起开着粉红色R8出门了。SB换上了他的FD，NC则开着一辆拖拉机。</p>
+<p>到了会场后，鱼蛋小哥Bleach作为主持人讲述比赛规则：“整场比赛共三圈。赛道地图已经上传在每位选手手里的GPS装置上。在比赛中选手们在赛场上的位置将实时地显示在我身后的大屏幕上。现在还有半小时的准备时间，请选手们将GPS装置安装在车上。”</p>
+<p>“呜哇…好紧张…”安好装置后，CK在车里不断的想着兔子说的话，一边硬着一边通过CKR牌手机的无线电对讲功能和SBNC聊天。这时SB和NC已经坐上了直升机，准备在空中观看CK的比赛。NC甚至将他的CKR牌手机上的60000万像素摄像机功能打开，准备录下来。</p>
+<p>“我的妹妹…死CK你性奋都来不及吧KAO…”NC流着泪说道。</p>
+<p>“据我的观察，John也只是小角色一个。看他的车就知道了。”SB指着John的天蓝色zr350说道。</p>
+<p>“加油…！！！”CK隐约地听见挡风玻璃外面有个好可爱的声音。一个短发loli在人群中跳动着，正是萌萌。</p>
+<p>“嗯…我一定会跟你去约会的…”CK更硬了。在听到准备的提示后，CK慢慢放下手刹，轻轻踏着油门，平稳地开到起点处。</p>
+<p>“准备了！”CK拉上手刹。</p>
+<p>“3！”CK有节奏地踩着油门。</p>
+<p>“2！”“轰隆…轰隆…”</p>
+<p>“1！”CK握紧手刹。</p>
+<p>“GO！！！”</p>
+<h3 id="实力差距"><a href="#实力差距" class="headerlink" title="实力差距"></a>实力差距</h3><p>“GO！！！”</p>
+<p>随着一声令下，GPS上的红色的背景色变成了绿色。这场轰动全SA的赛事，开始了。</p>
+<p>“轰！”CK熟练地操控着R8，依靠4WD超跑改装版巨炮III引擎，从一起步就超出了原厂zr350一大截。</p>
+<p>“Nice Start, ”SB在直升机上，作为NC的CKR手机摄像机解说，说道，“在恰到好处的35000转的时候半热起步，与CK改装的大马力引擎配合得天衣无缝。这样的技术可以让R8在0.26秒内从0加速到100km/h。使出如此绝妙的技术没有上万次的起步练习是不可能做到的。因为如果起步时再多1000转，起步就会变得极慢。而少1000转则会让车子在整场比赛都显得力不从心。”“只是…”SB话锋一转。</p>
+<p>“LDZ开头是弯道，傻子。”John在天蓝色zr350里轻轻地说道。这时两辆车已经临近了LDZ的四连发夹弯。CK的车速过快，每过一个发夹弯都要猛拉手刹锁死轮胎才能甩尾过弯。“4WD超跑的致命弱点。”SB摇着头说道。这也是SB死也不肯用4WD的原因之一。跟在CK后面的zr350因为起步慢，在弯道很轻松地轻点刹车就漂过去了。JOHN的原厂zr350慢慢地赶上了CK的R8，并在第三个发夹弯用内侧漂移超过了R8。“谢特。。。”CK艰难地过着弯，看着John横着从R8旁边超过，气愤地说道。</p>
+<p>看着zr350华丽地通过了发夹弯，而R8在10秒后也进入了主干道后，SB说道，“zr350的缺点，开始暴露了。”</p>
+<p>“直线加速太慢！”CK猛地换挡，大力踩下了油门。R8以不可思议的加速度冲了出去。长长的主干道，zr350用了40秒的时间。而R8仅仅用了8秒。R8又领先了zr350。</p>
+<p>“John跑山路的技术实在了得，”SB用望远镜看着两人越拉越开，轻轻地说道，“可惜这里是LDZ。”面对干道尽头的弯道，CK显然做出了准备。在弯道前按了一个按钮，然后便松开了油门，只轻点几下刹车，车子便流畅的滑行过了弯。而速度也没有过多的降低。“CK自己研制的电子速度稳定器，通过装在刹车片上的装置，让入弯之前减少的动能储存起来，过完后再将储存起来的能量一次性爆发出来，以弥补过弯之后的速度不足，也减低了发动机的负荷。”SB解说道。</p>
+<p>早已甩在后面的John看着R8逐渐消失的背影，愤怒的脸显得越发狰狞。他从抽屉里拿出一个无线电发射器，紧紧地握在了手里。</p>
+<p>比赛还在继续着。</p>
+<h3 id="致命弱点"><a href="#致命弱点" class="headerlink" title="致命弱点"></a>致命弱点</h3><p>CK依靠专业比赛用的巨炮III型超大马力版引擎，再加上几个月来一点一点亲自调教使得这个本身就有最强动力的引擎的性能又提升了好几个层次。现在这台引擎理论最大速度已基本达到了亚音速。这是原厂ZR350的引擎永远到达不了的境界。</p>
+<p>眼看CK就要回到LDZ的四连发夹弯了。若CK现在减速到摩托车速度登山，最后的单圈成绩也能打破世界纪录好几十秒。</p>
+<p>还在LDZ中段的John怒不可遏。他决定了。</p>
+<p>他打开了发射器的盖子。</p>
+<p>按下了开关。</p>
+<p>“嘀——！”</p>
+<p>CK脖子后面的发着红光的亮点变成了绿色。</p>
+<p>CK失去了知觉。</p>
+<p>……</p>
+<p>“呜哇…好多萌萌…跑过来了…”</p>
+<p>……</p>
+<h3 id="坠落"><a href="#坠落" class="headerlink" title="坠落"></a>坠落</h3><p>在LDZ终点…</p>
+<p>“快看，他们快到终点啦！”</p>
+<p>好不容易从人群中挤出一点缝隙，“终于能看到哥哥那帅气的脸了…但是好害羞呀…”兔子微红的脸蛋透出期待的眼神，白嫩的双手在胸前紧紧攥着，看起来可爱极了。在CK入弯的一瞬间，她却看到CK的座椅后背映出了一丝绿光，CK随即倒在方向盘上，车子突然加速，冲破赛道的围墙，然后翻滚着冲出了悬崖，狠狠地撞向一百多米下的硬泥地。整部车被撞得反弹起来，然后再一次撞向地面，不断翻滚着前进。直到撞向外星饭店的大理石墙才勉强停了下来。车身毁坏的不成样子，玻璃碎片散落一地。等众人艰难地将CK从车内找出并救出来时，CK已全身骨折，没了心跳。兔子怔住了。她从小到大从未如此近距离的看过这么震惊的车祸，眼泪不自主地流了下来。她跪坐在地上，脸上写满了惊愕。</p>
+<p>过了好一阵子后兔子才回过神来。“他死啦？不会吧？”她的心紧缩了一下。她站起身，拼命地奔向车祸现场，一直喊着CK的名字。</p>
+<p>兔子发了疯似地拨开围着的人群，爬到CK跟前，看着全身是血的CK，一遍一遍喊着CK的名字，直到声音嘶哑、再也喊不出声音来了。兔子趴在CK的身上痛哭着。</p>
+<p>不久，一辆救护车从远处开来，将CK的身体送上了救护车。兔子望着远去的救护车，双眼失神好久都没有缓过来。</p>
+<p>不久，兔子的手机震动起来。是一条短信。上面写着：“放心。他还活着。”</p>
+<h3 id="暴露"><a href="#暴露" class="headerlink" title="暴露"></a>暴露</h3><p>“咚！”随着一声巨响，CK的车子撞在外星饭店坚硬的岩石后墙上，停住了。车身被挤压得不成样子。就连直升机也被这声巨响震动了一下。</p>
+<p>“NC, 看回放。”SB看着车子的残骸和John若无其事地冲向了终点，冷冷地说道：“这事不简单。”</p>
+<p>“+1。”NC调出录像，快进到CK入弯前的那个时间段，开始了慢放。</p>
+<p>“看上去是CK突然失去意识了。”NC说道。画面在车祸前和车祸发生时的两个时间段不断重复着。       </p>
+<p>“等一下！”SB看了四遍慢放，突然好像发现了什么！</p>
+<p>“你将那个画面放大50000倍！看看左边的观众席！”SB说道。</p>
+<p>“兔子也在观众席——啊！不对！”NC突然也发现了什么！</p>
+<p>“再放大一点！”放大后，他们终于确信他们看到的东西不是幻觉——兔子的眼睛里，映出了CK的座椅后背突然闪出了一点绿光！也是在同时，CK失去了知觉！</p>
+<p>“有什么东西是可以使人在一瞬间失去知觉，然后陷入假死状态的？”SB问。</p>
+<p>“掉线！”SB、NC异口同声地说了出来。</p>
+<p>现在，两人终于知道事情的发展了。John请了草比物三人组出现在乡村银行，出演了那场戏，然后趁机将接收器安装在CK脖子后，然后在这一刻，让CK掉线！</p>
+<p>“SB，掉线之后要多久才能重新联网？”NC问。</p>
+<p>“看情况而定。CK应该要两个星期时间。”SB说。</p>
+<p>“好。我叫人回收身体。全身骨骼替换需要一个星期。我们还有时间。可是我们还有更重要的事情要解决。”NC说。</p>
+<p>“什么？”</p>
+<p>“杀了草比物，然后是John。”</p>
+<h3 id="草比物：处决"><a href="#草比物：处决" class="headerlink" title="草比物：处决"></a>草比物：处决</h3><p>凌晨1点20分，秋名山顶。一辆黑色面包车缓缓地驶来。籍着夜幕，没有人发现。</p>
+<p>“杀了草靠日、比尔、无机物，今晚。”LEON最后看了一眼短信，按下删除键，然后抓起一个长长的黑色帆布包，从后门下车，登上了水塔。这里是LS城仅次于NMB大厦的最高的地方。而且地处偏僻，是个狙击的好地方。选这里当狙击点还有一个最重要的原因就是——比尔今晚将来这里飙车。</p>
+<p>LEON将狙击步枪从帆布包里拿了出来。这支狙击步枪是LEON特制版，使用25MM口径贫铀穿甲弹，有效击杀距离为5KM。每个弹夹装6发子弹。</p>
+<p>时间一点一点流逝，而LEON毫不着急。他趴在水塔顶部，身上用黑色布盖着，静静地等待着即将到手的猎物。</p>
+<p>凌晨1点26分，秋名山底传来了引擎的轰鸣声。</p>
+<p>“FD的声音。”又听到了急加速和急刹车强行甩尾的声音。“开车的人是比尔。”LEON轻声说道。</p>
+<p>“5…4…3…2…1…就是现在！”LEON突然站了起来，用双手扛起70KG的重型狙击步枪，瞄准山下的亮光，计算好弹道和提前量，然后扣下扳机！</p>
+<p>“砰！”</p>
+<p>“轰隆！”</p>
+<p>山下突然爆炸了。一颗25MM贫铀穿甲弹从前方射入，射穿了FD的引擎和比尔的下半身，整辆FD翻了起来，在空中爆炸。</p>
+<p>LEON转身，面向大海的方向。离秋名山2KM的海面上正在举行游艇聚会。无机物在里面。</p>
+<p>“砰！”</p>
+<p>“轰隆！”</p>
+<p>子弹贯穿游艇，无机物内脏全被穿入的子弹搅碎。游艇在海面上爆炸了。</p>
+<p>LEON将瞄准镜对准夜空中的一点。600倍热成像瞄准镜准心正对着一架直升机上螺旋桨。</p>
+<p>“砰！”</p>
+<p>“轰隆！”</p>
+<p>草靠日的头颅被击穿，子弹穿过薄薄的钢板击断螺旋桨主轴，直升机应声失去控制，撞上了NMB大厦。</p>
+<p>LEON放下狙击步枪，看了看手中的手表。</p>
+<p>1点30分。</p>
+<h3 id="JOHN：策划"><a href="#JOHN：策划" class="headerlink" title="JOHN：策划"></a>JOHN：策划</h3><p>午夜，6号仓库。一辆鱼蛋货柜车慢慢驶进。仓库卷帘门缓缓打开，货柜驶入仓库。卷帘门关上的一刹那，整间仓库全部灯都亮了起来。空旷的仓库有两个人迎面走向货柜车。戴墨镜的司机下了车。</p>
+<p>“带来了吗？”“嗯。三件齐全的装备。”“好。”</p>
+<p>三人中那个很壮的人搬来一张桌子。旁边的猥琐将一张大地图铺在桌面上。墨镜司机从包里拿出厚厚一叠资料。</p>
+<p>“这个人叫John。27岁，身高一米七，不是本地人。七年前，因为参加春哥组织的猥琐夏令营而来到这里，但是却没有再回去过。他在SF一带名气挺广，听说是那里的Mr.J夜店老总，拥有一支装备精良的私人军队，还有贴身保镖六人，每一个都是特种兵出身。LEON以前也是特种兵，但是这六人的等级似乎比他更高一些。我们今晚可以去Mr.J夜店打探一下情况。”司机详细地说道。</p>
+<p>“很好，”猥琐收起挤满桌子的本子和地图说道，“出发！”</p>
+<p>三人打开货柜车箱，每人从里面拿出一件高科技潜行作战服穿上，然后关上灯，钻进货柜车。壮汉调好手臂上的GPS装置。上面有三个点在闪烁。壮汉的标识是SB，猥琐的标识是NC，司机的标识是Bleach。</p>
+<p>司机打开车载电脑。“系好安全带。”司机说道。</p>
+<p>他往电脑输入一段命令：“/tele Mr.J”</p>
+<p>“啪”一声，货柜车消失了。</p>
+<h3 id="JOHN：踩点"><a href="#JOHN：踩点" class="headerlink" title="JOHN：踩点"></a>JOHN：踩点</h3><p>SF的Mr.J夜店，一辆鱼蛋货柜车凭空出现了。不过，没有人发现。</p>
+<p>货柜打开了，三个模糊的身影轻盈地下了车。</p>
+<p>“打开匿踪模式。”NC通过加密无线电说道。</p>
+<p>瞬间，三个模糊的身影消失了。如果不是走进特别仔细的观察的话，根本无法将他们从背景之中分辨出来。</p>
+<p>分头行动。SB从正门进入，NC从二楼窗口爬入，Bleach从烟囱爬入。</p>
+<p>十分钟后，他们聚集在了位于六楼的John办公室内部。</p>
+<p>里面很安静。John坐在椅子上看书。浑然不知三人正在他的正前方凝视着他。</p>
+<p>BL拔出.45消声手枪对准了他。</p>
+<p>“要杀了他吗？”BL轻声说道。</p>
+<p>“不杀。”SB回绝道。</p>
+<p>“活捉。”NC回应道。</p>
+<p>BL将手枪放回了枪袋。</p>
+<p>突然，一阵电话铃声响了起来。John听着电话，神情越来越恐惧。</p>
+<p>他按了一下桌子底下的按钮，保镖六人立刻出现了。</p>
+<p>“听好，”John神情有点慌乱，“NMB就在刚才被处决了。我感觉他们会找上门来。从现在开始，Mark和Jack你们两个二十四小时随时贴身保卫我，剩下的人每天轮换岗位。不要让我失望。”“Yes, boss. ”对话间，SB看到了Mark往这边看了一眼。“别慌，不会暴露的。”BL轻声说。</p>
+<p>“看来现在无望活捉了。”NC轻声说，“先回去商讨对策。”</p>
+<p>不一会儿，SBNCBL三人在房间里一同消失了。</p>
+<p>两分钟后，停在Mr.J门口的货柜车，也消失不见了。</p>
+<h3 id="骨骼重塑"><a href="#骨骼重塑" class="headerlink" title="骨骼重塑"></a>骨骼重塑</h3><p>第二天清晨。NC开着他的绿色TUR，独自前往被称为69区的废弃军事基地。那里早已被俊花和野牛等一大堆世界顶尖科学家作为秘密科技研发中心。CK的身体正完好无损的保存在那里。</p>
+<p>NC从裆部掏出IC卡，在门前一刷，进入了整个研发中心的核心地带。他在墙上拿起一件白大褂帅气的披在身上。上面的身份卡写着：“生物科技与医学研究院脑神经外科与人类非正常行为高级研究员CKR教授”。</p>
+<p>“讨论得怎么样了？”“就等您了，教授。”NC让两个项目主管带路，通过长长的走廊，进入了会议室。</p>
+<p>“教授，”一个年轻的科学家说道，“我们一致认为，使用生物陶瓷来重塑骨骼，这样就可以使目标醒后受到的痛苦最小，也能更快恢复体能。”</p>
+<p>“Nope. ”NC回绝道。“生物陶瓷实在太脆弱了。CK这样的特种战士，普通骨骼的强度根本不够。”</p>
+<p>“难道说……”另一个科学家说道。</p>
+<p>“对。高强度钛铝合金。”NC说道。</p>
+<p>“可是……”</p>
+<p>“确实。CK醒来之后会因为连接的身体和掉线前的身体在构造上有着巨大不同而需要经历难以忍受的极其痛苦的三分钟同步过程。但我相信他承受得住的，”NC摸着他的左手小臂说道，“如果让他自己做决定，我相信他也是这样选择的。”</p>
+<p>“但……”那名科学家还想反驳。</p>
+<p>“他不是正常人。我相信他。”NC打断了他的话，脸上写满了信心。</p>
+<p>“手术将在明天开始。散会。”</p>
+<h3 id="回归"><a href="#回归" class="headerlink" title="回归"></a>回归</h3><p>……</p>
+<p>[2013/3/20 19:20:21]重新连接等待时间： 3秒</p>
+<p>[2013/3/20 19:20:22]重新连接等待时间： 2秒</p>
+<p>[2013/3/20 19:20:23]重新连接等待时间： 1秒</p>
+<p>[2013/3/20 19:20:26]端口已打开。</p>
+<p>[2013/3/20 19:20:26]输入/y开始连接。</p>
+<p>[2013/3/20 19:20:28] [SNC]CKavel:/y</p>
+<p>[2013/3/20 19:20:29]请稍等…</p>
+<p>[2013/3/20 19:20:35]连接成功。正在与大脑建立映射…</p>
+<p>[2013/3/20 19:20:35][警告]映射建立因未知原因被暂停。</p>
+<p>[2013/3/20 19:20:36][系统]你收到了一条信息。/o打开。</p>
+<p>[2013/3/20 19:20:38] [SNC]CKavel:/0</p>
+<p>[2013/3/20 19:20:39][系统]未知命令。</p>
+<p>[2013/3/20 19:20:41] [SNC]CKavel:噗/0</p>
+<p>[2013/3/20 19:20:42] [SNC]CKavel:/o</p>
+<p>[2013/3/20 19:20:44][新消息]CK：欢迎回来！你的身体已经被我们改进了。适应新身体将会有3分钟难以忍受的疼痛感，请做好心理准备。——NC 输入/r继续。</p>
+<p>……一段死亡般的寂静…..</p>
+<p>[2013/3/20 19:21:51] [SNC]CKavel:/r</p>
+<p>[2013/3/20 19:21:52][系统]映射重新建立，请稍等。</p>
+<p>[2013/3/20 19:21:52][系统]映射成功建立。正在与身体进行同步…</p>
+<p>秘密科技研发中心1号实验室，在NC、俊花、野牛等顶尖科学家的注视下，浸泡在水里的CK的身体开始了猛烈的抖动。扭动中的CK，脸上出现了极其痛苦的表情。</p>
+<p>“心跳开始加快了！130.150.180.220.260.290.301.306！”</p>
+<p>CK剧烈的晃动着。在场的所有人当中，NC最紧张了。因为这种痛苦他是最清楚的。他的左手小臂上的骨骼正是高强度钛铝合金。</p>
+<p>“心跳停止了！”随着实验室空中回荡着的“嘀——”的声音，CK也停止了晃动。</p>
+<p>NC痛苦的闭上了眼。“果然…全身还是不行吗…”</p>
+<p>突然，CK的心脏跳动了一下！</p>
+<p>NC睁开泪眼，双手紧紧的抓着栏杆。</p>
+<p>现场所有人都震惊了！</p>
+<p>“嘀…嘀…”CK的心跳慢慢恢复了。</p>
+<p>现场所有人都欢呼了起来。</p>
+<p>CK回归了。</p>
+<h3 id="JOHN：重新策划"><a href="#JOHN：重新策划" class="headerlink" title="JOHN：重新策划"></a>JOHN：重新策划</h3><p>两天后，LV市立医院。</p>
+<p>CK张睁开了模糊的双眼。</p>
+<p>“嗯。。。”</p>
+<p>趴在床边睡觉的SB闻声醒来了。“太好了！”他点亮呼叫按钮。“护士！CK醒啦！”</p>
+<p>很快地，一名护士进来了。紧跟进来的是兔子、NC、Bleach和LEON。兔子消瘦的脸庞终于找回了昔日的光彩。</p>
+<p>“哥哥~！！！”兔子一下趴在CK身上，大哭了起来。</p>
+<p>“呐…我们先出去一下吧…”NC苦笑地说。</p>
+<p>“我同情你…”SB拍了拍NC的肩。“走吧…楼下百事我请客…”</p>
+<p>“我要冰红茶…”NC被SB带领着，垂头丧气地走出了病房。</p>
+<p>医院餐厅。</p>
+<p>“之前的计划，现在可以实施了。”NC看着手中两罐旺仔牛奶开心得像个孩子，似乎忘却了刚才悲伤的记忆。SB坐在饭堂凳子上说道。</p>
+<p>“还是先叫齐人。”SB打开CKR牌手机拨弄着。不久，野牛和俊花赶来了。野牛上身穿着西服，下身穿了一条短裤和人字拖。俊花是白背心混搭牛仔裤。看到这两人以后餐厅里所有人都躲得远远的。</p>
+<p>于是在拥挤的医院的餐厅里，六人得以霸占了一张长桌子。</p>
+<p>NC摊开大地图。SB说道：“我们再说一遍计划。听好，我们这里六个人，”他将John贴身保镖六个人的照片撒在桌子上，“我们每人盯梢一个人，把它做掉，然后伪装成他们，接近John的身边，活捉John。然后剩下的事情就交给CK了。”</p>
+<p>每人都挑了一张照片。</p>
+<p>“你们什么时候能准备好？”NC问。</p>
+<p>“1个星期吧。”LEON说。</p>
+<p>“好。一个星期后6号仓库见面。”SB说。</p>
+<p> “该上去了。走吧。”NC喝了一大口旺仔牛奶，擦了擦嘴说。</p>
+<p>其他人先走了。剩下NCSB上去5楼病房。</p>
+<p>后来，推开门见到病房里脸好红好可爱的兔子背对着门在穿衣服和CK那好满足好猥琐的表情后，NC跑了。</p>
+<h3 id="中计"><a href="#中计" class="headerlink" title="中计"></a>中计</h3><p>终于，一个星期到了。</p>
+<p>凌晨3点。空无一人的Mr.J夜店停车场保安室里摆满了监控录像屏幕。其中一个小屏幕里正在放映着停车场1号监控镜头的实时画面。</p>
+<p>外面正在下大雨，地上全是积水。一辆白色的货柜车突然凭空出现了。后车箱自动打开了，但过一会儿却自动关上了。车箱下的地面那滩原本平静的积水此时却多出了6双脚印。其中一双脚印慢慢地朝着监控镜头走近。脚印上方的空气露出一把碳纤维.45消音手枪。枪口闪了一下，监控镜头便失去了信号。</p>
+<p>Mr.J三楼，John私人军队的宿舍。</p>
+<p>“MLGB喝咖啡喝多了。。。”一名胸前挂着“Jack”的士兵边捂着JJ边往厕所走去。“都6000天没有睡觉了。。。”不远处，开着m0d隐身力场的NC从屁股里抽出一把40CM长的碳钢打刀悄悄的跟了上去。</p>
+<p>厕所。NC悄悄地推开门。</p>
+<p>而里面却空无一人。</p>
+<p>“WTF..?”NC小声说着，从潜行的半蹲姿势站起身来，关闭了隐身力场。</p>
+<p>突然，NC感到背后有一阵风袭来。</p>
+<p>幸亏NC受过专业训练，在黑影距离NC后脑勺仅有5CM的时候觉察到并只用了0.08s便提手用刀身挡住了黑影直刺过来的螺丝刀。</p>
+<p>“身手不错嘛，”黑影冷笑道。“不过没有子弹快。”</p>
+<p>“WHA。。。”NC双眼睁大。黑影的腰间闪出了.45消音手枪的反光。</p>
+<p>还没等NC反应过来，“噗”一声闷响，NC肾中弹了。</p>
+<p>NC在极大的疼痛之中渐渐失去了力气，手中的碳刀滑落地上。NC倒在了厕所地上，伤口流出好多血。NC的视野渐渐发黑。</p>
+<p>在NC渐渐失去意识时，他隐隐约约地听见耳机里传来SB断断续续的喊声：“我们暴露了！快取消计划！快取消计划！快。。。嘭！沙沙沙沙。。。。”</p>
+<p>凌晨3点40分，Mr.J夜店停车场，积水上有两双脚印慢慢地走到白色货柜车旁，车门打开，然后自动关上。接着整辆货柜车，消失在了黑暗中。</p>
+<p>……</p>
+<p>[2013/3/29 3:42:16][系统]欢迎[SNC]Bleach回到LV城。</p>
+<p>[2013/3/29 3:42:16][系统]欢迎[SNC]LEON回到LV城。</p>
+<p>CK躺在LV市立医院的大床上，身旁依偎着可爱的兔子。</p>
+<p>“呐，你说我哥哥他们做完这次任务一定能回来我们身边的对吧？”看着电视左下角的两行回城欢迎信息，兔子说道。</p>
+<p>“放心好了。他们厉害得很呢。”CK说着，把兔子一把搂在怀里，慵懒地闭上了眼。兔子枕着CK的手臂，两人一起又进入了梦乡。</p>
+<h3 id="瓮中之鳖"><a href="#瓮中之鳖" class="headerlink" title="瓮中之鳖"></a>瓮中之鳖</h3><p>“谢特…”野牛在通风管道里通过无线电听到了SB的叫喊，在内心叫道。</p>
+<p>“这个频道已经被监听了…”俊花在女生澡堂通过无线电听到了SB的叫喊，在内心想道。</p>
+<p>于是凭借着他们多年猥琐的默契，野牛和俊花同时将通话频道调成了“52694”。</p>
+<p>“下一步怎么办？”野牛说道。</p>
+<p>“先想办法回医院。CK可能有危险。”俊花小声地说，旁边传来女生的笑声。</p>
+<p>“MLGB难怪他们找不到你…你都去的哪…”野牛吐槽道。</p>
+<p>凌晨4点10分，LV市立医院停车场。一辆白色面包车缓缓驶入。</p>
+<p>CK越睡越不安。他的脑海里浮现出的是刚才电视的欢迎信息。</p>
+<p>“NCSB野牛俊花呢？”</p>
+<p>CK猛然睁开眼，先帮熟睡中的兔子盖好被子，转身拿起床头的SNC特制版镀银M1911，装上消音器，然后转身出门，锁好病房，靠在电梯门口一侧静静地守着。</p>
+<p>白色货柜车停好后，LEON和Bleach从车上下来。Bleach拔出了碳钎维.45消音手枪，LEON收起NC的碳刀，两人走进了LV市立医院。</p>
+<h3 id="背叛"><a href="#背叛" class="headerlink" title="背叛"></a>背叛</h3><p>电梯缓缓上升…</p>
+<p>“1…2…3…4…5…叮！”</p>
+<p>CK紧握着枪把，吞了一口唾沫。</p>
+<p>门打开了。Bleach从里面出来，径直走向病房。</p>
+<p>随后的LEON刚一出来便被CK劫持住了。</p>
+<p>“BL!我TMD在这里！”CK大叫道。</p>
+<p>Bleach被身后突如其来的吼叫吓到了。</p>
+<p>“很聪明嘛，”Bleach定了定神，缓缓转过身来。</p>
+<p>Bleach向LEON使了一个眼色，LEON右手伸到背后抽出碳刀一个转手往CK的肚子上划了一个大口子，然后向后一推，CK痛苦地向后倒去。</p>
+<p>LEON一脚将CK手里的M1911踢掉，然后走到一边。</p>
+<p>“你。。。那把刀。。。NC他。。。”CK忍着痛大口大口喘气道。</p>
+<p>“NC? 啊，恐怕早已在厕所里被老鼠吃掉了吧！”Bleach放肆地笑着。</p>
+<p>“还有你的SB，我可是亲眼看着他被我的特制手榴弹炸得四分五裂呢。”LEON平静地说着。</p>
+<p>Bleach缓缓举起手中的.45消音手枪，打开了保险。</p>
+<p>“艹…”CK倒在地上，痛苦地说，“为什么…”</p>
+<p>“因为我和Bleach从一开始就是JOHN手下的人。”LEON平静地说。</p>
+<p>“大家都只是打一份工而已。”Bleach右手食指慢慢地伸到扳机上，慢慢扣紧。</p>
+<p>“对不起了。”</p>
+<p>CK绝望地闭上了眼。</p>
+<p>“啊~！！”“什么？！”</p>
+<p>“噗！”“Biu！”</p>
+<p>……</p>
+<h3 id="以下全部事件发生在20秒以内"><a href="#以下全部事件发生在20秒以内" class="headerlink" title="以下全部事件发生在20秒以内"></a>以下全部事件发生在20秒以内</h3><p>“啊~！！”“什么？！”</p>
+<p>“噗！”“Biu！”</p>
+<p>子弹擦着CK的头发噌地飞过去。</p>
+<p>CK猛地睁开眼，应激运至全身的肾上腺素使他获得极快的反应速度。</p>
+<p>眼前的景象仿佛全都静止了。CK看到兔子正浮在半空中，右脚狠狠地揣在Bleach的脸上。Bleach也浮在空中，失去重心的Bleach正在空中做着斜抛运动。一旁的LEON还没意识到眼前的一切，正打算转身回头看。</p>
+<p>CK猛地一个鲤鱼打挺，整个身体顺势前空翻180度，接着单手撑地来了个托马斯回旋甩腿正中LEON的脸，另一只手向前夺刀然后用刀背狠狠地敲了一下LEON的头，LEON还没意识到眼前的一切就昏了过去。</p>
+<p>CK抬头一瞥，竟发现Bleach正掐着兔子的脖子举到了半空中。虽然兔子脚法一流，但是在身高与体格方面注定不不上186壮汉Bleach。</p>
+<p>CK没有多想，直接将手中的刀甩了出去。</p>
+<p>NC的碳钢大打刀，在空中旋转数圈，径直插中了Bleach的右眼。</p>
+<p>Bleach当场死亡。</p>
+<p>4时50分，LV市立医院5楼。</p>
+<p>一个瘫倒在地上喘气的女孩，一个跪在地上全身肌肉绷紧的男人，一个扬起菊花昏迷了的男人，还有一个倒在血泊当中的男人。</p>
+<h3 id="血战：前夕"><a href="#血战：前夕" class="headerlink" title="血战：前夕"></a>血战：前夕</h3><p>“法克…他们先来了一步…”</p>
+<p>5点整，俊花和野牛骑着三轮车气喘吁吁地出现在LV市立医院大门口。</p>
+<p>“诶！快看大门！”</p>
+<p>医院门被推开了。CK满身是血、由兔子搀扶着慢慢走出大门。CK见到野牛和俊花，冷冷地说道：“杀回Mr.J。”</p>
+<p>俊花赶紧调出m0d给CK刷一个血包，野牛掏出胶囊往地上一扔，一架直升机立刻出现在医院空地。</p>
+<p>“我也可以去战斗吗？”兔子轻声地说，“我想为哥哥复仇。”</p>
+<p>“嗯。”CK信赖地看着她，“片甲不留。”</p>
+<p>四人登上直升机，直升机腾地一下升空了。临走时，俊花打开他的CKR牌手机，输入“/tp LEON car /tp Bleach car”，野牛操控着直升机缓缓地对准了停车场上唯一的白色面包车，按下操纵杆，6000发“地狱火改”小型战术核弹从直升机两侧飞出，向那辆面包车疯狂喷泄着。</p>
+<p>野牛一拧操纵杆，直升机转头朝Mr.J方向飞去。</p>
+<p>与此同时，Mr.J夜店…</p>
+<p>“法克…”</p>
+<p>在熊熊烈火中，一个壮汉一把推开身上的钢筋水泥天花板，站起身来，拍拍身上的尘土，然后从屁股袋里拿出一支POCKY，随意地伸到旁边的烈火上烤了一圈，然后一口把整根POCKY吃掉了。</p>
+<h3 id="SB的复仇"><a href="#SB的复仇" class="headerlink" title="SB的复仇"></a>SB的复仇</h3><p>“…他大概死也不会知道我装了无敌CLEO…”</p>
+<p>壮汉看了看插在裆部的U盘，轻轻说道。</p>
+<p>壮汉轻轻地捏了一下裆部，伸手便从里面掏出一把MINIGUN。接在上面的蓝色弹药箱上写着一行字“SB私改TNT弹”。这种弹药每发杀伤力相当于700kgTNT爆炸所造成的威力。而枪身使用了SB自制微秒级发射单元和电子后坐力稳定器，可以让此枪在0.1s内发射出最多4000发子弹而枪身最多只抬高0.003mm。</p>
+<p>“IT’S TIME TO PAYBACK! ”</p>
+<p>“轰隆隆隆隆…”</p>
+<p>30km开外，CK一行人便听到了SF城传来的一阵阵闷响。</p>
+<p>“打雷了？”兔子问。</p>
+<p>“不，是俊花放屁了。”野牛答。</p>
+<p>“尼玛卖批…”俊花下意识地挪了挪屁股，“老子刚放那个没声音…”</p>
+<p>“MLGB!”CK打开窗户，“怪不得刚才臭到爆炸还以为生化危机了…”</p>
+<p>“嘭嘭嘭！”</p>
+<p>Mr.J夜店里到处是烧焦的残肢和爆炸的痕迹。SB一路杀过去，到达了NC被伏击的厕所门前。</p>
+<p>SB猛地撞开门把躺在地上的NC抱起搭在肩膀上，又杀了出去。</p>
+<p>烧焦的尸体旁，破碎的电视左侧隐隐约约显着几行红色的字。</p>
+<p>“[SNC]SBill 90连杀！”</p>
+<p>“[SNC]SBill 100连杀！”</p>
+<p>“[SNC]SBill 200连杀！”</p>
+<h3 id="我把你们包围了"><a href="#我把你们包围了" class="headerlink" title="我把你们包围了"></a>我把你们包围了</h3><p>Mr.J夜店火光熊熊。SB一脚踹飞大门，肩扛着NC从里面走出来。</p>
+<p>“谁敢和我决一死战！”</p>
+<p>一声大吼，SB朝着包围着夜店大门的私人军队装甲车和躲在车后不敢露出半个头的雇佣兵疯狂地倾泻着子弹。SB私改TNT子弹冲击力就是强，竟然能把重量达90T的移动要塞装甲车从正面打翻，并且一路翻滚掉进旁边的海里，激起几米高的水花。装甲车全都被打进水里了，雇佣兵们见没有了掩护，纷纷四处逃窜。</p>
+<p>SB哪里肯罢休，于是扔掉NC右手抽出一把西瓜刀，左手伸进裆部，轻轻一捏，立刻瞬移到逃得最慢的士兵身后，对着脖子就是一划，士兵应声倒地。SB一捏裆部，瞬移到另一士兵身后，再一捏裆部，又瞬移到另一士兵身后。SB捏裆部的频率变得飞快，SB以超过光速的速度瞬移在每一个士兵的身后，就好像SB影分身之术。</p>
+<p>士兵们看着彼此身后好像都有一个SB在跟着，不由得吓破了胆，跑得更快了。</p>
+<p>SB大喊一声“我已经把你们包围了！”手起刀落间，8000多名四处逃窜的雇佣兵，几乎在同时应声倒地。苍白的天空顷刻被殷红的鲜血染蚀。</p>
+<p>SB最后瞬移回到了NC身边，右手把NC从地上搂起来，左手从裆部抽出一把自动伞，轻轻一按，自动伞喀的一声撑开了。SB将伞向右稍稍一倾，帅气地为NC遮挡天上落下的血雨。</p>
+<p>过了没多久，野牛开着直升机飞来了。SB看到了金门大桥上方那摇摇晃晃的黑点慢慢变大，轻轻笑了一声，便倒在了地上。</p>
+<p>“啊，野牛的开飞机技术还是那么的水。”</p>
+<h3 id="全面开战"><a href="#全面开战" class="headerlink" title="全面开战"></a>全面开战</h3><p>“嘟嘟嘟嘟嘟嘟嘟嘟…”</p>
+<p>直升机摇摇晃晃地降落在Mr.J门前，一片血红色的大空地上。舱门猛地一打开，兔子跳下舱门就弯腰呕吐起来。CK站在兔子身后拍着她的背，俊花、野牛则奔向失去知觉倒在血泊中的SB和NC。</p>
+<p>野牛往他的CKR牌智能手表上飞快地输入“/give SB health /give NC俺妹H”</p>
+<p>SB勉强地醒来了。NC的下面也很精神。</p>
+<p>SB双手撑在地上问野牛，这是怎么一回事？</p>
+<p>俊花把NC被Bleach夺走的碳刀拿了出来，晃了一晃，上面的血迹在碳钢表面的哑光上清晰可见。</p>
+<p>野牛说，是LEON和Bleach。John远比我们厉害得多。</p>
+<p>SB盯着NC精神的下面，脸上的凶气越发浓重。</p>
+<p>CK和兔子在吐完以后，也走了过来。</p>
+<p>野牛往他的CKR牌智能手表上飞快地输入“/tp NC LOVEHOTEL”，NC啪地一声消失了。</p>
+<p>“Time for payback. 这次是为了NC。”</p>
+<p>五人重新登上了直升机。这次是SB在开。</p>
+<p>等直升机飞过了金门大桥，SB掏出CKR牌手机，给“10086”打了个电话。</p>
+<p>“指令已接受。”电话那头温柔的女声说到。就在这时，Mr.J的上空像雨点一般降下上万颗小胖子核弹。“嘭嘭嘭嘭嘭！”，Mr.J发出了连续而巨大的爆炸，5层高的大楼分解成无数尘埃往四面八方炸开。整栋大楼转眼间消失殆尽，只剩下地上厚厚的粉尘。</p>
+<p>……</p>
+<p>[2013/3/29 6:00:00][系统]欢迎JOHN回到SF城。</p>
+<p>[2013/3/29 6:00:08] JOHN:。</p>
+<p>[2013/3/29 6:00:18] JOHN:/admin login admin</p>
+<p>[2013/3/29 6:00:19][系统][管理员]登陆中…</p>
+<p>[2013/3/29 6:00:26][系统][管理员]欢迎你，管理员[ADMIN]JOHN。</p>
+<p>（全文完）</p>
+
+      
     </div>
+    <footer class="article-footer">
+      <a data-url="http://wagon.kavel.cn/articles/snc-revengence.html" data-id="cjj2zofzy0011lswde6lg7srd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/snc/">snc</a></li></ul>
+
+    </footer>
+  </div>
+  
 </article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
     
-
-
-    </div></section>
-
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>关注我 :</p>
-        <ul class="social-links">
-            
-            
-            <li>
-                <a class="social-tooltip" title="facebook" href="https://www.facebook.com/jiawei96w"
-                   target="_blank">
-                    <i class="icon fa fa-facebook"></i>
-                </a>
-            </li>
-            
-            
-            
-            <li>
-                <a class="social-tooltip" title="linkedin" href="https://cn.linkedin.com/in/kavelcortex"
-                   target="_blank">
-                    <i class="icon fa fa-linkedin"></i>
-                </a>
-            </li>
-            
-            
-            
-            <li>
-                <a class="social-tooltip" title="github" href="https://github.com/KavelCortex"
-                   target="_blank">
-                    <i class="icon fa fa-github"></i>
-                </a>
-            </li>
-            
-            
-            
-            <li>
-                <a class="social-tooltip" title="steam" href="http://steamcommunity.com/id/wjw_wwasd"
-                   target="_blank">
-                    <i class="icon fa fa-steam"></i>
-                </a>
-            </li>
-            
-            
-        </ul>
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/article/">文章</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">编程</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/phpnoob/">php造车轮</a></li></ul></li></ul>
     </div>
-    
-    <div class="widgets-container">
-        
-        
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">最新文章</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/articles/post-via-cas.html" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/cas.png)" alt="URLConnection自动登录深大CAS认证平台：提交表单实现方案" class="thumbnail-image"></span>
-    
-    
-</a>
+  </div>
 
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/programming/">编程</a></p>
-                            <p class="item-title"><a href="/articles/post-via-cas.html" class="title">URLConnection自动登录深大CAS认证平台：提交表单实现方案</a></p>
-                            <p class="item-date"><time datetime="2017-04-14T16:00:00.000Z" itemprop="datePublished">2017-04-15</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/articles/hexo-installment-log.html" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://hexo.io/logo.svg)" alt="hexo小撇步：服务器架设hexo过程全记录" class="thumbnail-image"></span>
-    
-    
-</a>
 
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/programming/">编程</a></p>
-                            <p class="item-title"><a href="/articles/hexo-installment-log.html" class="title">hexo小撇步：服务器架设hexo过程全记录</a></p>
-                            <p class="item-date"><time datetime="2017-03-03T16:00:00.000Z" itemprop="datePublished">2017-03-04</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/articles/letsencrypt-on-centos7.html" class="thumbnail">
+  
     
-    
-        <span style="background-image:url(https://letsencrypt.org/images/letsencrypt-logo-horizontal.svg)" alt="给网站用上免费SSL：Let&#39;s Encrypt操作记录" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/programming/">编程</a></p>
-                            <p class="item-title"><a href="/articles/letsencrypt-on-centos7.html" class="title">给网站用上免费SSL：Let&#39;s Encrypt操作记录</a></p>
-                            <p class="item-date"><time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/articles/php-framework-using-singleton-with-GET.html" class="thumbnail">
-    
-    
-        <span style="background-image:url(images/php.jpg)" alt="php造车轮：基于单主页+GET请求的模块化框架" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/programming/">编程</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/programming/phpnoob/">php造车轮</a></p>
-                            <p class="item-title"><a href="/articles/php-framework-using-singleton-with-GET.html" class="title">php造车轮：基于单主页+GET请求的模块化框架</a></p>
-                            <p class="item-date"><time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/articles/rewire_https.html" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/programming/">编程</a></p>
-                            <p class="item-title"><a href="/articles/rewire_https.html" class="title">配置好rewire，开启全站https模式</a></p>
-                            <p class="item-date"><time datetime="2017-02-27T16:00:00.000Z" itemprop="datePublished">2017-02-28</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CAS/">CAS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Framework/">Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTPS/">HTTPS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Let-s-Encrypt/">Let's Encrypt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSL/">SSL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php造车轮/">php造车轮</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/snc/">snc</a></li></ul>
     </div>
+  </div>
 
-        
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/article/">文章</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/programming/">编程</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/programming/phpnoob/">php造车轮</a><span class="category-list-count">1</span></li></ul></li></ul>
-        </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CAS/" style="font-size: 10px;">CAS</a> <a href="/tags/Framework/" style="font-size: 10px;">Framework</a> <a href="/tags/HTTPS/" style="font-size: 20px;">HTTPS</a> <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/Let-s-Encrypt/" style="font-size: 10px;">Let's Encrypt</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/SSL/" style="font-size: 20px;">SSL</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/nginx/" style="font-size: 20px;">nginx</a> <a href="/tags/php造车轮/" style="font-size: 10px;">php造车轮</a> <a href="/tags/snc/" style="font-size: 10px;">snc</a>
     </div>
+  </div>
 
-
-        
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">归档</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">九月 2009</a><span class="archive-list-count">1</span></li></ul>
-        </div>
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">九月 2009</a></li></ul>
     </div>
+  </div>
 
 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
         
+          <li>
+            <a href="/articles/post-via-cas.html">URLConnection自动登录深大CAS认证平台：提交表单实现方案</a>
+          </li>
         
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">标签</h3>
-        <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CAS/">CAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Framework/">Framework</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTPS/">HTTPS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA/">JAVA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Let-s-Encrypt/">Let's Encrypt</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSL/">SSL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php造车轮/">php造车轮</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/snc/">snc</a><span class="tag-list-count">1</span></li></ul>
-        </div>
+          <li>
+            <a href="/articles/hexo-installment-log.html">hexo小撇步：服务器架设hexo过程全记录</a>
+          </li>
+        
+          <li>
+            <a href="/articles/letsencrypt-on-centos7.html">给网站用上免费SSL：Let&#39;s Encrypt操作记录</a>
+          </li>
+        
+          <li>
+            <a href="/articles/php-framework-using-singleton-with-GET.html">php造车轮：基于单主页+GET请求的模块化框架</a>
+          </li>
+        
+          <li>
+            <a href="/articles/rewire_https.html">配置好rewire，开启全站https模式</a>
+          </li>
+        
+      </ul>
     </div>
+  </div>
 
-
-        
-        
-    <div class="widget-wrap widget-float">
-        <h3 class="widget-title">标签云</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/CAS/" style="font-size: 10px;">CAS</a> <a href="/tags/Framework/" style="font-size: 10px;">Framework</a> <a href="/tags/HTTPS/" style="font-size: 20px;">HTTPS</a> <a href="/tags/JAVA/" style="font-size: 10px;">JAVA</a> <a href="/tags/Let-s-Encrypt/" style="font-size: 10px;">Let's Encrypt</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/SSL/" style="font-size: 20px;">SSL</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/nginx/" style="font-size: 20px;">nginx</a> <a href="/tags/php造车轮/" style="font-size: 10px;">php造车轮</a> <a href="/tags/snc/" style="font-size: 10px;">snc</a>
-        </div>
-    </div>
-
-
-        
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="https://www.kavel.cn/">首页</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-        
-        
-    </div>
+  
 </aside>
-
-                </div>
-            </div>
-        </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2018 Jiawei Wang</p>
-                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
-            </div>
-        </div>
-    </div>
-</footer>
         
-    
-    <script>
-    var disqus_shortname = 'kavelcn';
-    
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
-
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-<!-- Baidu Zhanzhang -->
-<script>
-    (function(){
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        }
-        else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
-<!-- Baidu Zhanzhang Ends-->
-
-<!-- Linkedin Badge -->
-<!--script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script-->
-<!-- Linkedin Badge Ends-->
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Jiawei Wang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
 </body>
 </html>
