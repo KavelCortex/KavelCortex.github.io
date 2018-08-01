@@ -38,6 +38,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[配置好rewire，开启全站https模式]]></title>
+    <url>%2Farchives%2Frewire_https.html</url>
+    <content type="text"><![CDATA[在一篇文章《给网站用上免费SSL：Let’s Encrypt操作记录》中，我们使用了Let’s Encrypt给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置： 12345erver&#123; listen 80; server_name www.kavel.cn kavel.cn; rewrite ^(.*)$ https://www.kavel.cn/ permanent; &#125; 保存好后重启nginx，所有http 12345678910111213141516171819202122server&#123; listen 80; server_name www.kavel.cn kavel.cn; rewrite ^(.*)$ https://www.kavel.cn$uri permanent; &#125; server &#123; listen 443 ssl; server_name localhost; ssl_certificate /etc/letsencrypt/live/&#123;域名&#125;/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/&#123;域名&#125;/privkey.pem; ssl_session_timeout 5m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL; ssl_prefer_server_ciphers on; location / &#123; index index.php index.html; &#125; &#125;]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>SSL</tag>
+        <tag>HTTPS</tag>
+        <tag>nginx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[php造车轮：基于单主页+GET请求的模块化框架]]></title>
     <url>%2Farchives%2Fphp-framework-using-singleton-with-GET.html</url>
     <content type="text"><![CDATA[上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求是什么。 ###GET请求在用户与服务器之间进行请求-响应时，两种最常被用到的方法分别为：GET和POST。 其中，GET请求的查询字符串是直接写在URL中进行发送的：1https://www.kavel.cn/?page=pdf 在这段URL中，?表示GET请求的开头，而page=pdf则是查询的键值对。 而GET请求也有如下的一些原则： GET 请求可被缓存 GET 请求可保留在浏览器历史记录中 GET 请求可被收藏为书签 GET 请求不应在处理敏感数据时使用 GET 请求有长度限制 GET 请求只应当用于取回数据 在PHP中，我们使用$value=$_GET[$key]方法来获取GET的内容。其中$key为我们自己定义的等号左边的内容（如page），称为键。而$value的内容即为我们需要获取的等号右边的内容（如pdf），称为值。 而这套框架的核心原理，则是利用了GET传递请求的可保留性，在单个页面（如index.php）通过GET请求获取到用户传来的不同的值 ，并根据值插入不同的模块页展现给用户。这是一种非常容易实现的模块化方案。 话不多说，赶紧进入实战环节。 ###获取用户传来的GET信息： 123456789101112131415161718/*File name: index.php*///获取插入的子页面名称if (isset($_GET['page'])) &#123; $p = sterilizeInput($_GET['page']);&#125; elseif (isset($_POST['page'])) &#123; $p = $_POST['page'];&#125; else &#123; $p = 'index';&#125;//任何GET表单在赋值前必须使用消毒函数function sterilizeInput($data) &#123; $data = trim($data); //移除字符串两侧的空白字符 $data = stripslashes($data); //移除字符串中的所有反斜杠 $data = htmlspecialchars($data); //将预定义的字符转换为 HTML 实体，可过滤单引号、双引号等 return $data;&#125; 我们应当提防用户能够通过GET请求上传恶意代码使得对网页进行的任意操作成为可能。所以在进行赋值前，使用消毒函数对值进行消毒非常重要。 ###根据GET信息选择要插入的模块页面 12345678910111213141516171819202122232425/*File name: index.php*///选择插入的子页面switch ($p) &#123; case 'index': $page = 'welcome.php'; $page_title = '主页'; break; case 'pdf': $page='pdf.php'; $page_title='课堂笔记'; break; case 'resume': $page='resume.html'; $page_title='简历'; break; case '404': header("HTTP/1.0 404 Not Found"); exit(); break; default: header("HTTP/1.0 404 Not Found"); exit(); break;&#125; 在这里，我们通过switch-case方式对得到的值进行判断，得到对应的页面文件名称。还要记得如果值对所有条件都不符合时，跳转到404页面。 ###插入模块页面 1234567891011121314151617/*File name: index.php*///确保子页面存在if (!file_exists('./modules/' . $page)) &#123; header("HTTP/1.0 404 Not Found"); exit();&#125;//插入页眉文件include_once('./includes/' . 'header.inc.html');//插入子页面include('./modules/' . $page);//插入页脚文件include_once('./includes/' . 'footer.inc.html'); 使用include($page)函数进行页面的插入。在插入页面前，还需要判断该页面是否真实存在。如果不存在，记得跳转到404页面。 为了实现模块化，我将整个页面分成三部分，分别为页眉、正文和页脚。页眉负责页面的头文件、CSS等。通过插入相同的页眉文件，我们可以确保整个网站都能得到统一的风格。 使用模块化的框架可以极大地方便模板页的开发。因为这样直接省去了编写每个页面都相同且必须的头文件和CSS等项，直接从&lt;body&gt;部分开始下笔。 我在这里则更加极端（lǎn），模板页只负责一个&lt;div&gt;，其余内容都在页眉和页脚文件中。 这里是当page=index时，网页的组成内容：12345678910/*File name: header.inc.html*/&lt;?php if (!isset($page_title)) $page_title='主页';?&gt;&lt;!DOCTYPE html&gt;&lt;html lang="zh-CN"&gt; &lt;head&gt; &lt;title&gt;&lt;?=$page_title?&gt; - kavel.cn&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div class="container body-content"&gt; 在页眉文件里，&lt;title&gt;标签里面的值$page_title由index.php定义。使用这种模块化方式的好处之一，就是在index.php内定义的变量，可以当作全局变量，在所有模块页面都能任意使用。 1234567891011/*File name: welcome.php*/function randomSplash()&#123;...&#125;&lt;div class="jumbotron"&gt; &lt;div class="container"&gt; &lt;h1&gt;&lt;?=randomSplash()?&gt;&lt;/h1&gt; &lt;p&gt;这里是嘉维小站，我是王嘉维。&lt;/p&gt; &lt;p&gt;&lt;a class="btn btn-primary btn-lg" href="/blog" role="button"&gt;进入博客&lt;/a&gt;&lt;/p&gt; &lt;/div&gt;&lt;/div&gt; 可以看到在模块页面内只包含一个&lt;div&gt;。这极大地方便了模块页的开发，也不需要担心样式问题。 123456789/*File name: footer.inc.html*/ &lt;/div&gt; &lt;footer class="container body-content"&gt; &lt;hr /&gt; &lt;p&gt;&amp;copy; &lt;?=date("Y",time())?&gt; Jiawei W.&lt;/p&gt; &lt;/footer&gt; &lt;/body&gt;&lt;/html&gt; 页尾文件则是包含各种结束标签。当然&lt;footer&gt;标签也存在于这里。 本站首页就是使用这种框架写成的，如果感兴趣的话可以点击链接参观： https://www.kavel.cn/]]></content>
@@ -49,19 +62,6 @@
         <tag>PHP</tag>
         <tag>Framework</tag>
         <tag>php造车轮</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[配置好rewire，开启全站https模式]]></title>
-    <url>%2Farchives%2Frewire_https.html</url>
-    <content type="text"><![CDATA[在一篇文章《给网站用上免费SSL：Let’s Encrypt操作记录》中，我们使用了Let’s Encrypt给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置： 12345erver&#123; listen 80; server_name www.kavel.cn kavel.cn; rewrite ^(.*)$ https://www.kavel.cn/ permanent; &#125; 保存好后重启nginx，所有http 12345678910111213141516171819202122server&#123; listen 80; server_name www.kavel.cn kavel.cn; rewrite ^(.*)$ https://www.kavel.cn$uri permanent; &#125; server &#123; listen 443 ssl; server_name localhost; ssl_certificate /etc/letsencrypt/live/&#123;域名&#125;/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/&#123;域名&#125;/privkey.pem; ssl_session_timeout 5m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL; ssl_prefer_server_ciphers on; location / &#123; index index.php index.html; &#125; &#125;]]></content>
-      <categories>
-        <category>编程</category>
-      </categories>
-      <tags>
-        <tag>SSL</tag>
-        <tag>HTTPS</tag>
-        <tag>nginx</tag>
       </tags>
   </entry>
   <entry>
