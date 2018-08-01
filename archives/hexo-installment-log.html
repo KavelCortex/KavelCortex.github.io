@@ -108,25 +108,28 @@
 
 
 
-  <meta name="description" content="在一篇文章《给网站用上免费SSL：Let’s Encrypt操作记录》中，我们使用了Let’s Encrypt给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置： 12345erver&amp;#123;        listen 80;        server_name www.kavel.cn kav">
-<meta name="keywords" content="SSL,HTTPS,nginx">
+  <meta name="description" content="刚一申请到域名和服务器，第一件事情便是架设博客。当时想找一个方便省事的博客框架，于是看到当时吹得天花乱坠的Wordpress，便不小心掉进了大坑。还没写几篇文章，便已经开始遭遇各种麻烦。最难忍的一点就是不知道为何载入极慢。网上说是由于自带google字库的原因，可是下载了好几个去字库插件变着花样试却都是徒劳（你可以想象在设置页面中顶着30秒以上一页的载入速度在插件页面苦苦寻找并一个一个尝试的滋味吗">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置好rewire，开启全站https模式">
-<meta property="og:url" content="http://www.kavel.cn/articles/rewire_https.html">
+<meta property="og:title" content="hexo小撇步：服务器架设hexo过程全记录">
+<meta property="og:url" content="http://www.kavel.cn/archives/hexo-installment-log.html">
 <meta property="og:site_name" content="嘉维小站">
-<meta property="og:description" content="在一篇文章《给网站用上免费SSL：Let’s Encrypt操作记录》中，我们使用了Let’s Encrypt给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置： 12345erver&amp;#123;        listen 80;        server_name www.kavel.cn kav">
+<meta property="og:description" content="刚一申请到域名和服务器，第一件事情便是架设博客。当时想找一个方便省事的博客框架，于是看到当时吹得天花乱坠的Wordpress，便不小心掉进了大坑。还没写几篇文章，便已经开始遭遇各种麻烦。最难忍的一点就是不知道为何载入极慢。网上说是由于自带google字库的原因，可是下载了好几个去字库插件变着花样试却都是徒劳（你可以想象在设置页面中顶着30秒以上一页的载入速度在插件页面苦苦寻找并一个一个尝试的滋味吗">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-02-28T15:24:20.161Z">
+<meta property="og:image" content="http://www.kavel.cn/archives/hexo-installment-log/1_npm.png">
+<meta property="og:image" content="http://www.kavel.cn/archives/hexo-installment-log/2_dir.png">
+<meta property="og:updated_time" content="2018-01-23T11:00:23.103Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="配置好rewire，开启全站https模式">
-<meta name="twitter:description" content="在一篇文章《给网站用上免费SSL：Let’s Encrypt操作记录》中，我们使用了Let’s Encrypt给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置： 12345erver&amp;#123;        listen 80;        server_name www.kavel.cn kav">
+<meta name="twitter:title" content="hexo小撇步：服务器架设hexo过程全记录">
+<meta name="twitter:description" content="刚一申请到域名和服务器，第一件事情便是架设博客。当时想找一个方便省事的博客框架，于是看到当时吹得天花乱坠的Wordpress，便不小心掉进了大坑。还没写几篇文章，便已经开始遭遇各种麻烦。最难忍的一点就是不知道为何载入极慢。网上说是由于自带google字库的原因，可是下载了好几个去字库插件变着花样试却都是徒劳（你可以想象在设置页面中顶着30秒以上一页的载入速度在插件页面苦苦寻找并一个一个尝试的滋味吗">
+<meta name="twitter:image" content="http://www.kavel.cn/archives/hexo-installment-log/1_npm.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://www.kavel.cn/articles/rewire_https.html"/>
+  <link rel="canonical" href="http://www.kavel.cn/archives/hexo-installment-log.html"/>
 
 
 
@@ -136,7 +139,7 @@
   };
 </script>
 
-  <title>配置好rewire，开启全站https模式 | 嘉维小站</title>
+  <title>hexo小撇步：服务器架设hexo过程全记录 | 嘉维小站</title>
   
 
 
@@ -200,7 +203,7 @@
     </div>
     
       
-        <h1 class="site-subtitle" itemprop="description">kavel.cn, now on <a href="https://bandwagonhost.com/aff.php?aff=17531">Bandwagon</a>!</h1>
+        <h1 class="site-subtitle" itemprop="description">kavel.cn, now on <a target="_blank" href="https://bandwagonhost.com/aff.php?aff=17531">Bandwagon</a>!</h1>
       
     
   </div>
@@ -240,7 +243,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-archives menu-item-active">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">6</span></a>
   </li>
@@ -324,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/articles/rewire_https.html">
+    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/archives/hexo-installment-log.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jiawei Wang">
@@ -341,7 +344,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">配置好rewire，开启全站https模式
+          <h2 class="post-title" itemprop="name headline">hexo小撇步：服务器架设hexo过程全记录
               
             
           </h2>
@@ -366,12 +369,24 @@
                 
               
 
-              <time title="创建时间：02/28/2017 00:00:00 / 修改时间：23:24:20" itemprop="dateCreated datePublished" datetime="2017-02-28T00:00:00+08:00">02/28/2017</time>
+              <time title="创建时间：03/04/2017 00:00:00" itemprop="dateCreated datePublished" datetime="2017-03-04T00:00:00+08:00">03/04/2017</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：01/23/2018 19:00:23" itemprop="dateModified" datetime="2018-01-23T19:00:23+08:00">01/23/2018</time>
               
             
           </span>
@@ -403,10 +418,10 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/articles/rewire_https.html#comments" itemprop="discussionUrl">
+                <a href="/archives/hexo-installment-log.html#comments" itemprop="discussionUrl">
                 
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="articles/rewire_https.html" itemprop="commentCount"></span>
+                        data-disqus-identifier="archives/hexo-installment-log.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -436,7 +451,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">974</span>
+                <span title="本文字数">2.3k</span>
               
 
               
@@ -450,7 +465,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -470,27 +485,65 @@
       
 
       
-        <p>在一篇文章<a href="https://www.kavel.cn/blog/programming/letsencrypt-on-centos7.html">《给网站用上免费SSL：Let’s Encrypt操作记录》</a>中，我们使用了<a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">erver&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.kavel.cn kavel.cn;</span><br><span class="line">        rewrite ^(.*)$ https://www.kavel.cn/ permanent;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>保存好后重启nginx，所有http</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.kavel.cn kavel.cn;</span><br><span class="line">        rewrite ^(.*)$ https://www.kavel.cn$uri permanent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        ssl_certificate /etc/letsencrypt/live/&#123;域名&#125;/fullchain.pem;</span><br><span class="line">        ssl_certificate_key  /etc/letsencrypt/live/&#123;域名&#125;/privkey.pem;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">       	    index	    index.php  index.html;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+        <p>刚一申请到域名和服务器，第一件事情便是架设博客。当时想找一个方便省事的博客框架，于是看到当时吹得天花乱坠的Wordpress，便不小心掉进了大坑。还没写几篇文章，便已经开始遭遇各种麻烦。最难忍的一点就是不知道为何载入极慢。网上说是由于自带google字库的原因，可是下载了好几个去字库插件变着花样试却都是徒劳（你可以想象在设置页面中顶着30秒以上一页的载入速度在插件页面苦苦寻找并一个一个尝试的滋味吗，那大概是地狱的滋味了）。而博客也因此处于长时间停更的状态（实在是没有心情写了）。</p>
+<p>于是乎，趁着一次误删除操作的机会（把主页所在的文件夹整一个删掉了），我踏上了寻找更好的博客框架之路。于是乎，驻足在了<a href="https://hexo.io/" target="_blank" rel="noopener">HEXO</a>面前。</p>
+<p>之前看到很多有关于hexo的教程与内容，基本上都是关于如何在Github Pages中的部署，在服务器中部署的内容极少，所以一直没有认真地考虑过hexo的可行性。于是抱着试一试的态度重新审视了一遍hexo，发现他原来是一个生成静态站点的工具。而因为nginx拥有对静态页面的处理的特殊加成，于是两者一拍即合，浑然天成，当即决定使用hexo作为新的博客框架。</p>
+<p>Hexo是一款由<a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a>开发的博客框架。它的安装需要进行以下步骤：</p>
+<ul>
+<li>安装Node.js</li>
+<li>安装Hexo</li>
+</ul>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>安装之前，我们需要更新yum源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum -y update</span><br></pre></td></tr></table></figure>
+<p>接下来，从官网下载Node.js的最新源码来进行编译安装。</p>
+<p>首先我们需要安装用来进行编译操作的<code>Development Tools</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yum -y groupinstall &quot;Development Tools&quot;</span><br></pre></td></tr></table></figure>
+<p>接下来，进入用来编译源码的目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd /uer/local/src</span><br></pre></td></tr></table></figure>
+<p>现在可以准备开始下载Node.js的源码了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget http://nodejs.org/dist/node-latest.tar.gz</span><br></pre></td></tr></table></figure>
+<p>等待下载完毕后，即可解压文件到当前目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ tar zxf node-*.tar.gz  </span><br><span class="line">$ cd node-v*</span><br></pre></td></tr></table></figure>
+<p>准备进行编译：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./configure</span><br></pre></td></tr></table></figure>
+<p>等待几分钟配置好后，输入命令开始进行漫长的编译：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make</span><br></pre></td></tr></table></figure>
+<p>期间编译的时间极长，伴随着满载的CPU和不断弹出的警告信息（是真的，满屏幕的警告信息）等待大概40~50分钟左右，编译结束,</p>
+<p>开始进行正式安装Node.js：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make install</span><br></pre></td></tr></table></figure>
+<p>安装的时间比编译时间要短一些，大概10分钟左右。安装完毕后，可以输入以下指令检查是否正确安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node --version  </span><br><span class="line">$ npm --version</span><br></pre></td></tr></table></figure>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>Hexo使用的是<code>npm</code>进行安装。由于npm源的原因，在国内直接使用npm进行安装整个下载过程将会极其缓慢，苦不堪言。所以我在这里使用<a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝npm镜像</a>来进行安装。</p>
+<p>可以通过以下的方法更换npm使用的源：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.npmrc</span><br></pre></td></tr></table></figure>
+<p>使用<code>vim</code>打开该文件后，按<code>i</code>添加以下内容，输入<code>:wq</code>退出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">registry = https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<img src="/archives/hexo-installment-log/1_npm.png">
+<p>配置好源以后，我们可以开始安装hexo了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>安装完毕以后，选择一个目录，使用以下指令对这个目录进行hexo初始化：（在这里，我选择<code>/hexo</code>作为我的hexo目录）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init /hexo</span><br></pre></td></tr></table></figure>
+<p>输入指令后，hexo开始往该目录下载hexo站点所需要的初始化文件。等待初始化完成后，这个目录就成为了我们的<code>hexo站点目录</code>了。当然，也可以在多个不同的地方建立不同的hexo站点目录，而所有不同地方生成的站点目录都是相互独立的。这有点像project的感觉。而所有对站点进行的操作都需要<code>cd</code>到站点所在的目录下进行。</p>
+<p>那么我们现在进入<code>/hexo</code>目录内一探究竟：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /hexo</span><br><span class="line">$ dir</span><br></pre></td></tr></table></figure>
+<img src="/archives/hexo-installment-log/2_dir.png">
+<p>可以看到，<code>/hexo</code>目录新增了许多文件。主要目录结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml （配置文件）</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts （草稿箱，在这里存放的文章不会被生成）</span><br><span class="line">|   └── _posts （在这里存放的文章会被生成）</span><br><span class="line">└── themes （主题目录）</span><br></pre></td></tr></table></figure>
+<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>这是hexo站点的配置文件。具体的配置可以查看<a href="https://hexo.io/docs/configuration.html" target="_blank" rel="noopener">官网文档</a>。</p>
+<p>为了方便生成，我在配置文件中将<code>public_dir</code>的路径直接设置在nginx的网站根目录下。具体效果可以看看我写的另一篇文章（正在写）。</p>
+<p>配置好后输入以下指令开始生成静态页面文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<p>于是乎，新的博客站点已经建立好了。</p>
+<p>###如何写文章</p>
+<p>在本地使用任何支持Markdown格式的文本编辑器（个人推荐<a href="https://markdownpad.com/" target="_blank" rel="noopener">MarkdownPad2</a>）建立一个<code>.md</code>文档来写文章。在文件的头部还需要填写一些<a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="noopener">信息</a>，比如现在这篇文章就是使用如下的信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo小撇步：服务器架设hexo过程全记录</span><br><span class="line">date: 2017/3/4</span><br><span class="line">category: 编程</span><br><span class="line">tags: [hexo]</span><br><span class="line">thumbnail: https://hexo.io/logo.svg</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>文章写完后，将写好的<code>.md</code>文件上传至<code>&lt;hexo站点目录&gt;/source/_posts</code>，然后在站点目录下使用<code>hexo g</code>指令即可生成新的站点。整个站点将在指定的<code>public_dir</code>中生成。（这也就是我选择将该路径直接设置在网站根目录下的原因）</p>
+
       
     </div>
 
     
       
-
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/articles/letsencrypt-on-centos7.html" rel="bookmark">给网站用上免费SSL：Let's Encrypt操作记录</a></div>
-      
-    </li>
-  
-  </ul>
 
 
     
@@ -510,7 +563,7 @@
     <strong>本文作者： </strong>Jiawei Wang</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.kavel.cn/articles/rewire_https.html" title="配置好rewire，开启全站https模式">http://www.kavel.cn/articles/rewire_https.html</a>
+    <a href="http://www.kavel.cn/archives/hexo-installment-log.html" title="hexo小撇步：服务器架设hexo过程全记录">http://www.kavel.cn/archives/hexo-installment-log.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -523,11 +576,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SSL/" rel="tag"># SSL</a>
-          
-            <a href="/tags/HTTPS/" rel="tag"># HTTPS</a>
-          
-            <a href="/tags/nginx/" rel="tag"># nginx</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
         </div>
       
@@ -540,8 +589,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/articles/snc-revengence.html" rel="next" title="SNC的复仇-全文完">
-                <i class="fa fa-chevron-left"></i> SNC的复仇-全文完
+              <a href="/archives/php-framework-using-singleton-with-GET.html" rel="next" title="php造车轮：基于单主页+GET请求的模块化框架">
+                <i class="fa fa-chevron-left"></i> php造车轮：基于单主页+GET请求的模块化框架
               </a>
             
           </div>
@@ -550,8 +599,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/articles/php-framework-using-singleton-with-GET.html" rel="prev" title="php造车轮：基于单主页+GET请求的模块化框架">
-                php造车轮：基于单主页+GET请求的模块化框架 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/post-via-cas.html" rel="prev" title="URLConnection自动登录深大CAS认证平台：提交表单实现方案">
+                URLConnection自动登录深大CAS认证平台：提交表单实现方案 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -607,8 +656,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -747,6 +805,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">1.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#config-yml"><span class="nav-number">3.</span> <span class="nav-text">_config.yml</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -943,9 +1017,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://www.kavel.cn/articles/rewire_https.html';
-        this.page.identifier = 'articles/rewire_https.html';
-        this.page.title = '配置好rewire，开启全站https模式';
+        this.page.url = 'http://www.kavel.cn/archives/hexo-installment-log.html';
+        this.page.identifier = 'archives/hexo-installment-log.html';
+        this.page.title = 'hexo小撇步：服务器架设hexo过程全记录';
         };
       function loadComments () {
         var d = document, s = d.createElement('script');
