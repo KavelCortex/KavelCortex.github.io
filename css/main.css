@@ -1898,7 +1898,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff7555;
+  background: #ffcdff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2030,7 +2030,7 @@ img:hover {
 .with-love {
   display: inline-block;
   margin: 0 5px;
-  color: #ff0000;
+  color: #808080;
 }
 .powered-by,
 .theme-info {
