@@ -376,7 +376,9 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/blog/articles/post-via-cas.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/blog/articles/post-via-cas.html" itemprop="commentCount"></span>
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="articles/post-via-cas.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -522,7 +524,14 @@
 
   
     <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     </div>
+
   
 
 
@@ -836,9 +845,30 @@
 
   
 
-
+  
+    <script id="dsq-count-scr" src="https://kavelcn.disqus.com/count.js" async></script>
+  
 
   
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://www.kavel.cn/blog/articles/post-via-cas.html';
+        this.page.identifier = 'articles/post-via-cas.html';
+        this.page.title = 'URLConnection自动登录深大CAS认证平台：提交表单实现方案';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://kavelcn.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
 
 
 

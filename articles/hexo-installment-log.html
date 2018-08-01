@@ -376,7 +376,9 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/blog/articles/hexo-installment-log.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/blog/articles/hexo-installment-log.html" itemprop="commentCount"></span>
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="articles/hexo-installment-log.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -568,7 +570,14 @@
 
   
     <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     </div>
+
   
 
 
@@ -882,9 +891,30 @@
 
   
 
-
+  
+    <script id="dsq-count-scr" src="https://kavelcn.disqus.com/count.js" async></script>
+  
 
   
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://www.kavel.cn/blog/articles/hexo-installment-log.html';
+        this.page.identifier = 'articles/hexo-installment-log.html';
+        this.page.title = 'hexo小撇步：服务器架设hexo过程全记录';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://kavelcn.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
 
 
 

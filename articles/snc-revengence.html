@@ -373,7 +373,9 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/blog/articles/snc-revengence.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/blog/articles/snc-revengence.html" itemprop="commentCount"></span>
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="articles/snc-revengence.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1029,8 +1031,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/articles/php-framework-using-singleton-with-GET.html" rel="prev" title="php造车轮：基于单主页+GET请求的模块化框架">
-                php造车轮：基于单主页+GET请求的模块化框架 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/articles/rewire_https.html" rel="prev" title="配置好rewire，开启全站https模式">
+                配置好rewire，开启全站https模式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1055,7 +1057,14 @@
 
   
     <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     </div>
+
   
 
 
@@ -1369,9 +1378,30 @@
 
   
 
-
+  
+    <script id="dsq-count-scr" src="https://kavelcn.disqus.com/count.js" async></script>
+  
 
   
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://www.kavel.cn/blog/articles/snc-revengence.html';
+        this.page.identifier = 'articles/snc-revengence.html';
+        this.page.title = 'SNC的复仇-全文完';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://kavelcn.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
+  
+
+
 
 
 
