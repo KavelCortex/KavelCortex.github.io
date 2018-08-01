@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -84,7 +84,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/blog/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '6.3.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: false,
@@ -282,7 +282,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jiawei Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/kavelspot.w.svg">
+      <meta itemprop="image" content="/blog/images/kavelspot.svg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -500,7 +500,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jiawei Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/kavelspot.w.svg">
+      <meta itemprop="image" content="/blog/images/kavelspot.svg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -762,7 +762,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jiawei Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/kavelspot.w.svg">
+      <meta itemprop="image" content="/blog/images/kavelspot.svg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1049,12 +1049,212 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/blog/blog/articles/rewire_https.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiawei Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/kavelspot.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉维小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/articles/rewire_https.html" itemprop="url">
+                  配置好rewire，开启全站https模式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-02-28 00:00:00 / 修改时间：23:24:20" itemprop="dateCreated datePublished" datetime="2017-02-28T00:00:00+08:00">2017-02-28</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/blog/articles/rewire_https.html#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="articles/rewire_https.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">974</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在一篇文章<a href="https://www.kavel.cn/blog/programming/letsencrypt-on-centos7.html">《给网站用上免费SSL：Let’s Encrypt操作记录》</a>中，我们使用了<a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">erver&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.kavel.cn kavel.cn;</span><br><span class="line">        rewrite ^(.*)$ https://www.kavel.cn/ permanent;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>保存好后重启nginx，所有http</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.kavel.cn kavel.cn;</span><br><span class="line">        rewrite ^(.*)$ https://www.kavel.cn$uri permanent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        ssl_certificate /etc/letsencrypt/live/&#123;域名&#125;/fullchain.pem;</span><br><span class="line">        ssl_certificate_key  /etc/letsencrypt/live/&#123;域名&#125;/privkey.pem;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">       	    index	    index.php  index.html;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/blog/blog/articles/php-framework-using-singleton-with-GET.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jiawei Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/kavelspot.w.svg">
+      <meta itemprop="image" content="/blog/images/kavelspot.svg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1303,212 +1503,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/blog/blog/articles/rewire_https.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiawei Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/kavelspot.w.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="嘉维小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/blog/articles/rewire_https.html" itemprop="url">
-                  配置好rewire，开启全站https模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-02-28 00:00:00 / 修改时间：23:24:20" itemprop="dateCreated datePublished" datetime="2017-02-28T00:00:00+08:00">2017-02-28</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/" itemprop="url" rel="index"><span itemprop="name">编程</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/blog/articles/rewire_https.html#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="articles/rewire_https.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">974</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在一篇文章<a href="https://www.kavel.cn/blog/programming/letsencrypt-on-centos7.html">《给网站用上免费SSL：Let’s Encrypt操作记录》</a>中，我们使用了<a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a>给网站装上了SSL证书。按道理，我们是时候可以抛弃http，全面拥抱https了，对吧！于是，为了彻底抛弃http，我在nginx里面写了如下配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">erver&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.kavel.cn kavel.cn;</span><br><span class="line">        rewrite ^(.*)$ https://www.kavel.cn/ permanent;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>保存好后重启nginx，所有http</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name www.kavel.cn kavel.cn;</span><br><span class="line">        rewrite ^(.*)$ https://www.kavel.cn$uri permanent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        server_name  localhost;</span><br><span class="line">        ssl_certificate /etc/letsencrypt/live/&#123;域名&#125;/fullchain.pem;</span><br><span class="line">        ssl_certificate_key  /etc/letsencrypt/live/&#123;域名&#125;/privkey.pem;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">       	    index	    index.php  index.html;</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/blog/blog/articles/snc-revengence.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jiawei Wang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/blog/images/kavelspot.w.svg">
+      <meta itemprop="image" content="/blog/images/kavelspot.svg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -2277,7 +2277,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/blog/images/kavelspot.w.svg"
+                src="/blog/images/kavelspot.svg"
                 alt="Jiawei Wang" />
             
               <p class="site-author-name" itemprop="name">Jiawei Wang</p>
@@ -2421,7 +2421,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Pisces</a> v6.3.0</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
 
 
 
