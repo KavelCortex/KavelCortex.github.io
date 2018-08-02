@@ -118,28 +118,4 @@
     </data>
     </url>
 
-    
-  <url>
-    <loc>http://www.kavel.cn/archives/rewire_https.html</loc>
-    <lastmod>2017-02-28T15:24:20.161Z</lastmod>
-    <data>
-        <display>
-        <title>配置好rewire，开启全站https模式</title>
-        <pubTime>2017-02-27T16:00:00.000Z</pubTime>
-        
-        <tag>SSL</tag>
-         
-        <tag>HTTPS</tag>
-         
-        <tag>nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://www.kavel.cn/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
 </urlset>
