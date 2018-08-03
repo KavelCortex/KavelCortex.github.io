@@ -3,6 +3,53 @@
 
 
     
+  <url>
+    <loc>http://www.kavel.cn/archives/php-framework-using-singleton-with-GET.html</loc>
+    <lastmod>2018-08-03T07:03:57.177Z</lastmod>
+    <data>
+        <display>
+        <title>php造车轮：基于单主页+GET请求的模块化框架</title>
+        <pubTime>2017-02-27T16:00:00.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+        <tag>Framework</tag>
+         
+        <tag>php造车轮</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://www.kavel.cn/categories/programming/"/>
+          
+             
+              <breadCrumb title="php造车轮" url="http://www.kavel.cn/categories/programming/phpnoob/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kavel.cn/archives/hexo-installment-log.html</loc>
+    <lastmod>2018-08-03T07:01:24.295Z</lastmod>
+    <data>
+        <display>
+        <title>hexo小撇步：服务器架设hexo过程全记录</title>
+        <pubTime>2017-03-03T16:00:00.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程" url="http://www.kavel.cn/categories/programming/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://www.kavel.cn/archives/xcr3tchat.html</loc>
@@ -65,33 +112,6 @@
 
     
   <url>
-    <loc>http://www.kavel.cn/archives/php-framework-using-singleton-with-GET.html</loc>
-    <lastmod>2018-01-23T11:59:05.265Z</lastmod>
-    <data>
-        <display>
-        <title>php造车轮：基于单主页+GET请求的模块化框架</title>
-        <pubTime>2017-02-27T16:00:00.000Z</pubTime>
-        
-        <tag>PHP</tag>
-         
-        <tag>Framework</tag>
-         
-        <tag>php造车轮</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://www.kavel.cn/categories/programming/"/>
-          
-             
-              <breadCrumb title="php造车轮" url="http://www.kavel.cn/categories/programming/phpnoob/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.kavel.cn/archives/letsencrypt-on-centos7.html</loc>
     <lastmod>2018-01-23T11:35:43.644Z</lastmod>
     <data>
@@ -106,26 +126,6 @@
         <tag>Let&#39;s Encrypt</tag>
          
         <tag>nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程" url="http://www.kavel.cn/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.kavel.cn/archives/hexo-installment-log.html</loc>
-    <lastmod>2018-01-23T11:00:23.103Z</lastmod>
-    <data>
-        <display>
-        <title>hexo小撇步：服务器架设hexo过程全记录</title>
-        <pubTime>2017-03-03T16:00:00.000Z</pubTime>
-        
-        <tag>hexo</tag>
          
          
            
