@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.kavel.cn/about/index.html</loc>
+    
+    <lastmod>2018-08-03T10:53:40.701Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.kavel.cn/zh-CN/letsencrypt-on-centos7.html</loc>
     
     <lastmod>2018-08-03T09:27:53.489Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>http://www.kavel.cn/categories/index.html</loc>
     
     <lastmod>2018-08-03T08:46:42.591Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.kavel.cn/about/index.html</loc>
-    
-    <lastmod>2018-08-03T07:42:35.372Z</lastmod>
     
   </url>
   
