@@ -3,10 +3,91 @@
 
 
     
+  <url>
+    <loc>http://www.kavel.cn/undefined/xcr3tchat.html</loc>
+    <lastmod>2018-08-03T14:45:32.937Z</lastmod>
+    <data>
+        <display>
+        <title>Xcr3tChat: 一个比较安全的聊天工具</title>
+        <pubTime>2018-08-02T06:44:57.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://www.kavel.cn/categories/programming/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
-    <loc>http://www.kavel.cn/zh-CN/letsencrypt-on-centos7.html</loc>
-    <lastmod>2018-08-03T09:27:53.489Z</lastmod>
+    <loc>http://www.kavel.cn/undefined/snc-revengence.html</loc>
+    <lastmod>2018-08-03T14:45:28.782Z</lastmod>
+    <data>
+        <display>
+        <title>SNC的复仇-全文完</title>
+        <pubTime>2009-09-06T16:00:00.000Z</pubTime>
+        
+        <tag>games</tag>
+         
+         
+           
+             
+              <breadCrumb title="articles" url="http://www.kavel.cn/categories/articles/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kavel.cn/undefined/post-via-cas.html</loc>
+    <lastmod>2018-08-03T14:45:25.107Z</lastmod>
+    <data>
+        <display>
+        <title>URLConnection自动登录深大CAS认证平台：提交表单实现方案</title>
+        <pubTime>2017-04-14T16:00:00.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://www.kavel.cn/categories/programming/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kavel.cn/undefined/php-framework-using-singleton-with-GET.html</loc>
+    <lastmod>2018-08-03T14:45:22.734Z</lastmod>
+    <data>
+        <display>
+        <title>php造车轮：基于单主页+GET请求的模块化框架</title>
+        <pubTime>2017-02-27T16:00:00.000Z</pubTime>
+        
+        <tag>php</tag>
+         
+        <tag>framework</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://www.kavel.cn/categories/programming/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kavel.cn/undefined/letsencrypt-on-centos7.html</loc>
+    <lastmod>2018-08-03T14:45:20.272Z</lastmod>
     <data>
         <display>
         <title>给网站用上免费SSL：Let's Encrypt操作记录</title>
@@ -25,8 +106,8 @@
 
     
   <url>
-    <loc>http://www.kavel.cn/zh-CN/hexo-installment-log.html</loc>
-    <lastmod>2018-08-03T09:27:46.116Z</lastmod>
+    <loc>http://www.kavel.cn/undefined/hexo-installment-log.html</loc>
+    <lastmod>2018-08-03T14:45:16.517Z</lastmod>
     <data>
         <display>
         <title>Hexo小撇步：服务器架设hexo过程全记录</title>
@@ -46,87 +127,6 @@
     </url>
 
     
-  <url>
-    <loc>http://www.kavel.cn/zh-CN/xcr3tchat.html</loc>
-    <lastmod>2018-08-03T09:26:11.575Z</lastmod>
-    <data>
-        <display>
-        <title>Xcr3tChat: 一个比较安全的聊天工具</title>
-        <pubTime>2018-08-02T06:44:57.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-         
-           
-             
-              <breadCrumb title="programming" url="http://www.kavel.cn/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.kavel.cn/zh-CN/snc-revengence.html</loc>
-    <lastmod>2018-08-03T09:25:53.987Z</lastmod>
-    <data>
-        <display>
-        <title>SNC的复仇-全文完</title>
-        <pubTime>2009-09-06T16:00:00.000Z</pubTime>
-        
-        <tag>games</tag>
-         
-         
-           
-             
-              <breadCrumb title="articles" url="http://www.kavel.cn/categories/articles/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.kavel.cn/zh-CN/post-via-cas.html</loc>
-    <lastmod>2018-08-03T09:25:07.548Z</lastmod>
-    <data>
-        <display>
-        <title>URLConnection自动登录深大CAS认证平台：提交表单实现方案</title>
-        <pubTime>2017-04-14T16:00:00.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-         
-           
-             
-              <breadCrumb title="programming" url="http://www.kavel.cn/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.kavel.cn/zh-CN/php-framework-using-singleton-with-GET.html</loc>
-    <lastmod>2018-08-03T09:24:24.190Z</lastmod>
-    <data>
-        <display>
-        <title>php造车轮：基于单主页+GET请求的模块化框架</title>
-        <pubTime>2017-02-27T16:00:00.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-        <tag>framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="programming" url="http://www.kavel.cn/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
     
     

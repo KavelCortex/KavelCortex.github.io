@@ -140,13 +140,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="嘉维小站">
-<meta property="og:url" content="http://www.kavel.cn/en/index.html">
+  <meta name="description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
+<meta name="keywords" content="php,framework">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php造车轮：基于单主页+GET请求的模块化框架">
+<meta property="og:url" content="http://www.kavel.cn/en/undefined/php-framework-using-singleton-with-GET.html">
 <meta property="og:site_name" content="嘉维小站">
+<meta property="og:description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-08-03T14:45:22.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="嘉维小站">
+<meta name="twitter:title" content="php造车轮：基于单主页+GET请求的模块化框架">
+<meta name="twitter:description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
 
 
 
@@ -155,7 +160,7 @@
 
 
 
-  <link rel="canonical" href="http://www.kavel.cn/"/>
+  <link rel="canonical" href="http://www.kavel.cn/en/undefined/php-framework-using-singleton-with-GET.html"/>
 
 
 
@@ -165,7 +170,7 @@
   };
 </script>
 
-  <title>嘉维小站 – kavel.cn, now on <a target="_blank" href="https://bandwagonhost.com/aff.php?aff=17531">Bandwagon</a>!</title>
+  <title>php造车轮：基于单主页+GET请求的模块化框架 | 嘉维小站</title>
   
 
 
@@ -212,8 +217,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,7 +258,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/en/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
   </li>
@@ -345,9 +349,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -362,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/zh-CN/xcr3tchat.html">
+    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/en/undefined/php-framework-using-singleton-with-GET.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jiawei Wang">
@@ -379,655 +383,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/zh-CN/xcr3tchat.html" itemprop="url">
-                  Xcr3tChat: 一个比较安全的聊天工具
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-02 14:44:57" itemprop="dateCreated datePublished" datetime="2018-08-02T14:44:57+08:00">2018-08-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-08-03 17:26:11" itemprop="dateModified" datetime="2018-08-03T17:26:11+08:00">2018-08-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/en/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/zh-CN/xcr3tchat.html#SOHUCS" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span id="url::http://www.kavel.cn/zh-CN/xcr3tchat.html" class="cy_cmt_count" data-xid="zh-CN/xcr3tchat.html" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">70k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">1:03</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>最近准备换机器，在整理硬盘的时候翻出来了一套加密聊天系统的源代码，是大三的时候的大作业。这套系统使用一次性密钥对来进行端对端的聊天加密，希望能给大家在加密传输方面带来一些新的思路。完整代码在这里：<a href="https://github.com/KavelCortex/Xcr3TChat-server" target="_blank" rel="noopener">https://github.com/KavelCortex/Xcr3TChat-server</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/zh-CN/xcr3tchat.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/zh-CN/post-via-cas.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiawei Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/en/images/kavelspot.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="嘉维小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/zh-CN/post-via-cas.html" itemprop="url">
-                  URLConnection自动登录深大CAS认证平台：提交表单实现方案
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-04-15 00:00:00" itemprop="dateCreated datePublished" datetime="2017-04-15T00:00:00+08:00">2017-04-15</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-08-03 17:25:07" itemprop="dateModified" datetime="2018-08-03T17:25:07+08:00">2018-08-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/en/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/zh-CN/post-via-cas.html#SOHUCS" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span id="url::http://www.kavel.cn/zh-CN/post-via-cas.html" class="cy_cmt_count" data-xid="zh-CN/post-via-cas.html" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">13k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">12 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等一切需要使用深大统一认证平台的站点实现一键登录甚至免登录的功能。
-CAS验证基本原理深大
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/zh-CN/post-via-cas.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/zh-CN/hexo-installment-log.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiawei Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/en/images/kavelspot.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="嘉维小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/zh-CN/hexo-installment-log.html" itemprop="url">
-                  Hexo小撇步：服务器架设hexo过程全记录
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-03-04 00:00:00" itemprop="dateCreated datePublished" datetime="2017-03-04T00:00:00+08:00">2017-03-04</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-08-03 17:27:46" itemprop="dateModified" datetime="2018-08-03T17:27:46+08:00">2018-08-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/en/categories/logs/" itemprop="url" rel="index"><span itemprop="name">logs</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/zh-CN/hexo-installment-log.html#SOHUCS" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span id="url::http://www.kavel.cn/zh-CN/hexo-installment-log.html" class="cy_cmt_count" data-xid="zh-CN/hexo-installment-log.html" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">2.3k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">2 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          刚一申请到域名和服务器，第一件事情便是架设博客。当时想找一个方便省事的博客框架，于是看到当时吹得天花乱坠的Wordpress，便不小心掉进了大坑。还没写几篇文章，便已经开始遭遇各种麻烦。最难忍的一点就是不知道为何载入极慢。网上说是由于自带google字库的原因，可是下载了好几个去字库插件变着花样试却
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/zh-CN/hexo-installment-log.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/zh-CN/letsencrypt-on-centos7.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiawei Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/en/images/kavelspot.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="嘉维小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/zh-CN/letsencrypt-on-centos7.html" itemprop="url">
-                  给网站用上免费SSL：Let's Encrypt操作记录
-                </a>
+          <h2 class="post-title" itemprop="name headline">php造车轮：基于单主页+GET请求的模块化框架
               
             
           </h2>
@@ -1069,223 +425,7 @@ CAS验证基本原理深大
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-08-03 17:27:53" itemprop="dateModified" datetime="2018-08-03T17:27:53+08:00">2018-08-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/en/categories/logs/" itemprop="url" rel="index"><span itemprop="name">logs</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/zh-CN/letsencrypt-on-centos7.html#SOHUCS" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span id="url::http://www.kavel.cn/zh-CN/letsencrypt-on-centos7.html" class="cy_cmt_count" data-xid="zh-CN/letsencrypt-on-centos7.html" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">4.1k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">4 mins.</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          看着别人网站上绿色的https标签很是心痒，而又不想花大价钱申请企业级的SSL方案，于是寻思着给网站申请了一个免费的沃通CA证书。谁知道前脚刚刚部署完证书，后脚却在网上发现沃通证书将不再被信任，心里很不是滋味。于是便重新上网搜寻其他获得SSL的方法。
-经过短暂的搜寻，发现了这样一个免费的SSL证书授
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/zh-CN/letsencrypt-on-centos7.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/zh-CN/php-framework-using-singleton-with-GET.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiawei Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/en/images/kavelspot.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="嘉维小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/zh-CN/php-framework-using-singleton-with-GET.html" itemprop="url">
-                  php造车轮：基于单主页+GET请求的模块化框架
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-02-28 00:00:00" itemprop="dateCreated datePublished" datetime="2017-02-28T00:00:00+08:00">2017-02-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-08-03 17:24:24" itemprop="dateModified" datetime="2018-08-03T17:24:24+08:00">2018-08-03</time>
+                <time title="Modified: 2018-08-03 22:45:22" itemprop="dateModified" datetime="2018-08-03T22:45:22+08:00">2018-08-03</time>
               
             
           </span>
@@ -1318,8 +458,8 @@ CAS验证基本原理深大
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/zh-CN/php-framework-using-singleton-with-GET.html#SOHUCS" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span id="url::http://www.kavel.cn/zh-CN/php-framework-using-singleton-with-GET.html" class="cy_cmt_count" data-xid="zh-CN/php-framework-using-singleton-with-GET.html" itemprop="commentsCount" ></span>
+                <a href="/en/undefined/php-framework-using-singleton-with-GET.html#SOHUCS" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="en/undefined/php-framework-using-singleton-with-GET.html" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -1328,6 +468,14 @@ CAS验证基本原理深大
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
@@ -1375,22 +523,63 @@ CAS验证基本原理深大
       
 
       
-        
-          
-          上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/zh-CN/php-framework-using-singleton-with-GET.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书<a href="http://baike.baidu.com/link?url=vggwmUem3loYtWvs94Q3HyZUh1UVFYs919tmyyY3_fWNDunqRweFTBEC2OlTIr8yGkVnxH4OetQ9vgCnohzZ-oRmmVY1WOF3MGGV1WMmFd_t1YxhW7rRFR2Aiq_zJ8NLdOKt_Ckg3UvRzhhhZAxB6DdUZAkwuPaBv6naqZ5RHlhTEx83_xHmFqjKSRCcUCwl" target="_blank" rel="noopener">《PHP 5 高级应用开发实践》</a>来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。</p>
+<p>在介绍框架之前，需要了解GET请求是什么。</p>
+<h3 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h3><p>在用户与服务器之间进行请求-响应时，两种最常被用到的方法分别为：<strong>GET</strong>和<strong>POST</strong>。</p>
+<p>其中，<strong>GET请求</strong>的查询字符串是直接写在URL中进行发送的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.kavel.cn/?page=pdf</span><br></pre></td></tr></table></figure></p>
+<p>在这段URL中，<code>?</code>表示GET请求的开头，而<code>page=pdf</code>则是查询的键值对。</p>
+<p>而GET请求也有如下的一些原则：</p>
+<ul>
+<li>GET 请求<strong>可被缓存</strong></li>
+<li>GET 请求<strong>可保留</strong>在浏览器<strong>历史记录</strong>中</li>
+<li>GET 请求<strong>可被收藏为书签</strong></li>
+<li>GET 请求<strong>不应</strong>在<strong>处理敏感数据</strong>时使用</li>
+<li>GET 请求<strong>有长度限制</strong></li>
+<li>GET 请求只应当用于<strong>取回数据</strong> </li>
+</ul>
+<p>在PHP中，我们使用<code>$value=$_GET[$key]</code>方法来获取GET的内容。<br>其中<code>$key</code>为我们自己定义的等号左边的内容（如<code>page</code>），称为<strong>键</strong>。<br>而<code>$value</code>的内容即为我们需要获取的等号右边的内容（如<code>pdf</code>），称为<strong>值</strong>。</p>
+<p>而这套框架的核心原理，则是利用了GET传递请求的<strong>可保留</strong>性，在单个页面（如<code>index.php</code>）通过GET请求获取到用户传来的不同的<strong>值</strong> ，并根据<strong>值</strong>插入不同的模块页展现给用户。这是一种非常容易实现的<strong>模块化方案</strong>。</p>
+<p>话不多说，赶紧进入实战环节。</p>
+<h3 id="获取用户传来的GET信息："><a href="#获取用户传来的GET信息：" class="headerlink" title="获取用户传来的GET信息："></a>获取用户传来的GET信息：</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取插入的子页面名称</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'page'</span>])) &#123;</span><br><span class="line">    $p = sterilizeInput($_GET[<span class="string">'page'</span>]);</span><br><span class="line">&#125; <span class="keyword">elseif</span> (<span class="keyword">isset</span>($_POST[<span class="string">'page'</span>])) &#123;</span><br><span class="line">    $p = $_POST[<span class="string">'page'</span>];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $p = <span class="string">'index'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//任何GET表单在赋值前必须使用消毒函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sterilizeInput</span><span class="params">($data)</span> </span>&#123;</span><br><span class="line">    $data = trim($data); <span class="comment">//移除字符串两侧的空白字符</span></span><br><span class="line">    $data = stripslashes($data); <span class="comment">//移除字符串中的所有反斜杠</span></span><br><span class="line">    $data = htmlspecialchars($data); <span class="comment">//将预定义的字符转换为 HTML 实体，可过滤单引号、双引号等</span></span><br><span class="line">    <span class="keyword">return</span> $data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们应当提防<strong>用户能够通过GET请求上传恶意代码使得对网页进行的任意操作成为可能</strong>。所以在进行赋值前，使用<strong>消毒函数</strong>对<strong>值</strong>进行消毒非常重要。</p>
+<h3 id="根据GET信息选择要插入的模块页面"><a href="#根据GET信息选择要插入的模块页面" class="headerlink" title="根据GET信息选择要插入的模块页面"></a>根据GET信息选择要插入的模块页面</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//选择插入的子页面</span></span><br><span class="line"><span class="keyword">switch</span> ($p) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'index'</span>:</span><br><span class="line">        $page = <span class="string">'welcome.php'</span>;</span><br><span class="line">        $page_title = <span class="string">'主页'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'pdf'</span>:</span><br><span class="line">        $page=<span class="string">'pdf.php'</span>;</span><br><span class="line">        $page_title=<span class="string">'课堂笔记'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'resume'</span>:</span><br><span class="line">        $page=<span class="string">'resume.html'</span>;</span><br><span class="line">        $page_title=<span class="string">'简历'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'404'</span>:</span><br><span class="line">        header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里，我们通过switch-case方式对得到的<strong>值</strong>进行判断，得到对应的页面文件名称。还要记得如果<strong>值</strong>对所有条件都不符合时，跳转到404页面。</p>
+<h3 id="插入模块页面"><a href="#插入模块页面" class="headerlink" title="插入模块页面"></a>插入模块页面</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//确保子页面存在</span></span><br><span class="line"><span class="keyword">if</span> (!file_exists(<span class="string">'./modules/'</span> . $page)) &#123;</span><br><span class="line">    header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">    <span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//插入页眉文件</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'./includes/'</span> . <span class="string">'header.inc.html'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入子页面</span></span><br><span class="line"><span class="keyword">include</span>(<span class="string">'./modules/'</span> . $page);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入页脚文件</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'./includes/'</span> . <span class="string">'footer.inc.html'</span>);</span><br></pre></td></tr></table></figure>
+<p>使用<code>include($page)</code>函数进行页面的插入。在插入页面前，还需要判断该页面是否真实存在。如果不存在，记得跳转到404页面。</p>
+<p>为了实现模块化，我将整个页面分成三部分，分别为页眉、正文和页脚。页眉负责页面的头文件、CSS等。通过插入相同的页眉文件，我们可以确保整个网站都能得到统一的风格。</p>
+<p>使用模块化的框架可以极大地方便模板页的开发。因为这样直接省去了编写每个页面都相同且必须的头文件和CSS等项，直接从<code>&lt;body&gt;</code>部分开始下笔。 我在这里则更加极端（lǎn），模板页只负责一个<code>&lt;div&gt;</code>，其余内容都在页眉和页脚文件中。</p>
+<p>这里是当<code>page=index</code>时，网页的组成内容：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: header.inc.html*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">if</span> (!<span class="keyword">isset</span>($page_title)) $page_title=<span class="string">'主页'</span>;<span class="meta">?&gt;</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;<span class="meta">&lt;?</span>=$page_title<span class="meta">?&gt;</span> - kavel.cn&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class="container body-content"&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在页眉文件里，<code>&lt;title&gt;</code>标签里面的值<code>$page_title</code>由<code>index.php</code>定义。使用这种模块化方式的好处之一，就是在<code>index.php</code>内定义的变量，可以当作全局变量，在所有模块页面都能任意使用。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: welcome.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomSplash</span><span class="params">()</span></span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line">&lt;div class="jumbotron"&gt;</span><br><span class="line">    &lt;div class="container"&gt;</span><br><span class="line">        &lt;h1&gt;<span class="meta">&lt;?</span>=randomSplash()<span class="meta">?&gt;</span>&lt;/h1&gt;</span><br><span class="line">        &lt;p&gt;这里是嘉维小站，我是王嘉维。&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&lt;a class="btn btn-primary btn-lg" href="/blog" role="button"&gt;进入博客&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>可以看到在模块页面内只包含一个<code>&lt;div&gt;</code>。这极大地方便了模块页的开发，也不需要担心样式问题。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: footer.inc.html*/</span></span><br><span class="line"></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;footer class="container body-content"&gt;</span><br><span class="line">            &lt;hr /&gt;</span><br><span class="line">            &lt;p&gt;&amp;copy; <span class="meta">&lt;?</span>=date(<span class="string">"Y"</span>,time())<span class="meta">?&gt;</span> Jiawei W.&lt;/p&gt;</span><br><span class="line">        &lt;/footer&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>页尾文件则是包含各种结束标签。当然<code>&lt;footer&gt;</code>标签也存在于这里。</p>
+<p><del>本站<a href="https://www.kavel.cn">首页</a>就是使用这种框架写成的，如果感兴趣的话可以点击链接参观：</del></p>
+<blockquote>
+<p><del><a href="https://www.kavel.cn/">https://www.kavel.cn/</a></del></p>
+</blockquote>
+<p><em>为了把博客置顶，已经删除了这个页面了 –2018-08-03</em></p>
+
       
     </div>
 
     
+      
+
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/undefined/php-framework-using-singleton-with-GET.html" rel="bookmark">php造车轮：基于单主页+GET请求的模块化框架</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
 
     
     
@@ -1399,234 +588,102 @@ CAS验证基本原理深大
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的每一次打赏都是我更新的动力！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
 
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/reward.jpg" alt="Jiawei Wang WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Jiawei Wang Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Jiawei Wang</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://www.kavel.cn/undefined/php-framework-using-singleton-with-GET.html" title="php造车轮：基于单主页+GET请求的模块化框架">http://www.kavel.cn/undefined/php-framework-using-singleton-with-GET.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.</li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/zh-CN/snc-revengence.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiawei Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/en/images/kavelspot.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="嘉维小站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/zh-CN/snc-revengence.html" itemprop="url">
-                  SNC的复仇-全文完
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2009-09-07 00:00:00" itemprop="dateCreated datePublished" datetime="2009-09-07T00:00:00+08:00">2009-09-07</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-08-03 17:25:53" itemprop="dateModified" datetime="2018-08-03T17:25:53+08:00">2018-08-03</time>
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/en/categories/articles/" itemprop="url" rel="index"><span itemprop="name">articles</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/en/tags/php/" rel="tag"># php</a>
           
-
+            <a href="/en/tags/framework/" rel="tag"># framework</a>
           
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/zh-CN/snc-revengence.html#SOHUCS" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span id="url::http://www.kavel.cn/zh-CN/snc-revengence.html" class="cy_cmt_count" data-xid="zh-CN/snc-revengence.html" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">26k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">24 mins.</span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
+      
+        <div class="post-widgets">
         
-          
-           这是一篇于09年开始落笔、14年高考前停笔的连载短篇。其灵感来源于一款名为GTA:SA的游戏及其相关插件（联机插件SA-MP、作弊插件m0d_s0beit、功能插件CLEO）。今天猛然从硬盘的角落翻出来全套word文档，发现自己竟然在这5年间断断续续地写了35篇整，今有感而发决定把他们重新修改一番
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/zh-CN/snc-revengence.html#more" rel="contents">
-              Read more &raquo;
-            </a>
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
           </div>
-          <!--/noindex-->
         
+
+        
+
+        
+        </div>
       
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/en/undefined/letsencrypt-on-centos7.html" rel="next" title="给网站用上免费SSL：Let's Encrypt操作记录">
+                <i class="fa fa-chevron-left"></i> 给网站用上免费SSL：Let's Encrypt操作记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/en/undefined/hexo-installment-log.html" rel="prev" title="Hexo小撇步：服务器架设hexo过程全记录">
+                Hexo小撇步：服务器架设hexo过程全记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1636,14 +693,20 @@ CAS验证基本原理深大
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1664,8 +727,17 @@ CAS验证基本原理深大
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1805,6 +877,22 @@ CAS验证基本原理深大
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GET请求"><span class="nav-number">1.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取用户传来的GET信息："><span class="nav-number">2.</span> <span class="nav-text">获取用户传来的GET信息：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据GET信息选择要插入的模块页面"><span class="nav-number">3.</span> <span class="nav-text">根据GET信息选择要插入的模块页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入模块页面"><span class="nav-number">4.</span> <span class="nav-text">插入模块页面</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1988,6 +1076,10 @@ CAS验证基本原理深大
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
@@ -2006,7 +1098,18 @@ CAS验证基本原理深大
 
 
   
-    <script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytKiUk9T"></script>
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytKiUk9T';
+      var conf = '09a421ba90a2c25769aa7807b76c2f03';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
   
 
 
@@ -2367,26 +1470,29 @@ CAS验证基本原理深大
 
   
   
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
 
   
 
 
   
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 12953,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
 
