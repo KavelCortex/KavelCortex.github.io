@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.kavel.cn/archives/letsencrypt-on-centos7.html</loc>
+    
+    <lastmod>2018-08-03T09:27:53.489Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.kavel.cn/archives/hexo-installment-log.html</loc>
+    
+    <lastmod>2018-08-03T09:27:46.116Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.kavel.cn/archives/xcr3tchat.html</loc>
     
     <lastmod>2018-08-03T09:26:11.575Z</lastmod>
@@ -26,20 +40,6 @@
     <loc>http://www.kavel.cn/archives/php-framework-using-singleton-with-GET.html</loc>
     
     <lastmod>2018-08-03T09:24:24.190Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.kavel.cn/archives/hexo-installment-log.html</loc>
-    
-    <lastmod>2018-08-03T09:22:58.724Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.kavel.cn/archives/letsencrypt-on-centos7.html</loc>
-    
-    <lastmod>2018-08-03T09:22:47.291Z</lastmod>
     
   </url>
   

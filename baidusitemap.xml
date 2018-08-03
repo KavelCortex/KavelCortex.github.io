@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>http://www.kavel.cn/archives/letsencrypt-on-centos7.html</loc>
+    <lastmod>2018-08-03T09:27:53.489Z</lastmod>
+    <data>
+        <display>
+        <title>给网站用上免费SSL：Let's Encrypt操作记录</title>
+        <pubTime>2017-02-27T16:00:00.000Z</pubTime>
+        
+        <tag>site</tag>
+         
+         
+           
+             
+              <breadCrumb title="logs" url="http://www.kavel.cn/categories/logs/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kavel.cn/archives/hexo-installment-log.html</loc>
+    <lastmod>2018-08-03T09:27:46.116Z</lastmod>
+    <data>
+        <display>
+        <title>hexo小撇步：服务器架设hexo过程全记录</title>
+        <pubTime>2017-03-03T16:00:00.000Z</pubTime>
+        
+        <tag>site</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="logs" url="http://www.kavel.cn/categories/logs/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kavel.cn/archives/xcr3tchat.html</loc>
     <lastmod>2018-08-03T09:26:11.575Z</lastmod>
     <data>
@@ -79,52 +121,6 @@
            
              
               <breadCrumb title="programming" url="http://www.kavel.cn/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.kavel.cn/archives/hexo-installment-log.html</loc>
-    <lastmod>2018-08-03T09:22:58.724Z</lastmod>
-    <data>
-        <display>
-        <title>hexo小撇步：服务器架设hexo过程全记录</title>
-        <pubTime>2017-03-03T16:00:00.000Z</pubTime>
-        
-        <tag>site</tag>
-         
-        <tag>hexo</tag>
-         
-        <tag>logs</tag>
-         
-         
-           
-             
-              <breadCrumb title="tech" url="http://www.kavel.cn/categories/tech/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.kavel.cn/archives/letsencrypt-on-centos7.html</loc>
-    <lastmod>2018-08-03T09:22:47.291Z</lastmod>
-    <data>
-        <display>
-        <title>给网站用上免费SSL：Let's Encrypt操作记录</title>
-        <pubTime>2017-02-27T16:00:00.000Z</pubTime>
-        
-        <tag>site</tag>
-         
-        <tag>logs</tag>
-         
-         
-           
-             
-              <breadCrumb title="tech" url="http://www.kavel.cn/categories/tech/"/>
           
         </display>
     </data>
