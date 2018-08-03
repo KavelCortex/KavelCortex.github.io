@@ -4,19 +4,21 @@
 
     
   <url>
-    <loc>http://www.kavel.cn/undefined/xcr3tchat.html</loc>
-    <lastmod>2018-08-03T14:45:32.937Z</lastmod>
+    <loc>http://www.kavel.cn/articles/hexo-installment-log.html</loc>
+    <lastmod>2018-08-03T14:47:24.926Z</lastmod>
     <data>
         <display>
-        <title>Xcr3tChat: 一个比较安全的聊天工具</title>
-        <pubTime>2018-08-02T06:44:57.000Z</pubTime>
+        <title>Hexo小撇步：服务器架设hexo过程全记录</title>
+        <pubTime>2017-03-03T16:00:00.000Z</pubTime>
         
-        <tag>java</tag>
+        <tag>site</tag>
+         
+        <tag>hexo</tag>
          
          
            
              
-              <breadCrumb title="programming" url="http://www.kavel.cn/categories/programming/"/>
+              <breadCrumb title="logs" url="http://www.kavel.cn/categories/logs/"/>
           
         </display>
     </data>
@@ -24,19 +26,19 @@
 
     
   <url>
-    <loc>http://www.kavel.cn/undefined/snc-revengence.html</loc>
-    <lastmod>2018-08-03T14:45:28.782Z</lastmod>
+    <loc>http://www.kavel.cn/articles/letsencrypt-on-centos7.html</loc>
+    <lastmod>2018-08-03T14:47:21.384Z</lastmod>
     <data>
         <display>
-        <title>SNC的复仇-全文完</title>
-        <pubTime>2009-09-06T16:00:00.000Z</pubTime>
+        <title>给网站用上免费SSL：Let's Encrypt操作记录</title>
+        <pubTime>2017-02-27T16:00:00.000Z</pubTime>
         
-        <tag>games</tag>
+        <tag>site</tag>
          
          
            
              
-              <breadCrumb title="articles" url="http://www.kavel.cn/categories/articles/"/>
+              <breadCrumb title="logs" url="http://www.kavel.cn/categories/logs/"/>
           
         </display>
     </data>
@@ -44,28 +46,8 @@
 
     
   <url>
-    <loc>http://www.kavel.cn/undefined/post-via-cas.html</loc>
-    <lastmod>2018-08-03T14:45:25.107Z</lastmod>
-    <data>
-        <display>
-        <title>URLConnection自动登录深大CAS认证平台：提交表单实现方案</title>
-        <pubTime>2017-04-14T16:00:00.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-         
-           
-             
-              <breadCrumb title="programming" url="http://www.kavel.cn/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.kavel.cn/undefined/php-framework-using-singleton-with-GET.html</loc>
-    <lastmod>2018-08-03T14:45:22.734Z</lastmod>
+    <loc>http://www.kavel.cn/articles/php-framework-using-singleton-with-GET.html</loc>
+    <lastmod>2018-08-03T14:47:18.357Z</lastmod>
     <data>
         <display>
         <title>php造车轮：基于单主页+GET请求的模块化框架</title>
@@ -86,19 +68,19 @@
 
     
   <url>
-    <loc>http://www.kavel.cn/undefined/letsencrypt-on-centos7.html</loc>
-    <lastmod>2018-08-03T14:45:20.272Z</lastmod>
+    <loc>http://www.kavel.cn/articles/post-via-cas.html</loc>
+    <lastmod>2018-08-03T14:47:14.960Z</lastmod>
     <data>
         <display>
-        <title>给网站用上免费SSL：Let's Encrypt操作记录</title>
-        <pubTime>2017-02-27T16:00:00.000Z</pubTime>
+        <title>URLConnection自动登录深大CAS认证平台：提交表单实现方案</title>
+        <pubTime>2017-04-14T16:00:00.000Z</pubTime>
         
-        <tag>site</tag>
+        <tag>java</tag>
          
          
            
              
-              <breadCrumb title="logs" url="http://www.kavel.cn/categories/logs/"/>
+              <breadCrumb title="programming" url="http://www.kavel.cn/categories/programming/"/>
           
         </display>
     </data>
@@ -106,21 +88,39 @@
 
     
   <url>
-    <loc>http://www.kavel.cn/undefined/hexo-installment-log.html</loc>
-    <lastmod>2018-08-03T14:45:16.517Z</lastmod>
+    <loc>http://www.kavel.cn/articles/snc-revengence.html</loc>
+    <lastmod>2018-08-03T14:47:11.534Z</lastmod>
     <data>
         <display>
-        <title>Hexo小撇步：服务器架设hexo过程全记录</title>
-        <pubTime>2017-03-03T16:00:00.000Z</pubTime>
+        <title>SNC的复仇-全文完</title>
+        <pubTime>2009-09-06T16:00:00.000Z</pubTime>
         
-        <tag>site</tag>
-         
-        <tag>hexo</tag>
+        <tag>games</tag>
          
          
            
              
-              <breadCrumb title="logs" url="http://www.kavel.cn/categories/logs/"/>
+              <breadCrumb title="articles" url="http://www.kavel.cn/categories/articles/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.kavel.cn/articles/xcr3tchat.html</loc>
+    <lastmod>2018-08-03T14:46:59.871Z</lastmod>
+    <data>
+        <display>
+        <title>Xcr3tChat: 一个比较安全的聊天工具</title>
+        <pubTime>2018-08-02T06:44:57.000Z</pubTime>
+        
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="programming" url="http://www.kavel.cn/categories/programming/"/>
           
         </display>
     </data>

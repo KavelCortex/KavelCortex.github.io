@@ -2,44 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.kavel.cn/undefined/xcr3tchat.html</loc>
+    <loc>http://www.kavel.cn/articles/hexo-installment-log.html</loc>
     
-    <lastmod>2018-08-03T14:45:32.937Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.kavel.cn/undefined/snc-revengence.html</loc>
-    
-    <lastmod>2018-08-03T14:45:28.782Z</lastmod>
+    <lastmod>2018-08-03T14:47:24.926Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.kavel.cn/undefined/post-via-cas.html</loc>
+    <loc>http://www.kavel.cn/articles/letsencrypt-on-centos7.html</loc>
     
-    <lastmod>2018-08-03T14:45:25.107Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.kavel.cn/undefined/php-framework-using-singleton-with-GET.html</loc>
-    
-    <lastmod>2018-08-03T14:45:22.734Z</lastmod>
+    <lastmod>2018-08-03T14:47:21.384Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.kavel.cn/undefined/letsencrypt-on-centos7.html</loc>
+    <loc>http://www.kavel.cn/articles/php-framework-using-singleton-with-GET.html</loc>
     
-    <lastmod>2018-08-03T14:45:20.272Z</lastmod>
+    <lastmod>2018-08-03T14:47:18.357Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.kavel.cn/undefined/hexo-installment-log.html</loc>
+    <loc>http://www.kavel.cn/articles/post-via-cas.html</loc>
     
-    <lastmod>2018-08-03T14:45:16.517Z</lastmod>
+    <lastmod>2018-08-03T14:47:14.960Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.kavel.cn/articles/snc-revengence.html</loc>
+    
+    <lastmod>2018-08-03T14:47:11.534Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.kavel.cn/articles/xcr3tchat.html</loc>
+    
+    <lastmod>2018-08-03T14:46:59.871Z</lastmod>
     
   </url>
   
