@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://www.kavel.cn/en/i18n-test.html</loc>
+    <lastmod>2018-08-03T09:48:18.202Z</lastmod>
+    <data>
+        <display>
+        <title>i18n test</title>
+        <pubTime>2018-08-03T09:48:18.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.kavel.cn/zh-CN/letsencrypt-on-centos7.html</loc>
     <lastmod>2018-08-03T09:27:53.489Z</lastmod>
     <data>
