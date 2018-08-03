@@ -140,18 +140,29 @@
 
 
 
-  <meta name="description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
-<meta name="keywords" content="php,framework">
+  <meta name="description" content="看着别人网站上绿色的https标签很是心痒，而又不想花大价钱申请企业级的SSL方案，于是寻思着给网站申请了一个免费的沃通CA证书。谁知道前脚刚刚部署完证书，后脚却在网上发现沃通证书将不再被信任，心里很不是滋味。于是便重新上网搜寻其他获得SSL的方法。 经过短暂的搜寻，发现了这样一个免费的SSL证书授权机构(CA)： Let’s Encrypt  据官网介绍，Let’s Encrypt服务由Inte">
+<meta name="keywords" content="site">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php造车轮：基于单主页+GET请求的模块化框架">
-<meta property="og:url" content="http://www.kavel.cn/archives/php-framework-using-singleton-with-GET.html">
+<meta property="og:title" content="给网站用上免费SSL：Let&#39;s Encrypt操作记录">
+<meta property="og:url" content="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7.html">
 <meta property="og:site_name" content="嘉维小站">
-<meta property="og:description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
+<meta property="og:description" content="看着别人网站上绿色的https标签很是心痒，而又不想花大价钱申请企业级的SSL方案，于是寻思着给网站申请了一个免费的沃通CA证书。谁知道前脚刚刚部署完证书，后脚却在网上发现沃通证书将不再被信任，心里很不是滋味。于是便重新上网搜寻其他获得SSL的方法。 经过短暂的搜寻，发现了这样一个免费的SSL证书授权机构(CA)： Let’s Encrypt  据官网介绍，Let’s Encrypt服务由Inte">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-03T09:24:24.190Z">
+<meta property="og:image" content="https://letsencrypt.org/images/letsencrypt-logo-horizontal.svg">
+<meta property="og:image" content="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7/1_enter_email.png">
+<meta property="og:image" content="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7/2_agree_terms.png">
+<meta property="og:image" content="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7/3_progress.png">
+<meta property="og:image" content="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7/4_error_unicode.png">
+<meta property="og:image" content="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7/5_congrat.png">
+<meta property="og:image" content="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7/6_done.png">
+<meta property="og:image" content="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7/7_renew.png">
+<meta property="og:image" content="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7/7_renew_test.png">
+<meta property="og:image" content="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7/8_cron.png">
+<meta property="og:updated_time" content="2018-08-03T09:27:53.489Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php造车轮：基于单主页+GET请求的模块化框架">
-<meta name="twitter:description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
+<meta name="twitter:title" content="给网站用上免费SSL：Let&#39;s Encrypt操作记录">
+<meta name="twitter:description" content="看着别人网站上绿色的https标签很是心痒，而又不想花大价钱申请企业级的SSL方案，于是寻思着给网站申请了一个免费的沃通CA证书。谁知道前脚刚刚部署完证书，后脚却在网上发现沃通证书将不再被信任，心里很不是滋味。于是便重新上网搜寻其他获得SSL的方法。 经过短暂的搜寻，发现了这样一个免费的SSL证书授权机构(CA)： Let’s Encrypt  据官网介绍，Let’s Encrypt服务由Inte">
+<meta name="twitter:image" content="https://letsencrypt.org/images/letsencrypt-logo-horizontal.svg">
 
 
 
@@ -160,7 +171,7 @@
 
 
 
-  <link rel="canonical" href="http://www.kavel.cn/archives/php-framework-using-singleton-with-GET.html"/>
+  <link rel="canonical" href="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7.html"/>
 
 
 
@@ -170,7 +181,7 @@
   };
 </script>
 
-  <title>php造车轮：基于单主页+GET请求的模块化框架 | 嘉维小站</title>
+  <title>给网站用上免费SSL：Let's Encrypt操作记录 | 嘉维小站</title>
   
 
 
@@ -374,7 +385,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/archives/php-framework-using-singleton-with-GET.html">
+    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jiawei Wang">
@@ -391,7 +402,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">php造车轮：基于单主页+GET请求的模块化框架
+          <h2 class="post-title" itemprop="name headline">给网站用上免费SSL：Let's Encrypt操作记录
               
             
           </h2>
@@ -433,7 +444,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-03 17:24:24" itemprop="dateModified" datetime="2018-08-03T17:24:24+08:00">2018-08-03</time>
+                <time title="修改时间：2018-08-03 17:27:53" itemprop="dateModified" datetime="2018-08-03T17:27:53+08:00">2018-08-03</time>
               
             
           </span>
@@ -450,7 +461,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/logs/" itemprop="url" rel="index"><span itemprop="name">logs</span></a></span>
 
                 
                 
@@ -466,8 +477,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/archives/php-framework-using-singleton-with-GET.html#SOHUCS" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="archives/php-framework-using-singleton-with-GET.html" itemprop="commentsCount"></span>
+                <a href="/undefined/archives/letsencrypt-on-centos7.html#SOHUCS" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="undefined/archives/letsencrypt-on-centos7.html" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -497,7 +508,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.7k</span>
+                <span title="本文字数">4.1k</span>
               
 
               
@@ -511,7 +522,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -531,48 +542,107 @@
       
 
       
-        <p>上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书<a href="http://baike.baidu.com/link?url=vggwmUem3loYtWvs94Q3HyZUh1UVFYs919tmyyY3_fWNDunqRweFTBEC2OlTIr8yGkVnxH4OetQ9vgCnohzZ-oRmmVY1WOF3MGGV1WMmFd_t1YxhW7rRFR2Aiq_zJ8NLdOKt_Ckg3UvRzhhhZAxB6DdUZAkwuPaBv6naqZ5RHlhTEx83_xHmFqjKSRCcUCwl" target="_blank" rel="noopener">《PHP 5 高级应用开发实践》</a>来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。</p>
-<p>在介绍框架之前，需要了解GET请求是什么。</p>
-<h3 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h3><p>在用户与服务器之间进行请求-响应时，两种最常被用到的方法分别为：<strong>GET</strong>和<strong>POST</strong>。</p>
-<p>其中，<strong>GET请求</strong>的查询字符串是直接写在URL中进行发送的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.kavel.cn/?page=pdf</span><br></pre></td></tr></table></figure></p>
-<p>在这段URL中，<code>?</code>表示GET请求的开头，而<code>page=pdf</code>则是查询的键值对。</p>
-<p>而GET请求也有如下的一些原则：</p>
-<ul>
-<li>GET 请求<strong>可被缓存</strong></li>
-<li>GET 请求<strong>可保留</strong>在浏览器<strong>历史记录</strong>中</li>
-<li>GET 请求<strong>可被收藏为书签</strong></li>
-<li>GET 请求<strong>不应</strong>在<strong>处理敏感数据</strong>时使用</li>
-<li>GET 请求<strong>有长度限制</strong></li>
-<li>GET 请求只应当用于<strong>取回数据</strong> </li>
-</ul>
-<p>在PHP中，我们使用<code>$value=$_GET[$key]</code>方法来获取GET的内容。<br>其中<code>$key</code>为我们自己定义的等号左边的内容（如<code>page</code>），称为<strong>键</strong>。<br>而<code>$value</code>的内容即为我们需要获取的等号右边的内容（如<code>pdf</code>），称为<strong>值</strong>。</p>
-<p>而这套框架的核心原理，则是利用了GET传递请求的<strong>可保留</strong>性，在单个页面（如<code>index.php</code>）通过GET请求获取到用户传来的不同的<strong>值</strong> ，并根据<strong>值</strong>插入不同的模块页展现给用户。这是一种非常容易实现的<strong>模块化方案</strong>。</p>
-<p>话不多说，赶紧进入实战环节。</p>
-<h3 id="获取用户传来的GET信息："><a href="#获取用户传来的GET信息：" class="headerlink" title="获取用户传来的GET信息："></a>获取用户传来的GET信息：</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取插入的子页面名称</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'page'</span>])) &#123;</span><br><span class="line">    $p = sterilizeInput($_GET[<span class="string">'page'</span>]);</span><br><span class="line">&#125; <span class="keyword">elseif</span> (<span class="keyword">isset</span>($_POST[<span class="string">'page'</span>])) &#123;</span><br><span class="line">    $p = $_POST[<span class="string">'page'</span>];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $p = <span class="string">'index'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//任何GET表单在赋值前必须使用消毒函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sterilizeInput</span><span class="params">($data)</span> </span>&#123;</span><br><span class="line">    $data = trim($data); <span class="comment">//移除字符串两侧的空白字符</span></span><br><span class="line">    $data = stripslashes($data); <span class="comment">//移除字符串中的所有反斜杠</span></span><br><span class="line">    $data = htmlspecialchars($data); <span class="comment">//将预定义的字符转换为 HTML 实体，可过滤单引号、双引号等</span></span><br><span class="line">    <span class="keyword">return</span> $data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们应当提防<strong>用户能够通过GET请求上传恶意代码使得对网页进行的任意操作成为可能</strong>。所以在进行赋值前，使用<strong>消毒函数</strong>对<strong>值</strong>进行消毒非常重要。</p>
-<h3 id="根据GET信息选择要插入的模块页面"><a href="#根据GET信息选择要插入的模块页面" class="headerlink" title="根据GET信息选择要插入的模块页面"></a>根据GET信息选择要插入的模块页面</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//选择插入的子页面</span></span><br><span class="line"><span class="keyword">switch</span> ($p) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'index'</span>:</span><br><span class="line">        $page = <span class="string">'welcome.php'</span>;</span><br><span class="line">        $page_title = <span class="string">'主页'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'pdf'</span>:</span><br><span class="line">        $page=<span class="string">'pdf.php'</span>;</span><br><span class="line">        $page_title=<span class="string">'课堂笔记'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'resume'</span>:</span><br><span class="line">        $page=<span class="string">'resume.html'</span>;</span><br><span class="line">        $page_title=<span class="string">'简历'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'404'</span>:</span><br><span class="line">        header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在这里，我们通过switch-case方式对得到的<strong>值</strong>进行判断，得到对应的页面文件名称。还要记得如果<strong>值</strong>对所有条件都不符合时，跳转到404页面。</p>
-<h3 id="插入模块页面"><a href="#插入模块页面" class="headerlink" title="插入模块页面"></a>插入模块页面</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//确保子页面存在</span></span><br><span class="line"><span class="keyword">if</span> (!file_exists(<span class="string">'./modules/'</span> . $page)) &#123;</span><br><span class="line">    header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">    <span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//插入页眉文件</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'./includes/'</span> . <span class="string">'header.inc.html'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入子页面</span></span><br><span class="line"><span class="keyword">include</span>(<span class="string">'./modules/'</span> . $page);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入页脚文件</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'./includes/'</span> . <span class="string">'footer.inc.html'</span>);</span><br></pre></td></tr></table></figure>
-<p>使用<code>include($page)</code>函数进行页面的插入。在插入页面前，还需要判断该页面是否真实存在。如果不存在，记得跳转到404页面。</p>
-<p>为了实现模块化，我将整个页面分成三部分，分别为页眉、正文和页脚。页眉负责页面的头文件、CSS等。通过插入相同的页眉文件，我们可以确保整个网站都能得到统一的风格。</p>
-<p>使用模块化的框架可以极大地方便模板页的开发。因为这样直接省去了编写每个页面都相同且必须的头文件和CSS等项，直接从<code>&lt;body&gt;</code>部分开始下笔。 我在这里则更加极端（lǎn），模板页只负责一个<code>&lt;div&gt;</code>，其余内容都在页眉和页脚文件中。</p>
-<p>这里是当<code>page=index</code>时，网页的组成内容：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: header.inc.html*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">if</span> (!<span class="keyword">isset</span>($page_title)) $page_title=<span class="string">'主页'</span>;<span class="meta">?&gt;</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;<span class="meta">&lt;?</span>=$page_title<span class="meta">?&gt;</span> - kavel.cn&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class="container body-content"&gt;</span><br></pre></td></tr></table></figure></p>
-<p>在页眉文件里，<code>&lt;title&gt;</code>标签里面的值<code>$page_title</code>由<code>index.php</code>定义。使用这种模块化方式的好处之一，就是在<code>index.php</code>内定义的变量，可以当作全局变量，在所有模块页面都能任意使用。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: welcome.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomSplash</span><span class="params">()</span></span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line">&lt;div class="jumbotron"&gt;</span><br><span class="line">    &lt;div class="container"&gt;</span><br><span class="line">        &lt;h1&gt;<span class="meta">&lt;?</span>=randomSplash()<span class="meta">?&gt;</span>&lt;/h1&gt;</span><br><span class="line">        &lt;p&gt;这里是嘉维小站，我是王嘉维。&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&lt;a class="btn btn-primary btn-lg" href="/blog" role="button"&gt;进入博客&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p>可以看到在模块页面内只包含一个<code>&lt;div&gt;</code>。这极大地方便了模块页的开发，也不需要担心样式问题。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: footer.inc.html*/</span></span><br><span class="line"></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;footer class="container body-content"&gt;</span><br><span class="line">            &lt;hr /&gt;</span><br><span class="line">            &lt;p&gt;&amp;copy; <span class="meta">&lt;?</span>=date(<span class="string">"Y"</span>,time())<span class="meta">?&gt;</span> Jiawei W.&lt;/p&gt;</span><br><span class="line">        &lt;/footer&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>页尾文件则是包含各种结束标签。当然<code>&lt;footer&gt;</code>标签也存在于这里。</p>
-<p><del>本站<a href="https://www.kavel.cn">首页</a>就是使用这种框架写成的，如果感兴趣的话可以点击链接参观：</del></p>
+        <p>看着别人网站上绿色的https标签很是心痒，而又不想花大价钱申请企业级的SSL方案，于是寻思着给网站申请了一个免费的沃通CA证书。谁知道前脚刚刚部署完证书，后脚却在网上发现<a href="http://www.cnbeta.com/articles/tech/554167.htm" target="_blank" rel="noopener">沃通证书将不再被信任</a>，心里很不是滋味。于是便重新上网搜寻其他获得SSL的方法。</p>
+<p>经过短暂的搜寻，发现了这样一个免费的SSL证书授权机构(CA)： <a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a></p>
+<p><img src="https://letsencrypt.org/images/letsencrypt-logo-horizontal.svg" alt="Let’s Encrypt"></p>
+<p>据官网介绍，Let’s Encrypt服务由Internet Security Research Group (ISRG)推出，通过向网站自动签发和管理免费SSL证书，旨在降低互联网进行安全通信的门槛。该项目托管于<a href="https://www.linuxfoundation.org/projects" target="_blank" rel="noopener">Linux基金会</a>，得到了来自诸如Mozilla, Akamai, Cisco, Electronic Foundation Frontier, OVH.com, Google Chrome等大咖加持，来头实在不小。</p>
+<p>为什么最终选择使用这个方案呢？首先当然是因为免费了。其次就是官网所宣传的“自动化(automated)”了。要知道当时给网站上CA证书的时候，生成私钥上传证书，各种麻烦事儿。Let’s Encrypt仅需要一条指令即可完成续签，根本不用进行文件操作，实在是极其吸引人。</p>
+<p>不多说废话，立刻进行操作。</p>
+<p><strong>本文使用<code>CentOS 7+Nginx</code>的组合。</strong></p>
 <blockquote>
-<p><del><a href="https://www.kavel.cn/">https://www.kavel.cn/</a></del></p>
+<p>注意：不同的OS和Web服务器所使用的命令不尽相同，有关其他系统和Web服务器的操作指南可以查看<a href="https://certbot.eff.org/" target="_blank" rel="noopener">这里</a>。</p>
 </blockquote>
-<p><em>为了把博客置顶，已经删除了这个页面了 –2018-08-03</em></p>
+<p>官网提到，上证书和续签的过程都是使用<a href="https://certbot.eff.org/" target="_blank" rel="noopener">Certbot</a>来进行的。由于服务器使用的是CentOS 7，所以直接运行以下命令即可完成安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install epel-release</span><br><span class="line">$ sudo yum install certbot</span><br></pre></td></tr></table></figure>
+<p>其中第一个命令是安装EPEL源，也称为“企业版Linux的额外软件包（Extra Packages for Enterprise Linux）”。EPEL源了提供许多在CentOS自带源上没有的软件，而这次用到的certbot就是从EPEL源中获取的。而第二个命令则是安装certbot本身。</p>
+<p>Certbot的官网提到，CentOS 7并不支持证书的自动安装，所以我们使用手动方式安装证书。获取证书使用<code>certonly</code>命令。具体参数如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">certbot certonly --webroot -w &lt;网页路径&gt; -d &lt;域名&gt;</span><br></pre></td></tr></table></figure>
+<p><code>--webroot</code>参数适用于使用Web服务器(如Nginx、Apache等)的网站。关于这个参数的具体使用说明可以查看<a href="https://certbot.eff.org/docs/using.html#webroot" target="_blank" rel="noopener">这里</a>。</p>
+<p><code>-w</code>参数后面接的是服务器请求数据的目录(“web root”)。一条命令后面可以接多个<code>-w</code>参数。</p>
+<p><code>-d</code>参数后面接这个目录的域名(“domain”)。同样地，一条命令后面也可以接多个<code>-d</code>参数。</p>
+<p>一个简单的示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ certbot certonly --webroot -w /var/www/example -d example.com -d www.example.com -w /var/www/thing -d thing.is -d m.thing.is</span><br></pre></td></tr></table></figure>
+<p>这条命令将生成单个证书颁发给 <strong>example.com</strong> , <strong>www.example.com</strong> , <strong>thing.is</strong> 和 <strong>m.thing.is</strong> ，而域名目录分别为 <strong>/var/www/example</strong> 和 <strong>/var/www/thing</strong> 。</p>
+<blockquote>
+<p>注意：<code>--webroot</code>参数的原理是在指定的web root位置（由<code>-w</code>指定）生成一个临时文件<code>.well-known/acme-challenge</code>，接着由Let’s Encrypt服务器向指定的域名（由<code>-d</code>指定）发起一个HTTP请求，验证DNS服务器是否能正确解析到该目录，从而验证域名的真实性。所以请在使用<code>--webroot</code>参数之前检查以下项目是否正常：</p>
+<ul>
+<li>保证Web服务器能够请求到隐藏目录（如<code>.well-known</code>这样目录名前带“点”的目录）里面的内容（如<code>.well-known/acme-challenge</code>）。</li>
+<li>保持80端口正常访问。</li>
+<li>当网站使用的是国内DNS时，如DNSPOD、阿里云DNS、CloudXNS等，有几率出现<code>DNS query timed out</code>问题导致证书获取不成功。这时候重新执行一遍命令即可。</li>
+</ul>
+</blockquote>
+<p>键入命令回车后，进入Certbot的UI界面。</p>
+<p>首先会提示键入用于找回私钥的邮箱，回车继续：</p>
+<img src="/undefined/archives/letsencrypt-on-centos7/1_enter_email.png">
+<p>接着，需要同意<a href="https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf" target="_blank" rel="noopener">协定</a>用来注册<a href="https://acme-v01.api.letsencrypt.org/directory" target="_blank" rel="noopener">ACME服务</a>：</p>
+<img src="/undefined/archives/letsencrypt-on-centos7/2_agree_terms.png">
+<p>接着便是短暂的安装过程：</p>
+<img src="/undefined/archives/letsencrypt-on-centos7/3_progress.png">
+<p>唔，安装快要结束时竟然报出了<code>UnicodeEncodeError</code> :</p>
+<img src="/undefined/archives/letsencrypt-on-centos7/4_error_unicode.png">
+<p>由于python的默认编码是ascii，而当目标字符的编码不是ascii的时候，python会尝试使用解码器（’ascii’ codec）将其转换为ascii编码再继续执行。当程序中出现非unicode的编码的时候，由于解码器并不能转换非unicode的编码，于是就会报这样的异常。</p>
+<p>于是手动设置环境变量更改系统的编码，命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export LANG=en_US.UTF-8</span><br></pre></td></tr></table></figure>
+<p>接着重新使用<code>certonly</code>命令重新获取证书：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">certbot certonly --webroot -w &lt;网页路径&gt; -d &lt;域名&gt;</span><br></pre></td></tr></table></figure>
+<p>问题解决，成功获取证书：</p>
+<img src="/undefined/archives/letsencrypt-on-centos7/5_congrat.png">
+<p>接下来是证书的装载。这点和一般SSL证书的装载操作大致相同，不同点在于使用Let’s Encrypt并不需要手动上传证书，仅需要把证书路径指向它给出的路径即可。</p>
+<blockquote>
+<p>Let’s Encrypt的证书位置</p>
+<p>最新的证书默认存放在<code>/etc/letsencrypt/live/{域名}</code>中。当使用<code>renew</code>命令续签证书时，该目录下的证书总是最新的。该目录存在以下文件：</p>
+<ul>
+<li><code>privkey.pem</code> 私钥文件</li>
+<li><code>fullchain.pem</code> 证书文件（包含证书链）</li>
+<li><code>cert.pem</code>本站点的证书文件及<code>chain.pem</code>证书链文件（这两个文件需搭配使用）</li>
+</ul>
+<p>证书归档在<code>/etc/letsencrypt/archive/{域名}</code>中。所有证书的改动都会归档在这里。文件名后面的序号表示文件的版本。</p>
+</blockquote>
+<p>为了将来方便续签，我们把证书路径定在<code>/etc/letsencrypt/live/{域名}</code>下。</p>
+<p>Nginx的配置示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">server&#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        server_name localhost;</span><br><span class="line">        rewrite ^(.*)$ https://$host$uri permanent;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">        listen       443 ssl;</span><br><span class="line">        server_name  localhost; </span><br><span class="line">        ssl                  on; </span><br><span class="line">        ssl_certificate      /etc/letsencrypt/live/&#123;域名&#125;/fullchain.pem; </span><br><span class="line">        ssl_certificate_key  /etc/letsencrypt/live/&#123;域名&#125;/privkey.pem; </span><br><span class="line">        ssl_session_timeout  5m; </span><br><span class="line">        ssl_protocols  SSLv3 TLSv1; </span><br><span class="line">        ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; </span><br><span class="line">        ssl_prefer_server_ciphers   on; </span><br><span class="line">        location / &#123; </span><br><span class="line">            root   html; </span><br><span class="line">            index  index.html index.htm; </span><br><span class="line">        &#125; </span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用这样的配置，可以将用户对http（80端口）的请求通过<code>rewrite</code>全部重定向至https（443端口），以实现全站https。（经测试这种设置并不会影响Let’s Encrypt验证服务器的HTTP请求。）</p>
+<p>更改好后保存文件并重启nginx服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nginx -s reload</span><br></pre></td></tr></table></figure>
+<p>大功告成。接下来放心大胆地开启HTTPS之旅吧！！！</p>
+<img src="/undefined/archives/letsencrypt-on-centos7/6_done.png">
+<p>等等，聪明的你可能发现了，为什么证书有效期那么短呢？</p>
+<p>没关系，虽然证书的有效期短，可是简单一条命令即可搞定续签：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ certbot renew</span><br></pre></td></tr></table></figure>
+<img src="/undefined/archives/letsencrypt-on-centos7/7_renew.png">
+<p>怎么回事？原来，为了保证续签系统的效率，还没到期的证书是不会允许进行续签操作的。那么如果我想测试续签操作到底能不能正常运行该怎么办？可以使用<code>--dry-run</code>参数进行模拟运行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ certbot renew --dry-run</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：续签过程和前面申请的过程一样，都需要HTTP验证域名的真实性。所以请保持80端口的畅通。</p>
+</blockquote>
+<img src="/undefined/archives/letsencrypt-on-centos7/7_renew_test.png">
+<p>当成功完成模拟运行时，我们就可以把真实的续签命令写进系统计划了。这里我使用crontab来进行任务计划。关于crontab的配置可以看<a href="http://www.centoscn.com/CentOS/2014/0924/3835.html" target="_blank" rel="noopener">这里</a>。网上也有一个<a href="http://cron.qqe2.com/" target="_blank" rel="noopener">在线Cron表达式生成器</a>，可以预览任务执行的时机，个人感觉也非常有用。</p>
+<p>使用vim命令打开cron的任务计划表crontab：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/crontab</span><br></pre></td></tr></table></figure>
+<p>按<code>i</code>进入编辑模式，输入任务计划后，输入<code>:wq</code>保存并退出vim：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 0 0/12 1/1 * ? root certbot renew --quiet</span><br></pre></td></tr></table></figure>
+<img src="/undefined/archives/letsencrypt-on-centos7/8_cron.png">
+<p>其中<code>--quiet</code>参数表示静默运行。</p>
+<blockquote>
+<p>注意：官方建议计划任务的运行周期为每天两次，以保证证书能够随时更新。</p>
+</blockquote>
 
       
     </div>
 
     
       
+
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/undefined/archives/hexo-installment-log.html" rel="bookmark">hexo小撇步：服务器架设hexo过程全记录</a></div>
+      
+    </li>
+  
+  </ul>
 
 
     
@@ -621,7 +691,7 @@
     <strong>本文作者： </strong>Jiawei Wang</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.kavel.cn/archives/php-framework-using-singleton-with-GET.html" title="php造车轮：基于单主页+GET请求的模块化框架">http://www.kavel.cn/archives/php-framework-using-singleton-with-GET.html</a>
+    <a href="http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7.html" title="给网站用上免费SSL：Let's Encrypt操作记录">http://www.kavel.cn/undefined/archives/letsencrypt-on-centos7.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -634,9 +704,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/php/" rel="tag"># php</a>
-          
-            <a href="/tags/framework/" rel="tag"># framework</a>
+            <a href="/tags/site/" rel="tag"># site</a>
           
         </div>
       
@@ -661,7 +729,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/snc-revengence.html" rel="next" title="SNC的复仇-全文完">
+              <a href="/undefined/archives/snc-revengence.html" rel="next" title="SNC的复仇-全文完">
                 <i class="fa fa-chevron-left"></i> SNC的复仇-全文完
               </a>
             
@@ -671,8 +739,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/letsencrypt-on-centos7.html" rel="prev" title="给网站用上免费SSL：Let's Encrypt操作记录">
-                给网站用上免费SSL：Let's Encrypt操作记录 <i class="fa fa-chevron-right"></i>
+              <a href="/undefined/archives/php-framework-using-singleton-with-GET.html" rel="prev" title="php造车轮：基于单主页+GET请求的模块化框架">
+                php造车轮：基于单主页+GET请求的模块化框架 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -723,17 +791,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -869,22 +928,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GET请求"><span class="nav-number">1.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取用户传来的GET信息："><span class="nav-number">2.</span> <span class="nav-text">获取用户传来的GET信息：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据GET信息选择要插入的模块页面"><span class="nav-number">3.</span> <span class="nav-text">根据GET信息选择要插入的模块页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入模块页面"><span class="nav-number">4.</span> <span class="nav-text">插入模块页面</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
