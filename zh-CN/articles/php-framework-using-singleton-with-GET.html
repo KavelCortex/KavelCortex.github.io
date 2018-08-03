@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-CN,en">
+<html class="theme-next gemini use-motion" lang="en,zh-CN,default">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -140,17 +140,18 @@
 
 
 
-  <meta name="description" content="这里是嘉维小站，我是王嘉维。在大学时候偶然接触到了腾讯云学生一元优惠主机，便心痒想建一个属于自己的网站，于是在域名主机一条龙以后，这个网站就诞生了。但2016年建站以后随着三分钟热度过去，这个站点也慢慢荒废了。2018年大学毕业，随着学生身份结束，腾讯云立马结束了我的一元主机优惠权限（这头刚刚参加完毕业典礼那头腾讯云就发邮件说失去身份了，辣鸡TX），于是立即动手将博客移动到VPS上去，再见了您呐，">
-<meta property="og:type" content="website">
-<meta property="og:title" content="泥嚎呀( •̀ ω •́ )y">
-<meta property="og:url" content="http://www.kavel.cn/en/about/index.html">
+  <meta name="description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
+<meta name="keywords" content="php,framework">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php造车轮：基于单主页+GET请求的模块化框架">
+<meta property="og:url" content="http://www.kavel.cn/zh-CN/articles/php-framework-using-singleton-with-GET.html">
 <meta property="og:site_name" content="嘉维小站">
-<meta property="og:description" content="这里是嘉维小站，我是王嘉维。在大学时候偶然接触到了腾讯云学生一元优惠主机，便心痒想建一个属于自己的网站，于是在域名主机一条龙以后，这个网站就诞生了。但2016年建站以后随着三分钟热度过去，这个站点也慢慢荒废了。2018年大学毕业，随着学生身份结束，腾讯云立马结束了我的一元主机优惠权限（这头刚刚参加完毕业典礼那头腾讯云就发邮件说失去身份了，辣鸡TX），于是立即动手将博客移动到VPS上去，再见了您呐，">
-<meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-08-03T07:42:35.372Z">
+<meta property="og:description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-03T09:24:24.190Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="泥嚎呀( •̀ ω •́ )y">
-<meta name="twitter:description" content="这里是嘉维小站，我是王嘉维。在大学时候偶然接触到了腾讯云学生一元优惠主机，便心痒想建一个属于自己的网站，于是在域名主机一条龙以后，这个网站就诞生了。但2016年建站以后随着三分钟热度过去，这个站点也慢慢荒废了。2018年大学毕业，随着学生身份结束，腾讯云立马结束了我的一元主机优惠权限（这头刚刚参加完毕业典礼那头腾讯云就发邮件说失去身份了，辣鸡TX），于是立即动手将博客移动到VPS上去，再见了您呐，">
+<meta name="twitter:title" content="php造车轮：基于单主页+GET请求的模块化框架">
+<meta name="twitter:description" content="上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书《PHP 5 高级应用开发实践》来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。 在介绍框架之前，需要了解GET请求">
 
 
 
@@ -159,7 +160,7 @@
 
 
 
-  <link rel="canonical" href="http://www.kavel.cn/en/about/"/>
+  <link rel="canonical" href="http://www.kavel.cn/zh-CN/articles/php-framework-using-singleton-with-GET.html"/>
 
 
 
@@ -169,7 +170,7 @@
   };
 </script>
 
-  <title>泥嚎呀( •̀ ω •́ )y | 嘉维小站</title>
+  <title>php造车轮：基于单主页+GET请求的模块化框架 | 嘉维小站</title>
   
 
 
@@ -209,7 +210,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -239,7 +240,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -259,15 +260,15 @@
           
           <li class="menu-item menu-item-home">
     <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
   </li>
         
         
         
           
-          <li class="menu-item menu-item-about menu-item-active">
+          <li class="menu-item menu-item-about">
     <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
   </li>
         
         
@@ -275,7 +276,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives<span class="badge">6</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">6</span></a>
   </li>
         
         
@@ -283,7 +284,7 @@
           
           <li class="menu-item menu-item-sitemap">
     <a href="/sitemap.xml" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />Sitemap</a>
+      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
   </li>
         
         
@@ -291,7 +292,7 @@
           
           <li class="menu-item menu-item-commonweal">
     <a href="/404/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />Commonweal 404</a>
+      <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />公益 404</a>
   </li>
 
       
@@ -301,7 +302,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
         </li>
       
     </ul>
@@ -322,7 +323,7 @@
     </span>
     <div class="local-search-input-wrapper">
       <input autocomplete="off"
-             placeholder="Searching..." spellcheck="false"
+             placeholder="搜索..." spellcheck="false"
              type="text" id="local-search-input">
     </div>
   </div>
@@ -353,142 +354,341 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.kavel.cn/zh-CN/articles/php-framework-using-singleton-with-GET.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jiawei Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/kavelspot.svg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嘉维小站">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">泥嚎呀( •̀ ω •́ )y</h2>
-
-<div class="post-meta">
-  
-  
-
-
-  
-  
-  <ul class="breadcrumb">
-    
-      
-      
         
-          <li><a href="/en/">EN</a></li>
+        
+          <h2 class="post-title" itemprop="name headline">php造车轮：基于单主页+GET请求的模块化框架
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-02-28 00:00:00" itemprop="dateCreated datePublished" datetime="2017-02-28T00:00:00+08:00">2017-02-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-03 17:24:24" itemprop="dateModified" datetime="2018-08-03T17:24:24+08:00">2018-08-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
           
             
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/zh-CN/articles/php-framework-using-singleton-with-GET.html#SOHUCS" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="zh-CN/articles/php-framework-using-singleton-with-GET.html" itemprop="commentsCount"></span>
+                </a>
+              
+            
           
-        
-      
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
     
-      
-      
-        
-          <li>ABOUT</li>
-        
-      
+
     
-      
-      
     
-  </ul>
-
-
-</div>
-
-</header>
+    
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
-      <div class="post-body">
-        
-        
-          <p>这里是嘉维小站，我是王嘉维。在大学时候偶然接触到了<a href="https://cloud.tencent.com/act/campus" target="_blank" rel="noopener">腾讯云学生一元优惠主机</a>，便心痒想建一个属于自己的网站，于是在域名主机一条龙以后，这个网站就诞生了。但2016年建站以后随着三分钟热度过去，这个站点也慢慢荒废了。2018年大学毕业，随着学生身份结束，腾讯云立马结束了我的一元主机优惠权限（这头刚刚参加完毕业典礼那头腾讯云就发邮件说失去身份了，辣鸡TX），于是立即动手将博客移动到VPS上去，再见了您呐，腾讯云主机。在整理硬盘的时候发现了许多好玩的小玩意，心想也许是时候重启站点了。于是换个主题，开始了嘉维小站2.0时代！在以后的日子里，接触到酷炫的事物之后会把他们一一整理之后发上来，希望大家会喜欢！</p>
-<p>如果你读到了这里，真的让我太感动了QAQ。作为回报，我在这里埋下了一个小彩蛋：<a href="https://www.kavel.cn/ssr.txt">ssr.txt</a> 相信聪明的你一定知道这个怎么用( ͡° ͜ʖ ͡°)  </p>
-<h1 id="Changelog"><a href="#Changelog" class="headerlink" title="Changelog"></a>Changelog</h1><h2 id="Unreleased"><a href="#Unreleased" class="headerlink" title="[Unreleased]"></a>[Unreleased]</h2><h2 id="2-0-0-2018-08-03"><a href="#2-0-0-2018-08-03" class="headerlink" title="[2.0.0] - 2018-08-03"></a>[2.0.0] - 2018-08-03</h2><h3 id="Added"><a href="#Added" class="headerlink" title="Added"></a>Added</h3><ul>
-<li>创建了“关于”页面，添加了一个符合<a href="https://keepachangelog.com/en/1.0.0/" target="_blank" rel="noopener">Keep A Changelog</a>规范的更新日志，用于记录站点的更新历史。</li>
-</ul>
-<h3 id="Changed"><a href="#Changed" class="headerlink" title="Changed"></a>Changed</h3><ul>
-<li>更换了服务器主机。</li>
-<li>hexo版本从v3.6.2更新至v3.7.1。</li>
-<li>主题从<a href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">Hueman</a>更换至<a href="https://theme-next.org/" target="_blank" rel="noopener">NexT.Gemini</a>。</li>
-</ul>
-<h2 id="1-2-0-2017-03-04"><a href="#1-2-0-2017-03-04" class="headerlink" title="[1.2.0] - 2017-03-04"></a>[1.2.0] - 2017-03-04</h2><h3 id="Changed-1"><a href="#Changed-1" class="headerlink" title="Changed"></a>Changed</h3><ul>
-<li>博客系统从<a href="https://wordpress.org/" target="_blank" rel="noopener">Wordpress</a>更换为<a href="https://hexo.io/" target="_blank" rel="noopener">hexo</a>。<a href="https://www.kavel.cn/archives/hexo-installment-log.html">相关博文</a></li>
-</ul>
-<h2 id="1-1-0-2017-02-28"><a href="#1-1-0-2017-02-28" class="headerlink" title="[1.1.0] - 2017-02-28"></a>[1.1.0] - 2017-02-28</h2><h3 id="Added-1"><a href="#Added-1" class="headerlink" title="Added"></a>Added</h3><ul>
-<li>部署了<a href="https://letsencrypt.org/" target="_blank" rel="noopener">Let’s Encrypt</a> SSL证书，正式开启全站HTTPS模式。<a href="https://www.kavel.cn/archives/letsencrypt-on-centos7.html">相关博文</a></li>
-</ul>
-<h2 id="1-0-0-2016-03-14"><a href="#1-0-0-2016-03-14" class="headerlink" title="[1.0.0] - 2016-03-14"></a>[1.0.0] - 2016-03-14</h2><h3 id="Added-2"><a href="#Added-2" class="headerlink" title="Added"></a>Added</h3><ul>
-<li>成功申请域名和备案，嘉维小站正式建站了！</li>
-</ul>
 
-        
-      </div>
       
-      
+        <p>上个学期修了一门软件工程课，我们小组的project是开发一个使用PHP的管理系统。只会 echo ‘Hello World’ 的我只好赶紧从校图书馆借了一本书<a href="http://baike.baidu.com/link?url=vggwmUem3loYtWvs94Q3HyZUh1UVFYs919tmyyY3_fWNDunqRweFTBEC2OlTIr8yGkVnxH4OetQ9vgCnohzZ-oRmmVY1WOF3MGGV1WMmFd_t1YxhW7rRFR2Aiq_zJ8NLdOKt_Ckg3UvRzhhhZAxB6DdUZAkwuPaBv6naqZ5RHlhTEx83_xHmFqjKSRCcUCwl" target="_blank" rel="noopener">《PHP 5 高级应用开发实践》</a>来好好补充知识。书中提到了一个很有趣的模块化框架，实现起来也非常简单，用来新手入门练练手对网页结构的了解也是非常有益的。在这里把它分享出来给大家，也顺便回顾一下学到的知识。</p>
+<p>在介绍框架之前，需要了解GET请求是什么。</p>
+<h3 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h3><p>在用户与服务器之间进行请求-响应时，两种最常被用到的方法分别为：<strong>GET</strong>和<strong>POST</strong>。</p>
+<p>其中，<strong>GET请求</strong>的查询字符串是直接写在URL中进行发送的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.kavel.cn/?page=pdf</span><br></pre></td></tr></table></figure></p>
+<p>在这段URL中，<code>?</code>表示GET请求的开头，而<code>page=pdf</code>则是查询的键值对。</p>
+<p>而GET请求也有如下的一些原则：</p>
+<ul>
+<li>GET 请求<strong>可被缓存</strong></li>
+<li>GET 请求<strong>可保留</strong>在浏览器<strong>历史记录</strong>中</li>
+<li>GET 请求<strong>可被收藏为书签</strong></li>
+<li>GET 请求<strong>不应</strong>在<strong>处理敏感数据</strong>时使用</li>
+<li>GET 请求<strong>有长度限制</strong></li>
+<li>GET 请求只应当用于<strong>取回数据</strong> </li>
+</ul>
+<p>在PHP中，我们使用<code>$value=$_GET[$key]</code>方法来获取GET的内容。<br>其中<code>$key</code>为我们自己定义的等号左边的内容（如<code>page</code>），称为<strong>键</strong>。<br>而<code>$value</code>的内容即为我们需要获取的等号右边的内容（如<code>pdf</code>），称为<strong>值</strong>。</p>
+<p>而这套框架的核心原理，则是利用了GET传递请求的<strong>可保留</strong>性，在单个页面（如<code>index.php</code>）通过GET请求获取到用户传来的不同的<strong>值</strong> ，并根据<strong>值</strong>插入不同的模块页展现给用户。这是一种非常容易实现的<strong>模块化方案</strong>。</p>
+<p>话不多说，赶紧进入实战环节。</p>
+<h3 id="获取用户传来的GET信息："><a href="#获取用户传来的GET信息：" class="headerlink" title="获取用户传来的GET信息："></a>获取用户传来的GET信息：</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取插入的子页面名称</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">'page'</span>])) &#123;</span><br><span class="line">    $p = sterilizeInput($_GET[<span class="string">'page'</span>]);</span><br><span class="line">&#125; <span class="keyword">elseif</span> (<span class="keyword">isset</span>($_POST[<span class="string">'page'</span>])) &#123;</span><br><span class="line">    $p = $_POST[<span class="string">'page'</span>];</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $p = <span class="string">'index'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//任何GET表单在赋值前必须使用消毒函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sterilizeInput</span><span class="params">($data)</span> </span>&#123;</span><br><span class="line">    $data = trim($data); <span class="comment">//移除字符串两侧的空白字符</span></span><br><span class="line">    $data = stripslashes($data); <span class="comment">//移除字符串中的所有反斜杠</span></span><br><span class="line">    $data = htmlspecialchars($data); <span class="comment">//将预定义的字符转换为 HTML 实体，可过滤单引号、双引号等</span></span><br><span class="line">    <span class="keyword">return</span> $data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们应当提防<strong>用户能够通过GET请求上传恶意代码使得对网页进行的任意操作成为可能</strong>。所以在进行赋值前，使用<strong>消毒函数</strong>对<strong>值</strong>进行消毒非常重要。</p>
+<h3 id="根据GET信息选择要插入的模块页面"><a href="#根据GET信息选择要插入的模块页面" class="headerlink" title="根据GET信息选择要插入的模块页面"></a>根据GET信息选择要插入的模块页面</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//选择插入的子页面</span></span><br><span class="line"><span class="keyword">switch</span> ($p) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'index'</span>:</span><br><span class="line">        $page = <span class="string">'welcome.php'</span>;</span><br><span class="line">        $page_title = <span class="string">'主页'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'pdf'</span>:</span><br><span class="line">        $page=<span class="string">'pdf.php'</span>;</span><br><span class="line">        $page_title=<span class="string">'课堂笔记'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'resume'</span>:</span><br><span class="line">        $page=<span class="string">'resume.html'</span>;</span><br><span class="line">        $page_title=<span class="string">'简历'</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'404'</span>:</span><br><span class="line">        header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">        <span class="keyword">exit</span>();</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这里，我们通过switch-case方式对得到的<strong>值</strong>进行判断，得到对应的页面文件名称。还要记得如果<strong>值</strong>对所有条件都不符合时，跳转到404页面。</p>
+<h3 id="插入模块页面"><a href="#插入模块页面" class="headerlink" title="插入模块页面"></a>插入模块页面</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: index.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//确保子页面存在</span></span><br><span class="line"><span class="keyword">if</span> (!file_exists(<span class="string">'./modules/'</span> . $page)) &#123;</span><br><span class="line">    header(<span class="string">"HTTP/1.0 404 Not Found"</span>);</span><br><span class="line">    <span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//插入页眉文件</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'./includes/'</span> . <span class="string">'header.inc.html'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入子页面</span></span><br><span class="line"><span class="keyword">include</span>(<span class="string">'./modules/'</span> . $page);</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入页脚文件</span></span><br><span class="line"><span class="keyword">include_once</span>(<span class="string">'./includes/'</span> . <span class="string">'footer.inc.html'</span>);</span><br></pre></td></tr></table></figure>
+<p>使用<code>include($page)</code>函数进行页面的插入。在插入页面前，还需要判断该页面是否真实存在。如果不存在，记得跳转到404页面。</p>
+<p>为了实现模块化，我将整个页面分成三部分，分别为页眉、正文和页脚。页眉负责页面的头文件、CSS等。通过插入相同的页眉文件，我们可以确保整个网站都能得到统一的风格。</p>
+<p>使用模块化的框架可以极大地方便模板页的开发。因为这样直接省去了编写每个页面都相同且必须的头文件和CSS等项，直接从<code>&lt;body&gt;</code>部分开始下笔。 我在这里则更加极端（lǎn），模板页只负责一个<code>&lt;div&gt;</code>，其余内容都在页眉和页脚文件中。</p>
+<p>这里是当<code>page=index</code>时，网页的组成内容：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: header.inc.html*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">if</span> (!<span class="keyword">isset</span>($page_title)) $page_title=<span class="string">'主页'</span>;<span class="meta">?&gt;</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;<span class="meta">&lt;?</span>=$page_title<span class="meta">?&gt;</span> - kavel.cn&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class="container body-content"&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在页眉文件里，<code>&lt;title&gt;</code>标签里面的值<code>$page_title</code>由<code>index.php</code>定义。使用这种模块化方式的好处之一，就是在<code>index.php</code>内定义的变量，可以当作全局变量，在所有模块页面都能任意使用。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: welcome.php*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">randomSplash</span><span class="params">()</span></span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line">&lt;div class="jumbotron"&gt;</span><br><span class="line">    &lt;div class="container"&gt;</span><br><span class="line">        &lt;h1&gt;<span class="meta">&lt;?</span>=randomSplash()<span class="meta">?&gt;</span>&lt;/h1&gt;</span><br><span class="line">        &lt;p&gt;这里是嘉维小站，我是王嘉维。&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&lt;a class="btn btn-primary btn-lg" href="/blog" role="button"&gt;进入博客&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>可以看到在模块页面内只包含一个<code>&lt;div&gt;</code>。这极大地方便了模块页的开发，也不需要担心样式问题。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*File name: footer.inc.html*/</span></span><br><span class="line"></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;footer class="container body-content"&gt;</span><br><span class="line">            &lt;hr /&gt;</span><br><span class="line">            &lt;p&gt;&amp;copy; <span class="meta">&lt;?</span>=date(<span class="string">"Y"</span>,time())<span class="meta">?&gt;</span> Jiawei W.&lt;/p&gt;</span><br><span class="line">        &lt;/footer&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>页尾文件则是包含各种结束标签。当然<code>&lt;footer&gt;</code>标签也存在于这里。</p>
+<p><del>本站<a href="https://www.kavel.cn">首页</a>就是使用这种框架写成的，如果感兴趣的话可以点击链接参观：</del></p>
+<blockquote>
+<p><del><a href="https://www.kavel.cn/">https://www.kavel.cn/</a></del></p>
+</blockquote>
+<p><em>为了把博客置顶，已经删除了这个页面了 –2018-08-03</em></p>
+
       
     </div>
-    
 
-
-  
-  
-  <ul class="breadcrumb">
     
       
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>您的每一次打赏都是我更新的动力！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/reward.jpg" alt="Jiawei Wang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Jiawei Wang 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Jiawei Wang</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.kavel.cn/zh-CN/articles/php-framework-using-singleton-with-GET.html" title="php造车轮：基于单主页+GET请求的模块化框架">http://www.kavel.cn/zh-CN/articles/php-framework-using-singleton-with-GET.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
       
-        
-          <li><a href="/en/">EN</a></li>
+        <div class="post-tags">
           
+            <a href="/tags/php/" rel="tag"># php</a>
+          
+            <a href="/tags/framework/" rel="tag"># framework</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          
-        
+              <a href="/zh-CN/articles/letsencrypt-on-centos7.html" rel="next" title="给网站用上免费SSL：Let's Encrypt操作记录">
+                <i class="fa fa-chevron-left"></i> 给网站用上免费SSL：Let's Encrypt操作记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/zh-CN/articles/hexo-installment-log.html" rel="prev" title="hexo小撇步：服务器架设hexo过程全记录">
+                hexo小撇步：服务器架设hexo过程全记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-    
+
       
       
-        
-          <li>ABOUT</li>
-        
-      
-    
-      
-      
-    
-  </ul>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    
-    
-    
   </div>
 
 
@@ -525,10 +725,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -553,7 +753,7 @@
                   <a href="/archives">
                 
                     <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
               
@@ -572,7 +772,7 @@
                       
                     
                     <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">categories</span>
+                    <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
               
@@ -597,7 +797,7 @@
                       
                     
                     <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
               
@@ -679,7 +879,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Changelog"><span class="nav-number">1.</span> <span class="nav-text">Changelog</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unreleased"><span class="nav-number">1.1.</span> <span class="nav-text">[Unreleased]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-0-0-2018-08-03"><span class="nav-number">1.2.</span> <span class="nav-text">[2.0.0] - 2018-08-03</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Added"><span class="nav-number">1.2.1.</span> <span class="nav-text">Added</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Changed"><span class="nav-number">1.2.2.</span> <span class="nav-text">Changed</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-0-2017-03-04"><span class="nav-number">1.3.</span> <span class="nav-text">[1.2.0] - 2017-03-04</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Changed-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">Changed</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-0-2017-02-28"><span class="nav-number">1.4.</span> <span class="nav-text">[1.1.0] - 2017-02-28</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Added-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">Added</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-0-0-2016-03-14"><span class="nav-number">1.5.</span> <span class="nav-text">[1.0.0] - 2016-03-14</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Added-2"><span class="nav-number">1.5.1.</span> <span class="nav-text">Added</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GET请求"><span class="nav-number">1.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取用户传来的GET信息："><span class="nav-number">2.</span> <span class="nav-text">获取用户传来的GET信息：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根据GET信息选择要插入的模块页面"><span class="nav-number">3.</span> <span class="nav-text">根据GET信息选择要插入的模块页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入模块页面"><span class="nav-number">4.</span> <span class="nav-text">插入模块页面</span></a></li></ol></div>
             
 
           </div>
@@ -718,7 +918,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">119k</span>
+    <span title="Symbols count total">119k</span>
   
 
   
@@ -727,7 +927,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">1:48</span>
+    <span title="Reading time total">1:48</span>
   
 </div>
 
@@ -736,7 +936,7 @@
 
 
 
-  <div class="powered-by">动力源自 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> v3.7.1</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> v3.7.1</div>
 
 
 
@@ -744,7 +944,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
 
 
 
@@ -756,14 +956,14 @@
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
-    <span class="site-uv" title="Total Visitors">
+    <span class="site-uv" title="总访客量">
       <i class="fa fa-user"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
     </span>
   
 
   
-    <span class="site-pv" title="Total Views">
+    <span class="site-pv" title="总访问量">
       <i class="fa fa-eye"></i>
       <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
     </span>
@@ -1268,6 +1468,23 @@
 
   
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 12953,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
 
@@ -1319,7 +1536,7 @@
     $('.highlight').each(function (i, e) {
       var $wrap = $('<div>').addClass('highlight-wrap')
       $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
         var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
           return $(e).text()
         }).toArray().join('\n')
@@ -1334,14 +1551,14 @@
         var result = document.execCommand('copy')
         document.body.removeChild(ta)
         
-          if(result)$(this).text('Copied')
-          else $(this).text('Copy failed')
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
         
         $(this).blur()
       })).on('mouseleave', function (e) {
         var $b = $(this).find('.copy-btn')
         setTimeout(function () {
-          $b.text('Copy')
+          $b.text('复制')
         }, 300)
       }).append(e)
     })
