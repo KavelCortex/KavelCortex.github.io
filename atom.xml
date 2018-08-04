@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>嘉维小站</title>
   
-  <subtitle>kavel.cn, now on &lt;a target=&quot;_blank&quot; href=&quot;https://bandwagonhost.com/aff.php?aff=17531&quot;&gt;Bandwagon&lt;/a&gt;!</subtitle>
+  <subtitle>kavel.cn, now on &lt;a target=&quot;_blank&quot; href=&quot;https://bandwagonhost.com/aff.php?aff=17531&quot; rel=”external nofollow”&gt;Bandwagon&lt;/a&gt;!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kavel.cn/"/>
