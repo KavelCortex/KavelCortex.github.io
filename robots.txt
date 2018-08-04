@@ -1,9 +1,4 @@
 User-agent: *
-Disallow: /vendors/
-Disallow: /js/
-Disallow: /css/
-Disallow: /fonts/
-Disallow: /vendors/
-Disallow: /fancybox/
+Allow: /
 Sitemap: https://www.kavel.cn/sitemap.xml
 Sitemap: https://www.kavel.cn/baidusitemap.xml
