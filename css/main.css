@@ -2083,7 +2083,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d2c8be;
+  background: #5e2b52;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3348,7 +3348,7 @@ ul.breadcrumb li+li:last-child {
 .comments {
   background: #333;
 }
-.badge {
+.menu .menu-item .badge {
   color: #ddd;
   background-color: #555;
 }
