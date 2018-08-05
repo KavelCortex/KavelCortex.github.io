@@ -181,7 +181,7 @@ th {
 }
 ::selection {
   background: #fff;
-  color: #181818;
+  color: #000;
 }
 body {
   position: relative;
@@ -2083,7 +2083,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #af44ff;
+  background: #f00a06;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2118,10 +2118,10 @@ img:hover {
   cursor: pointer;
   border-bottom: 1px solid transparent;
   font-size: 14px;
-  color: #555;
+  color: #ccc;
 }
 .sidebar-nav li:hover {
-  color: #fc6423;
+  color: #f5f5f5;
 }
 .page-post-detail .sidebar-nav-toc {
   padding: 0 5px;
@@ -2130,11 +2130,11 @@ img:hover {
   margin-left: 10px;
 }
 .sidebar-nav .sidebar-nav-active {
-  color: #fc6423;
-  border-bottom-color: #fc6423;
+  color: #87daff;
+  border-bottom-color: #87daff;
 }
 .sidebar-nav .sidebar-nav-active:hover {
-  color: #fc6423;
+  color: #87daff;
 }
 .sidebar-panel {
   display: none;
@@ -2167,12 +2167,12 @@ img:hover {
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
   transition-property: all;
-  color: #666;
+  color: #f5f5f5;
   border-bottom-color: #ccc;
 }
 .post-toc ol a:hover {
-  color: #000;
-  border-bottom-color: #000;
+  color: #ddd;
+  border-bottom-color: #ddd;
 }
 .post-toc .nav-item {
   overflow: hidden;
@@ -2715,7 +2715,7 @@ ul.popular-posts .popular-posts-item .popular-posts-title {
   }
 }
 .page-post-detail .sidebar-toggle-line {
-  background: #fc6423;
+  background: #87daff;
 }
 .page-post-detail .comments {
   overflow: hidden;
@@ -3012,16 +3012,16 @@ ul.breadcrumb li+li:last-child {
 }
 .sub-menu .menu-item a:hover {
   background: initial !important;
-  color: #fc6423;
+  color: #87daff;
 }
 .sub-menu .menu-item-active a {
   background: #fff !important;
-  color: #fc6423;
-  border-bottom-color: #fc6423;
+  color: #87daff;
+  border-bottom-color: #87daff;
 }
 .sub-menu .menu-item-active a:hover {
   background: #fff !important;
-  border-bottom-color: #fc6423;
+  border-bottom-color: #87daff;
 }
 .use-motion .sidebar .motion-element {
   opacity: 1;
@@ -3342,10 +3342,13 @@ ul.breadcrumb li+li:last-child {
 .post-block {
   background: #333;
 }
+.comments {
+  background: #333;
+}
 .header-inner {
   background: #333;
 }
-.comments {
+.sidebar-inner {
   background: #333;
 }
 .menu .menu-item .badge {
