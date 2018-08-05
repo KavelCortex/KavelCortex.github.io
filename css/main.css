@@ -1837,7 +1837,7 @@ pre .javascript .function {
   margin: 2em 0 0;
   padding: 0.5em 1em;
   border-left: 3px solid #ff1700;
-  background-color: #f9f9f9;
+  background-color: #333;
   list-style: none;
 }
 .post-widgets {
@@ -2083,7 +2083,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3c750b;
+  background: #2e0dee;
 }
 .links-of-blogroll {
   font-size: 13px;
