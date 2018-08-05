@@ -181,7 +181,7 @@ th {
 }
 ::selection {
   background: #fff;
-  color: #000;
+  color: #f5f5f5;
 }
 body {
   position: relative;
@@ -2083,7 +2083,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f0a7ff;
+  background: #86fff9;
 }
 .links-of-blogroll {
   font-size: 13px;
