@@ -181,7 +181,7 @@ th {
 }
 ::selection {
   background: #fff;
-  color: #222;
+  color: #181818;
 }
 body {
   position: relative;
@@ -189,7 +189,7 @@ body {
   font-size: 14px;
   line-height: 2;
   color: #f5f5f5;
-  background: #333;
+  background: #181818;
 }
 @media (max-width: 767px) {
   body {
@@ -1132,7 +1132,7 @@ pre .javascript .function {
 .back-to-top {
   display: none;
   margin: 20px -10px -20px;
-  background: #333;
+  background: #181818;
   font-size: 12px;
   opacity: 0.6;
   cursor: pointer;
@@ -1280,7 +1280,7 @@ pre .javascript .function {
 }
 .menu .menu-item a:hover,
 .menu-item-active a {
-  border-bottom-color: #222;
+  border-bottom-color: #555;
 }
 .menu .menu-item .fa {
   margin-right: 5px;
@@ -1837,7 +1837,7 @@ pre .javascript .function {
   margin: 2em 0 0;
   padding: 0.5em 1em;
   border-left: 3px solid #ff1700;
-  background-color: #333;
+  background-color: #f9f9f9;
   list-style: none;
 }
 .post-widgets {
@@ -2083,7 +2083,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2e0dee;
+  background: #ff7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2850,7 +2850,7 @@ ul.breadcrumb li+li:last-child {
   float: left;
   margin-top: 300px;
   width: 270px;
-  background: #333;
+  background: #181818;
   box-shadow: none;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -3263,19 +3263,19 @@ ul.breadcrumb li+li:last-child {
 }
 .post-body h1 {
   font-size: 1.6em;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #181818;
 }
 .post-body h2 {
   font-size: 1.45em;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #181818;
 }
 .post-body h3 {
   font-size: 1.3em;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #181818;
 }
 .post-body h4 {
   font-size: 1.2em;
-  border-bottom: 1px dotted #333;
+  border-bottom: 1px dotted #181818;
 }
 .post-body h5 {
   font-size: 1.07em;
@@ -3338,4 +3338,14 @@ ul.breadcrumb li+li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.post-block {
+  background: #333;
+}
+.comments {
+  background: #333;
+}
+.badge {
+  color: #ddd;
+  background-color: #555;
 }
