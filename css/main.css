@@ -2083,7 +2083,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #54ffa8;
+  background: #469e78;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3339,7 +3339,13 @@ ul.breadcrumb li+li:last-child {
     margin: 8px 0 0;
   }
 }
-.post-block .header-inner .comments {
+.post-block {
+  background: #333;
+}
+.header-inner {
+  background: #333;
+}
+.comments {
   background: #333;
 }
 .badge {
