@@ -2083,7 +2083,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e3fc05;
+  background: #1a494d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2130,11 +2130,11 @@ img:hover {
   margin-left: 10px;
 }
 .sidebar-nav .sidebar-nav-active {
-  color: #262a30;
-  border-bottom-color: #262a30;
+  color: #0684bd;
+  border-bottom-color: #0684bd;
 }
 .sidebar-nav .sidebar-nav-active:hover {
-  color: #262a30;
+  color: #0684bd;
 }
 .sidebar-panel {
   display: none;
@@ -2192,7 +2192,7 @@ img:hover {
   display: block;
 }
 .post-toc .nav .active > a {
-  color: #262a30;
+  color: #0684bd;
   border-bottom-color: #fc6423;
 }
 .post-toc .nav .active-current > a {
@@ -2715,7 +2715,7 @@ ul.popular-posts .popular-posts-item .popular-posts-title {
   }
 }
 .page-post-detail .sidebar-toggle-line {
-  background: #262a30;
+  background: #0684bd;
 }
 .page-post-detail .comments {
   overflow: hidden;
@@ -3012,16 +3012,16 @@ ul.breadcrumb li+li:last-child {
 }
 .sub-menu .menu-item a:hover {
   background: initial !important;
-  color: #262a30;
+  color: #0684bd;
 }
 .sub-menu .menu-item-active a {
   background: #fff !important;
-  color: #262a30;
-  border-bottom-color: #262a30;
+  color: #0684bd;
+  border-bottom-color: #0684bd;
 }
 .sub-menu .menu-item-active a:hover {
   background: #fff !important;
-  border-bottom-color: #262a30;
+  border-bottom-color: #0684bd;
 }
 .use-motion .sidebar .motion-element {
   opacity: 1;
