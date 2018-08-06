@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.kavel.cn/categories/index.html</loc>
+    
+    <lastmod>2018-08-06T16:48:08.221Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.kavel.cn/tags/index.html</loc>
+    
+    <lastmod>2018-08-06T16:48:00.232Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.kavel.cn/about/index.html</loc>
     
     <lastmod>2018-08-06T14:56:14.648Z</lastmod>
@@ -61,20 +75,6 @@
     <loc>http://www.kavel.cn/404.html</loc>
     
     <lastmod>2018-08-03T08:52:19.290Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.kavel.cn/tags/index.html</loc>
-    
-    <lastmod>2018-08-03T08:46:51.591Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.kavel.cn/categories/index.html</loc>
-    
-    <lastmod>2018-08-03T08:46:42.591Z</lastmod>
     
   </url>
   
