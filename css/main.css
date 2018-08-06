@@ -2083,7 +2083,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #034d13;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3353,11 +3353,11 @@ ul.breadcrumb li+li:last-child {
   color: #ccc;
 }
 .menu-item-active a {
-  background: #555;
+  background: #0684bd;
 }
 .menu .menu-item a:hover {
-  background: #444;
-  border-bottom-color: #333;
+  background: #87daff;
+  border-bottom-color: #262a30;
 }
 .sidebar a {
   color: #ccc;
