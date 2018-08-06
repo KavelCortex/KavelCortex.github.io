@@ -189,7 +189,7 @@ body {
   font-size: 14px;
   line-height: 2;
   color: #ccc;
-  background: #181818;
+  background: #262a30;
 }
 @media (max-width: 767px) {
   body {
@@ -1132,7 +1132,7 @@ pre .javascript .function {
 .back-to-top {
   display: none;
   margin: 20px -10px -20px;
-  background: #181818;
+  background: #262a30;
   font-size: 12px;
   opacity: 0.6;
   cursor: pointer;
@@ -2083,7 +2083,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffb565;
+  background: #559d18;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2850,7 +2850,7 @@ ul.breadcrumb li+li:last-child {
   float: left;
   margin-top: 300px;
   width: 270px;
-  background: #181818;
+  background: #262a30;
   box-shadow: none;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -3263,19 +3263,19 @@ ul.breadcrumb li+li:last-child {
 }
 .post-body h1 {
   font-size: 1.6em;
-  border-bottom: 1px solid #181818;
+  border-bottom: 1px solid #262a30;
 }
 .post-body h2 {
   font-size: 1.45em;
-  border-bottom: 1px solid #181818;
+  border-bottom: 1px solid #262a30;
 }
 .post-body h3 {
   font-size: 1.3em;
-  border-bottom: 1px solid #181818;
+  border-bottom: 1px solid #262a30;
 }
 .post-body h4 {
   font-size: 1.2em;
-  border-bottom: 1px dotted #181818;
+  border-bottom: 1px dotted #262a30;
 }
 .post-body h5 {
   font-size: 1.07em;
@@ -3353,6 +3353,7 @@ ul.breadcrumb li+li:last-child {
   color: #ccc;
 }
 .menu-item-active a {
+  color: #f5f5f5;
   background: #1565c0;
 }
 .menu .menu-item a:hover {
