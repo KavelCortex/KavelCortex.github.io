@@ -1,155 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-    
-    
-    
-    
   <url>
-    <loc>http://KavelCortex.github.io/zh-CN/2do.html</loc>
-    <lastmod>2018-08-05T04:10:14.000Z</lastmod>
-    <data>
-        <display>
-        <title>拖延症的救星！如何使用2Do打造一个实用的GTD®工具</title>
-        <pubTime>2018-08-03T11:13:39.000Z</pubTime>
-        
-        <tag>app</tag>
-         
-        <tag>GTD</tag>
-         
-         
-           
-             
-              <breadCrumb title="reviews" url="http://KavelCortex.github.io/categories/reviews/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://KavelCortex.github.io/zh-CN/xcr3tchat.html</loc>
-    <lastmod>2018-08-04T04:20:30.000Z</lastmod>
-    <data>
-        <display>
-        <title>Xcr3tChat: 一个比较安全的聊天工具</title>
-        <pubTime>2018-08-02T06:44:57.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-         
-           
-             
-              <breadCrumb title="programming" url="http://KavelCortex.github.io/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://KavelCortex.github.io/zh-CN/hexo-installment-log.html</loc>
-    <lastmod>2018-08-04T03:47:26.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo小撇步：服务器架设hexo过程全记录</title>
-        <pubTime>2017-03-03T16:00:00.000Z</pubTime>
-        
-        <tag>site</tag>
-         
-        <tag>hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="logs" url="http://KavelCortex.github.io/categories/logs/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://KavelCortex.github.io/zh-CN/letsencrypt-on-centos7.html</loc>
-    <lastmod>2018-08-04T03:47:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>给网站用上免费SSL：Let's Encrypt操作记录</title>
-        <pubTime>2017-02-27T16:00:00.000Z</pubTime>
-        
-        <tag>site</tag>
-         
-         
-           
-             
-              <breadCrumb title="logs" url="http://KavelCortex.github.io/categories/logs/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://KavelCortex.github.io/zh-CN/php-framework-using-singleton-with-GET.html</loc>
-    <lastmod>2018-08-04T03:47:20.000Z</lastmod>
-    <data>
-        <display>
-        <title>php造车轮：基于单主页+GET请求的模块化框架</title>
-        <pubTime>2017-02-27T16:00:00.000Z</pubTime>
-        
-        <tag>php</tag>
-         
-        <tag>framework</tag>
-         
-         
-           
-             
-              <breadCrumb title="programming" url="http://KavelCortex.github.io/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://KavelCortex.github.io/zh-CN/post-via-cas.html</loc>
-    <lastmod>2018-08-04T03:47:16.000Z</lastmod>
-    <data>
-        <display>
-        <title>URLConnection自动登录深大CAS认证平台：提交表单实现方案</title>
-        <pubTime>2017-04-14T16:00:00.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-         
-           
-             
-              <breadCrumb title="programming" url="http://KavelCortex.github.io/categories/programming/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://KavelCortex.github.io/zh-CN/snc-revengence.html</loc>
-    <lastmod>2018-08-04T03:47:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>SNC的复仇-全文完</title>
-        <pubTime>2009-09-06T16:00:00.000Z</pubTime>
-        
-        <tag>games</tag>
-         
-         
-           
-             
-              <breadCrumb title="articles" url="http://KavelCortex.github.io/categories/articles/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+    <loc>http://kavel.cn/zh-CN/2do.html</loc>
+    <lastmod>2018-08-05</lastmod>
+  </url>  <url>
+    <loc>http://kavel.cn/zh-CN/xcr3tchat.html</loc>
+    <lastmod>2018-08-04</lastmod>
+  </url>  <url>
+    <loc>http://kavel.cn/zh-CN/hexo-installment-log.html</loc>
+    <lastmod>2018-08-04</lastmod>
+  </url>  <url>
+    <loc>http://kavel.cn/zh-CN/letsencrypt-on-centos7.html</loc>
+    <lastmod>2018-08-04</lastmod>
+  </url>  <url>
+    <loc>http://kavel.cn/zh-CN/php-framework-using-singleton-with-GET.html</loc>
+    <lastmod>2018-08-04</lastmod>
+  </url>  <url>
+    <loc>http://kavel.cn/zh-CN/post-via-cas.html</loc>
+    <lastmod>2018-08-04</lastmod>
+  </url>  <url>
+    <loc>http://kavel.cn/zh-CN/snc-revengence.html</loc>
+    <lastmod>2018-08-04</lastmod>
+  </url>
 </urlset>
