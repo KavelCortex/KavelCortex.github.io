@@ -1,1581 +1,1136 @@
 <!DOCTYPE html>
+<html  lang="">
+<head>
+    <meta charset="utf-8" />
 
+<meta name="generator" content="Hexo 3.9.0" />
 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
+<title>URLConnection自动登录深大CAS认证平台：提交表单实现方案 - 嘉维小站 - Hello Github!</title>
 
 
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-CN,en,default">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-  <meta name="google-site-verification" content="H5hkilTTRmN3sh6bBjHKg_Fd0QMutKTwvVy5F3VX1Yc">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Helvetica:300,300italic,400,400italic,700,700italic|Consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/k114.png?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=6.3.0">
-
-
-  <link rel="mask-icon" href="/images/k300.png?v=6.3.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '6.3.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false,"width":270},
-    fancybox: false,
-    fastclick: true,
-    lazyload: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-  <meta name="description" content="本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等一切需要使用深大统一认证平台的站点实现一键登录甚至免登录的功能。 CAS验证基本原理深大统一身份认证平台使用了Jasig Central Authentication Service 3.">
+    <meta name="description" content="本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等一切需要使用深大统一认证平台的站点实现一键登录甚至免登录的功能。">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="URLConnection自动登录深大CAS认证平台：提交表单实现方案">
 <meta property="og:url" content="http://kavel.cn/zh-CN/post-via-cas.html">
 <meta property="og:site_name" content="嘉维小站">
-<meta property="og:description" content="本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等一切需要使用深大统一认证平台的站点实现一键登录甚至免登录的功能。 CAS验证基本原理深大统一身份认证平台使用了Jasig Central Authentication Service 3.">
+<meta property="og:description" content="本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等一切需要使用深大统一认证平台的站点实现一键登录甚至免登录的功能。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://www.ibm.com/developerworks/cn/opensource/os-cn-cas/images/image001.jpg">
-<meta property="og:image" content="http://kavel.cn/zh-CN/post-via-cas/result.png">
-<meta property="og:updated_time" content="2018-08-04T03:47:16.000Z">
+<meta property="og:image" content="http://kavel.cn/images/og_image.png">
+<meta property="og:updated_time" content="2019-09-16T01:31:43.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="URLConnection自动登录深大CAS认证平台：提交表单实现方案">
-<meta name="twitter:description" content="本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等一切需要使用深大统一认证平台的站点实现一键登录甚至免登录的功能。 CAS验证基本原理深大统一身份认证平台使用了Jasig Central Authentication Service 3.">
-<meta name="twitter:image" content="https://www.ibm.com/developerworks/cn/opensource/os-cn-cas/images/image001.jpg">
-
-
-
-  <link rel="alternate" href="/atom.xml" title="嘉维小站" type="application/atom+xml">
-
-
-
-
-  <link rel="canonical" href="http://kavel.cn/zh-CN/post-via-cas.html">
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>URLConnection自动登录深大CAS认证平台：提交表单实现方案 | 嘉维小站</title>
-  
+<meta name="twitter:description" content="本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等一切需要使用深大统一认证平台的站点实现一键登录甚至免登录的功能。">
+<meta name="twitter:image" content="http://kavel.cn/images/og_image.png">
+<meta name="twitter:creator" content="@wjw_wwasd">
+<meta name="twitter:site" content="https://twitter.com/wjw_wwasd">
+<meta property="fb:admins" content="jwang96w">
+<meta property="fb:app_id" content="415019602551598">
 
 
 
 
+
+<link rel="alternative" href="/atom.xml" title="URLConnection自动登录深大CAS认证平台：提交表单实现方案 - Hello Github!" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123327474-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-123327474-1');
+    gtag('config', 'UA-123327474-1');
 </script>
 
 
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
 
 
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
+<link rel="stylesheet" href="/css/style.css">
 
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">嘉维小站</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-    
-      
-        <h1 class="site-subtitle" itemprop="description">Hello Github!</h1>
-      
-    
-  </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">7</span></a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-sitemap">
-    <a href="/sitemap.xml" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>站点地图</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-commonweal">
-    <a href="/404/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+                <img src="/images/kavelspot.svg" alt="URLConnection自动登录深大CAS认证平台：提交表单实现方案" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                  <p class="navbar-item">
+                      version 2.3.1
+                  </p>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
     </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
 </nav>
 
-
-
-  
-
-
-
-</div>
-    </header>
-
     
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-            
-
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kavel.cn/zh-CN/post-via-cas.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jiawei Wang">
-      <meta itemprop="description" content="version 2.3.0">
-      <meta itemprop="image" content="/images/kavelspot.w.svg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="嘉维小站">
-    </span>
-
-    
-      <header class="post-header">
-
+    <div class="card-content article ">
         
-        
-          <h2 class="post-title" itemprop="name headline">URLConnection自动登录深大CAS认证平台：提交表单实现方案
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2017-04-15T05:00:00.000Z">04/15/2017</time>
                 
-              
-
-              <time title="创建时间：04/15/2017 00:00:00" itemprop="dateCreated datePublished" datetime="2017-04-15T00:00:00-05:00">04/15/2017</time>
-            
-
-            
-              
-
-              
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/programming/">programming</a>
+                </div>
                 
-                <span class="post-meta-divider">|</span>
                 
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                <span class="level-item has-text-grey">
+                    
+                    
+                    14 minutes 读完 (大约 2085 个字)
                 </span>
                 
-                  <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：08/03/2018 22:47:16" itemprop="dateModified" datetime="2018-08-03T22:47:16-05:00">08/03/2018</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/zh-CN/post-via-cas.html#SOHUCS" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="zh-CN/post-via-cas.html" itemprop="commentsCount"></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
                 </span>
                 
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">13k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">12 分钟</span>
-              
             </div>
-          
-
-          
-
-        </span></div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等<strong>一切需要使用深大统一认证平台的站点</strong>实现<strong>一键登录</strong>甚至<strong>免登录</strong>的功能。</p>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                URLConnection自动登录深大CAS认证平台：提交表单实现方案
+            
+        </h1>
+        <div class="content">
+            <p>本次实验使用HttpsURLConnection实现深大统一身份认证平台的自动登录。使用这个工具可以对包括Blackboard、OA、图书馆、财务查询、缴纳学费、公文通、校务信箱、故障报修、研究生选课和场馆订票等<strong>一切需要使用深大统一认证平台的站点</strong>实现<strong>一键登录</strong>甚至<strong>免登录</strong>的功能。<br><a id="more"></a></p>
 <h2 id="CAS验证基本原理"><a href="#CAS验证基本原理" class="headerlink" title="CAS验证基本原理"></a>CAS验证基本原理</h2><p>深大统一身份认证平台使用了<code>Jasig Central Authentication Service 3.5.2.1</code>这个 CAS 平台。CAS，全称 Central Authentication Service，是一种比较不错的的单点登录服务框架。使用像 CAS 这样单点登录（Single Sign On, 简称 SSO）方案时，用户只需要登录一次即可访问所有相互信任的系统（比如深大内的各种站点）。</p>
 <p>CAS的基本验证原理如图所示：<br><img src="https://www.ibm.com/developerworks/cn/opensource/os-cn-cas/images/image001.jpg" alt="CAS Protocol"></p>
 <p>通过原理图可知，浏览器访问一个使用了 CAS 服务的页面（CAS Client，如BlackBoard）后，将会被重定向至 CAS 验证页面（CAS Server，如深大的统一身份认证平台）进行用户认证。当用户验证成功后，浏览器将获得一条<strong>唯一且不可伪造的 <code>Ticket</code></strong>。然后 CAS Server 页面将浏览器重定向回 CAS Client 页面，浏览器紧接提交获得的<code>Ticket</code>给 Client页面，Client 页面接收到<code>Ticket</code>后，从后台验证该<code>Ticket</code>的合法性。验证通过后将自动跳转到登录后的页面，并返回相关的身份信息。</p>
 <h2 id="实现结果"><a href="#实现结果" class="headerlink" title="实现结果"></a>实现结果</h2><p>请求 BlackBoard 校园卡用户页面<br><a href="http://elearning.szu.edu.cn/webapps/cbb-sdgxtyM-BBLEARN/checksession.jsp" target="_blank" rel="noopener">http://elearning.szu.edu.cn/webapps/cbb-sdgxtyM-BBLEARN/checksession.jsp</a>，成功打印登录后的 BlackBoard 页面内容：</p>
 <img src="/zh-CN/post-via-cas/result.png">
 <h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><p>实现有两部分代码组成。第一个是主逻辑代码<code>HTTPSPoster.java</code>:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.kavel.httpsposter;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.HttpsURLConnection;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.SSLContext;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.SSLSocketFactory;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.TrustManager;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.net.*;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by wjw_w on 2017/4/13.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HTTPSPoster</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> URL mHttpsURLHost;</span><br><span class="line">    <span class="keyword">private</span> StringBuilder mPOSTQuery;</span><br><span class="line">    <span class="keyword">private</span> StringBuilder mCOOKIEChain;</span><br><span class="line">    <span class="keyword">private</span> String action;</span><br><span class="line">    <span class="keyword">private</span> String cookie;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 构造方法</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> host     需要登录的目标地址</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> username 登录用户名</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> password 登录密码</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    HTTPSPoster(String host, String username, String password) &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.username = username;</span><br><span class="line">            <span class="keyword">this</span>.password = password;</span><br><span class="line">            mHttpsURLHost = <span class="keyword">new</span> URL(host);</span><br><span class="line">            mPOSTQuery = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">            mCOOKIEChain = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (MalformedURLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加POST请求键值对</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> key   POST键</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> value POST值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addPOSTQuery</span><span class="params">(String key, String value)</span> </span>&#123;</span><br><span class="line">        mPOSTQuery.append(<span class="string">"&amp;"</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            mPOSTQuery.append(URLEncoder.encode(key, <span class="string">"UTF-8"</span>));</span><br><span class="line">            mPOSTQuery.append(<span class="string">"="</span>);</span><br><span class="line">            mPOSTQuery.append(URLEncoder.encode(value, <span class="string">"UTF-8"</span>));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 为302跳转请求添加Cookie链条</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> cookie 该次跳转返回的响应头文件内的Set-Cookie值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addCookieChain</span><span class="params">(String cookie)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mCOOKIEChain.toString().isEmpty())</span><br><span class="line">            mCOOKIEChain.append(cookie);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            mCOOKIEChain.append(<span class="string">";"</span> + cookie);</span><br><span class="line">        System.out.println(mCOOKIEChain.toString());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 处理网页并打印最终网页的结果</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> connection 需要处理的URLConnection</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回String类型的网页内容</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException 连接出错时抛出该异常</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getHTML</span><span class="params">(URLConnection connection)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (connection <span class="keyword">instanceof</span> HttpsURLConnection) &#123;</span><br><span class="line">            HttpsURLConnection httpsURLConnection = (HttpsURLConnection) connection;</span><br><span class="line">            httpsURLConnection.setSSLSocketFactory(initCustomizedSSLSocketFactory());</span><br><span class="line">        &#125;</span><br><span class="line">        connection = handleRedirect(connection);</span><br><span class="line">        String cookies = connection.getHeaderField(<span class="string">"Set-Cookie"</span>);</span><br><span class="line">        cookie = cookies;</span><br><span class="line">        BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(connection.getInputStream(), <span class="string">"GBK"</span>));</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        String s;</span><br><span class="line">        <span class="keyword">while</span> ((s = br.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">            sb.append(s);</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 递归处理跳转请求</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> connection 当前请求</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回最终状态码不为302的请求</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException 连接出错时抛出该异常</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> URLConnection <span class="title">handleRedirect</span><span class="params">(URLConnection connection)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"respond:"</span> + ((HttpURLConnection) connection).getResponseCode());</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, List&lt;String&gt;&gt; entry : connection.getHeaderFields().entrySet()) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Key : "</span> + entry.getKey() +</span><br><span class="line">                    <span class="string">" ,Value : "</span> + entry.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (((HttpURLConnection) connection).getResponseCode() == HttpURLConnection.HTTP_MOVED_TEMP) &#123;</span><br><span class="line">            String cookies = connection.getHeaderField(<span class="string">"Set-Cookie"</span>);</span><br><span class="line">            String location = connection.getHeaderField(<span class="string">"Location"</span>);</span><br><span class="line">            connection = <span class="keyword">new</span> URL(location).openConnection();</span><br><span class="line">            <span class="keyword">if</span> (connection <span class="keyword">instanceof</span> HttpsURLConnection) &#123;</span><br><span class="line">                HttpsURLConnection httpsURLConnection = (HttpsURLConnection) connection;</span><br><span class="line">                httpsURLConnection.setSSLSocketFactory(initCustomizedSSLSocketFactory());</span><br><span class="line">            &#125;</span><br><span class="line">            addCookieChain(cookies);</span><br><span class="line">            connection.setRequestProperty(<span class="string">"Cookie"</span>, mCOOKIEChain.toString());</span><br><span class="line">            connection = handleRedirect(connection);</span><br><span class="line">        &#125;</span><br><span class="line">        mHttpsURLHost = connection.getURL();</span><br><span class="line">        <span class="keyword">return</span> connection;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 分析登录验证页面上的元素，获取到表单提交地址和隐藏元素</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> HTTP String类型的网页</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回表单提交地址</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">analyseAuthPage</span><span class="params">(String HTTP)</span> </span>&#123;</span><br><span class="line">        String HIDDEN_REG = <span class="string">"&lt;input type=\"hidden\" (.*?)/&gt;"</span>;</span><br><span class="line">        String FORM_REG = <span class="string">"&lt;form (.*?)/&gt;"</span>;</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; hiddenList = getTag(HTTP, HIDDEN_REG);</span><br><span class="line">        <span class="keyword">for</span> (String tag : hiddenList) &#123;</span><br><span class="line">            String[] splited = tag.split(<span class="string">"\""</span>);</span><br><span class="line">            String name = splited[<span class="number">3</span>];</span><br><span class="line">            String value = splited[<span class="number">5</span>];</span><br><span class="line">            addPOSTQuery(name, value); <span class="comment">//添加隐藏键值对到mPOSTQuery中</span></span><br><span class="line">        &#125;</span><br><span class="line">        String formtag = getTag(HTTP, FORM_REG).get(<span class="number">0</span>);</span><br><span class="line">        String[] splited = formtag.split(<span class="string">"\""</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"https://"</span> + mHttpsURLHost.getHost() + splited[<span class="number">3</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据正则表达式匹配内容</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> HTML  待匹配文本内容</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> regex 正则表达式</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回存放有匹配内容的列表</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> List&lt;String&gt; <span class="title">getTag</span><span class="params">(String HTML, String regex)</span> </span>&#123;</span><br><span class="line">        Matcher matcher = Pattern.compile(regex).matcher(HTML);</span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">while</span> (matcher.find()) &#123;</span><br><span class="line">            list.add(matcher.group());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 主要逻辑</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * STEP1: 裸GET传入的网页，会因为没有身份验证信息“ticket”而被跳转到CAS页面进行身份验证。</span></span><br><span class="line"><span class="comment">     * 跳转到实际的CAS页面后，分析页面中的HTML元素，从而获取到提交表单所需要的必要信息。（包括POST地址和hidden属性的值）</span></span><br><span class="line"><span class="comment">     * 还有从响应头中获取表示当前身份的Cookie（Cookie非常重要，前几个小时因为没有正确存入Cookie而遭遇了循环跳转CAS页面）</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * STEP2: 获取到必要信息后，open一个connection并将必要信息进行组装，最后加入username与password，进行POST操作。</span></span><br><span class="line"><span class="comment">     * 在这些信息中，组装正确的Cookie值非常重要。前几个小时的实验因为没有存入正确的Cookie而被判断没有登录，一直被重定向回CAS页面。</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * STEP3: 如果一切正常，connection将会非常舒服地通过验证并跳转到所希望的页面上去。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">post</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"STEP1"</span>);</span><br><span class="line">            <span class="comment">//STEP1: GET and Analyse CAS Page (in order to get HIDDEN INFORMATION and COOKIE)</span></span><br><span class="line">            String http = getHTML(mHttpsURLHost.openConnection());</span><br><span class="line">            String action = analyseAuthPage(http);</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">"STEP2"</span>);</span><br><span class="line">            <span class="comment">//STEP2: POST data and HIDDEN INFORMATION and COOKIE</span></span><br><span class="line">            URL newPOST = <span class="keyword">new</span> URL(action);</span><br><span class="line">            HttpsURLConnection newPOSTConnection = (HttpsURLConnection) newPOST.openConnection();</span><br><span class="line">            newPOSTConnection.setSSLSocketFactory(initCustomizedSSLSocketFactory());</span><br><span class="line">            newPOSTConnection.setDoOutput(<span class="keyword">true</span>);</span><br><span class="line">            newPOSTConnection.setRequestMethod(<span class="string">"POST"</span>);</span><br><span class="line">            newPOSTConnection.setRequestProperty(<span class="string">"Cookie"</span>, cookie);</span><br><span class="line">            addPOSTQuery(<span class="string">"username"</span>, username);</span><br><span class="line">            addPOSTQuery(<span class="string">"password"</span>, password);</span><br><span class="line">            BufferedWriter bufferedWriter = <span class="keyword">new</span> BufferedWriter(<span class="keyword">new</span> OutputStreamWriter(newPOSTConnection.getOutputStream()));</span><br><span class="line">            bufferedWriter.write(mPOSTQuery.toString());</span><br><span class="line">            bufferedWriter.flush();</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="string">"STEP3"</span>);</span><br><span class="line">            <span class="comment">//STEP3: GET RESULT</span></span><br><span class="line">            getHTML(newPOSTConnection);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 组装自定义SSLSocket工厂</span></span><br><span class="line"><span class="comment">     * 在默认的情况下建立HTTPS链接时，HttpsURLConnection会根据默认的设定先去验证服务器的证书信息。</span></span><br><span class="line"><span class="comment">     * 而由于一些未知的原因，客户端获取不到深大CAS页面的证书信息，</span></span><br><span class="line"><span class="comment">     * 于是转向客户端TrustStore中寻找证书。而默认TrustStore是空的，因为没有手工添加过证书。</span></span><br><span class="line"><span class="comment">     * 所以这种情况下进行连接将会抛出SSLHandshakeException异常。</span></span><br><span class="line"><span class="comment">     * 所以需要传入一个自定义的SSLSocketFactory用于绕过证书验证。</span></span><br><span class="line"><span class="comment">     * 这个自定义的SSLSocket被传入一个假TrustManager，这个manager遇到证书验证失败不会有任何警报。当然，这种做法非常危险。</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 返回自定义的SSLSocketFactory</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> SSLSocketFactory <span class="title">initCustomizedSSLSocketFactory</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            TrustManager[] trustManagers = &#123;<span class="keyword">new</span> MyX509TrustManager()&#125;;</span><br><span class="line">            SSLContext sslContext = SSLContext.getInstance(<span class="string">"SSL"</span>, <span class="string">"SunJSSE"</span>);</span><br><span class="line">            sslContext.init(<span class="keyword">null</span>, trustManagers, <span class="keyword">new</span> java.security.SecureRandom());</span><br><span class="line">            <span class="keyword">return</span> sslContext.getSocketFactory();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// write your code here</span></span><br><span class="line">        String bb = <span class="string">"http://elearning.szu.edu.cn/webapps/cbb-sdgxtyM-BBLEARN/checksession.jsp"</span>;</span><br><span class="line">        String username = <span class="string">""</span>;</span><br><span class="line">        String password = <span class="string">""</span>;</span><br><span class="line">        HTTPSPoster poster = <span class="keyword">new</span> HTTPSPoster(bb, username, password);</span><br><span class="line">        poster.post();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> cn.kavel.httpsposter;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> javax.net.ssl.HttpsURLConnection;</span><br><span class="line"><span class="hljs-keyword">import</span> javax.net.ssl.SSLContext;</span><br><span class="line"><span class="hljs-keyword">import</span> javax.net.ssl.SSLSocketFactory;</span><br><span class="line"><span class="hljs-keyword">import</span> javax.net.ssl.TrustManager;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.*;</span><br><span class="line"><span class="hljs-keyword">import</span> java.net.*;</span><br><span class="line"><span class="hljs-keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="hljs-keyword">import</span> java.util.List;</span><br><span class="line"><span class="hljs-keyword">import</span> java.util.Map;</span><br><span class="line"><span class="hljs-keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="hljs-keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Created by wjw_w on 2017/4/13.</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HTTPSPoster</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">private</span> URL mHttpsURLHost;</span><br><span class="line">    <span class="hljs-keyword">private</span> StringBuilder mPOSTQuery;</span><br><span class="line">    <span class="hljs-keyword">private</span> StringBuilder mCOOKIEChain;</span><br><span class="line">    <span class="hljs-keyword">private</span> String action;</span><br><span class="line">    <span class="hljs-keyword">private</span> String cookie;</span><br><span class="line">    <span class="hljs-keyword">private</span> String username;</span><br><span class="line">    <span class="hljs-keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 构造方法</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> host     需要登录的目标地址</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> username 登录用户名</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> password 登录密码</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    HTTPSPoster(String host, String username, String password) &#123;</span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            <span class="hljs-keyword">this</span>.username = username;</span><br><span class="line">            <span class="hljs-keyword">this</span>.password = password;</span><br><span class="line">            mHttpsURLHost = <span class="hljs-keyword">new</span> URL(host);</span><br><span class="line">            mPOSTQuery = <span class="hljs-keyword">new</span> StringBuilder();</span><br><span class="line">            mCOOKIEChain = <span class="hljs-keyword">new</span> StringBuilder();</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> (MalformedURLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 添加POST请求键值对</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> key   POST键</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> value POST值</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addPOSTQuery</span><span class="hljs-params">(String key, String value)</span> </span>&#123;</span><br><span class="line">        mPOSTQuery.append(<span class="hljs-string">"&amp;"</span>);</span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            mPOSTQuery.append(URLEncoder.encode(key, <span class="hljs-string">"UTF-8"</span>));</span><br><span class="line">            mPOSTQuery.append(<span class="hljs-string">"="</span>);</span><br><span class="line">            mPOSTQuery.append(URLEncoder.encode(value, <span class="hljs-string">"UTF-8"</span>));</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 为302跳转请求添加Cookie链条</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> cookie 该次跳转返回的响应头文件内的Set-Cookie值</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addCookieChain</span><span class="hljs-params">(String cookie)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (mCOOKIEChain.toString().isEmpty())</span><br><span class="line">            mCOOKIEChain.append(cookie);</span><br><span class="line">        <span class="hljs-keyword">else</span></span><br><span class="line">            mCOOKIEChain.append(<span class="hljs-string">";"</span> + cookie);</span><br><span class="line">        System.out.println(mCOOKIEChain.toString());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 处理网页并打印最终网页的结果</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> connection 需要处理的URLConnection</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> 返回String类型的网页内容</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@throws</span> IOException 连接出错时抛出该异常</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">private</span> String <span class="hljs-title">getHTML</span><span class="hljs-params">(URLConnection connection)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">if</span> (connection <span class="hljs-keyword">instanceof</span> HttpsURLConnection) &#123;</span><br><span class="line">            HttpsURLConnection httpsURLConnection = (HttpsURLConnection) connection;</span><br><span class="line">            httpsURLConnection.setSSLSocketFactory(initCustomizedSSLSocketFactory());</span><br><span class="line">        &#125;</span><br><span class="line">        connection = handleRedirect(connection);</span><br><span class="line">        String cookies = connection.getHeaderField(<span class="hljs-string">"Set-Cookie"</span>);</span><br><span class="line">        cookie = cookies;</span><br><span class="line">        BufferedReader br = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(connection.getInputStream(), <span class="hljs-string">"GBK"</span>));</span><br><span class="line">        StringBuilder sb = <span class="hljs-keyword">new</span> StringBuilder();</span><br><span class="line">        String s;</span><br><span class="line">        <span class="hljs-keyword">while</span> ((s = br.readLine()) != <span class="hljs-keyword">null</span>) &#123;</span><br><span class="line">            sb.append(s);</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 递归处理跳转请求</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> connection 当前请求</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> 返回最终状态码不为302的请求</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@throws</span> IOException 连接出错时抛出该异常</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">private</span> URLConnection <span class="hljs-title">handleRedirect</span><span class="hljs-params">(URLConnection connection)</span> <span class="hljs-keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"respond:"</span> + ((HttpURLConnection) connection).getResponseCode());</span><br><span class="line">        <span class="hljs-keyword">for</span> (Map.Entry&lt;String, List&lt;String&gt;&gt; entry : connection.getHeaderFields().entrySet()) &#123;</span><br><span class="line">            System.out.println(<span class="hljs-string">"Key : "</span> + entry.getKey() +</span><br><span class="line">                    <span class="hljs-string">" ,Value : "</span> + entry.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">if</span> (((HttpURLConnection) connection).getResponseCode() == HttpURLConnection.HTTP_MOVED_TEMP) &#123;</span><br><span class="line">            String cookies = connection.getHeaderField(<span class="hljs-string">"Set-Cookie"</span>);</span><br><span class="line">            String location = connection.getHeaderField(<span class="hljs-string">"Location"</span>);</span><br><span class="line">            connection = <span class="hljs-keyword">new</span> URL(location).openConnection();</span><br><span class="line">            <span class="hljs-keyword">if</span> (connection <span class="hljs-keyword">instanceof</span> HttpsURLConnection) &#123;</span><br><span class="line">                HttpsURLConnection httpsURLConnection = (HttpsURLConnection) connection;</span><br><span class="line">                httpsURLConnection.setSSLSocketFactory(initCustomizedSSLSocketFactory());</span><br><span class="line">            &#125;</span><br><span class="line">            addCookieChain(cookies);</span><br><span class="line">            connection.setRequestProperty(<span class="hljs-string">"Cookie"</span>, mCOOKIEChain.toString());</span><br><span class="line">            connection = handleRedirect(connection);</span><br><span class="line">        &#125;</span><br><span class="line">        mHttpsURLHost = connection.getURL();</span><br><span class="line">        <span class="hljs-keyword">return</span> connection;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 分析登录验证页面上的元素，获取到表单提交地址和隐藏元素</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> HTTP String类型的网页</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> 返回表单提交地址</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">private</span> String <span class="hljs-title">analyseAuthPage</span><span class="hljs-params">(String HTTP)</span> </span>&#123;</span><br><span class="line">        String HIDDEN_REG = <span class="hljs-string">"&lt;input type=\"hidden\" (.*?)/&gt;"</span>;</span><br><span class="line">        String FORM_REG = <span class="hljs-string">"&lt;form (.*?)/&gt;"</span>;</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; hiddenList = getTag(HTTP, HIDDEN_REG);</span><br><span class="line">        <span class="hljs-keyword">for</span> (String tag : hiddenList) &#123;</span><br><span class="line">            String[] splited = tag.split(<span class="hljs-string">"\""</span>);</span><br><span class="line">            String name = splited[<span class="hljs-number">3</span>];</span><br><span class="line">            String value = splited[<span class="hljs-number">5</span>];</span><br><span class="line">            addPOSTQuery(name, value); <span class="hljs-comment">//添加隐藏键值对到mPOSTQuery中</span></span><br><span class="line">        &#125;</span><br><span class="line">        String formtag = getTag(HTTP, FORM_REG).get(<span class="hljs-number">0</span>);</span><br><span class="line">        String[] splited = formtag.split(<span class="hljs-string">"\""</span>);</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-string">"https://"</span> + mHttpsURLHost.getHost() + splited[<span class="hljs-number">3</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 根据正则表达式匹配内容</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> HTML  待匹配文本内容</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> regex 正则表达式</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> 返回存放有匹配内容的列表</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">private</span> List&lt;String&gt; <span class="hljs-title">getTag</span><span class="hljs-params">(String HTML, String regex)</span> </span>&#123;</span><br><span class="line">        Matcher matcher = Pattern.compile(regex).matcher(HTML);</span><br><span class="line">        List&lt;String&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="hljs-keyword">while</span> (matcher.find()) &#123;</span><br><span class="line">            list.add(matcher.group());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 主要逻辑</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * STEP1: 裸GET传入的网页，会因为没有身份验证信息“ticket”而被跳转到CAS页面进行身份验证。</span></span><br><span class="line"><span class="hljs-comment">     * 跳转到实际的CAS页面后，分析页面中的HTML元素，从而获取到提交表单所需要的必要信息。（包括POST地址和hidden属性的值）</span></span><br><span class="line"><span class="hljs-comment">     * 还有从响应头中获取表示当前身份的Cookie（Cookie非常重要，前几个小时因为没有正确存入Cookie而遭遇了循环跳转CAS页面）</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * STEP2: 获取到必要信息后，open一个connection并将必要信息进行组装，最后加入username与password，进行POST操作。</span></span><br><span class="line"><span class="hljs-comment">     * 在这些信息中，组装正确的Cookie值非常重要。前几个小时的实验因为没有存入正确的Cookie而被判断没有登录，一直被重定向回CAS页面。</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * STEP3: 如果一切正常，connection将会非常舒服地通过验证并跳转到所希望的页面上去。</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">post</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="hljs-string">"STEP1"</span>);</span><br><span class="line">            <span class="hljs-comment">//STEP1: GET and Analyse CAS Page (in order to get HIDDEN INFORMATION and COOKIE)</span></span><br><span class="line">            String http = getHTML(mHttpsURLHost.openConnection());</span><br><span class="line">            String action = analyseAuthPage(http);</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="hljs-string">"STEP2"</span>);</span><br><span class="line">            <span class="hljs-comment">//STEP2: POST data and HIDDEN INFORMATION and COOKIE</span></span><br><span class="line">            URL newPOST = <span class="hljs-keyword">new</span> URL(action);</span><br><span class="line">            HttpsURLConnection newPOSTConnection = (HttpsURLConnection) newPOST.openConnection();</span><br><span class="line">            newPOSTConnection.setSSLSocketFactory(initCustomizedSSLSocketFactory());</span><br><span class="line">            newPOSTConnection.setDoOutput(<span class="hljs-keyword">true</span>);</span><br><span class="line">            newPOSTConnection.setRequestMethod(<span class="hljs-string">"POST"</span>);</span><br><span class="line">            newPOSTConnection.setRequestProperty(<span class="hljs-string">"Cookie"</span>, cookie);</span><br><span class="line">            addPOSTQuery(<span class="hljs-string">"username"</span>, username);</span><br><span class="line">            addPOSTQuery(<span class="hljs-string">"password"</span>, password);</span><br><span class="line">            BufferedWriter bufferedWriter = <span class="hljs-keyword">new</span> BufferedWriter(<span class="hljs-keyword">new</span> OutputStreamWriter(newPOSTConnection.getOutputStream()));</span><br><span class="line">            bufferedWriter.write(mPOSTQuery.toString());</span><br><span class="line">            bufferedWriter.flush();</span><br><span class="line"></span><br><span class="line">            System.out.println(<span class="hljs-string">"STEP3"</span>);</span><br><span class="line">            <span class="hljs-comment">//STEP3: GET RESULT</span></span><br><span class="line">            getHTML(newPOSTConnection);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">     * 组装自定义SSLSocket工厂</span></span><br><span class="line"><span class="hljs-comment">     * 在默认的情况下建立HTTPS链接时，HttpsURLConnection会根据默认的设定先去验证服务器的证书信息。</span></span><br><span class="line"><span class="hljs-comment">     * 而由于一些未知的原因，客户端获取不到深大CAS页面的证书信息，</span></span><br><span class="line"><span class="hljs-comment">     * 于是转向客户端TrustStore中寻找证书。而默认TrustStore是空的，因为没有手工添加过证书。</span></span><br><span class="line"><span class="hljs-comment">     * 所以这种情况下进行连接将会抛出SSLHandshakeException异常。</span></span><br><span class="line"><span class="hljs-comment">     * 所以需要传入一个自定义的SSLSocketFactory用于绕过证书验证。</span></span><br><span class="line"><span class="hljs-comment">     * 这个自定义的SSLSocket被传入一个假TrustManager，这个manager遇到证书验证失败不会有任何警报。当然，这种做法非常危险。</span></span><br><span class="line"><span class="hljs-comment">     *</span></span><br><span class="line"><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> 返回自定义的SSLSocketFactory</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">private</span> SSLSocketFactory <span class="hljs-title">initCustomizedSSLSocketFactory</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            TrustManager[] trustManagers = &#123;<span class="hljs-keyword">new</span> MyX509TrustManager()&#125;;</span><br><span class="line">            SSLContext sslContext = SSLContext.getInstance(<span class="hljs-string">"SSL"</span>, <span class="hljs-string">"SunJSSE"</span>);</span><br><span class="line">            sslContext.init(<span class="hljs-keyword">null</span>, trustManagers, <span class="hljs-keyword">new</span> java.security.SecureRandom());</span><br><span class="line">            <span class="hljs-keyword">return</span> sslContext.getSocketFactory();</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-comment">// write your code here</span></span><br><span class="line">        String bb = <span class="hljs-string">"http://elearning.szu.edu.cn/webapps/cbb-sdgxtyM-BBLEARN/checksession.jsp"</span>;</span><br><span class="line">        String username = <span class="hljs-string">""</span>;</span><br><span class="line">        String password = <span class="hljs-string">""</span>;</span><br><span class="line">        HTTPSPoster poster = <span class="hljs-keyword">new</span> HTTPSPoster(bb, username, password);</span><br><span class="line">        poster.post();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>第二个是用于绕过证书验证的自定义TrustMamager<code>MyX509TrustManager.java</code>:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.kavel.httpsposter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.TrustManager;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.TrustManagerFactory;</span><br><span class="line"><span class="keyword">import</span> javax.net.ssl.X509TrustManager;</span><br><span class="line"><span class="keyword">import</span> java.security.KeyStore;</span><br><span class="line"><span class="keyword">import</span> java.security.cert.CertificateException;</span><br><span class="line"><span class="keyword">import</span> java.security.cert.X509Certificate;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Created by wjw_w on 2017/4/13.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyX509TrustManager</span> <span class="keyword">implements</span> <span class="title">X509TrustManager</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * The default X509TrustManager returned by SunX509.  We'll delegate</span></span><br><span class="line"><span class="comment">     * decisions to it, and fall back to the logic in this class if the</span></span><br><span class="line"><span class="comment">     * default X509TrustManager doesn't trust it.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    X509TrustManager sunJSSEX509TrustManager;</span><br><span class="line"></span><br><span class="line">    MyX509TrustManager() <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// create a "default" JSSE X509TrustManager.</span></span><br><span class="line">        KeyStore ks = KeyStore.getInstance(<span class="string">"JKS"</span>);</span><br><span class="line">        <span class="comment">//不需要load，因为这个是假的，是特技</span></span><br><span class="line">        <span class="comment">//ks.load(new FileInputStream("trustedCerts"),</span></span><br><span class="line">        <span class="comment">//        "passphrase".toCharArray());</span></span><br><span class="line">        TrustManagerFactory tmf =</span><br><span class="line">                TrustManagerFactory.getInstance(<span class="string">"SunX509"</span>, <span class="string">"SunJSSE"</span>);</span><br><span class="line">        tmf.init(ks);</span><br><span class="line">        TrustManager tms[] = tmf.getTrustManagers();</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">             * Iterate over the returned trustmanagers, look</span></span><br><span class="line"><span class="comment">             * for an instance of X509TrustManager.  If found,</span></span><br><span class="line"><span class="comment">             * use that as our "default" trust manager.</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tms.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (tms[i] <span class="keyword">instanceof</span> X509TrustManager) &#123;</span><br><span class="line">                sunJSSEX509TrustManager = (X509TrustManager) tms[i];</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">             * Find some other way to initialize, or else we have to fail the</span></span><br><span class="line"><span class="comment">             * constructor.</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"Couldn't initialize"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * Delegate to the default trust manager.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkClientTrusted</span><span class="params">(X509Certificate[] chain, String authType)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> CertificateException </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            sunJSSEX509TrustManager.checkClientTrusted(chain, authType);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (CertificateException excep) &#123;</span><br><span class="line">            <span class="comment">// do any special handling here, or rethrow exception.</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * Delegate to the default trust manager.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkServerTrusted</span><span class="params">(X509Certificate[] chain, String authType)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> CertificateException </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            sunJSSEX509TrustManager.checkServerTrusted(chain, authType);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (CertificateException excep) &#123;</span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                 * Possibly pop up a dialog box asking whether to trust the</span></span><br><span class="line"><span class="comment">                 * cert chain.</span></span><br><span class="line"><span class="comment">                 */</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * Merely pass this through.</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> X509Certificate[] getAcceptedIssuers() &#123;</span><br><span class="line">        <span class="keyword">return</span> sunJSSEX509TrustManager.getAcceptedIssuers();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-      
-
-  <div class="popular-posts-header">相关文章</div>
-  <ul class="popular-posts">
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/zh-CN/xcr3tchat.html" rel="bookmark">Xcr3tChat: 一个比较安全的聊天工具</a></div>
-      
-    </li>
-  
-  </ul>
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>您的每一次打赏都是我更新的动力！</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/images/reward.jpg" alt="Jiawei Wang 微信支付">
-        <p>微信支付</p>
-      </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/images/alipay.jpg" alt="Jiawei Wang 支付宝">
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>Jiawei Wang</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="http://kavel.cn/zh-CN/post-via-cas.html" title="URLConnection自动登录深大CAS认证平台：提交表单实现方案">http://kavel.cn/zh-CN/post-via-cas.html</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
-</ul>
-
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/java/" rel="tag"># java</a>
-          
-        </div>
-      
-
-      
-      
-        <div class="post-widgets">
-        
-          <div class="wp_rating">
-            <div id="wpac-rating"></div>
-          </div>
-        
-
-        
-
-        
-        </div>
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/zh-CN/hexo-installment-log.html" rel="next" title="hexo小撇步：服务器架设hexo过程全记录">
-                <i class="fa fa-chevron-left"></i> hexo小撇步：服务器架设hexo过程全记录
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/zh-CN/xcr3tchat.html" rel="prev" title="Xcr3tChat: 一个比较安全的聊天工具">
-                Xcr3tChat: 一个比较安全的聊天工具 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="SOHUCS"></div>
-    </div>
-
-  
-
-
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> cn.kavel.httpsposter;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> javax.net.ssl.TrustManager;</span><br><span class="line"><span class="hljs-keyword">import</span> javax.net.ssl.TrustManagerFactory;</span><br><span class="line"><span class="hljs-keyword">import</span> javax.net.ssl.X509TrustManager;</span><br><span class="line"><span class="hljs-keyword">import</span> java.security.KeyStore;</span><br><span class="line"><span class="hljs-keyword">import</span> java.security.cert.CertificateException;</span><br><span class="line"><span class="hljs-keyword">import</span> java.security.cert.X509Certificate;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment"> * Created by wjw_w on 2017/4/13.</span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyX509TrustManager</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">X509TrustManager</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">     * The default X509TrustManager returned by SunX509.  We'll delegate</span></span><br><span class="line"><span class="hljs-comment">     * decisions to it, and fall back to the logic in this class if the</span></span><br><span class="line"><span class="hljs-comment">     * default X509TrustManager doesn't trust it.</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    X509TrustManager sunJSSEX509TrustManager;</span><br><span class="line"></span><br><span class="line">    MyX509TrustManager() <span class="hljs-keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="hljs-comment">// create a "default" JSSE X509TrustManager.</span></span><br><span class="line">        KeyStore ks = KeyStore.getInstance(<span class="hljs-string">"JKS"</span>);</span><br><span class="line">        <span class="hljs-comment">//不需要load，因为这个是假的，是特技</span></span><br><span class="line">        <span class="hljs-comment">//ks.load(new FileInputStream("trustedCerts"),</span></span><br><span class="line">        <span class="hljs-comment">//        "passphrase".toCharArray());</span></span><br><span class="line">        TrustManagerFactory tmf =</span><br><span class="line">                TrustManagerFactory.getInstance(<span class="hljs-string">"SunX509"</span>, <span class="hljs-string">"SunJSSE"</span>);</span><br><span class="line">        tmf.init(ks);</span><br><span class="line">        TrustManager tms[] = tmf.getTrustManagers();</span><br><span class="line">            <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">             * Iterate over the returned trustmanagers, look</span></span><br><span class="line"><span class="hljs-comment">             * for an instance of X509TrustManager.  If found,</span></span><br><span class="line"><span class="hljs-comment">             * use that as our "default" trust manager.</span></span><br><span class="line"><span class="hljs-comment">             */</span></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; tms.length; i++) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (tms[i] <span class="hljs-keyword">instanceof</span> X509TrustManager) &#123;</span><br><span class="line">                sunJSSEX509TrustManager = (X509TrustManager) tms[i];</span><br><span class="line">                <span class="hljs-keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">             * Find some other way to initialize, or else we have to fail the</span></span><br><span class="line"><span class="hljs-comment">             * constructor.</span></span><br><span class="line"><span class="hljs-comment">             */</span></span><br><span class="line">        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> Exception(<span class="hljs-string">"Couldn't initialize"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">     * Delegate to the default trust manager.</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">checkClientTrusted</span><span class="hljs-params">(X509Certificate[] chain, String authType)</span></span></span><br><span class="line"><span class="hljs-function">            <span class="hljs-keyword">throws</span> CertificateException </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            sunJSSEX509TrustManager.checkClientTrusted(chain, authType);</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> (CertificateException excep) &#123;</span><br><span class="line">            <span class="hljs-comment">// do any special handling here, or rethrow exception.</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">     * Delegate to the default trust manager.</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">checkServerTrusted</span><span class="hljs-params">(X509Certificate[] chain, String authType)</span></span></span><br><span class="line"><span class="hljs-function">            <span class="hljs-keyword">throws</span> CertificateException </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">try</span> &#123;</span><br><span class="line">            sunJSSEX509TrustManager.checkServerTrusted(chain, authType);</span><br><span class="line">        &#125; <span class="hljs-keyword">catch</span> (CertificateException excep) &#123;</span><br><span class="line">                <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">                 * Possibly pop up a dialog box asking whether to trust the</span></span><br><span class="line"><span class="hljs-comment">                 * cert chain.</span></span><br><span class="line"><span class="hljs-comment">                 */</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">     * Merely pass this through.</span></span><br><span class="line"><span class="hljs-comment">     */</span></span><br><span class="line">    <span class="hljs-keyword">public</span> X509Certificate[] getAcceptedIssuers() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> sunJSSEX509TrustManager.getAcceptedIssuers();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/kavelspot.w.svg" alt="Jiawei Wang">
-            
-              <p class="site-author-name" itemprop="name">Jiawei Wang</p>
-              <p class="site-description motion-element" itemprop="description">version 2.3.0</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/java/">java</a>
                 </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">8</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
             </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/KavelCortex" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:wjw_wwasd@hotmail.com" target="_blank" title="Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>Mail</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://twitter.com/wjw_wwasd" target="_blank" title="Twitter" rel="external nofollow"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.facebook.com/jwang96w" target="_blank" title="Facebook" rel="external nofollow"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.instagram.com/jiawei_w9847/" target="_blank" title="Instagram" rel="external nofollow"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.linkedin.com/in/kavelcortex/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-            <div class="cc-license motion-element" itemprop="license">
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
-                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
-              </a>
-            </div>
-          
-
-          
-          
-
-          
-            
-          
-          <iframe src="https://open.spotify.com/embed?uri=spotify:user:spotify:playlist:37i9dQZEVXcDALj69YQpJE" width="250" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
         </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAS验证基本原理"><span class="nav-number">1.</span> <span class="nav-text">CAS验证基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现结果"><span class="nav-number">2.</span> <span class="nav-text">实现结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现代码"><span class="nav-number">3.</span> <span class="nav-text">实现代码</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
-
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Jiawei Wang</span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-    <span title="站点总字数">123k</span>
-  
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    
-    <span title="站点阅读时长">1:51</span>
-  
-</div>
-
-
-  
-
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.9.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
-
-
-
-  <div class="footer-custom"><p>粤ICP备16025578号-1</p></div>
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv" title="总访客量">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-
-  
-    <span class="site-pv" title="总访问量">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
 </div>
 
 
 
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-
-    
-	
-    
-
-    
-      <div>
-        <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class="addthis_inline_share_toolbox">
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b627c6df263adcc" async="async"></script>
-</div>
-
-      </div>
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-  
-    <script type="text/javascript">
-    (function(){
-      var appid = 'cytKiUk9T';
-      var conf = '09a421ba90a2c25769aa7807b76c2f03';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      if (width < 960) {
-      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
-        window.changyan.api.config({appid:appid,conf:conf})});
-      }
-    })();
-    </script>
-    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
-  
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
                 
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
 
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/reward.jpg" alt="微信"></div>
+</a>
 
-                // show search results
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
 
-                if (isMatch) {
-                  // sort index by position of keyword
+<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
+    <span class="icon is-small">
+        <i class="fab fa-paypal"></i>
+    </span>
+    <span>Paypal</span>
+</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
+    <input type="hidden" name="cmd" value="_donations" />
+    <input type="hidden" name="business" value="wjw_wwasd@hotmail.com" />
+    <input type="hidden" name="currency_code" value="USD" />
+</form>
 
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/zh-CN/xcr3tchat.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Xcr3tChat: 一个比较安全的聊天工具</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/zh-CN/hexo-installment-log.html">
+                <span class="level-item">hexo小撇步：服务器架设hexo过程全记录</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
-  
 
-  
-
-  
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
 <script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    var gitalk = new Gitalk({
+        clientID: '2252bc4eafc0990d46cb',
+        clientSecret: '0aedac71b55ece12d870b6c4f1378358e586ae0d',
+        id: '269d6105794da675265ef34456ddfd1f',
+        repo: 'KavelCortex.github.io',
+        owner: 'KavelCortex',
+        admin: "KavelCortex",
+        createIssueManually: false,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image has-mb-6">
+                        <a href="/">
+                          <img class=image src="/images/dogg.png" alt="Jiawei Wang">
+                        </a>
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Jiawei Wang
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        UAB Grad
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Birmingham, AL</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a class="title has-text-weight-normal" href="/archives">
+                        7
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a class="title has-text-weight-normal" href="/categories">
+                        4
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a class="title has-text-weight-normal" href="/tags">
+                        8
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://www.facebook.com/jwang96w" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="https://github.com/KavelCortex">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="https://www.facebook.com/jwang96w">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="https://twitter.com/wjw_wwasd">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="RSS" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#CAS验证基本原理">
+        <span class="has-mr-6">1</span>
+        <span>CAS验证基本原理</span>
+        </a></li><li>
+        <a class="is-flex" href="#实现结果">
+        <span class="has-mr-6">2</span>
+        <span>实现结果</span>
+        </a></li><li>
+        <a class="is-flex" href="#实现代码">
+        <span class="has-mr-6">3</span>
+        <span>实现代码</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/articles/">
+            <span class="level-start">
+                <span class="level-item">articles</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/logs/">
+            <span class="level-start">
+                <span class="level-item">logs</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/programming/">
+            <span class="level-start">
+                <span class="level-item">programming</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/reviews/">
+            <span class="level-start">
+                <span class="level-item">reviews</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/GTD/">
+                        <span class="tag">GTD</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/app/">
+                        <span class="tag">app</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/framework/">
+                        <span class="tag">framework</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/games/">
+                        <span class="tag">games</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/java/">
+                        <span class="tag">java</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/php/">
+                        <span class="tag">php</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/site/">
+                        <span class="tag">site</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/zh-CN/2do.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="拖延症的救星！如何使用2Do打造一个实用的GTD®工具">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-04T00:13:39.000Z">08/03/2018</time></div>
+                    <a href="/zh-CN/2do.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">拖延症的救星！如何使用2Do打造一个实用的GTD®工具</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/reviews/">reviews</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/zh-CN/xcr3tchat.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Xcr3tChat: 一个比较安全的聊天工具">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-02T19:44:57.000Z">08/02/2018</time></div>
+                    <a href="/zh-CN/xcr3tchat.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Xcr3tChat: 一个比较安全的聊天工具</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/programming/">programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/zh-CN/post-via-cas.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="URLConnection自动登录深大CAS认证平台：提交表单实现方案">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-04-15T05:00:00.000Z">04/15/2017</time></div>
+                    <a href="/zh-CN/post-via-cas.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">URLConnection自动登录深大CAS认证平台：提交表单实现方案</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/programming/">programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/zh-CN/hexo-installment-log.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="hexo小撇步：服务器架设hexo过程全记录">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-03-04T06:00:00.000Z">03/04/2017</time></div>
+                    <a href="/zh-CN/hexo-installment-log.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">hexo小撇步：服务器架设hexo过程全记录</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/logs/">logs</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/zh-CN/letsencrypt-on-centos7.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="给网站用上免费SSL：Let&#39;s Encrypt操作记录">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-02-28T06:00:00.000Z">02/28/2017</time></div>
+                    <a href="/zh-CN/letsencrypt-on-centos7.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">给网站用上免费SSL：Let&#39;s Encrypt操作记录</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/logs/">logs</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2009/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2009</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/zh-CN/2do.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="拖延症的救星！如何使用2Do打造一个实用的GTD®工具">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-04T00:13:39.000Z">08/03/2018</time></div>
+                    <a href="/zh-CN/2do.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">拖延症的救星！如何使用2Do打造一个实用的GTD®工具</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/reviews/">reviews</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/zh-CN/xcr3tchat.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Xcr3tChat: 一个比较安全的聊天工具">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-02T19:44:57.000Z">08/02/2018</time></div>
+                    <a href="/zh-CN/xcr3tchat.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">Xcr3tChat: 一个比较安全的聊天工具</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/programming/">programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/zh-CN/post-via-cas.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="URLConnection自动登录深大CAS认证平台：提交表单实现方案">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-04-15T05:00:00.000Z">04/15/2017</time></div>
+                    <a href="/zh-CN/post-via-cas.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">URLConnection自动登录深大CAS认证平台：提交表单实现方案</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/programming/">programming</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/zh-CN/hexo-installment-log.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="hexo小撇步：服务器架设hexo过程全记录">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-03-04T06:00:00.000Z">03/04/2017</time></div>
+                    <a href="/zh-CN/hexo-installment-log.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">hexo小撇步：服务器架设hexo过程全记录</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/logs/">logs</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/zh-CN/letsencrypt-on-centos7.html" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="给网站用上免费SSL：Let&#39;s Encrypt操作记录">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2017-02-28T06:00:00.000Z">02/28/2017</time></div>
+                    <a href="/zh-CN/letsencrypt-on-centos7.html" class="title has-link-black-ter is-size-6 has-text-weight-normal">给网站用上免费SSL：Let&#39;s Encrypt操作记录</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/logs/">logs</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2009/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2009</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/kavelspot.svg" alt="URLConnection自动登录深大CAS认证平台：提交表单实现方案" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Jiawei Wang&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'folded'
+        }
     }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+};
 </script>
 
 
-  
-  
-
-  
-  
-
-  
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
 
 
-  
-  
-  <script type="text/javascript">
-  wpac_init = window.wpac_init || [];
-  wpac_init.push({widget: 'Rating', id: 12953,
-    el: 'wpac-rating',
-    color: 'fc6423'
-  });
-  (function() {
-    if ('WIDGETPACK_LOADED' in window) return;
-    WIDGETPACK_LOADED = true;
-    var mc = document.createElement('script');
-    mc.type = 'text/javascript';
-    mc.async = true;
-    mc.src = '//embed.widgetpack.com/widget.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-  })();
-  </script>
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
 
 
-  
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
 
-  
+    
+    
 
-  
-
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
-        
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
 
 
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
 </body>
 </html>

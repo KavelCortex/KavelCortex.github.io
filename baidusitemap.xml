@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://kavel.cn/zh-CN/2do.html</loc>
-    <lastmod>2018-08-05</lastmod>
-  </url>  <url>
     <loc>http://kavel.cn/zh-CN/xcr3tchat.html</loc>
-    <lastmod>2018-08-04</lastmod>
-  </url>  <url>
-    <loc>http://kavel.cn/zh-CN/hexo-installment-log.html</loc>
-    <lastmod>2018-08-04</lastmod>
-  </url>  <url>
-    <loc>http://kavel.cn/zh-CN/letsencrypt-on-centos7.html</loc>
-    <lastmod>2018-08-04</lastmod>
-  </url>  <url>
-    <loc>http://kavel.cn/zh-CN/php-framework-using-singleton-with-GET.html</loc>
-    <lastmod>2018-08-04</lastmod>
-  </url>  <url>
-    <loc>http://kavel.cn/zh-CN/post-via-cas.html</loc>
-    <lastmod>2018-08-04</lastmod>
+    <lastmod>2019-09-16</lastmod>
   </url>  <url>
     <loc>http://kavel.cn/zh-CN/snc-revengence.html</loc>
-    <lastmod>2018-08-04</lastmod>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
+    <loc>http://kavel.cn/zh-CN/post-via-cas.html</loc>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
+    <loc>http://kavel.cn/zh-CN/php-framework-using-singleton-with-GET.html</loc>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
+    <loc>http://kavel.cn/zh-CN/letsencrypt-on-centos7.html</loc>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
+    <loc>http://kavel.cn/zh-CN/hexo-installment-log.html</loc>
+    <lastmod>2019-09-16</lastmod>
+  </url>  <url>
+    <loc>http://kavel.cn/zh-CN/2do.html</loc>
+    <lastmod>2019-09-16</lastmod>
   </url>
 </urlset>
