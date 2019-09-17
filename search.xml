@@ -12,9 +12,31 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[LeetCode 刷题记录: 85. Maximal Rectangle [Python]]]></title>
+    <url>%2Fzh-CN%2FLC85_Maximal_Rectangle.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/maximal-rectangle/ Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing only 1’s and return its area. 思路大致思路和 84. Largest Rectangle in Histogram 相同，对于每个row判断如果为1则高度叠加，否则高度清零。 代码1234567891011121314151617class Solution: def maximalRectangle(self, matrix: List[List[str]]) -&gt; int: if not matrix or not matrix[0]: return 0 height=[0] *(len(matrix[0])+1) ans=0 for row in matrix: for i in range(len(matrix[0])): height[i]=height[i]+1 if row[i]=='1' else 0 stack=[-1] for i in range(len(matrix[0])+1): while height[i]&lt;height[stack[-1]]: h=height[stack.pop()] w=i-stack[-1]-1 ans=max(ans,h*w) stack.append(i) return ans]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode 刷题记录: 84. Largest Rectangle in Histogram [Python]]]></title>
     <url>%2Fzh-CN%2FLC84_Largest_Rectangle_in_Histogram.html</url>
     <content type="text"><![CDATA[原题 https://leetcode.com/problems/largest-rectangle-in-histogram/ Given n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram. 思路在height后面加上一个0作为右边界，记录高度堆栈stack加上一个-1作为左边界。遍历heights，若当前height不低于stack最后一个元素的高度时，添加进stack中。否则： 从堆栈中弹出最后一个元素，即当前最高处位置信息，获取该位置的高度。 以当前位置i作为右边界，当前堆栈的最后一个元素stack[-1]，即当前第二高的位置作为左边界，宽度则为右边界-左边界-1（边界均不包含在内），即w=i-stack[-1]-1。 此时矩形面积即为h*w。 代码12345678910111213class Solution: def largestRectangleArea(self, heights: List[int]) -&gt; int: heights.append(0) stack=[-1] ans=0 for i in range(len(heights)): while heights[i]&lt;heights[stack[-1]]: h=heights[stack.pop()] w=i-stack[-1]-1 ans=max(ans,h*w) stack.append(i) heights.pop() return ans]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 96. Unique Binary Search Trees [Python]]]></title>
+    <url>%2Fzh-CN%2FLC96_Unique_Binary_Search_Trees.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/unique-binary-search-trees/ Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n? 思路对于n个值，以i为根，则可以将[1,i-1]放入左边，[i+1,n]放入右边，因此有[i-1]*[i-j]种方式。 代码12345678class Solution: def numTrees(self, n: int) -&gt; int: arr=[0]*(n+1) arr[0]=1 for i in range(1,n+1): for j in range(1,i+1): arr[i]+=arr[j-1]*arr[i-j] return arr[-1]]]></content>
       <categories>
         <category>leetcode</category>
       </categories>
@@ -32,28 +54,6 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>Binary</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[LeetCode 刷题记录: 85. Maximal Rectangle [Python]]]></title>
-    <url>%2Fzh-CN%2FLC85_Maximal_Rectangle.html</url>
-    <content type="text"><![CDATA[原题 https://leetcode.com/problems/maximal-rectangle/ Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing only 1’s and return its area. 思路大致思路和 84. Largest Rectangle in Histogram 相同，对于每个row判断如果为1则高度叠加，否则高度清零。 代码1234567891011121314151617class Solution: def maximalRectangle(self, matrix: List[List[str]]) -&gt; int: if not matrix or not matrix[0]: return 0 height=[0] *(len(matrix[0])+1) ans=0 for row in matrix: for i in range(len(matrix[0])): height[i]=height[i]+1 if row[i]=='1' else 0 stack=[-1] for i in range(len(matrix[0])+1): while height[i]&lt;height[stack[-1]]: h=height[stack.pop()] w=i-stack[-1]-1 ans=max(ans,h*w) stack.append(i) return ans]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[LeetCode 刷题记录: 96. Unique Binary Search Trees [Python]]]></title>
-    <url>%2Fzh-CN%2FLC96_Unique_Binary_Search_Trees.html</url>
-    <content type="text"><![CDATA[原题 https://leetcode.com/problems/unique-binary-search-trees/ Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n? 思路对于n个值，以i为根，则可以将[1,i-1]放入左边，[i+1,n]放入右边，因此有[i-1]*[i-j]种方式。 代码12345678class Solution: def numTrees(self, n: int) -&gt; int: arr=[0]*(n+1) arr[0]=1 for i in range(1,n+1): for j in range(1,i+1): arr[i]+=arr[j-1]*arr[i-j] return arr[-1]]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -91,17 +91,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LeetCode 刷题记录: 55. Jump Game [Python]]]></title>
-    <url>%2Fzh-CN%2FLC55_Jump_Game.html</url>
-    <content type="text"><![CDATA[原题 https://leetcode.com/problems/jump-game/ Given an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Determine if you are able to reach the last index. 思路设定一个变量reachable记录当前能够达到的最远值。然后遍历nums: 当reachable&lt;i时，即已经不能到达该处。返回False。 否则更新reachable，大小为当前能走的最远值以及此处可以走的最远值之间的最大值。 接着判断reachable是否大于nums，若是即可提前返回True跳出。 代码1234567class Solution: def canJump(self, nums: List[int]) -&gt; bool: reachable=0 for i in range(len(nums)): if reachable&lt;i:return False reachable=max(reachable,i+nums[i]) if reachable&gt;=len(nums)-1: return True]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[LeetCode 刷题记录: 46. Permutations [Python]]]></title>
     <url>%2Fzh-CN%2FLC46_Permutations.html</url>
     <content type="text"><![CDATA[原题 https://leetcode.com/problems/permutations/ Given a collection of distinct integers, return all possible permutations. 思路Backtrack。当temp长度等于所有数字时，添加进结果。否则遍历数字，每个数字添加进temp中，进行下一次迭代。当temp中存在相同数字时跳过。 代码1234567891011121314class Solution: def permute(self, nums: List[int]) -&gt; List[List[int]]: if not nums: return [[]] result=[] self.backtrack(nums,[],result) return result def backtrack(self, nums, temp,result): if len(temp)==len(nums): result.append(temp[:]) else: for num in nums: if num in temp: continue temp.append(num) self.backtrack(nums,temp,result) temp.pop()]]></content>
@@ -112,6 +101,17 @@
         <tag>LeetCode</tag>
         <tag>Backtrack</tag>
         <tag>DFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 55. Jump Game [Python]]]></title>
+    <url>%2Fzh-CN%2FLC55_Jump_Game.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/jump-game/ Given an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Determine if you are able to reach the last index. 思路设定一个变量reachable记录当前能够达到的最远值。然后遍历nums: 当reachable&lt;i时，即已经不能到达该处。返回False。 否则更新reachable，大小为当前能走的最远值以及此处可以走的最远值之间的最大值。 接着判断reachable是否大于nums，若是即可提前返回True跳出。 代码1234567class Solution: def canJump(self, nums: List[int]) -&gt; bool: reachable=0 for i in range(len(nums)): if reachable&lt;i:return False reachable=max(reachable,i+nums[i]) if reachable&gt;=len(nums)-1: return True]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -173,6 +173,18 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>Greedy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 1. Two Sum [Java]]]></title>
+    <url>%2Fzh-CN%2FLC1_Two_Sum.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/two-sum/ Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice. 思路使用hashmap查表，拿到数字首先查找余值是否在表内，若在的话直接返回表内的对应值。接着将数字以及index存入表内。 代码1234567891011121314import java.util.HashMap;class Solution &#123; public int[] twoSum(int[] nums, int target) &#123; HashMap&lt;Integer, Integer&gt; h = new HashMap&lt;&gt;(); for(int i=0;i&lt;nums.length;i++)&#123; int residue=target-nums[i]; if(h.containsKey(residue))&#123; return new int[]&#123;h.get(residue),i&#125;; &#125; h.put(nums[i],i); &#125; throw new IllegalArgumentException("No solution"); &#125;&#125;]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Hashmap</tag>
       </tags>
   </entry>
   <entry>

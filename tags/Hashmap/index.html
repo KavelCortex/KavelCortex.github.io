@@ -7,22 +7,20 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>LeetCode 刷题记录: 79. Word Search [Python] - 嘉维小站 - Hello Github!</title>
+<title>Tag: Hashmap - 嘉维小站 - Hello Github!</title>
 
 
-    <meta name="description" content="原题 https://leetcode.com/problems/word-search/ Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where “adjacent”">
-<meta name="keywords" content="LeetCode,DFS">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 刷题记录: 79. Word Search [Python]">
-<meta property="og:url" content="http://kavel.cn/zh-CN/LC79_Word_Search.html">
+    <meta name="description" content="version 2.3.1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="嘉维小站">
+<meta property="og:url" content="http://kavel.cn/tags/Hashmap/index.html">
 <meta property="og:site_name" content="嘉维小站">
-<meta property="og:description" content="原题 https://leetcode.com/problems/word-search/ Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where “adjacent”">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="version 2.3.1">
+<meta property="og:locale" content="en">
 <meta property="og:image" content="http://kavel.cn/images/og_image.png">
-<meta property="og:updated_time" content="2019-09-17T04:13:18.222Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 刷题记录: 79. Word Search [Python]">
-<meta name="twitter:description" content="原题 https://leetcode.com/problems/word-search/ Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where “adjacent”">
+<meta name="twitter:title" content="嘉维小站">
+<meta name="twitter:description" content="version 2.3.1">
 <meta name="twitter:image" content="http://kavel.cn/images/og_image.png">
 <meta name="twitter:creator" content="@wjw_wwasd">
 <meta name="twitter:site" content="https://twitter.com/wjw_wwasd">
@@ -33,7 +31,7 @@
 
 
 
-<link rel="alternative" href="/atom.xml" title="LeetCode 刷题记录: 79. Word Search [Python] - Hello Github!" type="application/atom+xml">
+<link rel="alternative" href="/atom.xml" title="嘉维小站 - Hello Github!" type="application/atom+xml">
 
 
 
@@ -113,7 +111,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/kavelspot.svg" alt="LeetCode 刷题记录: 79. Word Search [Python]" height="28">
+                <img src="/images/kavelspot.svg" alt="嘉维小站" height="28">
             
             </a>
         </div>
@@ -147,7 +145,7 @@
                   </p>
                 
                 
-                <a class="navbar-item search" title="搜索" href="javascript:;">
+                <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -161,12 +159,23 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Hashmap</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-23T05:00:00.000Z">07/23/2019</time>
+                <time class="level-item has-text-grey" datetime="2019-07-18T05:00:00.000Z">07/18/2019</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/leetcode/">leetcode</a>
@@ -176,146 +185,47 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute 读完 (大约 183 个字)
+                    a minute read (About 154 words)
                 </span>
                 
-                
-                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>次访问
-                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                LeetCode 刷题记录: 79. Word Search [Python]
+                <a class="has-link-black-ter" href="/zh-CN/LC1_Two_Sum.html">LeetCode 刷题记录: 1. Two Sum [Java]</a>
             
         </h1>
         <div class="content">
             <h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
-<p><a href="https://leetcode.com/problems/word-search/" target="_blank" rel="noopener">https://leetcode.com/problems/word-search/</a></p>
-<p>Given a 2D board and a word, find if the word exists in the grid.</p>
-<p>The word can be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.</p>
+<p><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">https://leetcode.com/problems/two-sum/</a></p>
+<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
 </blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>DFS。四个方向搜寻即可。<br><a id="more"></a></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exist</span><span class="hljs-params">(self, board: List[List[str]], word: str)</span> -&gt; bool:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> board: <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(board)):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(len(board[<span class="hljs-number">0</span>])):</span><br><span class="line">                <span class="hljs-keyword">if</span> self.dfs(board,i,j,word): <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span></span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dfs</span><span class="hljs-params">(self, board, i, j, word)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(word)==<span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span></span><br><span class="line">        <span class="hljs-keyword">if</span> i&lt;<span class="hljs-number">0</span> <span class="hljs-keyword">or</span> i&gt;=len(board) <span class="hljs-keyword">or</span> j&lt;<span class="hljs-number">0</span> <span class="hljs-keyword">or</span> j&gt;=len(board[<span class="hljs-number">0</span>]) <span class="hljs-keyword">or</span> word[<span class="hljs-number">0</span>]!=board[i][j]: <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span></span><br><span class="line">        tmp,board[i][j]=board[i][j],<span class="hljs-string">'#'</span></span><br><span class="line">        res=self.dfs(board,i<span class="hljs-number">-1</span>,j,word[<span class="hljs-number">1</span>:]) <span class="hljs-keyword">or</span> self.dfs(board,i+<span class="hljs-number">1</span>,j,word[<span class="hljs-number">1</span>:]) <span class="hljs-keyword">or</span> self.dfs(board,i,j<span class="hljs-number">-1</span>,word[<span class="hljs-number">1</span>:]) <span class="hljs-keyword">or</span> self.dfs(board, i, j+<span class="hljs-number">1</span>, word[<span class="hljs-number">1</span>:])</span><br><span class="line">        board[i][j]=tmp</span><br><span class="line">        <span class="hljs-keyword">return</span> res</span><br></pre></td></tr></table></figure>
-
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用hashmap查表，拿到数字首先查找余值是否在表内，若在的话直接返回表内的对应值。接着将数字以及index存入表内。<br></p>
         </div>
         
-        <div class="level is-size-7 is-uppercase">
+        
+        <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/DFS/">DFS</a>, <a class="has-link-grey -link" href="/tags/LeetCode/">LeetCode</a>
+                <a class="button is-size-7 is-light" href="/zh-CN/LC1_Two_Sum.html#more">Read More</a>
                 </div>
             </div>
         </div>
         
         
-        
-        <div class="social-share"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
-<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
-        
     </div>
 </div>
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
-        <div class="buttons is-centered">
-            
-                
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <i class="fab fa-alipay"></i>
-    </span>
-    <span>支付宝</span>
-    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
-</a>
-
-                
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <i class="fab fa-weixin"></i>
-    </span>
-    <span>微信</span>
-    <div class="qrcode"><img src="/images/reward.jpg" alt="微信"></div>
-</a>
-
-                
-                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
-
-<a class="button is-warning donate" onclick="document.getElementById(&#39;paypal-donate-form&#39;).submit()">
-    <span class="icon is-small">
-        <i class="fab fa-paypal"></i>
-    </span>
-    <span>Paypal</span>
-</a>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal-donate-form">
-    <input type="hidden" name="cmd" value="_donations" />
-    <input type="hidden" name="business" value="wjw_wwasd@hotmail.com" />
-    <input type="hidden" name="currency_code" value="USD" />
-</form>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/zh-CN/LC98_Validate_Binary_Search_Tree.html">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">LeetCode 刷题记录: 98. Validate Binary Search Tree [Python]</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/zh-CN/LC56_Merge_Intervals.html">
-                <span class="level-item">LeetCode 刷题记录: 56. Merge Intervals [Python]</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
-<script>
-    var gitalk = new Gitalk({
-        clientID: '2252bc4eafc0990d46cb',
-        clientSecret: '0aedac71b55ece12d870b6c4f1378358e586ae0d',
-        id: '85dd924724ebb819e13f6388e55f16a5',
-        repo: 'KavelCortex.github.io',
-        owner: 'KavelCortex',
-        admin: "KavelCortex",
-        createIssueManually: false,
-        distractionFreeMode: false
-    })
-    gitalk.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -359,7 +269,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        文章
+                        Posts
                     </p>
                     <a class="title has-text-weight-normal" href="/archives">
                         24
@@ -369,7 +279,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        分类
+                        Categories
                     </p>
                     <a class="title has-text-weight-normal" href="/categories">
                         5
@@ -379,7 +289,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        标签
+                        Tags
                     </p>
                     <a class="title has-text-weight-normal" href="/tags">
                         20
@@ -389,7 +299,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://www.facebook.com/jwang96w" target="_blank">
-                关注我</a>
+                Follow</a>
         </div>
         
         
@@ -436,7 +346,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                分类
+                Categories
             </h3>
             <ul class="menu-list">
             <li>
@@ -489,7 +399,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                标签
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -645,7 +555,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            最新文章
+            Recent
         </h3>
         
         <article class="media">
@@ -751,7 +661,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            归档
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -841,7 +751,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            最新文章
+            Recent
         </h3>
         
         <article class="media">
@@ -947,7 +857,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            归档
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -1034,7 +944,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/kavelspot.svg" alt="LeetCode 刷题记录: 79. Word Search [Python]" height="28">
+                    <img src="/images/kavelspot.svg" alt="嘉维小站" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -1044,7 +954,7 @@
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
-                共<span id="busuanzi_value_site_uv">0</span>个访客
+                Visited by <span id="busuanzi_value_site_uv">0</span> users
                 </span>
                 
                 </p>
@@ -1160,7 +1070,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="回到顶端" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -1189,7 +1099,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -1201,11 +1111,11 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: '文章',
-                PAGES: '页面',
-                CATEGORIES: '分类',
-                TAGS: '标签',
-                UNTITLED: '(无标题)',
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
         };

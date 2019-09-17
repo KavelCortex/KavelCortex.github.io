@@ -7,22 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>LeetCode 刷题记录: 79. Word Search [Python] - 嘉维小站 - Hello Github!</title>
+<title>LeetCode 刷题记录: 1. Two Sum [Java] - 嘉维小站 - Hello Github!</title>
 
 
-    <meta name="description" content="原题 https://leetcode.com/problems/word-search/ Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where “adjacent”">
-<meta name="keywords" content="LeetCode,DFS">
+    <meta name="description" content="原题 https://leetcode.com/problems/two-sum/ Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly on">
+<meta name="keywords" content="LeetCode,Hashmap">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 刷题记录: 79. Word Search [Python]">
-<meta property="og:url" content="http://kavel.cn/zh-CN/LC79_Word_Search.html">
+<meta property="og:title" content="LeetCode 刷题记录: 1. Two Sum [Java]">
+<meta property="og:url" content="http://kavel.cn/zh-CN/LC1_Two_Sum.html">
 <meta property="og:site_name" content="嘉维小站">
-<meta property="og:description" content="原题 https://leetcode.com/problems/word-search/ Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where “adjacent”">
+<meta property="og:description" content="原题 https://leetcode.com/problems/two-sum/ Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly on">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://kavel.cn/images/og_image.png">
-<meta property="og:updated_time" content="2019-09-17T04:13:18.222Z">
+<meta property="og:updated_time" content="2019-09-17T04:13:18.211Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 刷题记录: 79. Word Search [Python]">
-<meta name="twitter:description" content="原题 https://leetcode.com/problems/word-search/ Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where “adjacent”">
+<meta name="twitter:title" content="LeetCode 刷题记录: 1. Two Sum [Java]">
+<meta name="twitter:description" content="原题 https://leetcode.com/problems/two-sum/ Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly on">
 <meta name="twitter:image" content="http://kavel.cn/images/og_image.png">
 <meta name="twitter:creator" content="@wjw_wwasd">
 <meta name="twitter:site" content="https://twitter.com/wjw_wwasd">
@@ -33,7 +33,7 @@
 
 
 
-<link rel="alternative" href="/atom.xml" title="LeetCode 刷题记录: 79. Word Search [Python] - Hello Github!" type="application/atom+xml">
+<link rel="alternative" href="/atom.xml" title="LeetCode 刷题记录: 1. Two Sum [Java] - Hello Github!" type="application/atom+xml">
 
 
 
@@ -113,7 +113,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/kavelspot.svg" alt="LeetCode 刷题记录: 79. Word Search [Python]" height="28">
+                <img src="/images/kavelspot.svg" alt="LeetCode 刷题记录: 1. Two Sum [Java]" height="28">
             
             </a>
         </div>
@@ -166,7 +166,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-07-23T05:00:00.000Z">07/23/2019</time>
+                <time class="level-item has-text-grey" datetime="2019-07-18T05:00:00.000Z">07/18/2019</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/leetcode/">leetcode</a>
@@ -176,7 +176,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute 读完 (大约 183 个字)
+                    a minute 读完 (大约 154 个字)
                 </span>
                 
                 
@@ -190,17 +190,17 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                LeetCode 刷题记录: 79. Word Search [Python]
+                LeetCode 刷题记录: 1. Two Sum [Java]
             
         </h1>
         <div class="content">
             <h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
-<p><a href="https://leetcode.com/problems/word-search/" target="_blank" rel="noopener">https://leetcode.com/problems/word-search/</a></p>
-<p>Given a 2D board and a word, find if the word exists in the grid.</p>
-<p>The word can be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.</p>
+<p><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">https://leetcode.com/problems/two-sum/</a></p>
+<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
 </blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>DFS。四个方向搜寻即可。<br><a id="more"></a></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exist</span><span class="hljs-params">(self, board: List[List[str]], word: str)</span> -&gt; bool:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> board: <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(board)):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(len(board[<span class="hljs-number">0</span>])):</span><br><span class="line">                <span class="hljs-keyword">if</span> self.dfs(board,i,j,word): <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span></span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dfs</span><span class="hljs-params">(self, board, i, j, word)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(word)==<span class="hljs-number">0</span>: <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span></span><br><span class="line">        <span class="hljs-keyword">if</span> i&lt;<span class="hljs-number">0</span> <span class="hljs-keyword">or</span> i&gt;=len(board) <span class="hljs-keyword">or</span> j&lt;<span class="hljs-number">0</span> <span class="hljs-keyword">or</span> j&gt;=len(board[<span class="hljs-number">0</span>]) <span class="hljs-keyword">or</span> word[<span class="hljs-number">0</span>]!=board[i][j]: <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span></span><br><span class="line">        tmp,board[i][j]=board[i][j],<span class="hljs-string">'#'</span></span><br><span class="line">        res=self.dfs(board,i<span class="hljs-number">-1</span>,j,word[<span class="hljs-number">1</span>:]) <span class="hljs-keyword">or</span> self.dfs(board,i+<span class="hljs-number">1</span>,j,word[<span class="hljs-number">1</span>:]) <span class="hljs-keyword">or</span> self.dfs(board,i,j<span class="hljs-number">-1</span>,word[<span class="hljs-number">1</span>:]) <span class="hljs-keyword">or</span> self.dfs(board, i, j+<span class="hljs-number">1</span>, word[<span class="hljs-number">1</span>:])</span><br><span class="line">        board[i][j]=tmp</span><br><span class="line">        <span class="hljs-keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用hashmap查表，拿到数字首先查找余值是否在表内，若在的话直接返回表内的对应值。接着将数字以及index存入表内。<br><a id="more"></a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] twoSum(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; h = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="hljs-keyword">int</span> residue=target-nums[i];</span><br><span class="line">            <span class="hljs-keyword">if</span>(h.containsKey(residue))&#123;</span><br><span class="line">                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;h.get(residue),i&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            h.put(nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">"No solution"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -208,7 +208,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/DFS/">DFS</a>, <a class="has-link-grey -link" href="/tags/LeetCode/">LeetCode</a>
+                    <a class="has-link-grey -link" href="/tags/Hashmap/">Hashmap</a>, <a class="has-link-grey -link" href="/tags/LeetCode/">LeetCode</a>
                 </div>
             </div>
         </div>
@@ -274,16 +274,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/zh-CN/LC98_Validate_Binary_Search_Tree.html">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/zh-CN/LC11_Container_With_Most_Water.html">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">LeetCode 刷题记录: 98. Validate Binary Search Tree [Python]</span>
+                <span class="level-item">LeetCode 刷题记录: 11. Container With Most Water [Python]</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/zh-CN/LC56_Merge_Intervals.html">
-                <span class="level-item">LeetCode 刷题记录: 56. Merge Intervals [Python]</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/zh-CN/LC5_Longest_Palindromic_Substring.html">
+                <span class="level-item">LeetCode 刷题记录: 5. Longest Palindromic Substring [Python]</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -304,7 +304,7 @@
     var gitalk = new Gitalk({
         clientID: '2252bc4eafc0990d46cb',
         clientSecret: '0aedac71b55ece12d870b6c4f1378358e586ae0d',
-        id: '85dd924724ebb819e13f6388e55f16a5',
+        id: 'c69c6cc65ede72018a068f2c9bc37970',
         repo: 'KavelCortex.github.io',
         owner: 'KavelCortex',
         admin: "KavelCortex",
@@ -1034,7 +1034,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/kavelspot.svg" alt="LeetCode 刷题记录: 79. Word Search [Python]" height="28">
+                    <img src="/images/kavelspot.svg" alt="LeetCode 刷题记录: 1. Two Sum [Java]" height="28">
                 
                 </a>
                 <p class="is-size-7">
