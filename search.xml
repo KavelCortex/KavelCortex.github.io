@@ -1,6 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode 刷题记录: 101. Symmetric Tree [Python]]]></title>
+    <url>%2Fzh-CN%2FLC101_Symmetric_Tree.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/symmetric-tree/ Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center). 思路递归判断左节点的左边是否等于右节点的右边。 代码123456789101112131415# Definition for a binary tree node.# class TreeNode:# def __init__(self, x):# self.val = x# self.left = None# self.right = Noneclass Solution: def isSymmetric(self, root: TreeNode) -&gt; bool: def isSym(L,R): if not L and not R: return True if L and R and L.val==R.val: return isSym(L.left,R.right) and isSym(L.right,R.left) return isSym(root,root)]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 84. Largest Rectangle in Histogram [Python]]]></title>
+    <url>%2Fzh-CN%2FLC84_Largest_Rectangle_in_Histogram.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/largest-rectangle-in-histogram/ Given n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram. 思路在height后面加上一个0作为右边界，记录高度堆栈stack加上一个-1作为左边界。遍历heights，若当前height不低于stack最后一个元素的高度时，添加进stack中。否则： 从堆栈中弹出最后一个元素，即当前最高处位置信息，获取该位置的高度。 以当前位置i作为右边界，当前堆栈的最后一个元素stack[-1]，即当前第二高的位置作为左边界，宽度则为右边界-左边界-1（边界均不包含在内），即w=i-stack[-1]-1。 此时矩形面积即为h*w。 代码12345678910111213class Solution: def largestRectangleArea(self, heights: List[int]) -&gt; int: heights.append(0) stack=[-1] ans=0 for i in range(len(heights)): while heights[i]&lt;heights[stack[-1]]: h=heights[stack.pop()] w=i-stack[-1]-1 ans=max(ans,h*w) stack.append(i) heights.pop() return ans]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 85. Maximal Rectangle [Python]]]></title>
+    <url>%2Fzh-CN%2FLC85_Maximal_Rectangle.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/maximal-rectangle/ Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing only 1’s and return its area. 思路大致思路和 84. Largest Rectangle in Histogram 相同，对于每个row判断如果为1则高度叠加，否则高度清零。 代码1234567891011121314151617class Solution: def maximalRectangle(self, matrix: List[List[str]]) -&gt; int: if not matrix or not matrix[0]: return 0 height=[0] *(len(matrix[0])+1) ans=0 for row in matrix: for i in range(len(matrix[0])): height[i]=height[i]+1 if row[i]=='1' else 0 stack=[-1] for i in range(len(matrix[0])+1): while height[i]&lt;height[stack[-1]]: h=height[stack.pop()] w=i-stack[-1]-1 ans=max(ans,h*w) stack.append(i) return ans]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 98. Validate Binary Search Tree [Python]]]></title>
+    <url>%2Fzh-CN%2FLC98_Validate_Binary_Search_Tree.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/validate-binary-search-tree/ Given a binary tree, determine if it is a valid binary search tree (BST). 思路递归判断子节点: 当节点为None时，即到达分支底端，返回True即该条线正确。 当min存在且当前值小于min时，返回False。 当max存在且当前值大于max时，返回False。 当不存在min和max时，开始往两头搜索。左边：最小值维持原样，最大值为当前节点的值。右边：最大值维持原样，最小值为当前节点的值。 代码12345678910111213141516# Definition for a binary tree node.# class TreeNode:# def __init__(self, x):# self.val = x# self.left = None# self.right = Noneclass Solution: def isValidBST(self, root: TreeNode) -&gt; bool: def search(root,mi,ma): if not root: return True if mi!=None and root.val&lt;=mi: return False if ma!=None and root.val&gt;=ma: return False return search(root.left,mi,root.val) and search(root.right,root.val,ma) return search(root,None,None)]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Binary</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 96. Unique Binary Search Trees [Python]]]></title>
+    <url>%2Fzh-CN%2FLC96_Unique_Binary_Search_Trees.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/unique-binary-search-trees/ Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n? 思路对于n个值，以i为根，则可以将[1,i-1]放入左边，[i+1,n]放入右边，因此有[i-1]*[i-j]种方式。 代码12345678class Solution: def numTrees(self, n: int) -&gt; int: arr=[0]*(n+1) arr[0]=1 for i in range(1,n+1): for j in range(1,i+1): arr[i]+=arr[j-1]*arr[i-j] return arr[-1]]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 79. Word Search [Python]]]></title>
+    <url>%2Fzh-CN%2FLC79_Word_Search.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/word-search/ Given a 2D board and a word, find if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cell, where “adjacent” cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once. 思路DFS。四个方向搜寻即可。 代码1234567891011121314class Solution: def exist(self, board: List[List[str]], word: str) -&gt; bool: if not board: return False for i in range(len(board)): for j in range(len(board[0])): if self.dfs(board,i,j,word): return True return False def dfs(self, board, i, j, word): if len(word)==0: return True if i&lt;0 or i&gt;=len(board) or j&lt;0 or j&gt;=len(board[0]) or word[0]!=board[i][j]: return False tmp,board[i][j]=board[i][j],'#' res=self.dfs(board,i-1,j,word[1:]) or self.dfs(board,i+1,j,word[1:]) or self.dfs(board,i,j-1,word[1:]) or self.dfs(board, i, j+1, word[1:]) board[i][j]=tmp return res]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>DFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 56. Merge Intervals [Python]]]></title>
+    <url>%2Fzh-CN%2FLC56_Merge_Intervals.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/merge-intervals/ Given a collection of intervals, merge all overlapping intervals. 思路先对数组排序，然后遍历数组。设定两个变量记录左边界和右边界。 对于每个范围，当其左值小于记录的右边界时，即这个范围可以被merge。此时右边界为右值与右边界的最大值，在结果数组更新最后一项的右值。 否则重新设定左边界与右边界，并将新的范围记录至结果中。 代码123456789101112131415class Solution: def merge(self, intervals: List[List[int]]) -&gt; List[List[int]]: if len(intervals)==0: return [] left=right=-1 intervals.sort() res=[] for intv in intervals: if right&gt;=intv[0]: right=max(intv[1],right) res[-1][1]=right else: left,right=intv res.append(intv) return res]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 46. Permutations [Python]]]></title>
+    <url>%2Fzh-CN%2FLC46_Permutations.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/permutations/ Given a collection of distinct integers, return all possible permutations. 思路Backtrack。当temp长度等于所有数字时，添加进结果。否则遍历数字，每个数字添加进temp中，进行下一次迭代。当temp中存在相同数字时跳过。 代码1234567891011121314class Solution: def permute(self, nums: List[int]) -&gt; List[List[int]]: if not nums: return [[]] result=[] self.backtrack(nums,[],result) return result def backtrack(self, nums, temp,result): if len(temp)==len(nums): result.append(temp[:]) else: for num in nums: if num in temp: continue temp.append(num) self.backtrack(nums,temp,result) temp.pop()]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Backtrack</tag>
+        <tag>DFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 48. Rotate Image [Python]]]></title>
+    <url>%2Fzh-CN%2FLC48_Rotate_image.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/rotate-image/ You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise). You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation. 思路先转置再x轴颠倒。 代码12345678910class Solution: def rotate(self, matrix: List[List[int]]) -&gt; None: """ Do not return anything, modify matrix in-place instead. """ for i in range(len(matrix)): for j in range(i): matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j] for i in range(len(matrix)): matrix[i][:]=matrix[i][::-1]]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 55. Jump Game [Python]]]></title>
+    <url>%2Fzh-CN%2FLC55_Jump_Game.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/jump-game/ Given an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Determine if you are able to reach the last index. 思路设定一个变量reachable记录当前能够达到的最远值。然后遍历nums: 当reachable&lt;i时，即已经不能到达该处。返回False。 否则更新reachable，大小为当前能走的最远值以及此处可以走的最远值之间的最大值。 接着判断reachable是否大于nums，若是即可提前返回True跳出。 代码1234567class Solution: def canJump(self, nums: List[int]) -&gt; bool: reachable=0 for i in range(len(nums)): if reachable&lt;i:return False reachable=max(reachable,i+nums[i]) if reachable&gt;=len(nums)-1: return True]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode 刷题记录: 31. Next Permutation [Python]]]></title>
     <url>%2Fzh-CN%2FLC31_Next_Premutation.html</url>
     <content type="text"><![CDATA[原题 https://leetcode.com/problems/next-permutation/ Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order). The replacement must be in-place and use only constant extra memory. Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column. 1,2,3 → 1,3,23,2,1 → 1,2,31,1,5 → 1,5,1 思路 指针i从后往前找到第一个前面比后面小的数nums[i-1]，此时i:end均为从大到小排序。 指针j从后往前找到第一个比nums[i-1]大的数nums[j]。此时nums[j]为i:end中的最小数。 交换nums[i-1]与nums[j]，此时i:end依然为从大到小排序。 将i:end倒序，此时变成从小到大排序。完成。 代码123456789101112131415class Solution: def nextPermutation(self, nums: List[int]) -&gt; None: """ Do not return anything, modify nums in-place instead. """ n=len(nums) if n&lt;2: return i=j=n-1 while i&gt;0 and nums[i-1]&gt;=nums[i]: i-=1 if i&gt;0: while nums[j]&lt;=nums[i-1]: j-=1 nums[i-1],nums[j]=nums[j],nums[i-1] nums[i:]=reversed(nums[i:])]]></content>
@@ -11,6 +125,18 @@
         <tag>LeetCode</tag>
         <tag>Premutation</tag>
         <tag>Tricky</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 刷题记录: 42. Trapping Rain Water [Python]]]></title>
+    <url>%2Fzh-CN%2FLC42_Trapping_Rain_Water.html</url>
+    <content type="text"><![CDATA[原题 https://leetcode.com/problems/trapping-rain-water/ Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining. 思路使用双指针，分别从两头往最高处逼近。每次经过刷新左边和右边的最高值，该处结果等于最高值与当前值的差。 代码12345678910111213141516class Solution: def trap(self, height: List[int]) -&gt; int: res=0 left=0 right=len(height)-1 max_left=max_right=0 while left&lt;=right: if height[left]&lt;height[right]: max_left=max(max_left,height[left]) res+=max_left-height[left] left+=1 else: max_right=max(max_right,height[right]) res+=max_right-height[right] right-=1 return res]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Triky</tag>
       </tags>
   </entry>
   <entry>
@@ -39,7 +165,7 @@
   </entry>
   <entry>
     <title><![CDATA[LeetCode 刷题记录: 1. Two Sum [Java]]]></title>
-    <url>%2Fzh-CN%2FLC1_two_sum.html</url>
+    <url>%2Fzh-CN%2FLC1_Two_Sum.html</url>
     <content type="text"><![CDATA[原题 https://leetcode.com/problems/two-sum/ Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice. 思路使用hashmap查表，拿到数字首先查找余值是否在表内，若在的话直接返回表内的对应值。接着将数字以及index存入表内。 代码1234567891011121314import java.util.HashMap;class Solution &#123; public int[] twoSum(int[] nums, int target) &#123; HashMap&lt;Integer, Integer&gt; h = new HashMap&lt;&gt;(); for(int i=0;i&lt;nums.length;i++)&#123; int residue=target-nums[i]; if(h.containsKey(residue))&#123; return new int[]&#123;h.get(residue),i&#125;; &#125; h.put(nums[i],i); &#125; throw new IllegalArgumentException("No solution"); &#125;&#125;]]></content>
       <categories>
         <category>leetcode</category>
