@@ -95,6 +95,32 @@
   </entry>
   
   <entry>
+    <title>LeetCode 刷题记录: 96. Unique Binary Search Trees [Python]</title>
+    <link href="http://kavel.cn/zh-CN/LC96_Unique_Binary_Search_Trees.html"/>
+    <id>http://kavel.cn/zh-CN/LC96_Unique_Binary_Search_Trees.html</id>
+    <published>2019-07-24T05:00:00.000Z</published>
+    <updated>2019-09-17T04:13:18.227Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/unique-binary-search-trees/" target="_blank" rel="noopener">https://leetcode.com/problems/unique-binary-search-trees/</a></p><p>Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n?</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>对于n个值，以i为根，则可以将[1,i-1]放入左边，[i+1,n]放入右边，因此有[i-1]*[i-j]种方式。</p><a id="more"></a><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">numTrees</span><span class="hljs-params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        arr=[<span class="hljs-number">0</span>]*(n+<span class="hljs-number">1</span>)</span><br><span class="line">        arr[<span class="hljs-number">0</span>]=<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,n+<span class="hljs-number">1</span>):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,i+<span class="hljs-number">1</span>):</span><br><span class="line">                arr[i]+=arr[j<span class="hljs-number">-1</span>]*arr[i-j]</span><br><span class="line">        <span class="hljs-keyword">return</span> arr[<span class="hljs-number">-1</span>]</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/unique-binary-search-trees/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/unique-binary-search-trees/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;对于n个值，以i为根，则可以将[1,i-1]放入左边，[i+1,n]放入右边，因此有[i-1]*[i-j]种方式。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="http://kavel.cn/categories/leetcode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://kavel.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LeetCode 刷题记录: 98. Validate Binary Search Tree [Python]</title>
     <link href="http://kavel.cn/zh-CN/LC98_Validate_Binary_Search_Tree.html"/>
     <id>http://kavel.cn/zh-CN/LC98_Validate_Binary_Search_Tree.html</id>
@@ -119,32 +145,6 @@
       <category term="LeetCode" scheme="http://kavel.cn/tags/LeetCode/"/>
     
       <category term="Binary" scheme="http://kavel.cn/tags/Binary/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 刷题记录: 96. Unique Binary Search Trees [Python]</title>
-    <link href="http://kavel.cn/zh-CN/LC96_Unique_Binary_Search_Trees.html"/>
-    <id>http://kavel.cn/zh-CN/LC96_Unique_Binary_Search_Trees.html</id>
-    <published>2019-07-24T05:00:00.000Z</published>
-    <updated>2019-09-17T04:13:18.227Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/unique-binary-search-trees/" target="_blank" rel="noopener">https://leetcode.com/problems/unique-binary-search-trees/</a></p><p>Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n?</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>对于n个值，以i为根，则可以将[1,i-1]放入左边，[i+1,n]放入右边，因此有[i-1]*[i-j]种方式。</p><a id="more"></a><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">numTrees</span><span class="hljs-params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        arr=[<span class="hljs-number">0</span>]*(n+<span class="hljs-number">1</span>)</span><br><span class="line">        arr[<span class="hljs-number">0</span>]=<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,n+<span class="hljs-number">1</span>):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,i+<span class="hljs-number">1</span>):</span><br><span class="line">                arr[i]+=arr[j<span class="hljs-number">-1</span>]*arr[i-j]</span><br><span class="line">        <span class="hljs-keyword">return</span> arr[<span class="hljs-number">-1</span>]</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/unique-binary-search-trees/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/unique-binary-search-trees/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;对于n个值，以i为根，则可以将[1,i-1]放入左边，[i+1,n]放入右边，因此有[i-1]*[i-j]种方式。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="http://kavel.cn/categories/leetcode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://kavel.cn/tags/LeetCode/"/>
     
   </entry>
   
@@ -409,35 +409,6 @@
   </entry>
   
   <entry>
-    <title>LeetCode 刷题记录: 1. Two Sum [Java]</title>
-    <link href="http://kavel.cn/zh-CN/LC1_Two_Sum.html"/>
-    <id>http://kavel.cn/zh-CN/LC1_Two_Sum.html</id>
-    <published>2019-07-18T05:00:00.000Z</published>
-    <updated>2019-09-17T04:13:18.211Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">https://leetcode.com/problems/two-sum/</a></p><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p><p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用hashmap查表，拿到数字首先查找余值是否在表内，若在的话直接返回表内的对应值。接着将数字以及index存入表内。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] twoSum(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; h = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="hljs-keyword">int</span> residue=target-nums[i];</span><br><span class="line">            <span class="hljs-keyword">if</span>(h.containsKey(residue))&#123;</span><br><span class="line">                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;h.get(residue),i&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            h.put(nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">"No solution"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/two-sum/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/two-sum/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Given an array of integers, return indices of the two numbers such that they add up to a specific target.&lt;/p&gt;
-&lt;p&gt;You may assume that each input would have exactly one solution, and you may not use the same element twice.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;使用hashmap查表，拿到数字首先查找余值是否在表内，若在的话直接返回表内的对应值。接着将数字以及index存入表内。&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="http://kavel.cn/categories/leetcode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://kavel.cn/tags/LeetCode/"/>
-    
-      <category term="Hashmap" scheme="http://kavel.cn/tags/Hashmap/"/>
-    
-  </entry>
-  
-  <entry>
     <title>LeetCode 刷题记录: 11. Container With Most Water [Python]</title>
     <link href="http://kavel.cn/zh-CN/LC11_Container_With_Most_Water.html"/>
     <id>http://kavel.cn/zh-CN/LC11_Container_With_Most_Water.html</id>
@@ -463,6 +434,35 @@
       <category term="LeetCode" scheme="http://kavel.cn/tags/LeetCode/"/>
     
       <category term="Greedy" scheme="http://kavel.cn/tags/Greedy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 刷题记录: 1. Two Sum [Java]</title>
+    <link href="http://kavel.cn/zh-CN/LC1_Two_Sum.html"/>
+    <id>http://kavel.cn/zh-CN/LC1_Two_Sum.html</id>
+    <published>2019-07-18T05:00:00.000Z</published>
+    <updated>2019-09-17T04:13:18.211Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">https://leetcode.com/problems/two-sum/</a></p><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p><p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用hashmap查表，拿到数字首先查找余值是否在表内，若在的话直接返回表内的对应值。接着将数字以及index存入表内。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] twoSum(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) &#123;</span><br><span class="line">        HashMap&lt;Integer, Integer&gt; h = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="hljs-keyword">int</span> residue=target-nums[i];</span><br><span class="line">            <span class="hljs-keyword">if</span>(h.containsKey(residue))&#123;</span><br><span class="line">                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;h.get(residue),i&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">            h.put(nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">"No solution"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/two-sum/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/two-sum/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Given an array of integers, return indices of the two numbers such that they add up to a specific target.&lt;/p&gt;
+&lt;p&gt;You may assume that each input would have exactly one solution, and you may not use the same element twice.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;使用hashmap查表，拿到数字首先查找余值是否在表内，若在的话直接返回表内的对应值。接着将数字以及index存入表内。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="http://kavel.cn/categories/leetcode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://kavel.cn/tags/LeetCode/"/>
+    
+      <category term="Hashmap" scheme="http://kavel.cn/tags/Hashmap/"/>
     
   </entry>
   
