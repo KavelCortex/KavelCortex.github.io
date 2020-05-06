@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>LeetCode 刷题记录: 101. Symmetric Tree [Python]</title>
-    <url>/zh-CN/LC101_Symmetric_Tree.html</url>
-    <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
-<p><a href="https://leetcode.com/problems/symmetric-tree/" target="_blank" rel="noopener">https://leetcode.com/problems/symmetric-tree/</a></p>
-<p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</p>
-</blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>递归判断左节点的左边是否等于右节点的右边。<br><a id="more"></a></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="hljs-comment"># class TreeNode:</span></span><br><span class="line"><span class="hljs-comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="hljs-comment">#         self.val = x</span></span><br><span class="line"><span class="hljs-comment">#         self.left = None</span></span><br><span class="line"><span class="hljs-comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isSymmetric</span><span class="hljs-params">(self, root: TreeNode)</span> -&gt; bool:</span></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isSym</span><span class="hljs-params">(L,R)</span>:</span></span><br><span class="line">            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> L <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> R: <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span></span><br><span class="line">            <span class="hljs-keyword">if</span> L <span class="hljs-keyword">and</span> R <span class="hljs-keyword">and</span> L.val==R.val:</span><br><span class="line">                <span class="hljs-keyword">return</span> isSym(L.left,R.right) <span class="hljs-keyword">and</span> isSym(L.right,R.left)</span><br><span class="line">        <span class="hljs-keyword">return</span> isSym(root,root)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>拖延症的救星！如何使用2Do打造一个实用的GTD®工具</title>
     <url>/zh-CN/2do.html</url>
     <content><![CDATA[<p>作为一个拖延症晚期的选手，经常视deadline为第一生产力，不到最后一分钟坚决不做事¯\_(ツ)_/¯。这使得在日常生活中，经常会将一骡子未完成的事情记在脑子中。再加上经常忘事的属性，久而久之就会将一些需要做的事情彻底遗忘在脑海中，不得不说深受其害。我曾经非常希望能够改掉忘记完成事情的这个坏毛病，理论上来说，遇到事情第一时间完成便是最好的了。但是，拖延症是改不了的。这辈子也改不了的。那么，如何改变这样的现状呢？正在挠头之际，GTD®出现了。<br><a id="more"></a></p>
@@ -88,6 +71,41 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 刷题记录: 101. Symmetric Tree [Python]</title>
+    <url>/zh-CN/LC101_Symmetric_Tree.html</url>
+    <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
+<p><a href="https://leetcode.com/problems/symmetric-tree/" target="_blank" rel="noopener">https://leetcode.com/problems/symmetric-tree/</a></p>
+<p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>递归判断左节点的左边是否等于右节点的右边。<br><a id="more"></a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="hljs-comment"># class TreeNode:</span></span><br><span class="line"><span class="hljs-comment">#     def __init__(self, x):</span></span><br><span class="line"><span class="hljs-comment">#         self.val = x</span></span><br><span class="line"><span class="hljs-comment">#         self.left = None</span></span><br><span class="line"><span class="hljs-comment">#         self.right = None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isSymmetric</span><span class="hljs-params">(self, root: TreeNode)</span> -&gt; bool:</span></span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">isSym</span><span class="hljs-params">(L,R)</span>:</span></span><br><span class="line">            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> L <span class="hljs-keyword">and</span> <span class="hljs-keyword">not</span> R: <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span></span><br><span class="line">            <span class="hljs-keyword">if</span> L <span class="hljs-keyword">and</span> R <span class="hljs-keyword">and</span> L.val==R.val:</span><br><span class="line">                <span class="hljs-keyword">return</span> isSym(L.left,R.right) <span class="hljs-keyword">and</span> isSym(L.right,R.left)</span><br><span class="line">        <span class="hljs-keyword">return</span> isSym(root,root)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 刷题记录: 22. Generate Parentheses [Python]</title>
+    <url>/zh-CN/LC22_Generate_Parentheses.html</url>
+    <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
+<p><a href="https://leetcode.com/problems/generate-parentheses/" target="_blank" rel="noopener">https://leetcode.com/problems/generate-parentheses/</a></p>
+<p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用动态规划，分析子问题：每次加括号要么加在外面，要么加在旁边。<br><a id="more"></a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generateParenthesis</span><span class="hljs-params">(self, n: int)</span> -&gt; List[str]:</span></span><br><span class="line">        dp=[[] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n+<span class="hljs-number">1</span>)]</span><br><span class="line">        dp[<span class="hljs-number">0</span>].append(<span class="hljs-string">''</span>)</span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n+<span class="hljs-number">1</span>):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(i):</span><br><span class="line">                dp[i]+=[<span class="hljs-string">'('</span>+inner+<span class="hljs-string">')'</span>+outer <span class="hljs-keyword">for</span> inner <span class="hljs-keyword">in</span> dp[j] <span class="hljs-keyword">for</span> outer <span class="hljs-keyword">in</span> dp[i-j<span class="hljs-number">-1</span>]]</span><br><span class="line">        <span class="hljs-keyword">return</span> dp[n]</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Dynamic Programming</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 刷题记录: 19. Remove Nth Node From End of List [Python]</title>
     <url>/zh-CN/LC19_Remove_Nth_Node_From_End_of_List.html</url>
     <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
@@ -146,6 +164,24 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 刷题记录: 42. Trapping Rain Water [Python]</title>
+    <url>/zh-CN/LC42_Trapping_Rain_Water.html</url>
+    <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
+<p><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank" rel="noopener">https://leetcode.com/problems/trapping-rain-water/</a></p>
+<p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用双指针，分别从两头往最高处逼近。每次经过刷新左边和右边的最高值，该处结果等于最高值与当前值的差。<br><a id="more"></a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">trap</span><span class="hljs-params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">        res=<span class="hljs-number">0</span></span><br><span class="line">        left=<span class="hljs-number">0</span></span><br><span class="line">        right=len(height)<span class="hljs-number">-1</span></span><br><span class="line">        max_left=max_right=<span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">while</span> left&lt;=right:</span><br><span class="line">            <span class="hljs-keyword">if</span> height[left]&lt;height[right]:</span><br><span class="line">                max_left=max(max_left,height[left])</span><br><span class="line">                res+=max_left-height[left]</span><br><span class="line">                left+=<span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                max_right=max(max_right,height[right])</span><br><span class="line">                res+=max_right-height[right]</span><br><span class="line">                right-=<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">return</span> res</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Triky</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 刷题记录: 31. Next Permutation [Python]</title>
     <url>/zh-CN/LC31_Next_Premutation.html</url>
     <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
@@ -179,24 +215,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 刷题记录: 22. Generate Parentheses [Python]</title>
-    <url>/zh-CN/LC22_Generate_Parentheses.html</url>
-    <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
-<p><a href="https://leetcode.com/problems/generate-parentheses/" target="_blank" rel="noopener">https://leetcode.com/problems/generate-parentheses/</a></p>
-<p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</p>
-</blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用动态规划，分析子问题：每次加括号要么加在外面，要么加在旁边。<br><a id="more"></a></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generateParenthesis</span><span class="hljs-params">(self, n: int)</span> -&gt; List[str]:</span></span><br><span class="line">        dp=[[] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n+<span class="hljs-number">1</span>)]</span><br><span class="line">        dp[<span class="hljs-number">0</span>].append(<span class="hljs-string">''</span>)</span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n+<span class="hljs-number">1</span>):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(i):</span><br><span class="line">                dp[i]+=[<span class="hljs-string">'('</span>+inner+<span class="hljs-string">')'</span>+outer <span class="hljs-keyword">for</span> inner <span class="hljs-keyword">in</span> dp[j] <span class="hljs-keyword">for</span> outer <span class="hljs-keyword">in</span> dp[i-j<span class="hljs-number">-1</span>]]</span><br><span class="line">        <span class="hljs-keyword">return</span> dp[n]</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>Dynamic Programming</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 刷题记录: 46. Permutations [Python]</title>
     <url>/zh-CN/LC46_Permutations.html</url>
     <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
@@ -213,24 +231,6 @@
         <tag>LeetCode</tag>
         <tag>Backtrack</tag>
         <tag>DFS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 刷题记录: 42. Trapping Rain Water [Python]</title>
-    <url>/zh-CN/LC42_Trapping_Rain_Water.html</url>
-    <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
-<p><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank" rel="noopener">https://leetcode.com/problems/trapping-rain-water/</a></p>
-<p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
-</blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用双指针，分别从两头往最高处逼近。每次经过刷新左边和右边的最高值，该处结果等于最高值与当前值的差。<br><a id="more"></a></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">trap</span><span class="hljs-params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">        res=<span class="hljs-number">0</span></span><br><span class="line">        left=<span class="hljs-number">0</span></span><br><span class="line">        right=len(height)<span class="hljs-number">-1</span></span><br><span class="line">        max_left=max_right=<span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">while</span> left&lt;=right:</span><br><span class="line">            <span class="hljs-keyword">if</span> height[left]&lt;height[right]:</span><br><span class="line">                max_left=max(max_left,height[left])</span><br><span class="line">                res+=max_left-height[left]</span><br><span class="line">                left+=<span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                max_right=max(max_right,height[right])</span><br><span class="line">                res+=max_right-height[right]</span><br><span class="line">                right-=<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">return</span> res</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>Triky</tag>
       </tags>
   </entry>
   <entry>
@@ -322,49 +322,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 刷题记录: 84. Largest Rectangle in Histogram [Python]</title>
-    <url>/zh-CN/LC84_Largest_Rectangle_in_Histogram.html</url>
-    <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
-<p><a href="https://leetcode.com/problems/largest-rectangle-in-histogram/" target="_blank" rel="noopener">https://leetcode.com/problems/largest-rectangle-in-histogram/</a></p>
-<p>Given n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.</p>
-</blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>在height后面加上一个0作为右边界，记录高度堆栈stack加上一个-1作为左边界。<br><a id="more"></a><br>遍历heights，若当前height不低于stack最后一个元素的高度时，添加进stack中。否则：</p>
-<ol>
-<li><p>从堆栈中弹出最后一个元素，即当前最高处位置信息，获取该位置的高度。</p>
-</li>
-<li><p>以当前位置i作为右边界，当前堆栈的最后一个元素stack[-1]，即当前第二高的位置作为左边界，宽度则为右边界-左边界-1（边界均不包含在内），即w=i-stack[-1]-1。</p>
-</li>
-<li><p>此时矩形面积即为h*w。</p>
-</li>
-</ol>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">largestRectangleArea</span><span class="hljs-params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        heights.append(<span class="hljs-number">0</span>)</span><br><span class="line">        stack=[<span class="hljs-number">-1</span>]</span><br><span class="line">        ans=<span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(heights)):</span><br><span class="line">            <span class="hljs-keyword">while</span> heights[i]&lt;heights[stack[<span class="hljs-number">-1</span>]]:</span><br><span class="line">                h=heights[stack.pop()]</span><br><span class="line">                w=i-stack[<span class="hljs-number">-1</span>]<span class="hljs-number">-1</span></span><br><span class="line">                ans=max(ans,h*w)</span><br><span class="line">            stack.append(i)</span><br><span class="line">        heights.pop()</span><br><span class="line">        <span class="hljs-keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 刷题记录: 96. Unique Binary Search Trees [Python]</title>
-    <url>/zh-CN/LC96_Unique_Binary_Search_Trees.html</url>
-    <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
-<p><a href="https://leetcode.com/problems/unique-binary-search-trees/" target="_blank" rel="noopener">https://leetcode.com/problems/unique-binary-search-trees/</a></p>
-<p>Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n?</p>
-</blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>对于n个值，以i为根，则可以将[1,i-1]放入左边，[i+1,n]放入右边，因此有[i-1]*[i-j]种方式。</p>
-<a id="more"></a>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">numTrees</span><span class="hljs-params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        arr=[<span class="hljs-number">0</span>]*(n+<span class="hljs-number">1</span>)</span><br><span class="line">        arr[<span class="hljs-number">0</span>]=<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,n+<span class="hljs-number">1</span>):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,i+<span class="hljs-number">1</span>):</span><br><span class="line">                arr[i]+=arr[j<span class="hljs-number">-1</span>]*arr[i-j]</span><br><span class="line">        <span class="hljs-keyword">return</span> arr[<span class="hljs-number">-1</span>]</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 刷题记录: 5. Longest Palindromic Substring [Python]</title>
     <url>/zh-CN/LC5_Longest_Palindromic_Substring.html</url>
     <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
@@ -401,6 +358,66 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 刷题记录: 85. Maximal Rectangle [Python]</title>
+    <url>/zh-CN/LC85_Maximal_Rectangle.html</url>
+    <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
+<p><a href="https://leetcode.com/problems/maximal-rectangle/" target="_blank" rel="noopener">https://leetcode.com/problems/maximal-rectangle/</a></p>
+<p>Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing only 1’s and return its area.</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>大致思路和 84. Largest Rectangle in Histogram 相同，对于每个row判断如果为1则高度叠加，否则高度清零。<br><a id="more"></a></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">maximalRectangle</span><span class="hljs-params">(self, matrix: List[List[str]])</span> -&gt; int:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> matrix <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> matrix[<span class="hljs-number">0</span>]:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line">        height=[<span class="hljs-number">0</span>] *(len(matrix[<span class="hljs-number">0</span>])+<span class="hljs-number">1</span>)</span><br><span class="line">        ans=<span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> matrix:</span><br><span class="line">            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(matrix[<span class="hljs-number">0</span>])):</span><br><span class="line">                height[i]=height[i]+<span class="hljs-number">1</span> <span class="hljs-keyword">if</span> row[i]==<span class="hljs-string">'1'</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span></span><br><span class="line">            stack=[<span class="hljs-number">-1</span>]</span><br><span class="line">            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(matrix[<span class="hljs-number">0</span>])+<span class="hljs-number">1</span>):</span><br><span class="line">                <span class="hljs-keyword">while</span> height[i]&lt;height[stack[<span class="hljs-number">-1</span>]]:</span><br><span class="line">                    h=height[stack.pop()]</span><br><span class="line">                    w=i-stack[<span class="hljs-number">-1</span>]<span class="hljs-number">-1</span></span><br><span class="line">                    ans=max(ans,h*w)</span><br><span class="line">                stack.append(i)</span><br><span class="line">        <span class="hljs-keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 刷题记录: 96. Unique Binary Search Trees [Python]</title>
+    <url>/zh-CN/LC96_Unique_Binary_Search_Trees.html</url>
+    <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
+<p><a href="https://leetcode.com/problems/unique-binary-search-trees/" target="_blank" rel="noopener">https://leetcode.com/problems/unique-binary-search-trees/</a></p>
+<p>Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n?</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>对于n个值，以i为根，则可以将[1,i-1]放入左边，[i+1,n]放入右边，因此有[i-1]*[i-j]种方式。</p>
+<a id="more"></a>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">numTrees</span><span class="hljs-params">(self, n: int)</span> -&gt; int:</span></span><br><span class="line">        arr=[<span class="hljs-number">0</span>]*(n+<span class="hljs-number">1</span>)</span><br><span class="line">        arr[<span class="hljs-number">0</span>]=<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,n+<span class="hljs-number">1</span>):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,i+<span class="hljs-number">1</span>):</span><br><span class="line">                arr[i]+=arr[j<span class="hljs-number">-1</span>]*arr[i-j]</span><br><span class="line">        <span class="hljs-keyword">return</span> arr[<span class="hljs-number">-1</span>]</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 刷题记录: 84. Largest Rectangle in Histogram [Python]</title>
+    <url>/zh-CN/LC84_Largest_Rectangle_in_Histogram.html</url>
+    <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
+<p><a href="https://leetcode.com/problems/largest-rectangle-in-histogram/" target="_blank" rel="noopener">https://leetcode.com/problems/largest-rectangle-in-histogram/</a></p>
+<p>Given n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>在height后面加上一个0作为右边界，记录高度堆栈stack加上一个-1作为左边界。<br><a id="more"></a><br>遍历heights，若当前height不低于stack最后一个元素的高度时，添加进stack中。否则：</p>
+<ol>
+<li><p>从堆栈中弹出最后一个元素，即当前最高处位置信息，获取该位置的高度。</p>
+</li>
+<li><p>以当前位置i作为右边界，当前堆栈的最后一个元素stack[-1]，即当前第二高的位置作为左边界，宽度则为右边界-左边界-1（边界均不包含在内），即w=i-stack[-1]-1。</p>
+</li>
+<li><p>此时矩形面积即为h*w。</p>
+</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">largestRectangleArea</span><span class="hljs-params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        heights.append(<span class="hljs-number">0</span>)</span><br><span class="line">        stack=[<span class="hljs-number">-1</span>]</span><br><span class="line">        ans=<span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(heights)):</span><br><span class="line">            <span class="hljs-keyword">while</span> heights[i]&lt;heights[stack[<span class="hljs-number">-1</span>]]:</span><br><span class="line">                h=heights[stack.pop()]</span><br><span class="line">                w=i-stack[<span class="hljs-number">-1</span>]<span class="hljs-number">-1</span></span><br><span class="line">                ans=max(ans,h*w)</span><br><span class="line">            stack.append(i)</span><br><span class="line">        heights.pop()</span><br><span class="line">        <span class="hljs-keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 刷题记录: 98. Validate Binary Search Tree [Python]</title>
     <url>/zh-CN/LC98_Validate_Binary_Search_Tree.html</url>
     <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
@@ -426,23 +443,6 @@
       <tags>
         <tag>LeetCode</tag>
         <tag>Binary</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 刷题记录: 85. Maximal Rectangle [Python]</title>
-    <url>/zh-CN/LC85_Maximal_Rectangle.html</url>
-    <content><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote>
-<p><a href="https://leetcode.com/problems/maximal-rectangle/" target="_blank" rel="noopener">https://leetcode.com/problems/maximal-rectangle/</a></p>
-<p>Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing only 1’s and return its area.</p>
-</blockquote>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>大致思路和 84. Largest Rectangle in Histogram 相同，对于每个row判断如果为1则高度叠加，否则高度清零。<br><a id="more"></a></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">maximalRectangle</span><span class="hljs-params">(self, matrix: List[List[str]])</span> -&gt; int:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> matrix <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> matrix[<span class="hljs-number">0</span>]:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line">        height=[<span class="hljs-number">0</span>] *(len(matrix[<span class="hljs-number">0</span>])+<span class="hljs-number">1</span>)</span><br><span class="line">        ans=<span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> matrix:</span><br><span class="line">            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(matrix[<span class="hljs-number">0</span>])):</span><br><span class="line">                height[i]=height[i]+<span class="hljs-number">1</span> <span class="hljs-keyword">if</span> row[i]==<span class="hljs-string">'1'</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span></span><br><span class="line">            stack=[<span class="hljs-number">-1</span>]</span><br><span class="line">            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(matrix[<span class="hljs-number">0</span>])+<span class="hljs-number">1</span>):</span><br><span class="line">                <span class="hljs-keyword">while</span> height[i]&lt;height[stack[<span class="hljs-number">-1</span>]]:</span><br><span class="line">                    h=height[stack.pop()]</span><br><span class="line">                    w=i-stack[<span class="hljs-number">-1</span>]<span class="hljs-number">-1</span></span><br><span class="line">                    ans=max(ans,h*w)</span><br><span class="line">                stack.append(i)</span><br><span class="line">        <span class="hljs-keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
