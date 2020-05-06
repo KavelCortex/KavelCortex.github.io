@@ -43,6 +43,32 @@
   </entry>
   
   <entry>
+    <title>LeetCode 刷题记录: 84. Largest Rectangle in Histogram [Python]</title>
+    <link href="http://kavel.cn/zh-CN/LC84_Largest_Rectangle_in_Histogram.html"/>
+    <id>http://kavel.cn/zh-CN/LC84_Largest_Rectangle_in_Histogram.html</id>
+    <published>2019-07-24T05:00:00.000Z</published>
+    <updated>2019-09-17T04:13:18.223Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/largest-rectangle-in-histogram/" target="_blank" rel="noopener">https://leetcode.com/problems/largest-rectangle-in-histogram/</a></p><p>Given n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>在height后面加上一个0作为右边界，记录高度堆栈stack加上一个-1作为左边界。<br><a id="more"></a><br>遍历heights，若当前height不低于stack最后一个元素的高度时，添加进stack中。否则：</p><ol><li><p>从堆栈中弹出最后一个元素，即当前最高处位置信息，获取该位置的高度。</p></li><li><p>以当前位置i作为右边界，当前堆栈的最后一个元素stack[-1]，即当前第二高的位置作为左边界，宽度则为右边界-左边界-1（边界均不包含在内），即w=i-stack[-1]-1。</p></li><li><p>此时矩形面积即为h*w。</p></li></ol><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">largestRectangleArea</span><span class="hljs-params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        heights.append(<span class="hljs-number">0</span>)</span><br><span class="line">        stack=[<span class="hljs-number">-1</span>]</span><br><span class="line">        ans=<span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(heights)):</span><br><span class="line">            <span class="hljs-keyword">while</span> heights[i]&lt;heights[stack[<span class="hljs-number">-1</span>]]:</span><br><span class="line">                h=heights[stack.pop()]</span><br><span class="line">                w=i-stack[<span class="hljs-number">-1</span>]<span class="hljs-number">-1</span></span><br><span class="line">                ans=max(ans,h*w)</span><br><span class="line">            stack.append(i)</span><br><span class="line">        heights.pop()</span><br><span class="line">        <span class="hljs-keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/largest-rectangle-in-histogram/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/largest-rectangle-in-histogram/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Given n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;在height后面加上一个0作为右边界，记录高度堆栈stack加上一个-1作为左边界。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="http://kavel.cn/categories/leetcode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://kavel.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LeetCode 刷题记录: 85. Maximal Rectangle [Python]</title>
     <link href="http://kavel.cn/zh-CN/LC85_Maximal_Rectangle.html"/>
     <id>http://kavel.cn/zh-CN/LC85_Maximal_Rectangle.html</id>
@@ -84,32 +110,6 @@
 &lt;p&gt;Given n, how many structurally unique BST’s (binary search trees) that store values 1 … n?&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;对于n个值，以i为根，则可以将[1,i-1]放入左边，[i+1,n]放入右边，因此有[i-1]*[i-j]种方式。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="http://kavel.cn/categories/leetcode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://kavel.cn/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 刷题记录: 84. Largest Rectangle in Histogram [Python]</title>
-    <link href="http://kavel.cn/zh-CN/LC84_Largest_Rectangle_in_Histogram.html"/>
-    <id>http://kavel.cn/zh-CN/LC84_Largest_Rectangle_in_Histogram.html</id>
-    <published>2019-07-24T05:00:00.000Z</published>
-    <updated>2019-09-17T04:13:18.223Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/largest-rectangle-in-histogram/" target="_blank" rel="noopener">https://leetcode.com/problems/largest-rectangle-in-histogram/</a></p><p>Given n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>在height后面加上一个0作为右边界，记录高度堆栈stack加上一个-1作为左边界。<br><a id="more"></a><br>遍历heights，若当前height不低于stack最后一个元素的高度时，添加进stack中。否则：</p><ol><li><p>从堆栈中弹出最后一个元素，即当前最高处位置信息，获取该位置的高度。</p></li><li><p>以当前位置i作为右边界，当前堆栈的最后一个元素stack[-1]，即当前第二高的位置作为左边界，宽度则为右边界-左边界-1（边界均不包含在内），即w=i-stack[-1]-1。</p></li><li><p>此时矩形面积即为h*w。</p></li></ol><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">largestRectangleArea</span><span class="hljs-params">(self, heights: List[int])</span> -&gt; int:</span></span><br><span class="line">        heights.append(<span class="hljs-number">0</span>)</span><br><span class="line">        stack=[<span class="hljs-number">-1</span>]</span><br><span class="line">        ans=<span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(heights)):</span><br><span class="line">            <span class="hljs-keyword">while</span> heights[i]&lt;heights[stack[<span class="hljs-number">-1</span>]]:</span><br><span class="line">                h=heights[stack.pop()]</span><br><span class="line">                w=i-stack[<span class="hljs-number">-1</span>]<span class="hljs-number">-1</span></span><br><span class="line">                ans=max(ans,h*w)</span><br><span class="line">            stack.append(i)</span><br><span class="line">        heights.pop()</span><br><span class="line">        <span class="hljs-keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/largest-rectangle-in-histogram/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/largest-rectangle-in-histogram/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Given n non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;在height后面加上一个0作为右边界，记录高度堆栈stack加上一个-1作为左边界。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -351,34 +351,6 @@
   </entry>
   
   <entry>
-    <title>LeetCode 刷题记录: 22. Generate Parentheses [Python]</title>
-    <link href="http://kavel.cn/zh-CN/LC22_Generate_Parentheses.html"/>
-    <id>http://kavel.cn/zh-CN/LC22_Generate_Parentheses.html</id>
-    <published>2019-07-19T05:00:00.000Z</published>
-    <updated>2019-09-17T04:13:18.216Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/generate-parentheses/" target="_blank" rel="noopener">https://leetcode.com/problems/generate-parentheses/</a></p><p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用动态规划，分析子问题：每次加括号要么加在外面，要么加在旁边。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generateParenthesis</span><span class="hljs-params">(self, n: int)</span> -&gt; List[str]:</span></span><br><span class="line">        dp=[[] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n+<span class="hljs-number">1</span>)]</span><br><span class="line">        dp[<span class="hljs-number">0</span>].append(<span class="hljs-string">''</span>)</span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n+<span class="hljs-number">1</span>):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(i):</span><br><span class="line">                dp[i]+=[<span class="hljs-string">'('</span>+inner+<span class="hljs-string">')'</span>+outer <span class="hljs-keyword">for</span> inner <span class="hljs-keyword">in</span> dp[j] <span class="hljs-keyword">for</span> outer <span class="hljs-keyword">in</span> dp[i-j<span class="hljs-number">-1</span>]]</span><br><span class="line">        <span class="hljs-keyword">return</span> dp[n]</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/generate-parentheses/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/generate-parentheses/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;使用动态规划，分析子问题：每次加括号要么加在外面，要么加在旁边。&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="http://kavel.cn/categories/leetcode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://kavel.cn/tags/LeetCode/"/>
-    
-      <category term="Dynamic Programming" scheme="http://kavel.cn/tags/Dynamic-Programming/"/>
-    
-  </entry>
-  
-  <entry>
     <title>LeetCode 刷题记录: 19. Remove Nth Node From End of List [Python]</title>
     <link href="http://kavel.cn/zh-CN/LC19_Remove_Nth_Node_From_End_of_List.html"/>
     <id>http://kavel.cn/zh-CN/LC19_Remove_Nth_Node_From_End_of_List.html</id>
@@ -409,22 +381,21 @@
   </entry>
   
   <entry>
-    <title>LeetCode 刷题记录: 11. Container With Most Water [Python]</title>
-    <link href="http://kavel.cn/zh-CN/LC11_Container_With_Most_Water.html"/>
-    <id>http://kavel.cn/zh-CN/LC11_Container_With_Most_Water.html</id>
-    <published>2019-07-18T05:00:00.000Z</published>
-    <updated>2019-09-17T04:13:18.214Z</updated>
+    <title>LeetCode 刷题记录: 22. Generate Parentheses [Python]</title>
+    <link href="http://kavel.cn/zh-CN/LC22_Generate_Parentheses.html"/>
+    <id>http://kavel.cn/zh-CN/LC22_Generate_Parentheses.html</id>
+    <published>2019-07-19T05:00:00.000Z</published>
+    <updated>2019-09-17T04:13:18.216Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank" rel="noopener">https://leetcode.com/problems/container-with-most-water/</a></p><p>Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). nvertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.</p><p>Note: You may not slant the container and n is at least 2.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>贪心算法，从左右两边开始，从短的一边往中间缩进并记录最大值。由于短板效应从短的一边往中间缩进是最有利的。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">maxArea</span><span class="hljs-params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">        l,r,m=<span class="hljs-number">0</span>,len(height)<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span></span><br><span class="line">        <span class="hljs-keyword">while</span>(l&lt;r):</span><br><span class="line">            m=max(m,min(height[l],height[r])*(r-l))</span><br><span class="line">            <span class="hljs-keyword">if</span> height[l]&lt;height[r]:</span><br><span class="line">                l+=<span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                r-=<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">return</span> m</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/generate-parentheses/" target="_blank" rel="noopener">https://leetcode.com/problems/generate-parentheses/</a></p><p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>使用动态规划，分析子问题：每次加括号要么加在外面，要么加在旁边。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generateParenthesis</span><span class="hljs-params">(self, n: int)</span> -&gt; List[str]:</span></span><br><span class="line">        dp=[[] <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n+<span class="hljs-number">1</span>)]</span><br><span class="line">        dp[<span class="hljs-number">0</span>].append(<span class="hljs-string">''</span>)</span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(n+<span class="hljs-number">1</span>):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(i):</span><br><span class="line">                dp[i]+=[<span class="hljs-string">'('</span>+inner+<span class="hljs-string">')'</span>+outer <span class="hljs-keyword">for</span> inner <span class="hljs-keyword">in</span> dp[j] <span class="hljs-keyword">for</span> outer <span class="hljs-keyword">in</span> dp[i-j<span class="hljs-number">-1</span>]]</span><br><span class="line">        <span class="hljs-keyword">return</span> dp[n]</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/container-with-most-water/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/container-with-most-water/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). nvertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.&lt;/p&gt;
-&lt;p&gt;Note: You may not slant the container and n is at least 2.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/generate-parentheses/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/generate-parentheses/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;贪心算法，从左右两边开始，从短的一边往中间缩进并记录最大值。由于短板效应从短的一边往中间缩进是最有利的。&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;使用动态规划，分析子问题：每次加括号要么加在外面，要么加在旁边。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -433,7 +404,7 @@
     
       <category term="LeetCode" scheme="http://kavel.cn/tags/LeetCode/"/>
     
-      <category term="Greedy" scheme="http://kavel.cn/tags/Greedy/"/>
+      <category term="Dynamic Programming" scheme="http://kavel.cn/tags/Dynamic-Programming/"/>
     
   </entry>
   
@@ -463,6 +434,35 @@
       <category term="LeetCode" scheme="http://kavel.cn/tags/LeetCode/"/>
     
       <category term="Hashmap" scheme="http://kavel.cn/tags/Hashmap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 刷题记录: 11. Container With Most Water [Python]</title>
+    <link href="http://kavel.cn/zh-CN/LC11_Container_With_Most_Water.html"/>
+    <id>http://kavel.cn/zh-CN/LC11_Container_With_Most_Water.html</id>
+    <published>2019-07-18T05:00:00.000Z</published>
+    <updated>2019-09-17T04:13:18.214Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank" rel="noopener">https://leetcode.com/problems/container-with-most-water/</a></p><p>Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). nvertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.</p><p>Note: You may not slant the container and n is at least 2.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>贪心算法，从左右两边开始，从短的一边往中间缩进并记录最大值。由于短板效应从短的一边往中间缩进是最有利的。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">maxArea</span><span class="hljs-params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">        l,r,m=<span class="hljs-number">0</span>,len(height)<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span></span><br><span class="line">        <span class="hljs-keyword">while</span>(l&lt;r):</span><br><span class="line">            m=max(m,min(height[l],height[r])*(r-l))</span><br><span class="line">            <span class="hljs-keyword">if</span> height[l]&lt;height[r]:</span><br><span class="line">                l+=<span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                r-=<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">return</span> m</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/container-with-most-water/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/container-with-most-water/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). nvertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.&lt;/p&gt;
+&lt;p&gt;Note: You may not slant the container and n is at least 2.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;贪心算法，从左右两边开始，从短的一边往中间缩进并记录最大值。由于短板效应从短的一边往中间缩进是最有利的。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="http://kavel.cn/categories/leetcode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://kavel.cn/tags/LeetCode/"/>
+    
+      <category term="Greedy" scheme="http://kavel.cn/tags/Greedy/"/>
     
   </entry>
   
