@@ -69,6 +69,32 @@
   </entry>
   
   <entry>
+    <title>LeetCode 刷题记录: 85. Maximal Rectangle [Python]</title>
+    <link href="http://ko4cbt.com/zh-CN/LC85_Maximal_Rectangle.html"/>
+    <id>http://ko4cbt.com/zh-CN/LC85_Maximal_Rectangle.html</id>
+    <published>2019-07-24T05:00:00.000Z</published>
+    <updated>2019-09-17T04:13:18.225Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/maximal-rectangle/" target="_blank" rel="noopener">https://leetcode.com/problems/maximal-rectangle/</a></p><p>Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing only 1’s and return its area.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>大致思路和 84. Largest Rectangle in Histogram 相同，对于每个row判断如果为1则高度叠加，否则高度清零。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">maximalRectangle</span><span class="hljs-params">(self, matrix: List[List[str]])</span> -&gt; int:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> matrix <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> matrix[<span class="hljs-number">0</span>]:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line">        height=[<span class="hljs-number">0</span>] *(len(matrix[<span class="hljs-number">0</span>])+<span class="hljs-number">1</span>)</span><br><span class="line">        ans=<span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> matrix:</span><br><span class="line">            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(matrix[<span class="hljs-number">0</span>])):</span><br><span class="line">                height[i]=height[i]+<span class="hljs-number">1</span> <span class="hljs-keyword">if</span> row[i]==<span class="hljs-string">'1'</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span></span><br><span class="line">            stack=[<span class="hljs-number">-1</span>]</span><br><span class="line">            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(matrix[<span class="hljs-number">0</span>])+<span class="hljs-number">1</span>):</span><br><span class="line">                <span class="hljs-keyword">while</span> height[i]&lt;height[stack[<span class="hljs-number">-1</span>]]:</span><br><span class="line">                    h=height[stack.pop()]</span><br><span class="line">                    w=i-stack[<span class="hljs-number">-1</span>]<span class="hljs-number">-1</span></span><br><span class="line">                    ans=max(ans,h*w)</span><br><span class="line">                stack.append(i)</span><br><span class="line">        <span class="hljs-keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/maximal-rectangle/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/maximal-rectangle/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing only 1’s and return its area.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;大致思路和 84. Largest Rectangle in Histogram 相同，对于每个row判断如果为1则高度叠加，否则高度清零。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="http://ko4cbt.com/categories/leetcode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://ko4cbt.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LeetCode 刷题记录: 96. Unique Binary Search Trees [Python]</title>
     <link href="http://ko4cbt.com/zh-CN/LC96_Unique_Binary_Search_Trees.html"/>
     <id>http://ko4cbt.com/zh-CN/LC96_Unique_Binary_Search_Trees.html</id>
@@ -119,32 +145,6 @@
       <category term="LeetCode" scheme="http://ko4cbt.com/tags/LeetCode/"/>
     
       <category term="Binary" scheme="http://ko4cbt.com/tags/Binary/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 刷题记录: 85. Maximal Rectangle [Python]</title>
-    <link href="http://ko4cbt.com/zh-CN/LC85_Maximal_Rectangle.html"/>
-    <id>http://ko4cbt.com/zh-CN/LC85_Maximal_Rectangle.html</id>
-    <published>2019-07-24T05:00:00.000Z</published>
-    <updated>2019-09-17T04:13:18.225Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/maximal-rectangle/" target="_blank" rel="noopener">https://leetcode.com/problems/maximal-rectangle/</a></p><p>Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing only 1’s and return its area.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>大致思路和 84. Largest Rectangle in Histogram 相同，对于每个row判断如果为1则高度叠加，否则高度清零。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">maximalRectangle</span><span class="hljs-params">(self, matrix: List[List[str]])</span> -&gt; int:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> matrix <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> matrix[<span class="hljs-number">0</span>]:</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span></span><br><span class="line">        height=[<span class="hljs-number">0</span>] *(len(matrix[<span class="hljs-number">0</span>])+<span class="hljs-number">1</span>)</span><br><span class="line">        ans=<span class="hljs-number">0</span></span><br><span class="line">        <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> matrix:</span><br><span class="line">            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(matrix[<span class="hljs-number">0</span>])):</span><br><span class="line">                height[i]=height[i]+<span class="hljs-number">1</span> <span class="hljs-keyword">if</span> row[i]==<span class="hljs-string">'1'</span> <span class="hljs-keyword">else</span> <span class="hljs-number">0</span></span><br><span class="line">            stack=[<span class="hljs-number">-1</span>]</span><br><span class="line">            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(matrix[<span class="hljs-number">0</span>])+<span class="hljs-number">1</span>):</span><br><span class="line">                <span class="hljs-keyword">while</span> height[i]&lt;height[stack[<span class="hljs-number">-1</span>]]:</span><br><span class="line">                    h=height[stack.pop()]</span><br><span class="line">                    w=i-stack[<span class="hljs-number">-1</span>]<span class="hljs-number">-1</span></span><br><span class="line">                    ans=max(ans,h*w)</span><br><span class="line">                stack.append(i)</span><br><span class="line">        <span class="hljs-keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/maximal-rectangle/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/maximal-rectangle/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing only 1’s and return its area.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;大致思路和 84. Largest Rectangle in Histogram 相同，对于每个row判断如果为1则高度叠加，否则高度清零。&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="http://ko4cbt.com/categories/leetcode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://ko4cbt.com/tags/LeetCode/"/>
     
   </entry>
   
@@ -204,21 +204,23 @@
   </entry>
   
   <entry>
-    <title>LeetCode 刷题记录: 46. Permutations [Python]</title>
-    <link href="http://ko4cbt.com/zh-CN/LC46_Permutations.html"/>
-    <id>http://ko4cbt.com/zh-CN/LC46_Permutations.html</id>
+    <title>LeetCode 刷题记录: 48. Rotate Image [Python]</title>
+    <link href="http://ko4cbt.com/zh-CN/LC48_Rotate_image.html"/>
+    <id>http://ko4cbt.com/zh-CN/LC48_Rotate_image.html</id>
     <published>2019-07-21T05:00:00.000Z</published>
-    <updated>2019-09-17T04:13:18.219Z</updated>
+    <updated>2019-09-17T04:13:18.220Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/permutations/" target="_blank" rel="noopener">https://leetcode.com/problems/permutations/</a></p><p>Given a collection of distinct integers, return all possible permutations.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>Backtrack。当temp长度等于所有数字时，添加进结果。否则遍历数字，每个数字添加进temp中，进行下一次迭代。当temp中存在相同数字时跳过。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">permute</span><span class="hljs-params">(self, nums: List[int])</span> -&gt; List[List[int]]:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> nums: <span class="hljs-keyword">return</span> [[]]</span><br><span class="line">        result=[]</span><br><span class="line">        self.backtrack(nums,[],result)</span><br><span class="line">        <span class="hljs-keyword">return</span> result</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">backtrack</span><span class="hljs-params">(self, nums, temp,result)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(temp)==len(nums): result.append(temp[:])</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            <span class="hljs-keyword">for</span> num <span class="hljs-keyword">in</span> nums:</span><br><span class="line">                <span class="hljs-keyword">if</span> num <span class="hljs-keyword">in</span> temp: <span class="hljs-keyword">continue</span></span><br><span class="line">                temp.append(num)</span><br><span class="line">                self.backtrack(nums,temp,result)</span><br><span class="line">                temp.pop()</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/rotate-image/" target="_blank" rel="noopener">https://leetcode.com/problems/rotate-image/</a></p><p>You are given an n x n 2D matrix representing an image.</p><p>Rotate the image by 90 degrees (clockwise).</p><p>You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>先转置再x轴颠倒。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">rotate</span><span class="hljs-params">(self, matrix: List[List[int]])</span> -&gt; <span class="hljs-keyword">None</span>:</span></span><br><span class="line">        <span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="hljs-string">        """</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(matrix)):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(i):</span><br><span class="line">                matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]</span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(matrix)):</span><br><span class="line">            matrix[i][:]=matrix[i][::<span class="hljs-number">-1</span>]</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/permutations/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/permutations/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Given a collection of distinct integers, return all possible permutations.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/rotate-image/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/rotate-image/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You are given an n x n 2D matrix representing an image.&lt;/p&gt;
+&lt;p&gt;Rotate the image by 90 degrees (clockwise).&lt;/p&gt;
+&lt;p&gt;You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;Backtrack。当temp长度等于所有数字时，添加进结果。否则遍历数字，每个数字添加进temp中，进行下一次迭代。当temp中存在相同数字时跳过。&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;先转置再x轴颠倒。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -226,10 +228,6 @@
     
     
       <category term="LeetCode" scheme="http://ko4cbt.com/tags/LeetCode/"/>
-    
-      <category term="Backtrack" scheme="http://ko4cbt.com/tags/Backtrack/"/>
-    
-      <category term="DFS" scheme="http://ko4cbt.com/tags/DFS/"/>
     
   </entry>
   
@@ -262,23 +260,21 @@
   </entry>
   
   <entry>
-    <title>LeetCode 刷题记录: 48. Rotate Image [Python]</title>
-    <link href="http://ko4cbt.com/zh-CN/LC48_Rotate_image.html"/>
-    <id>http://ko4cbt.com/zh-CN/LC48_Rotate_image.html</id>
+    <title>LeetCode 刷题记录: 46. Permutations [Python]</title>
+    <link href="http://ko4cbt.com/zh-CN/LC46_Permutations.html"/>
+    <id>http://ko4cbt.com/zh-CN/LC46_Permutations.html</id>
     <published>2019-07-21T05:00:00.000Z</published>
-    <updated>2019-09-17T04:13:18.220Z</updated>
+    <updated>2019-09-17T04:13:18.219Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/rotate-image/" target="_blank" rel="noopener">https://leetcode.com/problems/rotate-image/</a></p><p>You are given an n x n 2D matrix representing an image.</p><p>Rotate the image by 90 degrees (clockwise).</p><p>You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>先转置再x轴颠倒。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">rotate</span><span class="hljs-params">(self, matrix: List[List[int]])</span> -&gt; <span class="hljs-keyword">None</span>:</span></span><br><span class="line">        <span class="hljs-string">"""</span></span><br><span class="line"><span class="hljs-string">        Do not return anything, modify matrix in-place instead.</span></span><br><span class="line"><span class="hljs-string">        """</span></span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(matrix)):</span><br><span class="line">            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(i):</span><br><span class="line">                matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]</span><br><span class="line">        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(matrix)):</span><br><span class="line">            matrix[i][:]=matrix[i][::<span class="hljs-number">-1</span>]</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/permutations/" target="_blank" rel="noopener">https://leetcode.com/problems/permutations/</a></p><p>Given a collection of distinct integers, return all possible permutations.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>Backtrack。当temp长度等于所有数字时，添加进结果。否则遍历数字，每个数字添加进temp中，进行下一次迭代。当temp中存在相同数字时跳过。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">permute</span><span class="hljs-params">(self, nums: List[int])</span> -&gt; List[List[int]]:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> nums: <span class="hljs-keyword">return</span> [[]]</span><br><span class="line">        result=[]</span><br><span class="line">        self.backtrack(nums,[],result)</span><br><span class="line">        <span class="hljs-keyword">return</span> result</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">backtrack</span><span class="hljs-params">(self, nums, temp,result)</span>:</span></span><br><span class="line">        <span class="hljs-keyword">if</span> len(temp)==len(nums): result.append(temp[:])</span><br><span class="line">        <span class="hljs-keyword">else</span>:</span><br><span class="line">            <span class="hljs-keyword">for</span> num <span class="hljs-keyword">in</span> nums:</span><br><span class="line">                <span class="hljs-keyword">if</span> num <span class="hljs-keyword">in</span> temp: <span class="hljs-keyword">continue</span></span><br><span class="line">                temp.append(num)</span><br><span class="line">                self.backtrack(nums,temp,result)</span><br><span class="line">                temp.pop()</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/rotate-image/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/rotate-image/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;You are given an n x n 2D matrix representing an image.&lt;/p&gt;
-&lt;p&gt;Rotate the image by 90 degrees (clockwise).&lt;/p&gt;
-&lt;p&gt;You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/permutations/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/permutations/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Given a collection of distinct integers, return all possible permutations.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;先转置再x轴颠倒。&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;Backtrack。当temp长度等于所有数字时，添加进结果。否则遍历数字，每个数字添加进temp中，进行下一次迭代。当temp中存在相同数字时跳过。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -286,6 +282,10 @@
     
     
       <category term="LeetCode" scheme="http://ko4cbt.com/tags/LeetCode/"/>
+    
+      <category term="DFS" scheme="http://ko4cbt.com/tags/DFS/"/>
+    
+      <category term="Backtrack" scheme="http://ko4cbt.com/tags/Backtrack/"/>
     
   </entry>
   
@@ -409,35 +409,6 @@
   </entry>
   
   <entry>
-    <title>LeetCode 刷题记录: 11. Container With Most Water [Python]</title>
-    <link href="http://ko4cbt.com/zh-CN/LC11_Container_With_Most_Water.html"/>
-    <id>http://ko4cbt.com/zh-CN/LC11_Container_With_Most_Water.html</id>
-    <published>2019-07-18T05:00:00.000Z</published>
-    <updated>2019-09-17T04:13:18.214Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank" rel="noopener">https://leetcode.com/problems/container-with-most-water/</a></p><p>Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). nvertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.</p><p>Note: You may not slant the container and n is at least 2.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>贪心算法，从左右两边开始，从短的一边往中间缩进并记录最大值。由于短板效应从短的一边往中间缩进是最有利的。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">maxArea</span><span class="hljs-params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">        l,r,m=<span class="hljs-number">0</span>,len(height)<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span></span><br><span class="line">        <span class="hljs-keyword">while</span>(l&lt;r):</span><br><span class="line">            m=max(m,min(height[l],height[r])*(r-l))</span><br><span class="line">            <span class="hljs-keyword">if</span> height[l]&lt;height[r]:</span><br><span class="line">                l+=<span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                r-=<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">return</span> m</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/container-with-most-water/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/container-with-most-water/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). nvertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.&lt;/p&gt;
-&lt;p&gt;Note: You may not slant the container and n is at least 2.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;贪心算法，从左右两边开始，从短的一边往中间缩进并记录最大值。由于短板效应从短的一边往中间缩进是最有利的。&lt;br&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="leetcode" scheme="http://ko4cbt.com/categories/leetcode/"/>
-    
-    
-      <category term="LeetCode" scheme="http://ko4cbt.com/tags/LeetCode/"/>
-    
-      <category term="Greedy" scheme="http://ko4cbt.com/tags/Greedy/"/>
-    
-  </entry>
-  
-  <entry>
     <title>LeetCode 刷题记录: 1. Two Sum [Java]</title>
     <link href="http://ko4cbt.com/zh-CN/LC1_Two_Sum.html"/>
     <id>http://ko4cbt.com/zh-CN/LC1_Two_Sum.html</id>
@@ -463,6 +434,35 @@
       <category term="LeetCode" scheme="http://ko4cbt.com/tags/LeetCode/"/>
     
       <category term="Hashmap" scheme="http://ko4cbt.com/tags/Hashmap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 刷题记录: 11. Container With Most Water [Python]</title>
+    <link href="http://ko4cbt.com/zh-CN/LC11_Container_With_Most_Water.html"/>
+    <id>http://ko4cbt.com/zh-CN/LC11_Container_With_Most_Water.html</id>
+    <published>2019-07-18T05:00:00.000Z</published>
+    <updated>2019-09-17T04:13:18.214Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="原题"><a href="#原题" class="headerlink" title="原题"></a>原题</h2><blockquote><p><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank" rel="noopener">https://leetcode.com/problems/container-with-most-water/</a></p><p>Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). nvertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.</p><p>Note: You may not slant the container and n is at least 2.</p></blockquote><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>贪心算法，从左右两边开始，从短的一边往中间缩进并记录最大值。由于短板效应从短的一边往中间缩进是最有利的。<br><a id="more"></a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">maxArea</span><span class="hljs-params">(self, height: List[int])</span> -&gt; int:</span></span><br><span class="line">        l,r,m=<span class="hljs-number">0</span>,len(height)<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span></span><br><span class="line">        <span class="hljs-keyword">while</span>(l&lt;r):</span><br><span class="line">            m=max(m,min(height[l],height[r])*(r-l))</span><br><span class="line">            <span class="hljs-keyword">if</span> height[l]&lt;height[r]:</span><br><span class="line">                l+=<span class="hljs-number">1</span></span><br><span class="line">            <span class="hljs-keyword">else</span>:</span><br><span class="line">                r-=<span class="hljs-number">1</span></span><br><span class="line">        <span class="hljs-keyword">return</span> m</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;原题&quot;&gt;&lt;a href=&quot;#原题&quot; class=&quot;headerlink&quot; title=&quot;原题&quot;&gt;&lt;/a&gt;原题&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://leetcode.com/problems/container-with-most-water/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode.com/problems/container-with-most-water/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). nvertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.&lt;/p&gt;
+&lt;p&gt;Note: You may not slant the container and n is at least 2.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;headerlink&quot; title=&quot;思路&quot;&gt;&lt;/a&gt;思路&lt;/h2&gt;&lt;p&gt;贪心算法，从左右两边开始，从短的一边往中间缩进并记录最大值。由于短板效应从短的一边往中间缩进是最有利的。&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="leetcode" scheme="http://ko4cbt.com/categories/leetcode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://ko4cbt.com/tags/LeetCode/"/>
+    
+      <category term="Greedy" scheme="http://ko4cbt.com/tags/Greedy/"/>
     
   </entry>
   
